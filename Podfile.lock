@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.5.1)
+  - Alamofire (4.5.1)
   - PromiseKit (4.4.3):
     - PromiseKit/Foundation (= 4.4.3)
     - PromiseKit/QuartzCore (= 4.4.3)
@@ -13,13 +13,13 @@ PODS:
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire (~> 4.5)
   - PromiseKit (~> 4.4)
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
 
-PODFILE CHECKSUM: 7dfd946c132f5483c6e11c7f473ed883433f90b9
+PODFILE CHECKSUM: 012249a618c885f2ad6c8765a52567e2b4e5347c
 
 COCOAPODS: 1.4.0

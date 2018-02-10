@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A78202FB08E00291EE9 /* DataManager.swift */; };
+		052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */; };
+		052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */; };
+		052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7F202FB2ED00291EE9 /* Restaurant.swift */; };
 		52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C023202670B1001CFCB5 /* AppDelegate.swift */; };
 		52D0C026202670B1001CFCB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C025202670B1001CFCB5 /* ViewController.swift */; };
 		52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C027202670B1001CFCB5 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		052B4A78202FB08E00291EE9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIManager.swift; sourceTree = "<group>"; };
+		052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
+		052B4A7F202FB2ED00291EE9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		52D0C020202670B1001CFCB5 /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C023202670B1001CFCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D0C025202670B1001CFCB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052B4A77202FB05300291EE9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				052B4A78202FB08E00291EE9 /* DataManager.swift */,
+				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		052B4A7C202FB2AF00291EE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */,
+				052B4A7F202FB2ED00291EE9 /* Restaurant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		091F34FC105EC00FE57D1998 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +139,8 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				052B4A7C202FB2AF00291EE9 /* Models */,
+				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
 				52D0C025202670B1001CFCB5 /* ViewController.swift */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
@@ -343,6 +371,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D0C026202670B1001CFCB5 /* ViewController.swift in Sources */,
+				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
+				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
+				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
+				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,7 +604,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHQUCUSUHX;
 				INFOPLIST_FILE = EatUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.EatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,7 +621,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHQUCUSUHX;
 				INFOPLIST_FILE = EatUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.EatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
