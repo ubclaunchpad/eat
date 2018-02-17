@@ -89,9 +89,9 @@
                     </view>
                     <connections>
                         <outlet property="countButton" destination="sAr-iE-ohv" id="fio-qQ-qpl"/>
-                        <outlet property="countButtonHeight" destination="ftQ-bI-dVk" id="1yg-mb-rXT"/>
-                        <outlet property="countButtonWidth" destination="jSN-h7-BHm" id="aFI-vl-iAv"/>
+                        <outlet property="headerLabel" destination="2rU-eN-CVJ" id="P8h-nJ-k8P"/>
                         <outlet property="minusButton" destination="q4C-Ml-8oH" id="B3F-1x-49d"/>
+                        <outlet property="subheaderLabel" destination="6TA-lT-da5" id="qta-pt-9sd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cut-Ic-k29" userLabel="First Responder" sceneMemberID="firstResponder"/>

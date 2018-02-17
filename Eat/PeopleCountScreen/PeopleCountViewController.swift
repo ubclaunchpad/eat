@@ -11,14 +11,14 @@ import UIKit
 class PeopleCountViewController: UIViewController {
   @IBOutlet weak var minusButton: UIButton!
   @IBOutlet weak var countButton: UIButton!
+  @IBOutlet weak var headerLabel: UILabel!
+  @IBOutlet weak var subheaderLabel: UILabel!
   var peopleCount: Int = 1
-
-  @IBOutlet weak var countButtonWidth: NSLayoutConstraint!
-  @IBOutlet weak var countButtonHeight: NSLayoutConstraint!
 
   override func viewDidLoad() {
       super.viewDidLoad()
       setupButtons()
+      setupLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +46,6 @@ class PeopleCountViewController: UIViewController {
     countButton.layer.cornerRadius = 0.5 * countButton.bounds.size.width
     countButton.clipsToBounds = true
     countButton.backgroundColor = .gray
-    //countButton.frame = CGSize(width: 100, height: 100)
 
     minusButton.layer.cornerRadius = 0.5 * minusButton.bounds.size.width
     minusButton.clipsToBounds = true
@@ -56,16 +55,15 @@ class PeopleCountViewController: UIViewController {
   }
 
   private func scaleButton(){
-//    UIView.animate(withDuration: 0.5, animations: {
-//      let scale = 1.0 + Double(self.peopleCount)/5.0 * Double(self.peopleCount)/10.0
-//      let scaleTransform: CGAffineTransform  = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
-//      self.countButton.transform = scaleTransform
-//    })
     let scale = 1.0 + Double(self.peopleCount)/5.0 * Double(self.peopleCount)/10.0
-    //countButton.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
     UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
       self.countButton.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
     }, completion: nil)
+  }
+
+  private func setupLabels(){
+    headerLabel.font = Font.header(size: 20)
+    subheaderLabel.font = Font.body(size: 18)
   }
 
     /*
