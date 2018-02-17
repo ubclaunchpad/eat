@@ -56,7 +56,7 @@ class PeopleCountViewController: UIViewController {
 
   private func scaleButton(){
     let scale = 1.0 + Double(self.peopleCount)/5.0 * Double(self.peopleCount)/10.0
-    UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+    UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
       self.countButton.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
     }, completion: nil)
   }
