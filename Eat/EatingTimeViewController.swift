@@ -27,8 +27,8 @@ class EatingTimeViewController: UIViewController {
   //
   @IBAction func datePickerChanged(_ sender: Any) {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = DateFormatter.Style.short
-    dateFormatter.timeStyle = DateFormatter.Style.short
+    dateFormatter.dateStyle = DateFormatter.Style.full
+    dateFormatter.timeStyle = DateFormatter.Style.full
 
     let strDate = dateFormatter.string(from: datePicker.date)
     dateLabel.text = strDate
