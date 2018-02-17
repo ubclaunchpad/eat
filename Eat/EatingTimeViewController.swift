@@ -22,21 +22,19 @@ class EatingTimeViewController: UIViewController {
     dateLabel.font = Font.body(size: 20)
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-  //label.font = Font.bold(size: fontSize)
-  //label.font = Font.bold(size: fontSize)
-
-  //
   @IBAction func datePickerChanged(_ sender: Any) {
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = DateFormatter.Style.full
     dateFormatter.timeStyle = DateFormatter.Style.full
 
-    let strDate = dateFormatter.string(from: datePicker.date)
+    dateFormatter.dateFormat = "E MMM d, h:mm a"
+//
+    let myString = dateFormatter.string(from: Date())
+//    // convert your string to date
+    let yourDate = dateFormatter.date(from: myString)
+//    //then again set the date format whhich type of output you need
+
+    let strDate = dateFormatter.string(from: yourDate!)
     dateLabel.text = strDate
   }
 

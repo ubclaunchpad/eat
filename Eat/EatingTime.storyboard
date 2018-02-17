@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6gN-eO-6Yc">
-                                <rect key="frame" x="0.0" y="346" width="375" height="221"/>
+                                <rect key="frame" x="0.0" y="351" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="540598337.43020999">
                                     <!--2018-02-17 22:12:17 +0000-->
                                 </date>
@@ -29,7 +29,7 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you want to eat?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-Ll-FLh">
-                                <rect key="frame" x="20" y="105" width="205" height="21"/>
+                                <rect key="frame" x="20" y="105" width="305" height="21"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,10 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0W-4X-V1Q">
-                                <rect key="frame" x="20" y="184" width="335" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="zQ0-H6-Fcn"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="184" width="335" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +52,6 @@
                             <constraint firstItem="81a-L6-plu" firstAttribute="trailing" secondItem="x0W-4X-V1Q" secondAttribute="trailing" constant="20" id="0cN-NT-iV0"/>
                             <constraint firstItem="x0W-4X-V1Q" firstAttribute="top" secondItem="pgz-8O-2c7" secondAttribute="bottom" constant="12" id="56W-bq-BAI"/>
                             <constraint firstItem="pgz-8O-2c7" firstAttribute="leading" secondItem="81a-L6-plu" secondAttribute="leading" constant="20" id="FfU-5i-h7B"/>
-                            <constraint firstItem="6gN-eO-6Yc" firstAttribute="top" secondItem="x0W-4X-V1Q" secondAttribute="bottom" constant="130" id="SJm-SM-hx4"/>
                             <constraint firstItem="6gN-eO-6Yc" firstAttribute="trailing" secondItem="81a-L6-plu" secondAttribute="trailing" id="WVz-KF-VxF"/>
                             <constraint firstItem="81a-L6-plu" firstAttribute="trailing" secondItem="pgz-8O-2c7" secondAttribute="trailing" constant="20" id="Wle-42-xNs"/>
                             <constraint firstItem="x0W-4X-V1Q" firstAttribute="leading" secondItem="81a-L6-plu" secondAttribute="leading" constant="20" id="dBA-8G-4kJ"/>
@@ -63,7 +59,7 @@
                             <constraint firstItem="81a-L6-plu" firstAttribute="bottom" secondItem="6gN-eO-6Yc" secondAttribute="bottom" constant="100" id="hdg-xs-BVc"/>
                             <constraint firstItem="gE1-Ll-FLh" firstAttribute="top" secondItem="81a-L6-plu" secondAttribute="top" constant="85" id="hvX-B5-1HO"/>
                             <constraint firstItem="6gN-eO-6Yc" firstAttribute="leading" secondItem="81a-L6-plu" secondAttribute="leading" id="in5-qb-vwm"/>
-                            <constraint firstItem="81a-L6-plu" firstAttribute="trailing" secondItem="gE1-Ll-FLh" secondAttribute="trailing" constant="150" id="nxo-Pg-CGY"/>
+                            <constraint firstItem="81a-L6-plu" firstAttribute="trailing" secondItem="gE1-Ll-FLh" secondAttribute="trailing" constant="50" id="nxo-Pg-CGY"/>
                             <constraint firstItem="gE1-Ll-FLh" firstAttribute="leading" secondItem="81a-L6-plu" secondAttribute="leading" constant="20" id="pOV-5g-FfI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="81a-L6-plu"/>
