@@ -9,9 +9,6 @@
 import UIKit
 
 internal struct Font {
-    static func regular(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular) }
-    static func medium(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium) }
-    static func bold(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.bold) }
-    static func semibold(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.semibold) }
-    }
+    static func header(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium) }
+    static func body(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular) }
 }
