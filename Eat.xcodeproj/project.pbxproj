@@ -11,6 +11,7 @@
 		052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */; };
 		052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */; };
 		052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B4A7F202FB2ED00291EE9 /* Restaurant.swift */; };
+		5225CB1E2038E1C4000726E7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225CB1D2038E1C4000726E7 /* Font.swift */; };
 		52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C023202670B1001CFCB5 /* AppDelegate.swift */; };
 		52D0C026202670B1001CFCB5 /* EatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */; };
 		52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C027202670B1001CFCB5 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIManager.swift; sourceTree = "<group>"; };
 		052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		052B4A7F202FB2ED00291EE9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		5225CB1D2038E1C4000726E7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		52D0C020202670B1001CFCB5 /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C023202670B1001CFCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingTimeViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5225CB1F2038E1D8000726E7 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				5225CB1D2038E1C4000726E7 /* Font.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
 		52D0C017202670B1001CFCB5 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,8 @@
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
 				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
 				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
+				52D0C025202670B1001CFCB5 /* ViewController.swift */,
+				5225CB1F2038E1D8000726E7 /* Styling */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
 				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
@@ -376,6 +388,7 @@
 			files = (
 				52D0C026202670B1001CFCB5 /* EatingTimeViewController.swift in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
+				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
@@ -547,6 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.Eat;
@@ -562,6 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.Eat;

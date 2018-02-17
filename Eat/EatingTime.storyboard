@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6gN-eO-6Yc">
-                                <rect key="frame" x="0.0" y="347" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="346" width="375" height="221"/>
                                 <date key="date" timeIntervalSinceReferenceDate="540598337.43020999">
                                     <!--2018-02-17 22:12:17 +0000-->
                                 </date>
@@ -35,13 +35,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The restaurant should be open at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgz-8O-2c7">
-                                <rect key="frame" x="20" y="151" width="335" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="20" y="151" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0W-4X-V1Q">
-                                <rect key="frame" x="20" y="185" width="335" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0W-4X-V1Q">
+                                <rect key="frame" x="20" y="184" width="335" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="zQ0-H6-Fcn"/>
                                 </constraints>
@@ -69,6 +69,8 @@
                         <viewLayoutGuide key="safeArea" id="81a-L6-plu"/>
                     </view>
                     <connections>
+                        <outlet property="HeaderEatDate" destination="gE1-Ll-FLh" id="M1X-1e-Ipl"/>
+                        <outlet property="Temp" destination="pgz-8O-2c7" id="G7h-6q-acI"/>
                         <outlet property="dateLabel" destination="x0W-4X-V1Q" id="NcJ-tT-Dnz"/>
                         <outlet property="datePicker" destination="6gN-eO-6Yc" id="sJG-61-Wtw"/>
                     </connections>

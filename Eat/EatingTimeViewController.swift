@@ -9,10 +9,17 @@
 import UIKit
 
 class EatingTimeViewController: UIViewController {
+  @IBOutlet weak var Temp: UILabel!
+  @IBOutlet weak var HeaderEatDate: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var datePicker: UIDatePicker!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    Temp.font = Font.body(size: 18)
+    HeaderEatDate.font = Font.header(size: 18)
+    dateLabel.font = Font.body(size: 20)
   }
 
   override func didReceiveMemoryWarning() {
@@ -22,8 +29,7 @@ class EatingTimeViewController: UIViewController {
 
   //label.font = Font.bold(size: fontSize)
   //label.font = Font.bold(size: fontSize)
-  @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var datePicker: UIDatePicker!
+
   //
   @IBAction func datePickerChanged(_ sender: Any) {
     let dateFormatter = DateFormatter()
