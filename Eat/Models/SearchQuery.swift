@@ -9,5 +9,10 @@
 import Foundation
 
 struct SearchQuery {
-  let keywords: String
+  let latitude: Float
+  let longitude: Float
+  let radius: Int
+  let limit: Int
+  let price: String
+  let keywords: [String]
 }

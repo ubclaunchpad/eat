@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     let yelpApiManager = YelpAPIManager.init()
     let dataManager = DataManager.init(yelpAPIManager: yelpApiManager)
-    let query = SearchQuery(keywords: "sample")
+    let query = SearchQuery(latitude: 2, longitude: 2, radius: 2, limit: 5, price: "$", keywords: [])
     dataManager.fetchRestaurants(with: query)
   }
 

@@ -11,38 +11,62 @@ import BrightFutures
 import Alamofire
 
 internal final class YelpAPIManager {
-  
 }
 
 // MARK: Search
 extension YelpAPIManager {
-  // TODO: return Promise of JSON
-  func search(keywords: String) -> Void {
 
-    // Parse the keywords to use in the search query
-    // let keywordsArray = [""]
+  enum ReadmeError: Error {
+    case RequestFailed, TimeServiceError
+  }
 
-    // Declare the Yelp Secret and APIKey
-    let APIKey = "MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx"
-    let urlString = "https://api.yelp.com/v3/businesses/search?location=Canada"
+  // INPUT: Search Query Object
+  // RETURN: Promise<JSON>
+  // INFO: Returns a Promise<JSON> which contains the list of restaurants matching the query
+  func search(query: SearchQuery) -> Void {
 
+    // Launch async call to get restaurants
     DispatchQueue.global().asyncValue {
-      self.getRestaurantList(params: keywords, url: urlString, APIKey: APIKey)
-      }.onSuccess { num in
-        print(num)
+      self.getRestaurantList(query: query)
+      }.onSuccess { result in
+        result.andThen { result in
+          switch result {
+          case .success(let val):
+            print(val)
+          case .failure(_):
+            print("No Restaurants returned")
+          }
+        }
     }
   }
 
-  func getRestaurantList(params: String, url: String, APIKey: String) -> String {
+  func getRestaurantList(query: SearchQuery) -> Future<Any, ReadmeError> {
+    // Declare the headers for the query
     let headers = [
       "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
     ]
-    Alamofire.request(url,headers: headers).responseJSON { response in
+    // Get the customized URL string based on the query
+    let url = createURLString(query: query)
 
-      if let json = response.result.value {
-        print("JSON: \(json)")
-      }
+    return Future { complete in
+      DispatchQueue.global().asyncValue {
+        Alamofire.request(url, headers: headers)
+        }.onSuccess { response in
+          response.responseJSON { response in
+            if let json = response.result.value {
+                complete(.success(json))
+            }
+            }
+          }
     }
-    return "Cheese"
+  }
+
+  func createURLString(query: SearchQuery) -> URL {
+    let queryItems = [URLQueryItem(name: "location", value: "Canada")]
+    var urlComps = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
+    urlComps.queryItems =  queryItems
+    let resultURL = urlComps.url
+
+    return resultURL!
   }
 }

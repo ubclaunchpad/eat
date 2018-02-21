@@ -21,8 +21,7 @@ internal final class DataManager {
 extension DataManager {
   func fetchRestaurants(with query: SearchQuery) -> [Restaurant] {
     // fetch json twice, once with vegan, other without
-    yelpAPIManager.search(keywords: query.keywords)
-    
+    yelpAPIManager.search(query: query)
     // turn json into list of restaurants, see link
 
     return []
