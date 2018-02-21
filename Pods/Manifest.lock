@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (4.5.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - BrightFutures (6.0.0):
+    - Result (~> 3.2.4)
+  - CDYelpFusionKit (1.5.0):
+    - AlamofireObjectMapper (= 5.0.0)
+  - ObjectMapper (3.1.0)
   - PromiseKit (4.4.3):
     - PromiseKit/Foundation (= 4.4.3)
     - PromiseKit/QuartzCore (= 4.4.3)
@@ -11,15 +19,26 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.4.3):
     - PromiseKit/CorePromise
+  - Result (3.2.4)
+  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BrightFutures
+  - CDYelpFusionKit (= 1.5.0)
   - PromiseKit (~> 4.4)
+  - YelpAPI
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
+  CDYelpFusionKit: 665cf3881bff25db3a47ca3a4e3497e3a1ea552a
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 012249a618c885f2ad6c8765a52567e2b4e5347c
+PODFILE CHECKSUM: 561f2904fc1102753bed914f120c0728c9f96dc7
 
 COCOAPODS: 1.4.0

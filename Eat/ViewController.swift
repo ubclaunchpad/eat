@@ -13,6 +13,10 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    let yelpApiManager = YelpAPIManager.init()
+    let dataManager = DataManager.init(yelpAPIManager: yelpApiManager)
+    let query = SearchQuery(keywords: "sample")
+    dataManager.fetchRestaurants(with: query)
   }
 
   override func didReceiveMemoryWarning() {
