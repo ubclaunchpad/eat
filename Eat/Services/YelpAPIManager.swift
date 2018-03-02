@@ -23,8 +23,9 @@ extension YelpAPIManager {
   // INPUT: Search Query Object
   // RETURN: Promise<JSON>
   // INFO: Returns a Promise<JSON> which contains the list of restaurants matching the query
-  func search(query: SearchQuery) -> Void {
+  func search(query: SearchQuery) -> Future<Any, ReadmeError> {
 
+    return Future { complete in
     // Launch async call to get restaurants
     DispatchQueue.global().asyncValue {
       self.getRestaurantList(query: query)
@@ -32,11 +33,14 @@ extension YelpAPIManager {
         result.andThen { result in
           switch result {
           case .success(let val):
-            print(val)
+            print("calling generate restaurants")
+            let restaurants = self.generateRestaurantsList(json: val)
+            complete(.success(restaurants))
           case .failure(_):
             print("No Restaurants returned")
           }
         }
+    }
     }
   }
 
@@ -54,6 +58,7 @@ extension YelpAPIManager {
         }.onSuccess { response in
           response.responseJSON { response in
             if let json = response.result.value {
+                // returns when the json object is received
                 complete(.success(json))
             }
             }
@@ -62,11 +67,33 @@ extension YelpAPIManager {
   }
 
   func createURLString(query: SearchQuery) -> URL {
-    let queryItems = [URLQueryItem(name: "location", value: "Canada")]
+    // Declare the additonal filters for the query
+    let queryItems = [URLQueryItem(name: "location", value: "Vancouver")]
+
+    // Base URL
     var urlComps = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
+
+    // Adds the additional paramaters onto the query string
     urlComps.queryItems =  queryItems
+
+    // Gets the URL string from the object
     let resultURL = urlComps.url
 
     return resultURL!
+  }
+
+  // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
+  func generateRestaurantsList(json: Any) -> [Restaurant] {
+    let restaurants: [Restaurant] = []
+
+    if let dictionary = json as? [String: Any] {
+      let businesses = dictionary["businesses"] as! NSArray
+      for business in businesses {
+        if let businessDict = business as? [String: Any] {
+          print(businessDict["categories"])
+        }
+      }
+    }
+    return restaurants
   }
 }
