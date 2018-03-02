@@ -23,7 +23,7 @@ extension YelpAPIManager {
   // INPUT: Search Query Object
   // RETURN: Promise<JSON>
   // INFO: Returns a Promise<JSON> which contains the list of restaurants matching the query
-  func search(query: SearchQuery) -> Future<Any, ReadmeError> {
+  func search(query: SearchQuery) -> Future<[Restaurant], ReadmeError> {
 
     return Future { complete in
     // Launch async call to get restaurants
@@ -33,7 +33,6 @@ extension YelpAPIManager {
         result.andThen { result in
           switch result {
           case .success(let val):
-            print("calling generate restaurants")
             let restaurants = self.generateRestaurantsList(json: val)
             complete(.success(restaurants))
           case .failure(_):
@@ -68,7 +67,11 @@ extension YelpAPIManager {
 
   func createURLString(query: SearchQuery) -> URL {
     // Declare the additonal filters for the query
-    let queryItems = [URLQueryItem(name: "location", value: "Vancouver")]
+    let queryItems = [URLQueryItem(name: "latitude", value: String(query.latitude)),
+                      URLQueryItem(name: "longitude", value: String(query.longitude)),
+                      URLQueryItem(name: "radius", value: String(query.radius)),
+                      URLQueryItem(name: "price", value: String(query.price)),
+                      URLQueryItem(name: "limit", value: String(query.limit))]
 
     // Base URL
     var urlComps = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
@@ -78,22 +81,30 @@ extension YelpAPIManager {
 
     // Gets the URL string from the object
     let resultURL = urlComps.url
+    print(resultURL)
 
     return resultURL!
   }
 
   // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
   func generateRestaurantsList(json: Any) -> [Restaurant] {
-    let restaurants: [Restaurant] = []
+    var restaurants: [Restaurant] = []
 
     if let dictionary = json as? [String: Any] {
       let businesses = dictionary["businesses"] as! NSArray
       for business in businesses {
         if let businessDict = business as? [String: Any] {
-          print(businessDict["categories"])
+          let restaurantName = businessDict["name"] as! String
+          let restaurantRating = businessDict["rating"] as! NSNumber
+          let restaurantPhone = businessDict["phone"] as! String
+          let restaurantStatus = businessDict["is_closed"] as! Bool
+
+          let newResto = Restaurant(name: restaurantName, rating: restaurantRating, phone: restaurantPhone, status: restaurantStatus)
+          restaurants.append(newResto)
         }
       }
     }
     return restaurants
   }
 }
+

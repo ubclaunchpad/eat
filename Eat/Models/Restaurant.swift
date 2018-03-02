@@ -10,4 +10,7 @@ import Foundation
 
 struct Restaurant {
   let name: String
+  let rating: NSNumber
+  let phone: String
+  let status: Bool
 }
