@@ -27,17 +27,15 @@ extension YelpAPIManager {
 
     return Future { complete in
     // Launch async call to get restaurants
-    DispatchQueue.global().asyncValue {
-      self.getRestaurantList(query: query)
-      }.onSuccess { result in
-        result.andThen { result in
-          switch result {
-          case .success(let val):
-            let restaurants = self.generateRestaurantsList(json: val)
-            complete(.success(restaurants))
-          case .failure(_):
-            print("No Restaurants returned")
-          }
+    let returnVal = getRestaurantList(query: query)
+
+    returnVal.andThen { result in
+        switch result {
+        case .success(let val):
+          let restaurants = self.generateRestaurantsList(json: val)
+          complete(.success(restaurants))
+        case .failure(_):
+          print("No Restaurants returned")
         }
     }
     }
@@ -50,18 +48,14 @@ extension YelpAPIManager {
     ]
     // Get the customized URL string based on the query
     let url = createURLString(query: query)
+    print("Getting Restaurant List")
 
     return Future { complete in
-      DispatchQueue.global().asyncValue {
-        Alamofire.request(url, headers: headers)
-        }.onSuccess { response in
-          response.responseJSON { response in
-            if let json = response.result.value {
-                // returns when the json object is received
-                complete(.success(json))
-            }
-            }
+      Alamofire.request(url, headers: headers).responseJSON { response in
+        if let json = response.result.value {
+          complete(.success(json))
           }
+      }
     }
   }
 
