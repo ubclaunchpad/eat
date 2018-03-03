@@ -19,6 +19,7 @@
 		52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */; };
 		52D0C039202670B1001CFCB5 /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C038202670B1001CFCB5 /* EatTests.swift */; };
 		52D0C044202670B1001CFCB5 /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C043202670B1001CFCB5 /* EatUITests.swift */; };
+		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
 		7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7826DC6E2038DF9700A320BE /* EatingTime.storyboard */; };
 		91C8138F54DA402147069822 /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		52D0C043202670B1001CFCB5 /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		52D0C045202670B1001CFCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
+		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
 		8DACC57CAB14BD51A799BAD6 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,12 +153,12 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				781616CC204B4874005E8649 /* Extensions */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
-				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
 				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
-				52D0C025202670B1001CFCB5 /* ViewController.swift */,
+				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
@@ -182,6 +184,14 @@
 				52D0C045202670B1001CFCB5 /* Info.plist */,
 			);
 			path = EatUITests;
+			sourceTree = "<group>";
+		};
+		781616CC204B4874005E8649 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				781616CD204B4895005E8649 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FCF35F275727B6B7F3C905F7 /* Frameworks */ = {
@@ -389,6 +399,7 @@
 				52D0C026202670B1001CFCB5 /* EatingTimeViewController.swift in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
+				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,

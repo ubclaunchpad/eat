@@ -18,24 +18,19 @@ class EatingTimeViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     Temp.font = Font.body(size: 18)
-    HeaderEatDate.font = Font.header(size: 18)
-    dateLabel.font = Font.body(size: 20)
+    HeaderEatDate.font = Font.header(size: 22)
+    dateLabel.font = Font.body(size: 22)
+    //
+    dateLabel.text = "Now"
   }
 
+  //: # Today's Date
+  let thisTimeTomrrow = NSDate(timeIntervalSinceNow: 86400)
+  let thisTimeYesterday = NSDate(timeIntervalSinceNow: -86400)
+
+
   @IBAction func datePickerChanged(_ sender: Any) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = DateFormatter.Style.full
-    dateFormatter.timeStyle = DateFormatter.Style.full
-
-    dateFormatter.dateFormat = "E MMM d, h:mm a"
-//
-    let myString = dateFormatter.string(from: Date())
-//    // convert your string to date
-    let yourDate = dateFormatter.date(from: myString)
-//    //then again set the date format whhich type of output you need
-
-    let strDate = dateFormatter.string(from: yourDate!)
-    dateLabel.text = strDate
+    dateLabel.text = datePicker.date.toString()
   }
 
 }
