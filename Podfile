@@ -7,4 +7,12 @@ use_frameworks!
 target ‘Eat’ do
   pod 'Alamofire', '~> 4.5’
   pod "PromiseKit", "~> 4.4"
+
+  #google places api
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
+
+  #Textview autocomplete
+  pod "SearchTextField"
 end

@@ -24,6 +24,8 @@
 		55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */; };
 		55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */; };
 		91C8138F54DA402147069822 /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */; };
+		AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */; };
+		AF03A432204B129200A4574F /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF03A431204B129200A4574F /* FindLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		8DACC57CAB14BD51A799BAD6 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
+		AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindLocation.storyboard; sourceTree = "<group>"; };
+		AF03A431204B129200A4574F /* FindLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				AF03A42E204B0E4A00A4574F /* FindLocationScreen */,
 				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
@@ -206,6 +211,15 @@
 				55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */,
 			);
 			path = PriceRatingFilterScreen;
+			sourceTree = "<group>";
+		};
+		AF03A42E204B0E4A00A4574F /* FindLocationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */,
+				AF03A431204B129200A4574F /* FindLocationViewController.swift */,
+			);
+			path = FindLocationScreen;
 			sourceTree = "<group>";
 		};
 		FCF35F275727B6B7F3C905F7 /* Frameworks */ = {
@@ -330,6 +344,7 @@
 				556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */,
 				52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */,
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
+				AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A69470C55DADC42B2FC65496 /* [CP] Embed Pods Frameworks */ = {
@@ -419,6 +434,7 @@
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
+				AF03A432204B129200A4574F /* FindLocationViewController.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
