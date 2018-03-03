@@ -35,6 +35,7 @@ extension DataManager {
         case .success(let val):
           complete(.success(val))
         case .failure(_):
+          // TODO: make this return an error
           print("No Restaurants returned")
         }
     }

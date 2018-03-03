@@ -10,7 +10,7 @@ import Foundation
 
 struct Restaurant {
   let name: String
-  let rating: NSNumber
+  let rating: Float
   let phone: String
   let status: Bool
 }

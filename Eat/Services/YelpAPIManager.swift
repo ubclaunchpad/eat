@@ -74,10 +74,13 @@ extension YelpAPIManager {
     urlComps.queryItems =  queryItems
 
     // Gets the URL string from the object
-    let resultURL = urlComps.url
+    guard let resultURL = urlComps.url else {
+      print("Failed to create URL")
+      return URL(string: "https://www.apple.com")!
+    }
     print(resultURL)
 
-    return resultURL!
+    return resultURL
   }
 
   // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
@@ -89,7 +92,7 @@ extension YelpAPIManager {
       for business in businesses {
         if let businessDict = business as? [String: Any] {
           let restaurantName = businessDict["name"] as! String
-          let restaurantRating = businessDict["rating"] as! NSNumber
+          let restaurantRating = businessDict["rating"] as! Float
           let restaurantPhone = businessDict["phone"] as! String
           let restaurantStatus = businessDict["is_closed"] as! Bool
 
