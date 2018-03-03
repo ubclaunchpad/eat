@@ -47,7 +47,10 @@ extension YelpAPIManager {
       "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
     ]
     // Get the customized URL string based on the query
-    let url = createURLString(query: query)
+    guard let url = createURLString(query: query) else {
+      print("Problem with URL")
+      return Future(error: ReadmeError.RequestFailed)
+    }
     print("Getting Restaurant List")
 
     return Future { complete in
@@ -59,7 +62,7 @@ extension YelpAPIManager {
     }
   }
 
-  func createURLString(query: SearchQuery) -> URL {
+  func createURLString(query: SearchQuery) -> URL? {
     // Declare the additonal filters for the query
     let queryItems = [URLQueryItem(name: "latitude", value: String(query.latitude)),
                       URLQueryItem(name: "longitude", value: String(query.longitude)),
@@ -76,7 +79,7 @@ extension YelpAPIManager {
     // Gets the URL string from the object
     guard let resultURL = urlComps.url else {
       print("Failed to create URL")
-      return URL(string: "https://www.apple.com")!
+      return nil
     }
     print(resultURL)
 
@@ -89,6 +92,7 @@ extension YelpAPIManager {
 
     if let dictionary = json as? [String: Any] {
       let businesses = dictionary["businesses"] as! NSArray
+      // TODO: Implement with MAP
       for business in businesses {
         if let businessDict = business as? [String: Any] {
           let restaurantName = businessDict["name"] as! String
