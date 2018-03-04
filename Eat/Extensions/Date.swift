@@ -14,4 +14,14 @@ extension Date {
     dateFormatter.dateFormat = "E MMM d 'at' h:mm a"
     return dateFormatter.string(from: self)
   }
+
+  func sameDate(date : Date) -> Bool {
+    return Calendar.current.isDate(self, equalTo: date, toGranularity: .day)
+  }
+
+  func toStringToday() -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "'Today at' h:mm a"
+    return dateFormatter.string(from: self)
+  }
 }

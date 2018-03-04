@@ -21,7 +21,7 @@ class EatingTimeViewController: UIViewController {
     HeaderEatDate.font = Font.header(size: 22)
     dateLabel.font = Font.body(size: 22)
     //
-    dateLabel.text = "Now"
+    dateLabel.text = "now"
   }
 
   //: # Today's Date
@@ -30,7 +30,12 @@ class EatingTimeViewController: UIViewController {
 
 
   @IBAction func datePickerChanged(_ sender: Any) {
+    if (datePicker.date.sameDate(date: Date())) {
+      dateLabel.text = datePicker.date.toStringToday()
+    }
+    else {
     dateLabel.text = datePicker.date.toString()
+    }
   }
 
 }
