@@ -12,13 +12,17 @@ import GoogleMaps
 import GooglePlacePicker
 import GooglePlaces
 
-class MapScreenController: GMSPlacePickerViewController{
+class MapScreenController: UIViewController{
 
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
-  var mapView: GMSMapView!
+//  var mapView: GMSMapView!
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
+
+  @IBOutlet var mapView: GMSMapView!
+
+  
 
   // Whether a user has selected a location other than their current location.
   // If this value is true, then the map should not recenter when the user's location
@@ -30,19 +34,24 @@ class MapScreenController: GMSPlacePickerViewController{
   // A default location to use when location permission is not granted.
   let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
 
-  // The currently selected place.
-  var selectedPlace: GMSPlace?
 
-  override func loadView() {
+//  override func loadView() {
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
-    let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
-    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-    view = mapView
-  }
+//    let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
+//    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//    view = mapView
+//  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+
+    // Create a GMSCameraPosition that tells the map to display the
+    // coordinate -33.86,151.20 at zoom level 6.
+//    let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
+//    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+
 
     // Initialize location manager
     locationManager = CLLocationManager()
@@ -59,13 +68,21 @@ class MapScreenController: GMSPlacePickerViewController{
     let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                           longitude: defaultLocation.coordinate.longitude,
                                           zoom: zoomLevel)
-    mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-    mapView.settings.myLocationButton = true
-    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    mapView.isMyLocationEnabled = true
-    mapView.delegate = self
+    self.mapView.camera = camera
+    self.mapView.settings.myLocationButton = true
+    self.mapView.settings.setAllGesturesEnabled(true)
+    mapView.isUserInteractionEnabled = true
+    self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.mapView.isMyLocationEnabled = true
+    self.mapView.delegate = self
 
+    // Add a next button to the navigation bar
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: Selector("next"))
   }
+  func next() {
+    print("Next has been click")
+  }
+
 }
 
 extension MapScreenController : CLLocationManagerDelegate {
@@ -88,8 +105,6 @@ extension MapScreenController : CLLocationManagerDelegate {
         self.mapView.animate(to: camera)
       }
     }
-    // Update the view
-    view = mapView
   }
 
 }
@@ -102,9 +117,11 @@ extension MapScreenController : GMSMapViewDelegate {
     // Set didSelect to true as map should not recenter if the user's current location
     // changes
     didSelect = true
-    mapView.clear()
+
+    // There should only be one pin on the map max
+    self.mapView.clear()
     let marker = GMSMarker(position: coordinate)
-    marker.map = mapView
+    marker.map = self.mapView
 
    let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
     if self.mapView.isHidden {
@@ -113,9 +130,6 @@ extension MapScreenController : GMSMapViewDelegate {
     } else {
       self.mapView.animate(to: camera)
     }
-
-    // Update the view object
-    view = mapView
   }
   func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
     didSelect = false
