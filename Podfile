@@ -10,6 +10,7 @@ target ‘Eat’ do
 
   #google maps api
   pod 'GooglePlaces'
+  pod ‘GooglePlacePicker’
   pod 'GoogleMaps’
 
   #Textview autocomplete

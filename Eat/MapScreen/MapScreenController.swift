@@ -9,16 +9,22 @@
 import Foundation
 import UIKit
 import GoogleMaps
+import GooglePlacePicker
+import GooglePlaces
 
-class MapScreenController: UIViewController{
+class MapScreenController: GMSPlacePickerViewController{
 
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
   var mapView: GMSMapView!
+  var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
   // A default location to use when location permission is not granted.
   let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+
+  // The currently selected place.
+  var selectedPlace: GMSPlace?
 
   override func loadView() {
     // Create a GMSCameraPosition that tells the map to display the
@@ -57,9 +63,11 @@ class MapScreenController: UIViewController{
     mapView.settings.myLocationButton = true
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.isMyLocationEnabled = true
+    mapView.delegate = self
 
   }
 }
+
 extension MapScreenController : CLLocationManagerDelegate {
 
   // Handle incoming location events.
@@ -83,3 +91,16 @@ extension MapScreenController : CLLocationManagerDelegate {
   }
 
 }
+
+extension MapScreenController : GMSMapViewDelegate {
+  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
+  {
+    print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+    mapView.clear()
+    let marker = GMSMarker(position: coordinate)
+    marker.map = mapView
+    self.view = mapView
+  }
+}
+
+
