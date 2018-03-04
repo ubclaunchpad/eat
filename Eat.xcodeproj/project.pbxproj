@@ -23,6 +23,8 @@
 		556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */; };
 		55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */; };
 		55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */; };
+		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
+		781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */; };
 		91C8138F54DA402147069822 /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRatingFilterViewController.swift; sourceTree = "<group>"; };
 		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
+		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DietaryRestrictionsScreen.storyboard; path = Models/DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
+		781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DietaryRestrictionsViewController.swift; path = Models/DietaryRestrictionsViewController.swift; sourceTree = "<group>"; };
 		8DACC57CAB14BD51A799BAD6 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,8 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */,
+				781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */,
 				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
@@ -330,6 +336,7 @@
 				556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */,
 				52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */,
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
+				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +426,7 @@
 			files = (
 				52D0C026202670B1001CFCB5 /* ViewController.swift in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
+				781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
