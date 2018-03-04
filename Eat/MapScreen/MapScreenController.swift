@@ -16,7 +16,6 @@ class MapScreenController: UIViewController{
 
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
-//  var mapView: GMSMapView!
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
@@ -77,10 +76,12 @@ class MapScreenController: UIViewController{
     self.mapView.delegate = self
 
     // Add a next button to the navigation bar
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: Selector("next"))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MapScreenController.next(_:)))
   }
-  func next() {
+  @objc func next(_ sender:UIBarButtonItem!) {
     print("Next has been click")
+    // TODO: create a search query object when this button is clicked and move onto the next
+    //       screen
   }
 
 }
