@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Stj-Lw-hR2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--People Count View Controller-->
+        <scene sceneID="5HN-Eb-aEz">
+            <objects>
+                <viewController id="Stj-Lw-hR2" customClass="PeopleCountViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iPe-qT-BQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAr-iE-ohv">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.39117446219867208" green="0.39223451262955034" blue="0.40807423857868019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" identifier="countButtonHeight" id="ftQ-bI-dVk"/>
+                                    <constraint firstAttribute="width" constant="100" identifier="countButtonWidth" id="jSN-h7-BHm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <connections>
+                                    <action selector="countButtonTapped:" destination="Stj-Lw-hR2" eventType="touchUpInside" id="QDb-gq-PBQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4C-Ml-8oH">
+                                <rect key="frame" x="165" y="498" width="45" height="45"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="auM-GH-0HQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="yIG-zt-hWh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="0.42588039340101524" green="0.42588039340101524" blue="0.42588039340101524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="Stj-Lw-hR2" eventType="touchUpInside" id="ojU-j5-aNe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-1s-G2m">
+                                <rect key="frame" x="40" y="607" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.0065831218274111647" green="0.0065831218274111647" blue="0.0065831218274111647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RK-c5-dkZ">
+                                <rect key="frame" x="306" y="607" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.024488420050761461" green="0.024488420050761461" blue="0.024488420050761461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How big is your group?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rU-eN-CVJ">
+                                <rect key="frame" x="63" y="81" width="198.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the circle to increase the #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-lT-da5">
+                                <rect key="frame" x="63" y="123" width="248.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.48822176395939088" green="0.48822176395939088" blue="0.48822176395939088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4E-fg-isG">
+                                <rect key="frame" x="180.5" y="318.5" width="13" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sAr-iE-ohv" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="1qW-xb-dKd"/>
+                            <constraint firstItem="cUv-1s-G2m" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="40" id="2YH-p7-Fg1"/>
+                            <constraint firstItem="v4E-fg-isG" firstAttribute="centerX" secondItem="sAr-iE-ohv" secondAttribute="centerX" id="4xh-zg-x5w"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="6RK-c5-dkZ" secondAttribute="trailing" constant="37" id="5dl-cu-fDJ"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="cUv-1s-G2m" secondAttribute="bottom" constant="30" id="6aL-6o-RVV"/>
+                            <constraint firstItem="6TA-lT-da5" firstAttribute="top" secondItem="2rU-eN-CVJ" secondAttribute="bottom" constant="18" id="GFe-Ff-0QL"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="q4C-Ml-8oH" secondAttribute="bottom" constant="124" id="GIE-yM-mAF"/>
+                            <constraint firstItem="q4C-Ml-8oH" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="PPY-im-Myh"/>
+                            <constraint firstItem="sAr-iE-ohv" firstAttribute="top" secondItem="6TA-lT-da5" secondAttribute="bottom" constant="139" id="R9I-bL-ivR"/>
+                            <constraint firstItem="2rU-eN-CVJ" firstAttribute="leading" secondItem="6TA-lT-da5" secondAttribute="trailing" constant="-249" id="ZND-qw-Tur"/>
+                            <constraint firstItem="6RK-c5-dkZ" firstAttribute="baseline" secondItem="cUv-1s-G2m" secondAttribute="baseline" id="hco-dL-lQE"/>
+                            <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="AgL-vd-kul" secondAttribute="centerY" constant="-10.5" id="jmy-gg-9qS"/>
+                            <constraint firstItem="v4E-fg-isG" firstAttribute="centerY" secondItem="sAr-iE-ohv" secondAttribute="centerY" id="pzG-QH-zyT"/>
+                            <constraint firstItem="6TA-lT-da5" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="skd-Qy-4Zr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AgL-vd-kul"/>
+                    </view>
+                    <connections>
+                        <outlet property="countButton" destination="sAr-iE-ohv" id="fio-qQ-qpl"/>
+                        <outlet property="countLabel" destination="v4E-fg-isG" id="8lq-XD-HWy"/>
+                        <outlet property="headerLabel" destination="2rU-eN-CVJ" id="P8h-nJ-k8P"/>
+                        <outlet property="minusButton" destination="q4C-Ml-8oH" id="B3F-1x-49d"/>
+                        <outlet property="subheaderLabel" destination="6TA-lT-da5" id="qta-pt-9sd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cut-Ic-k29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="51.724137931034484"/>
+        </scene>
+    </scenes>
+</document>

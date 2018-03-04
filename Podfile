@@ -7,4 +7,6 @@ use_frameworks!
 target ‘Eat’ do
   pod 'Alamofire', '~> 4.5’
   pod "PromiseKit", "~> 4.4"
+  pod 'BrightFutures'
+  pod "YelpAPI"
 end

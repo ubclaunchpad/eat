@@ -21,6 +21,10 @@
 		52D0C044202670B1001CFCB5 /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C043202670B1001CFCB5 /* EatUITests.swift */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
 		7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7826DC6E2038DF9700A320BE /* EatingTime.storyboard */; };
+		556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */; };
+		556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */; };
+		55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */; };
+		55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */; };
 		91C8138F54DA402147069822 /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,10 @@
 		52D0C03F202670B1001CFCB5 /* EatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C043202670B1001CFCB5 /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		52D0C045202670B1001CFCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeopleCountScreen.storyboard; sourceTree = "<group>"; };
+		556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCountViewController.swift; sourceTree = "<group>"; };
+		55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRatingFilterViewController.swift; sourceTree = "<group>"; };
+		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				781616CC204B4874005E8649 /* Extensions */,
+				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
@@ -164,6 +173,7 @@
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
 				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
 				52D0C02F202670B1001CFCB5 /* Info.plist */,
+				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -192,6 +202,22 @@
 				781616CD204B4895005E8649 /* Date.swift */,
 			);
 			path = Extensions;
+		556B856D2037F92F00B71F44 /* PeopleCountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */,
+				556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */,
+			);
+			path = PeopleCountScreen;
+			sourceTree = "<group>";
+		};
+		55A34F562038ED9600331534 /* PriceRatingFilterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */,
+				55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */,
+			);
+			path = PriceRatingFilterScreen;
 			sourceTree = "<group>";
 		};
 		FCF35F275727B6B7F3C905F7 /* Frameworks */ = {
@@ -312,6 +338,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */,
+				556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */,
 				52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */,
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
@@ -362,12 +390,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -402,6 +436,8 @@
 				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
+				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
+				55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
 			);
@@ -573,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = launchpad.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

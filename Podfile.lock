@@ -1,5 +1,7 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.6.0)
+  - BrightFutures (6.0.0):
+    - Result (~> 3.2.4)
   - PromiseKit (4.4.3):
     - PromiseKit/Foundation (= 4.4.3)
     - PromiseKit/QuartzCore (= 4.4.3)
@@ -11,15 +13,22 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.4.3):
     - PromiseKit/CorePromise
+  - Result (3.2.4)
+  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BrightFutures
   - PromiseKit (~> 4.4)
+  - YelpAPI
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 012249a618c885f2ad6c8765a52567e2b4e5347c
+PODFILE CHECKSUM: 68522edb7527bc420c4bab1eca0c6d946f533fa8
 
 COCOAPODS: 1.4.0
