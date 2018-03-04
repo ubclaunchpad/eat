@@ -20,14 +20,8 @@ class EatingTimeViewController: UIViewController {
     Temp.font = Font.body(size: 18)
     HeaderEatDate.font = Font.header(size: 22)
     dateLabel.font = Font.body(size: 22)
-    //
     dateLabel.text = "now"
   }
-
-  //: # Today's Date
-  let thisTimeTomrrow = NSDate(timeIntervalSinceNow: 86400)
-  let thisTimeYesterday = NSDate(timeIntervalSinceNow: -86400)
-
 
   @IBAction func datePickerChanged(_ sender: Any) {
     if (datePicker.date.sameDate(date: Date())) {
