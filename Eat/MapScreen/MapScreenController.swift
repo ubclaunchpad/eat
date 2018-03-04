@@ -33,24 +33,8 @@ class MapScreenController: UIViewController{
   // A default location to use when location permission is not granted.
   let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
 
-
-//  override func loadView() {
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-//    let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
-//    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//    view = mapView
-//  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
-
-
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-//    let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
-//    let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-
 
     // Initialize location manager
     locationManager = CLLocationManager()
@@ -70,11 +54,13 @@ class MapScreenController: UIViewController{
     self.mapView.camera = camera
     self.mapView.settings.myLocationButton = true
     self.mapView.settings.setAllGesturesEnabled(true)
-    mapView.isUserInteractionEnabled = true
+    self.mapView.isUserInteractionEnabled = true
     self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.mapView.isMyLocationEnabled = true
     self.mapView.delegate = self
 
+    // Add title to the navigation bar
+    navigationItem.title = "Where do you want to eat?"
     // Add a next button to the navigation bar
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MapScreenController.next(_:)))
   }
