@@ -20,6 +20,13 @@ class MapScreenController: GMSPlacePickerViewController{
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
+  // Whether a user has selected a location other than their current location.
+  // If this value is true, then the map should not recenter when the user's location
+  // changes.
+  // This value is reset to false when a user clicks on the current location icon where
+  // the map recenters at that location
+  var didSelect: Bool = false
+
   // A default location to use when location permission is not granted.
   let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
 
@@ -32,13 +39,6 @@ class MapScreenController: GMSPlacePickerViewController{
     let camera = GMSCameraPosition.camera(withLatitude: 56.26, longitude: -139.98, zoom: 6.0)
     let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
     view = mapView
-
-    // Creates a marker in the center of the map.
-    //    let marker = GMSMarker()
-    //    marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-    //    marker.title = "Sydney"
-    //    marker.snippet = "Australia"
-    //    marker.map = mapView
   }
 
   override func viewDidLoad() {
@@ -79,6 +79,34 @@ extension MapScreenController : CLLocationManagerDelegate {
 
     let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
 
+    // Check if the map should recenter for that incoming location change
+    if (!didSelect){
+      if self.mapView.isHidden {
+        self.mapView.isHidden = false
+        self.mapView.camera = camera
+      } else {
+        self.mapView.animate(to: camera)
+      }
+    }
+    // Update the view
+    view = mapView
+  }
+
+}
+
+extension MapScreenController : GMSMapViewDelegate {
+  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
+  {
+    print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+
+    // Set didSelect to true as map should not recenter if the user's current location
+    // changes
+    didSelect = true
+    mapView.clear()
+    let marker = GMSMarker(position: coordinate)
+    marker.map = mapView
+
+   let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
     if self.mapView.isHidden {
       self.mapView.isHidden = false
       self.mapView.camera = camera
@@ -89,17 +117,11 @@ extension MapScreenController : CLLocationManagerDelegate {
     // Update the view object
     view = mapView
   }
+  func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+    didSelect = false
 
-}
-
-extension MapScreenController : GMSMapViewDelegate {
-  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
-  {
-    print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-    mapView.clear()
-    let marker = GMSMarker(position: coordinate)
-    marker.map = mapView
-    self.view = mapView
+    // Default behaviour for false is for the map to recenter at the user's current location
+    return false
   }
 }
 

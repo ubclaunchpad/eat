@@ -26,6 +26,8 @@
 		55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */; };
 		9A779CE0204B47B5009A22E0 /* MapScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A779CDF204B47B5009A22E0 /* MapScreen.storyboard */; };
 		9A779CE4204B4FE4009A22E0 /* MapScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */; };
+		9A79F66C204BD0EA003A3E3A /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79F66B204BD0EA003A3E3A /* MapController.swift */; };
+		9A79F66E204BD1B5003A3E3A /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A79F66D204BD1B5003A3E3A /* Map.storyboard */; };
 		AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */; };
 		AF03A432204B129200A4574F /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF03A431204B129200A4574F /* FindLocationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		9A779CDF204B47B5009A22E0 /* MapScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapScreen.storyboard; sourceTree = "<group>"; };
 		9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenController.swift; sourceTree = "<group>"; };
+		9A79F66B204BD0EA003A3E3A /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		9A79F66D204BD1B5003A3E3A /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindLocation.storyboard; sourceTree = "<group>"; };
 		AF03A431204B129200A4574F /* FindLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 		C61D7FF9E372EC9B0233190F /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				9A79F66A204BD0C1003A3E3A /* MapScreen2 */,
 				9A779CDE204B4786009A22E0 /* MapScreen */,
 				AF03A42E204B0E4A00A4574F /* FindLocationScreen */,
 				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
@@ -224,6 +229,15 @@
 				9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */,
 			);
 			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		9A79F66A204BD0C1003A3E3A /* MapScreen2 */ = {
+			isa = PBXGroup;
+			children = (
+				9A79F66B204BD0EA003A3E3A /* MapController.swift */,
+				9A79F66D204BD1B5003A3E3A /* Map.storyboard */,
+			);
+			path = MapScreen2;
 			sourceTree = "<group>";
 		};
 		AF03A42E204B0E4A00A4574F /* FindLocationScreen */ = {
@@ -359,6 +373,7 @@
 				556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */,
 				52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */,
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
+				9A79F66E204BD1B5003A3E3A /* Map.storyboard in Resources */,
 				AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 			);
@@ -454,6 +469,7 @@
 				52D0C026202670B1001CFCB5 /* ViewController.swift in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
+				9A79F66C204BD0EA003A3E3A /* MapController.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
