@@ -2,7 +2,7 @@
 //  FindLocationViewController.swift
 //  Eat
 //
-//  Created by Kelvin Chan on 2018-03-03.
+//  Created by Yonni Luu on 2018-03-03.
 //  Copyright © 2018 launchpad. All rights reserved.
 //
 
