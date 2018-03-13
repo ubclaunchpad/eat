@@ -10,7 +10,8 @@ import UIKit
 
 class RestaurantInfoCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var MenuButton: UIButton!
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

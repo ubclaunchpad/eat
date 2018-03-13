@@ -16,6 +16,7 @@
 		05A3EE222054FFF000C52F4A /* RestaurantTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE212054FFF000C52F4A /* RestaurantTitleCell.swift */; };
 		05A3EE242055001C00C52F4A /* RestaurantInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE232055001C00C52F4A /* RestaurantInfoCell.swift */; };
 		05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE252055003200C52F4A /* RestaurantReviewCell.swift */; };
+		05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE2720578EA400C52F4A /* RestaurantInfoAddressCell.swift */; };
 		5225CB1E2038E1C4000726E7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225CB1D2038E1C4000726E7 /* Font.swift */; };
 		52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C023202670B1001CFCB5 /* AppDelegate.swift */; };
 		52D0C026202670B1001CFCB5 /* EatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */; };
@@ -61,6 +62,7 @@
 		05A3EE212054FFF000C52F4A /* RestaurantTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTitleCell.swift; sourceTree = "<group>"; };
 		05A3EE232055001C00C52F4A /* RestaurantInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoCell.swift; sourceTree = "<group>"; };
 		05A3EE252055003200C52F4A /* RestaurantReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewCell.swift; sourceTree = "<group>"; };
+		05A3EE2720578EA400C52F4A /* RestaurantInfoAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoAddressCell.swift; sourceTree = "<group>"; };
 		5225CB1D2038E1C4000726E7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		52D0C020202670B1001CFCB5 /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C023202670B1001CFCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				05A3EE212054FFF000C52F4A /* RestaurantTitleCell.swift */,
 				05A3EE232055001C00C52F4A /* RestaurantInfoCell.swift */,
 				05A3EE252055003200C52F4A /* RestaurantReviewCell.swift */,
+				05A3EE2720578EA400C52F4A /* RestaurantInfoAddressCell.swift */,
 			);
 			path = RestaurantInfoScreen;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */,
 				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
+				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */,

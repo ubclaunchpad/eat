@@ -32,9 +32,9 @@ class RestaurantInfoViewController: UIViewController {
 extension RestaurantInfoViewController: UITableViewDataSource {
 
   enum Section: Int {
-    case title, Info, reviews
+    case title, InfoMenu, InfoAddress, reviews
 
-    static let count = 3
+    static let count = 4
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,20 +45,49 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     guard let section = Section(rawValue: indexPath.section) else { fatalError() }
     switch section {
     case .title:
-      print("Before Creating Cell")
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTitleCell",for: indexPath) as? RestaurantTitleCell else { fatalError() }
       cell.configure()
       return cell
-    case .Info:
-      return UITableViewCell()
+    case .InfoMenu:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoCell",for: indexPath) as? RestaurantInfoCell else { fatalError() }
+      return cell
+    case .InfoAddress:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoAddressCell",for: indexPath) as? RestaurantInfoAddressCell else { fatalError() }
+      cell.configure()
+      return cell
     case .reviews:
-      return UITableViewCell()
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell",for: indexPath) as? RestaurantReviewCell else { fatalError() }
+      cell.configure()
+      return cell
     }
   }
 
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    guard let section = Section(rawValue: section) else { fatalError() }
+    switch section {
+    case .title:
+      return ""
+    case .InfoMenu:
+      return "Info"
+    case .InfoAddress:
+      return ""
+    case .reviews:
+      return "Reviews"
+  }
+  }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    guard let section = Section(rawValue: section) else { fatalError() }
+    switch section {
+    case .title:
+      return 1
+    case .InfoMenu:
+      return 1
+    case .InfoAddress:
+      return 1
+    case .reviews:
+      return 5
+    }
   }
 
 }
@@ -68,11 +97,13 @@ extension RestaurantInfoViewController: UITableViewDelegate {
     guard let section = Section(rawValue: indexPath.section) else { fatalError() }
     switch section {
     case .title:
-      return 200
-    case .Info:
-      return UITableViewAutomaticDimension
+      return 150
+    case .InfoMenu:
+      return 70
+    case .InfoAddress:
+      return 70
     case .reviews:
-      return UITableViewAutomaticDimension
+      return 150
     }
   }
 }

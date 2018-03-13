@@ -1,27 +1,22 @@
 //
-//  RestaurantReviewCell.swift
+//  RestaurantInfoAddressCell.swift
 //  Eat
 //
-//  Created by Henry Jones on 2018-03-10.
+//  Created by Henry Jones on 2018-03-12.
 //  Copyright © 2018 launchpad. All rights reserved.
 //
 
 import UIKit
 
-class RestaurantReviewCell: UITableViewCell {
+class RestaurantInfoAddressCell: UITableViewCell {
 
-
-  @IBOutlet weak var ReviewerName: UILabel!
-  @IBOutlet weak var Review: UILabel!
+  @IBOutlet weak var RestaurantAddress: UILabel!
 
   func configure() {
-    ReviewerName.text = "Gina"
-
-    // Set Review
-    Review.text = "It was Great!"
+    RestaurantAddress.text = "6035 University Blvd, Vancouver, BC"
   }
 
-    override func awakeFromNib() {
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
