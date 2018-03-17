@@ -26,6 +26,9 @@
                                             <constraint firstAttribute="width" constant="98" id="x9O-6V-Yx0"/>
                                         </constraints>
                                         <state key="normal" title="Vegan"/>
+                                        <connections>
+                                            <action selector="VeganButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="qc3-Ml-J7Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-T4-uca">
                                         <rect key="frame" x="100" y="0.0" width="111" height="40"/>
@@ -34,6 +37,9 @@
                                             <constraint firstAttribute="height" constant="40" id="udd-gb-s67"/>
                                         </constraints>
                                         <state key="normal" title="Vegetarian"/>
+                                        <connections>
+                                            <action selector="VegetarianButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="ryN-5F-nJD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-vk-G6H">
                                         <rect key="frame" x="213" y="0.0" width="98" height="40"/>
@@ -41,6 +47,9 @@
                                             <constraint firstAttribute="width" constant="98" id="Mvy-qM-jnP"/>
                                         </constraints>
                                         <state key="normal" title="None"/>
+                                        <connections>
+                                            <action selector="NoneButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="1Mb-cT-EGh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
