@@ -2,6 +2,13 @@ PODS:
   - Alamofire (4.6.0)
   - BrightFutures (6.0.0):
     - Result (~> 3.2.4)
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.6.0):
+    - GoogleMaps/Base (= 2.6.0)
   - PromiseKit (4.4.3):
     - PromiseKit/Foundation (= 4.4.3)
     - PromiseKit/QuartzCore (= 4.4.3)
@@ -19,16 +26,20 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - BrightFutures
+  - GoogleMaps
+  - GooglePlaces
   - PromiseKit (~> 4.4)
   - YelpAPI
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 68522edb7527bc420c4bab1eca0c6d946f533fa8
+PODFILE CHECKSUM: c15871ac37866e2cdc0676aae091e0d711dea1c2
 
 COCOAPODS: 1.4.0
