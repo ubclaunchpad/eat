@@ -16,28 +16,39 @@ class RestaurantTitleCell: UITableViewCell {
   @IBOutlet weak var distance: UILabel!
   @IBOutlet weak var foodtype: UILabel!
   @IBOutlet weak var hoursofoperation: UILabel!
+  @IBOutlet weak var ReviewSize: UILabel!
 
-  func configure() {
+
+  func configure(restaurant: Restaurant) {
       // set Title
-      title.text = "JamJar"
-      title.font = UIFont.systemFont(ofSize: 20)
+      title.text = restaurant.name
+      title.font = UIFont.boldSystemFont(ofSize: 24)
 
       // set distance
       distance.text = "0.7km"
       distance.textColor = UIColor.gray
-      distance.alpha = 0.5
-      distance.font = UIFont.systemFont(ofSize: 14)
+      distance.alpha = 0.9
+      distance.font = UIFont.systemFont(ofSize: 18)
 
       // set foodtype
       foodtype.text = "Lebanese"
       foodtype.textColor = UIColor.gray
-      foodtype.alpha = 0.5
-      foodtype.font = UIFont.systemFont(ofSize: 14)
+      foodtype.alpha = 0.9
+      foodtype.font = UIFont.systemFont(ofSize: 16)
 
       // set hours
       hoursofoperation.text = "Open until 11pm"
-      hoursofoperation.textColor = UIColor.green
-      hoursofoperation.font = UIFont.systemFont(ofSize: 14)
+      hoursofoperation.textColor = UIColor.init(red: 0.40, green: 0.71, blue: 0.48, alpha: 1)
+      hoursofoperation.font = UIFont.boldSystemFont(ofSize: 16)
+
+      // set ReviewSize
+      ReviewSize.text = "23 Reviews"
+      ReviewSize.textColor = UIColor.gray
+      ReviewSize.alpha = 0.9
+      ReviewSize.font = UIFont.systemFont(ofSize: 16)
+
+      // set up button
+
     }
 
     override func awakeFromNib() {

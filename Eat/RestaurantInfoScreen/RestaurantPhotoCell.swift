@@ -1,25 +1,14 @@
 //
-//  RestaurantReviewCell.swift
+//  RestaurantPhotoCell.swift
 //  Eat
 //
-//  Created by Henry Jones on 2018-03-10.
+//  Created by Henry Jones on 2018-03-16.
 //  Copyright © 2018 launchpad. All rights reserved.
 //
 
 import UIKit
 
-class RestaurantReviewCell: UITableViewCell {
-
-
-  @IBOutlet weak var ReviewerName: UILabel!
-  @IBOutlet weak var Review: UILabel!
-
-  func configure(restaurant: Restaurant) {
-    ReviewerName.text = "Gina"
-
-    // Set Review
-    Review.text = "It was Great!"
-  }
+class RestaurantPhotoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

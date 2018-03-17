@@ -12,8 +12,8 @@ class RestaurantInfoAddressCell: UITableViewCell {
 
   @IBOutlet weak var RestaurantAddress: UILabel!
 
-  func configure() {
-    RestaurantAddress.text = "6035 University Blvd, Vancouver, BC"
+  func configure(restaurant: Restaurant) {
+    RestaurantAddress.text = "6035 University Blvd"
   }
 
   override func awakeFromNib() {

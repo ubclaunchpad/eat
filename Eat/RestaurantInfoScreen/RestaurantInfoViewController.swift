@@ -13,6 +13,8 @@ class RestaurantInfoViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
+  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false)
+
   static func viewController() -> RestaurantInfoViewController {
     let storyboard = UIStoryboard(name: "RestaurantInfoStoryboard", bundle: nil)
     guard let restaurantVC = storyboard.instantiateViewController(withIdentifier: "RestaurantInfoVC") as? RestaurantInfoViewController
@@ -32,9 +34,9 @@ class RestaurantInfoViewController: UIViewController {
 extension RestaurantInfoViewController: UITableViewDataSource {
 
   enum Section: Int {
-    case title, InfoMenu, InfoAddress, reviews
+    case photo, title, InfoMenu, InfoAddress, reviews
 
-    static let count = 4
+    static let count = 5
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,20 +46,24 @@ extension RestaurantInfoViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let section = Section(rawValue: indexPath.section) else { fatalError() }
     switch section {
+    case .photo:
+      guard let cell =
+        tableView.dequeueReusableCell(withIdentifier: "RestaurantPhotoCell", for: indexPath) as? RestaurantPhotoCell else { fatalError() }
+        return cell
     case .title:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTitleCell",for: indexPath) as? RestaurantTitleCell else { fatalError() }
-      cell.configure()
+      cell.configure(restaurant: myRestaurant)
       return cell
     case .InfoMenu:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoCell",for: indexPath) as? RestaurantInfoCell else { fatalError() }
       return cell
     case .InfoAddress:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoAddressCell",for: indexPath) as? RestaurantInfoAddressCell else { fatalError() }
-      cell.configure()
+      cell.configure(restaurant: myRestaurant)
       return cell
     case .reviews:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell",for: indexPath) as? RestaurantReviewCell else { fatalError() }
-      cell.configure()
+      cell.configure(restaurant: myRestaurant)
       return cell
     }
   }
@@ -65,6 +71,8 @@ extension RestaurantInfoViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     guard let section = Section(rawValue: section) else { fatalError() }
     switch section {
+    case .photo:
+      return ""
     case .title:
       return ""
     case .InfoMenu:
@@ -79,6 +87,8 @@ extension RestaurantInfoViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard let section = Section(rawValue: section) else { fatalError() }
     switch section {
+    case .photo:
+      return 1
     case .title:
       return 1
     case .InfoMenu:
@@ -96,12 +106,14 @@ extension RestaurantInfoViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     guard let section = Section(rawValue: indexPath.section) else { fatalError() }
     switch section {
+    case .photo:
+      return 267
     case .title:
-      return 150
+      return 160
     case .InfoMenu:
-      return 70
+      return 65
     case .InfoAddress:
-      return 70
+      return 65
     case .reviews:
       return 150
     }
