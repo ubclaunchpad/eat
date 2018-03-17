@@ -10,35 +10,42 @@ import UIKit
 
 class DietaryRestrictionsViewController: UIViewController {
 
-  let ourColour = "F79C88"
   @IBOutlet weak var OtherPrefs: UITextField!
-  @IBOutlet weak var QuestionText: UILabel!
+  @IBOutlet weak var preferenceQuestion: UILabel!
   @IBOutlet weak var VeganButton: UIButton!
   @IBOutlet weak var None: UIButton!
   @IBOutlet weak var VegetarianButton: UIButton!
+  @IBOutlet weak var restrictionQuestion: UILabel!
   override func viewDidLoad() {
     super.viewDidLoad()
         // Do any additional setup after loading the view.
     OtherPrefs.font = Font.body(size: 18)
-    QuestionText.font = Font.header(size: 18)
-//    VeganButton.font = Font.header(size: 18)
-//    VegetarianButton.font = Font.header(size: 18)
+    OtherPrefs.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
+    preferenceQuestion.font = Font.header(size: 13)
+    preferenceQuestion.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
+    restrictionQuestion.font = Font.header(size: 13)
+    restrictionQuestion.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     // Vegan
     VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     VeganButton.layer.cornerRadius = 8
     VeganButton.layer.borderWidth = 2
     VeganButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    VeganButton.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 20) //NEEDS TO BE CORRECTED
+    VeganButton.setTitle("Vegan", for: .normal)
     // Vegetarian
     VegetarianButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     VegetarianButton.layer.cornerRadius = 8
     VegetarianButton.layer.borderWidth = 2
     VegetarianButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    VegetarianButton.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 20) //NEEDS TO BE CORRECTED
+    VegetarianButton.setTitle("Vegetarian", for: .normal)
     // None
     None.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     None.layer.cornerRadius = 8
     None.layer.borderWidth = 2
     None.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
-//    OtherPrefs.text = "Eg: Vietnamese, bubble tea..."
+    None.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 20) //NEEDS TO BE CORRECTED
+    None.setTitle("None", for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
