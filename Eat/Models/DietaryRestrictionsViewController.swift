@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class DietaryRestrictionsViewController: UIViewController {
 
@@ -32,6 +33,8 @@ class DietaryRestrictionsViewController: UIViewController {
     VeganButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     VeganButton.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 20) //NEEDS TO BE CORRECTED
     VeganButton.setTitle("Vegan", for: .normal)
+    VeganButton.backgroundColor = [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)]
+    view.backgroundColor = FlatGreen()
     // Vegetarian
     VegetarianButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     VegetarianButton.layer.cornerRadius = 8
