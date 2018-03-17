@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vwj-fN-jVp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurant Card Selection View Controller-->
+        <scene sceneID="2HN-m9-81n">
+            <objects>
+                <viewController id="Vwj-fN-jVp" customClass="RestaurantCardSelectionViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t7C-h6-Usy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-Sr-y38">
+                                <rect key="frame" x="62.5" y="537" width="250" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62G-so-4Wn">
+                                        <rect key="frame" x="23" y="17.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Da4-kh-Wrd"/>
+                                            <constraint firstAttribute="width" constant="35" id="b6h-wj-XQ5"/>
+                                            <constraint firstAttribute="height" constant="35" id="vmD-1w-ZxK"/>
+                                        </constraints>
+                                        <state key="normal" title="No" image="button_skip"/>
+                                        <connections>
+                                            <action selector="skipButtonTapped:" destination="Vwj-fN-jVp" eventType="touchUpInside" id="DGU-LK-FLZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cju-m7-QUt">
+                                        <rect key="frame" x="192" y="17.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="ddE-ID-dUJ"/>
+                                            <constraint firstAttribute="height" constant="35" id="vjw-63-VRh"/>
+                                        </constraints>
+                                        <state key="normal" title="Yes" image="button_keep"/>
+                                        <connections>
+                                            <action selector="keepButtonTapped:" destination="Vwj-fN-jVp" eventType="touchUpInside" id="SDo-El-a4a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="E5Z-N4-zlV"/>
+                                    <constraint firstItem="62G-so-4Wn" firstAttribute="centerY" secondItem="2bw-Sr-y38" secondAttribute="centerY" id="JhX-Ia-b4U"/>
+                                    <constraint firstItem="cju-m7-QUt" firstAttribute="centerY" secondItem="2bw-Sr-y38" secondAttribute="centerY" id="Lfv-hD-b8H"/>
+                                    <constraint firstItem="62G-so-4Wn" firstAttribute="leading" secondItem="2bw-Sr-y38" secondAttribute="leading" constant="23" id="Prd-lZ-Uq7"/>
+                                    <constraint firstAttribute="trailing" secondItem="cju-m7-QUt" secondAttribute="trailing" constant="23" id="Ru2-C5-qif"/>
+                                    <constraint firstAttribute="width" constant="250" id="gib-bp-xJf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqt-QZ-VU4" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="62" y="81" width="250" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pass to next person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-Yb-KLe">
+                                        <rect key="frame" x="49" y="189" width="151" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKx-dC-tRr">
+                                        <rect key="frame" x="78" y="218" width="92" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Press to start"/>
+                                        <connections>
+                                            <action selector="restartButtonPressed:" destination="Vwj-fN-jVp" eventType="touchUpInside" id="KiE-9u-ybU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="P10-94-F3L"/>
+                                    <constraint firstAttribute="height" constant="400" id="zA8-Zd-Rhb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2bw-Sr-y38" firstAttribute="centerX" secondItem="xHa-qF-LNW" secondAttribute="centerX" id="Dx5-bd-spU"/>
+                            <constraint firstItem="xHa-qF-LNW" firstAttribute="bottom" secondItem="2bw-Sr-y38" secondAttribute="bottom" constant="60" id="M1e-iR-3B9"/>
+                            <constraint firstItem="qqt-QZ-VU4" firstAttribute="centerX" secondItem="xHa-qF-LNW" secondAttribute="centerX" id="rzM-HJ-yth"/>
+                            <constraint firstItem="2bw-Sr-y38" firstAttribute="top" secondItem="qqt-QZ-VU4" secondAttribute="bottom" constant="56" id="zvf-Gq-MQ1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xHa-qF-LNW"/>
+                    </view>
+                    <connections>
+                        <outlet property="keepButton" destination="cju-m7-QUt" id="dfh-lE-sjj"/>
+                        <outlet property="kolodaView" destination="qqt-QZ-VU4" id="Gv7-7l-VPw"/>
+                        <outlet property="nextPlayerLabel" destination="tcc-Yb-KLe" id="sFO-Yf-uE6"/>
+                        <outlet property="restartButton" destination="jKx-dC-tRr" id="lze-2O-gmX"/>
+                        <outlet property="skipButton" destination="62G-so-4Wn" id="lT9-Sj-FNh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clO-F2-IWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="-43.628185907046479"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_keep" width="32" height="32"/>
+        <image name="button_skip" width="32" height="32"/>
+    </resources>
+</document>
