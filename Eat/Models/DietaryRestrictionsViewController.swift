@@ -10,17 +10,35 @@ import UIKit
 
 class DietaryRestrictionsViewController: UIViewController {
 
+  let ourColour = "F79C88"
   @IBOutlet weak var OtherPrefs: UITextField!
-
   @IBOutlet weak var QuestionText: UILabel!
+  @IBOutlet weak var VeganButton: UIButton!
+  @IBOutlet weak var None: UIButton!
+  @IBOutlet weak var VegetarianButton: UIButton!
   override func viewDidLoad() {
     super.viewDidLoad()
         // Do any additional setup after loading the view.
     OtherPrefs.font = Font.body(size: 18)
     QuestionText.font = Font.header(size: 18)
-    QuestionText.font = Font.header(size: 18)
-
-    OtherPrefs.text = "Eg: Vietnamese, bubble tea..."
+//    VeganButton.font = Font.header(size: 18)
+//    VegetarianButton.font = Font.header(size: 18)
+    // Vegan
+    VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
+    VeganButton.layer.cornerRadius = 8
+    VeganButton.layer.borderWidth = 2
+    VeganButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    // Vegetarian
+    VegetarianButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
+    VegetarianButton.layer.cornerRadius = 8
+    VegetarianButton.layer.borderWidth = 2
+    VegetarianButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    // None
+    None.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
+    None.layer.cornerRadius = 8
+    None.layer.borderWidth = 2
+    None.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+//    OtherPrefs.text = "Eg: Vietnamese, bubble tea..."
     }
 
     override func didReceiveMemoryWarning() {
