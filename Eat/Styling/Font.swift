@@ -9,6 +9,10 @@
 import UIKit
 
 internal struct Font {
-    static func header(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium) }
-    static func body(size: CGFloat) -> UIFont { return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular) }
+  static func header(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Medium", size: size)!
+  }
+  static func body(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Medium", size: size)!
+  }
 }
