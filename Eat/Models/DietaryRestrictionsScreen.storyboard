@@ -17,43 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-7s-ogP">
-                                <rect key="frame" x="32" y="172" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-7s-ogP">
+                                <rect key="frame" x="32" y="172" width="98" height="40"/>
                                 <state key="normal" title="Vegan"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-T4-uca">
-                                <rect key="frame" x="143" y="172" width="90" height="30"/>
-                                <state key="normal" title="Vegetarian"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-vk-G6H">
-                                <rect key="frame" x="297" y="172" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-vk-G6H">
+                                <rect key="frame" x="245" y="172" width="98" height="40"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eg: Vietnamese, bubble tea" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d38-PU-xhC">
-                                <rect key="frame" x="54" y="385" width="198" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Any preferences?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9d-ks-aSF">
-                                <rect key="frame" x="32" y="274" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any preferences?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9d-ks-aSF">
+                                <rect key="frame" x="32" y="274" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-T4-uca">
+                                <rect key="frame" x="139" y="172" width="98" height="40"/>
+                                <state key="normal" title="Vegetarian"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eg: Vietnamese, Italian..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vym-Bn-QE5">
+                                <rect key="frame" x="32" y="311" width="324" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Z4O-gS-vTE"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="X9d-ks-aSF" firstAttribute="top" secondItem="0gD-7s-ogP" secondAttribute="bottom" constant="72" id="aOs-kE-CNI"/>
-                            <constraint firstItem="C5R-T4-uca" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="fFX-9a-3RX"/>
-                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="Fza-vk-G6H" secondAttribute="trailing" constant="32" id="gR8-Xs-12p"/>
-                            <constraint firstItem="0gD-7s-ogP" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="kZk-x0-1b4"/>
-                            <constraint firstItem="Fza-vk-G6H" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="mIF-UL-txn"/>
-                            <constraint firstItem="0gD-7s-ogP" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="skK-hs-zHt"/>
+                            <constraint firstItem="X9d-ks-aSF" firstAttribute="top" secondItem="0gD-7s-ogP" secondAttribute="bottom" priority="250" constant="72" id="A8k-pK-DfY"/>
+                            <constraint firstItem="vym-Bn-QE5" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="DvR-dE-iab"/>
+                            <constraint firstItem="Fza-vk-G6H" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="Kqu-1c-swk"/>
+                            <constraint firstItem="C5R-T4-uca" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="Oya-vA-l9u"/>
+                            <constraint firstItem="0gD-7s-ogP" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="PRu-Ne-ERQ"/>
+                            <constraint firstItem="Fza-vk-G6H" firstAttribute="leading" secondItem="C5R-T4-uca" secondAttribute="trailing" priority="750" constant="9" id="Y7f-cj-x3I"/>
+                            <constraint firstItem="C5R-T4-uca" firstAttribute="leading" secondItem="0gD-7s-ogP" secondAttribute="trailing" priority="750" constant="8" id="ZuJ-CQ-MAH"/>
+                            <constraint firstItem="vym-Bn-QE5" firstAttribute="top" secondItem="X9d-ks-aSF" secondAttribute="bottom" constant="16" id="dsK-wy-gOd"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="X9d-ks-aSF" secondAttribute="trailing" constant="35" id="fbP-Ea-NaQ"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="vym-Bn-QE5" secondAttribute="trailing" constant="19" id="g2G-yq-YnJ"/>
+                            <constraint firstItem="0gD-7s-ogP" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="kg4-DI-ztR"/>
+                            <constraint firstItem="X9d-ks-aSF" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="w02-DB-CKK"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="Fza-vk-G6H" secondAttribute="trailing" constant="32" id="xV1-6d-PFj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jWe-P5-L1y"/>
                     </view>
+                    <connections>
+                        <outlet property="OtherPrefs" destination="vym-Bn-QE5" id="lzZ-oJ-scc"/>
+                        <outlet property="QuestionText" destination="X9d-ks-aSF" id="1w5-sP-WEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMg-RX-Rdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

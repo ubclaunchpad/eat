@@ -10,15 +10,23 @@ import UIKit
 
 class DietaryRestrictionsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var OtherPrefs: UITextField!
 
+  @IBOutlet weak var QuestionText: UILabel!
+  override func viewDidLoad() {
+    super.viewDidLoad()
         // Do any additional setup after loading the view.
+    OtherPrefs.font = Font.body(size: 18)
+    QuestionText.font = Font.header(size: 18)
+    QuestionText.font = Font.header(size: 18)
+
+    OtherPrefs.text = "Eg: Vietnamese, bubble tea..."
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+      
     }
     
 
