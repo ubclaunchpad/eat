@@ -55,20 +55,22 @@ class DietaryRestrictionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
       
     }
-    let vegan = false
-  let vegetarian = false
-  let none = false
+  var vegan = false
+  var vegetarian = false
+  var none = false
 
   @IBAction func VeganButtonPress(_ sender: Any) {
     if (vegan) {
       VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
       VeganButton.layer.borderWidth = 2
       VeganButton.backgroundColor = UIColor.white
+      vegan = false
     } else {
       resetAll()
     VeganButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VeganButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
     VeganButton.setTitleColor(UIColor.white, for: .normal)
       VeganButton.layer.borderWidth = 0
+      vegan = true
     }
   }
   @IBAction func VegetarianButtonPress(_ sender: UIButton) {
@@ -76,11 +78,13 @@ class DietaryRestrictionsViewController: UIViewController {
       VegetarianButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
       VegetarianButton.layer.borderWidth = 2
       VegetarianButton.backgroundColor = UIColor.white
+      vegetarian = false
     } else {
       resetAll()
       VegetarianButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VegetarianButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
       VegetarianButton.setTitleColor(UIColor.white, for: .normal)
       VegetarianButton.layer.borderWidth = 0
+      vegetarian = true
     }
   }
   @IBAction func NoneButtonPress(_ sender: Any) {
@@ -88,14 +92,20 @@ class DietaryRestrictionsViewController: UIViewController {
       None.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
       None.layer.borderWidth = 2
       None.backgroundColor = UIColor.white
+      none = false
     } else {
+      resetAll()
       None.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: None.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
       None.setTitleColor(UIColor.white, for: .normal)
       None.layer.borderWidth = 0
+      none = true
     }
   }
 
   func resetAll() {
+    vegan = false
+    vegetarian = false
+    none = false
     VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     VeganButton.layer.borderWidth = 2
     VeganButton.backgroundColor = UIColor.white
