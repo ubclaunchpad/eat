@@ -9,4 +9,5 @@ target ‘Eat’ do
   pod "PromiseKit", "~> 4.4"
   pod 'BrightFutures'
   pod "YelpAPI"
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

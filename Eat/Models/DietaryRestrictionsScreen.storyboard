@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xk8-Qc-nET">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dietary Restrictions View Controller-->
+        <scene sceneID="Ssh-wW-BHQ">
+            <objects>
+                <viewController id="xk8-Qc-nET" customClass="DietaryRestrictionsViewController" customModule="Eat" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pD6-DO-iys">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-nF-li9">
+                                <rect key="frame" x="32" y="172" width="311" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-7s-ogP">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="98" id="x9O-6V-Yx0"/>
+                                        </constraints>
+                                        <state key="normal" title="Vegan"/>
+                                        <connections>
+                                            <action selector="VeganButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="qc3-Ml-J7Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-T4-uca">
+                                        <rect key="frame" x="106" y="0.0" width="99" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="g4L-Hn-TKJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="udd-gb-s67"/>
+                                        </constraints>
+                                        <state key="normal" title="Vegetarian"/>
+                                        <connections>
+                                            <action selector="VegetarianButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="ryN-5F-nJD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-vk-G6H">
+                                        <rect key="frame" x="213" y="0.0" width="98" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="98" id="Mvy-qM-jnP"/>
+                                        </constraints>
+                                        <state key="normal" title="None"/>
+                                        <connections>
+                                            <action selector="NoneButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="1Mb-cT-EGh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any preferences?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9d-ks-aSF">
+                                <rect key="frame" x="32" y="284" width="308" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg: Vietnamese, Italian..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vym-Bn-QE5">
+                                <rect key="frame" x="32" y="320.5" width="324" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Z4O-gS-vTE"/>
+                                </constraints>
+                                <color key="textColor" red="0.25556761026382446" green="0.24197310209274292" blue="0.82085728645324707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Does anyone in your group have dietary restrictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-5F-Tyw">
+                                <rect key="frame" x="32" y="140" width="314" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Vl-5F-Tyw" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="3So-q6-rAf"/>
+                            <constraint firstItem="X9d-ks-aSF" firstAttribute="top" secondItem="C0n-nF-li9" secondAttribute="bottom" constant="72" id="7Aa-bD-QE3"/>
+                            <constraint firstItem="9Vl-5F-Tyw" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="120" id="7PN-T5-2Ob"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="C0n-nF-li9" secondAttribute="trailing" constant="32" id="8yH-gX-TwQ"/>
+                            <constraint firstItem="vym-Bn-QE5" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="DvR-dE-iab"/>
+                            <constraint firstItem="C0n-nF-li9" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="Ja2-4p-0bC"/>
+                            <constraint firstItem="C0n-nF-li9" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="152" id="Ugs-sW-2Pv"/>
+                            <constraint firstItem="vym-Bn-QE5" firstAttribute="top" secondItem="X9d-ks-aSF" secondAttribute="bottom" constant="16" id="dsK-wy-gOd"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="X9d-ks-aSF" secondAttribute="trailing" constant="35" id="fbP-Ea-NaQ"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="vym-Bn-QE5" secondAttribute="trailing" constant="19" id="g2G-yq-YnJ"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="9Vl-5F-Tyw" secondAttribute="trailing" constant="29" id="vW7-5G-QCa"/>
+                            <constraint firstItem="X9d-ks-aSF" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="32" id="w02-DB-CKK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jWe-P5-L1y"/>
+                    </view>
+                    <connections>
+                        <outlet property="None" destination="Fza-vk-G6H" id="Ihc-aM-DfV"/>
+                        <outlet property="OtherPrefs" destination="vym-Bn-QE5" id="lzZ-oJ-scc"/>
+                        <outlet property="VeganButton" destination="0gD-7s-ogP" id="KaQ-BM-3od"/>
+                        <outlet property="VegetarianButton" destination="C5R-T4-uca" id="N1Q-EB-ogv"/>
+                        <outlet property="preferenceQuestion" destination="X9d-ks-aSF" id="1w5-sP-WEd"/>
+                        <outlet property="restrictionQuestion" destination="9Vl-5F-Tyw" id="Pes-9A-B2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMg-RX-Rdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+</document>

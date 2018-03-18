@@ -34,6 +34,8 @@
 		55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A34F572038EE1200331534 /* PriceRatingFilterViewController.swift */; };
 		55A34F5A2038EE6200331534 /* PriceRatingFilterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
+		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
+		781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */; };
 		7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7826DC6E2038DF9700A320BE /* EatingTime.storyboard */; };
 		91C8138F54DA402147069822 /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02645B07FDDC7A92A2F52B0D /* Pods_Eat.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DietaryRestrictionsScreen.storyboard; path = Models/DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
+		781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DietaryRestrictionsViewController.swift; path = Models/DietaryRestrictionsViewController.swift; sourceTree = "<group>"; };
 		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
 		8DACC57CAB14BD51A799BAD6 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
+				781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */,
+				781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */,
 				781616CC204B4874005E8649 /* Extensions */,
 				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
@@ -401,6 +407,7 @@
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
 				05A3EE1E20538BB500C52F4A /* RestaurantInfoScreen.storyboard in Resources */,
 				52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */,
+				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 				7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */,
 				52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */,
@@ -451,6 +458,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/YelpAPI/YelpAPI.framework",
@@ -459,6 +467,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YelpAPI.framework",
@@ -494,6 +503,7 @@
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
 				05A3EE2020538C5500C52F4A /* RestaurantInfoViewController.swift in Sources */,
 				05A3EE222054FFF000C52F4A /* RestaurantTitleCell.swift in Sources */,
+				781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				05A3EE242055001C00C52F4A /* RestaurantInfoCell.swift in Sources */,
 				05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */,
