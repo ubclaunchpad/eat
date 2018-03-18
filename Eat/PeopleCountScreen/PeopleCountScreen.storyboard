@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Stj-Lw-hR2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Stj-Lw-hR2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,13 +19,86 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggwhite" translatesAutoresizingMaskIntoConstraints="NO" id="wb2-Ne-UZk">
-                                <rect key="frame" x="0.0" y="144.5" width="375" height="398"/>
+                                <rect key="frame" x="0.0" y="191.5" width="375" height="398"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wb2-Ne-UZk" secondAttribute="height" multiplier="375:398" id="eUa-My-DBO"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAr-iE-ohv">
-                                <rect key="frame" x="137" y="293.5" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How big is your group?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rU-eN-CVJ">
+                                <rect key="frame" x="24" y="121" width="198.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the circle to increase the #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-lT-da5">
+                                <rect key="frame" x="24" y="161" width="326.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.48822176395939088" green="0.48822176395939088" blue="0.48822176395939088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4C-Ml-8oH">
+                                <rect key="frame" x="162.5" y="539.5" width="50" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="auM-GH-0HQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="yIG-zt-hWh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <state key="normal" title="–">
+                                    <color key="titleColor" red="0.42588039340101524" green="0.42588039340101524" blue="0.42588039340101524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="Stj-Lw-hR2" eventType="touchUpInside" id="ojU-j5-aNe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9x-f1-Jn5">
+                                <rect key="frame" x="16" y="37" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="H2w-BN-gcj"/>
+                                    <constraint firstAttribute="height" constant="40" id="nUo-YP-Pxe"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="close"/>
+                                <connections>
+                                    <action selector="closeTapped" destination="Stj-Lw-hR2" eventType="touchUpInside" id="58d-oQ-AAp"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILV-qK-13i">
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVm-dv-Arr">
+                                        <rect key="frame" x="275" y="0.0" width="76" height="77"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="76" id="UuF-cV-Eyi"/>
+                                        </constraints>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextTapped" destination="Stj-Lw-hR2" eventType="touchUpInside" id="FSD-Xj-b0x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSt-ac-cfF">
+                                        <rect key="frame" x="24" y="-0.5" width="76" height="77"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="76" id="Oxq-De-wfM"/>
+                                        </constraints>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backTapped" destination="Stj-Lw-hR2" eventType="touchUpInside" id="lGz-Rc-7gj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="1Uk-vI-yiZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="AVm-dv-Arr" secondAttribute="trailing" constant="24" id="5nI-I0-8gw"/>
+                                    <constraint firstItem="AVm-dv-Arr" firstAttribute="height" secondItem="ILV-qK-13i" secondAttribute="height" id="K8b-lu-1rr"/>
+                                    <constraint firstItem="sSt-ac-cfF" firstAttribute="centerY" secondItem="ILV-qK-13i" secondAttribute="centerY" id="KTN-Z1-o34"/>
+                                    <constraint firstItem="AVm-dv-Arr" firstAttribute="centerY" secondItem="ILV-qK-13i" secondAttribute="centerY" id="RQG-HC-6us"/>
+                                    <constraint firstItem="sSt-ac-cfF" firstAttribute="height" secondItem="ILV-qK-13i" secondAttribute="height" id="aeA-5K-0nc"/>
+                                    <constraint firstItem="sSt-ac-cfF" firstAttribute="leading" secondItem="ILV-qK-13i" secondAttribute="leading" constant="24" id="fYz-oZ-wMl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAr-iE-ohv">
+                                <rect key="frame" x="137" y="340" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.39117446219867208" green="0.39223451262955034" blue="0.40807423857868019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" identifier="countButtonHeight" id="ftQ-bI-dVk"/>
@@ -37,80 +110,45 @@
                                     <action selector="countButtonTapped:" destination="Stj-Lw-hR2" eventType="touchUpInside" id="QDb-gq-PBQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-1s-G2m">
-                                <rect key="frame" x="40" y="607" width="34" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.0065831218274111647" green="0.0065831218274111647" blue="0.0065831218274111647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RK-c5-dkZ">
-                                <rect key="frame" x="306" y="607" width="32" height="30"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.024488420050761461" green="0.024488420050761461" blue="0.024488420050761461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How big is your group?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rU-eN-CVJ">
-                                <rect key="frame" x="63" y="83.5" width="198.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the circle to increase the #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-lT-da5">
-                                <rect key="frame" x="63" y="125.5" width="248.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.48822176395939088" green="0.48822176395939088" blue="0.48822176395939088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4E-fg-isG">
-                                <rect key="frame" x="180.5" y="328.5" width="13" height="30"/>
+                                <rect key="frame" x="180" y="375" width="13" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4C-Ml-8oH">
-                                <rect key="frame" x="162.5" y="462" width="50" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="auM-GH-0HQ"/>
-                                    <constraint firstAttribute="height" constant="50" id="yIG-zt-hWh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" red="0.42588039340101524" green="0.42588039340101524" blue="0.42588039340101524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="minusButtonTapped:" destination="Stj-Lw-hR2" eventType="touchUpInside" id="ojU-j5-aNe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sAr-iE-ohv" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="1qW-xb-dKd"/>
-                            <constraint firstItem="cUv-1s-G2m" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="40" id="2YH-p7-Fg1"/>
                             <constraint firstItem="v4E-fg-isG" firstAttribute="centerX" secondItem="sAr-iE-ohv" secondAttribute="centerX" id="4xh-zg-x5w"/>
-                            <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="6RK-c5-dkZ" secondAttribute="trailing" constant="37" id="5dl-cu-fDJ"/>
-                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="cUv-1s-G2m" secondAttribute="bottom" constant="30" id="6aL-6o-RVV"/>
-                            <constraint firstItem="wb2-Ne-UZk" firstAttribute="centerY" secondItem="AgL-vd-kul" secondAttribute="centerY" id="C56-PM-MQS"/>
+                            <constraint firstItem="2rU-eN-CVJ" firstAttribute="top" secondItem="AgL-vd-kul" secondAttribute="top" constant="101" id="7AA-n7-tk8"/>
+                            <constraint firstItem="q9x-f1-Jn5" firstAttribute="top" secondItem="AgL-vd-kul" secondAttribute="top" constant="17" id="Cqf-T3-dCA"/>
+                            <constraint firstItem="ILV-qK-13i" firstAttribute="bottom" secondItem="AgL-vd-kul" secondAttribute="bottom" id="E6R-VR-8tX"/>
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="FpN-np-zLv"/>
-                            <constraint firstItem="6TA-lT-da5" firstAttribute="top" secondItem="2rU-eN-CVJ" secondAttribute="bottom" constant="18" id="GFe-Ff-0QL"/>
-                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="q4C-Ml-8oH" secondAttribute="bottom" constant="155" id="GIE-yM-mAF"/>
-                            <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="AgL-vd-kul" secondAttribute="centerY" id="Mt0-Qd-d1R"/>
+                            <constraint firstItem="6TA-lT-da5" firstAttribute="top" secondItem="2rU-eN-CVJ" secondAttribute="bottom" constant="16" id="GFe-Ff-0QL"/>
+                            <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="wb2-Ne-UZk" secondAttribute="centerY" id="H6t-pI-gLi"/>
+                            <constraint firstItem="2rU-eN-CVJ" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="24" id="Kqw-dL-tYa"/>
                             <constraint firstItem="q4C-Ml-8oH" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="PPY-im-Myh"/>
-                            <constraint firstItem="sAr-iE-ohv" firstAttribute="top" secondItem="6TA-lT-da5" secondAttribute="bottom" constant="147" id="R9I-bL-ivR"/>
-                            <constraint firstItem="wb2-Ne-UZk" firstAttribute="centerX" secondItem="iPe-qT-BQ7" secondAttribute="centerX" id="YKn-zr-1FM"/>
-                            <constraint firstItem="2rU-eN-CVJ" firstAttribute="leading" secondItem="6TA-lT-da5" secondAttribute="trailing" constant="-249" id="ZND-qw-Tur"/>
-                            <constraint firstItem="6RK-c5-dkZ" firstAttribute="baseline" secondItem="cUv-1s-G2m" secondAttribute="baseline" id="hco-dL-lQE"/>
+                            <constraint firstItem="q9x-f1-Jn5" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="16" id="iTA-P3-Atn"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="ILV-qK-13i" secondAttribute="trailing" id="m0S-Bd-fJE"/>
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="width" secondItem="iPe-qT-BQ7" secondAttribute="width" id="m3N-M2-SQ3"/>
                             <constraint firstItem="v4E-fg-isG" firstAttribute="centerY" secondItem="sAr-iE-ohv" secondAttribute="centerY" id="pzG-QH-zyT"/>
+                            <constraint firstItem="6TA-lT-da5" firstAttribute="leading" secondItem="2rU-eN-CVJ" secondAttribute="leading" id="rGr-YP-qLq"/>
                             <constraint firstItem="6TA-lT-da5" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="skd-Qy-4Zr"/>
+                            <constraint firstItem="ILV-qK-13i" firstAttribute="leading" secondItem="iPe-qT-BQ7" secondAttribute="leading" id="tCk-wA-zLr"/>
+                            <constraint firstItem="wb2-Ne-UZk" firstAttribute="top" secondItem="6TA-lT-da5" secondAttribute="bottom" constant="9" id="xeh-0V-XO0"/>
+                            <constraint firstItem="q4C-Ml-8oH" firstAttribute="bottom" secondItem="wb2-Ne-UZk" secondAttribute="bottom" id="zIu-VD-a4r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AgL-vd-kul"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="sSt-ac-cfF" id="M8Y-FI-td7"/>
+                        <outlet property="closeButton" destination="q9x-f1-Jn5" id="wJg-FL-T1L"/>
                         <outlet property="countButton" destination="sAr-iE-ohv" id="fio-qQ-qpl"/>
                         <outlet property="countLabel" destination="v4E-fg-isG" id="8lq-XD-HWy"/>
                         <outlet property="headerLabel" destination="2rU-eN-CVJ" id="P8h-nJ-k8P"/>
                         <outlet property="minusButton" destination="q4C-Ml-8oH" id="B3F-1x-49d"/>
+                        <outlet property="nextButton" destination="AVm-dv-Arr" id="joK-Xr-TIg"/>
                         <outlet property="subheaderLabel" destination="6TA-lT-da5" id="qta-pt-9sd"/>
                     </connections>
                 </viewController>
@@ -121,6 +159,7 @@
     </scenes>
     <resources>
         <image name="button_eggyolk" width="200" height="200"/>
+        <image name="close" width="14" height="14"/>
         <image name="eggwhite" width="375" height="398"/>
     </resources>
 </document>

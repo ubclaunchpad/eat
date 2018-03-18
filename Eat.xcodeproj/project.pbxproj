@@ -214,8 +214,8 @@
 		5246DA6B205E3E39002513E1 /* RatingPrice */ = {
 			isa = PBXGroup;
 			children = (
-				5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */,
 				5246DA67205E2E10002513E1 /* RatingPrice.storyboard */,
+				5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */,
 				5246DA6C205E3E4A002513E1 /* EatSlider.swift */,
 			);
 			path = RatingPrice;
