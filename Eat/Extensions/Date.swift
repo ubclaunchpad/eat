@@ -11,7 +11,7 @@ import Foundation
 extension Date {
   func toString() -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "E MMM d 'at' h:mm a"
+    dateFormatter.dateFormat = "EEEE MMMM d 'at' h:mm a"
     return dateFormatter.string(from: self)
   }
 
