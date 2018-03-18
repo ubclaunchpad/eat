@@ -181,6 +181,15 @@
 			path = "Font Files";
 			sourceTree = "<group>";
 		};
+		52B73232205DC90300A5E441 /* EatingTimeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
+				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
+			);
+			path = EatingTimeScreen;
+			sourceTree = "<group>";
+		};
 		52D0C017202670B1001CFCB5 = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +221,7 @@
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
-				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
-				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
+				52B73232205DC90300A5E441 /* EatingTimeScreen */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
