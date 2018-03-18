@@ -19,6 +19,16 @@ class PeopleCountViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
 
+  static func viewController(searchQuery: SearchQuery) -> PeopleCountViewController {
+    let storyboard = UIStoryboard(name: "PeopleCountScreen", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
+      else { fatalError() }
+    vc.searchQuery = searchQuery
+    return vc
+  }
+
+  var searchQuery: SearchQuery = SearchQuery()
+
   var peopleCount: Int = 1
 
   override func viewDidLoad() {
@@ -98,6 +108,8 @@ extension PeopleCountViewController {
   }
 
   @IBAction private func nextTapped() {
-
+    searchQuery.numberOfPeople = peopleCount
+    let eatingTimeVC = EatingTimeViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(eatingTimeVC, animated: true)
   }
 }

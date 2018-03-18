@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Stj-Lw-hR2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FvV-NS-iRb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--People Count View Controller-->
         <scene sceneID="5HN-Eb-aEz">
             <objects>
-                <viewController id="Stj-Lw-hR2" customClass="PeopleCountViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeopleCountViewController" id="Stj-Lw-hR2" customClass="PeopleCountViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iPe-qT-BQ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AgL-vd-kul"/>
                     </view>
+                    <navigationItem key="navigationItem" id="isE-f5-FXR"/>
                     <connections>
                         <outlet property="backButton" destination="sSt-ac-cfF" id="M8Y-FI-td7"/>
                         <outlet property="closeButton" destination="q9x-f1-Jn5" id="wJg-FL-T1L"/>
@@ -154,7 +155,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cut-Ic-k29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120.8" y="51.724137931034484"/>
+            <point key="canvasLocation" x="460" y="51.724137931034484"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uEo-mz-W3k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FvV-NS-iRb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9KR-d9-6wN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Stj-Lw-hR2" kind="relationship" relationship="rootViewController" id="qvA-Gf-ovR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stD-cD-M8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="52"/>
         </scene>
     </scenes>
     <resources>

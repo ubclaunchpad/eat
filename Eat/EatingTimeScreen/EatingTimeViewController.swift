@@ -18,6 +18,16 @@ class EatingTimeViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
 
+  static func viewController(searchQuery: SearchQuery) -> EatingTimeViewController {
+    let storyboard = UIStoryboard(name: "EatingTime", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "EatingTimeViewController") as? EatingTimeViewController
+      else { fatalError() }
+    vc.searchQuery = searchQuery
+    return vc
+  }
+
+  var searchQuery: SearchQuery!
+  var selectedDate: EatingTime = .now
   let datePicker = UIDatePicker()
 
   override func viewDidLoad() {
@@ -73,11 +83,13 @@ class EatingTimeViewController: UIViewController {
     else {
       setDateInput(date: datePicker.date.toString())
     }
+    selectedDate = .later(date: datePicker.date)
   }
 
   @objc func nowTapped() {
     datePicker.date = Date()
     setDateInput(date: "now")
+    selectedDate = .now
   }
 
   @objc func doneTapped() {
@@ -108,6 +120,8 @@ extension EatingTimeViewController {
   }
 
   @IBAction private func nextTapped() {
-
+    searchQuery.eatingTime = selectedDate
+    let ratingPriceVC = RatingPriceViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(ratingPriceVC, animated: true)
   }
 }

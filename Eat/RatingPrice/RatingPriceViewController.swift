@@ -26,6 +26,16 @@ class RatingPriceViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
 
+  static func viewController(searchQuery: SearchQuery) -> RatingPriceViewController {
+    let storyboard = UIStoryboard(name: "RatingPrice", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "RatingPriceViewController") as? RatingPriceViewController
+      else { fatalError() }
+    vc.searchQuery = searchQuery
+    return vc
+  }
+
+  var searchQuery: SearchQuery!
+
   var isOneSelected = false
   var isTwoSelected = false
   var isThreeSelected = false
@@ -126,6 +136,14 @@ class RatingPriceViewController: UIViewController {
       isThreeSelected = true
     }
   }
+
+  func transformPriceInput() -> [Int] {
+    var prices: [Int] = []
+    if isOneSelected { prices.append(1) }
+    if isTwoSelected { prices.append(2) }
+    if isThreeSelected { prices.append(3) }
+    return prices
+  }
 }
 
 // MARK: Navigation
@@ -146,6 +164,9 @@ extension RatingPriceViewController {
   }
 
   @IBAction private func nextTapped() {
-
+    searchQuery.minimumRating = Double(ratingSlider.value)
+    searchQuery.price = transformPriceInput()
+    let dietaryVC = DietaryRestrictionsViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(dietaryVC, animated: true)
   }
 }
