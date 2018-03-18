@@ -85,6 +85,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomGradientView" destination="A9P-Hc-PZr" id="agS-Bb-Rfo"/>
                         <outlet property="dateLabel" destination="x0W-4X-V1Q" id="NcJ-tT-Dnz"/>
                         <outlet property="headerLabel" destination="gE1-Ll-FLh" id="7Zn-K2-pxx"/>
                         <outlet property="restaurantHoursLabel" destination="pgz-8O-2c7" id="C7C-bm-Xzc"/>
