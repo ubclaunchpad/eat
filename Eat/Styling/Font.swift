@@ -27,4 +27,10 @@ internal struct Font {
   static func formInput(size: CGFloat) -> UIFont {
     return UIFont(name: "CircularStd-Book", size: size)!
   }
+  static func onboarding(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Book", size: size)!
+  }
+  static func onboardingAction(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Bold", size: size)!
+  }
 }
