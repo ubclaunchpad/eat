@@ -18,4 +18,10 @@ internal struct Font {
   static func formNavigation(size: CGFloat) -> UIFont {
     return UIFont(name: "CircularStd-Book", size: size)!
   }
+  static func button(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Book", size: size)!
+  }
+  static func formInput(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Book", size: size)!
+  }
 }

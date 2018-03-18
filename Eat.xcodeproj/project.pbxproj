@@ -93,8 +93,8 @@
 		55A34F592038EE6200331534 /* PriceRatingFilterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PriceRatingFilterScreen.storyboard; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = DietaryRestrictionsScreen.storyboard; path = Models/DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
-		781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DietaryRestrictionsViewController.swift; path = Models/DietaryRestrictionsViewController.swift; sourceTree = "<group>"; };
+		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
+		781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionsViewController.swift; sourceTree = "<group>"; };
 		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
 		8DACC57CAB14BD51A799BAD6 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +175,15 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
+		5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */,
+				781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */,
+			);
+			path = DietaryRestrictionsScreen;
+			sourceTree = "<group>";
+		};
 		52B7322B205DC5BD00A5E441 /* Font Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
-				781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */,
-				781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */,
+				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
 				781616CC204B4874005E8649 /* Extensions */,
 				55A34F562038ED9600331534 /* PriceRatingFilterScreen */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
@@ -683,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MHQUCUSUHX;
+				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -700,7 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MHQUCUSUHX;
+				DEVELOPMENT_TEAM = AX2D84BZ47;
 				INFOPLIST_FILE = Eat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

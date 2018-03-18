@@ -99,6 +99,10 @@ extension EatingTimeViewController {
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
   }
 
+  @IBAction private func closeTapped() {
+    navigationController?.popToRootViewController(animated: true)
+  }
+
   @IBAction private func backTapped() {
     navigationController?.popViewController(animated: true)
   }
