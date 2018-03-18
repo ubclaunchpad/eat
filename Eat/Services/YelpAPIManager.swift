@@ -26,10 +26,10 @@ extension YelpAPIManager {
   func search(query: SearchQuery) -> Future<[Restaurant], ReadmeError> {
 
     return Future { complete in
-    // Launch async call to get restaurants
-    let returnVal = getRestaurantList(query: query)
+      // Launch async call to get restaurants
+      let returnVal = getRestaurantList(query: query)
 
-    returnVal.andThen { result in
+      returnVal.andThen { result in
         switch result {
         case .success(let val):
           let restaurants = self.generateRestaurantsList(json: val)
@@ -37,7 +37,7 @@ extension YelpAPIManager {
         case .failure(_):
           print("No Restaurants returned")
         }
-    }
+      }
     }
   }
 
@@ -45,7 +45,7 @@ extension YelpAPIManager {
     // Declare the headers for the query
     let headers = [
       "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
-    ]
+      ]
     // Get the customized URL string based on the query
     guard let url = createURLString(query: query) else {
       print("Problem with URL")
@@ -57,21 +57,32 @@ extension YelpAPIManager {
       Alamofire.request(url, headers: headers).responseJSON { response in
         if let json = response.result.value {
           complete(.success(json))
-          }
+        }
       }
     }
   }
 
   func createURLString(query: SearchQuery) -> URL? {
     // Declare the additonal filters for the query
+    let eatingTimeQuery: URLQueryItem
+    switch query.eatingTime {
+    case .now:
+      eatingTimeQuery = URLQueryItem(name: "open_now", value: "true")
+      break
+    case .later(let date):
+      eatingTimeQuery = URLQueryItem(name: "open_at", value: String(date.timeIntervalSince1970))
+      break
+    }
+
     let queryItems = [URLQueryItem(name: "latitude", value: String(query.latitude)),
                       URLQueryItem(name: "longitude", value: String(query.longitude)),
                       URLQueryItem(name: "radius", value: String(query.radius)),
-                      URLQueryItem(name: "price", value: String(query.price)),
-                      URLQueryItem(name: "limit", value: String(query.limit))]
+                      URLQueryItem(name: "price", value: query.priceString),
+                      URLQueryItem(name: "limit", value: String(query.numberOfRestaurants)),
+                      eatingTimeQuery]
 
     // Base URL
-    var urlComps = URLComponents(string: "https://api.yelp.com/v3/businesses/search")!
+    guard var urlComps = URLComponents(string: "https://api.yelp.com/v3/businesses/search") else { return nil }
 
     // Adds the additional paramaters onto the query string
     urlComps.queryItems =  queryItems
@@ -88,24 +99,22 @@ extension YelpAPIManager {
 
   // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
   func generateRestaurantsList(json: Any) -> [Restaurant] {
-    var restaurants: [Restaurant] = []
+    guard let dictionary = json as? [String: Any] else { return [] }
+    let businesses = dictionary["businesses"] as! NSArray
 
-    if let dictionary = json as? [String: Any] {
-      let businesses = dictionary["businesses"] as! NSArray
-      // TODO: Implement with MAP
-      for business in businesses {
-        if let businessDict = business as? [String: Any] {
-          let restaurantName = businessDict["name"] as! String
-          let restaurantRating = businessDict["rating"] as! Float
-          let restaurantPhone = businessDict["phone"] as! String
-          let restaurantStatus = businessDict["is_closed"] as! Bool
+    return businesses.flatMap { business in
+      guard let businessDict = business as? [String: Any],
+        let restaurantName = businessDict["name"] as? String,
+        let restaurantRating = businessDict["rating"] as? Float,
+        let restaurantPhone = businessDict["phone"] as? String,
+        let restaurantStatus = businessDict["is_closed"] as? Bool
+        else { return nil }
 
-          let newResto = Restaurant(name: restaurantName, rating: restaurantRating, phone: restaurantPhone, status: restaurantStatus)
-          restaurants.append(newResto)
-        }
-      }
+      return Restaurant(name: restaurantName,
+                        rating: restaurantRating,
+                        phone: restaurantPhone,
+                        status: restaurantStatus)
     }
-    return restaurants
   }
 }
 
