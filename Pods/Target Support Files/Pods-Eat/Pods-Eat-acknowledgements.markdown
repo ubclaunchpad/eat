@@ -73,6 +73,14 @@ SOFTWARE.
 > SOFTWARE. 
 
 
+## GoogleMaps
+
+Copyright 2017 Google
+
+## GooglePlaces
+
+Copyright 2017 Google
+
 ## Koloda
 
 The MIT License (MIT)

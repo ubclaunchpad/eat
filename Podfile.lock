@@ -5,6 +5,13 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - pop (1.0.10)
@@ -26,6 +33,8 @@ DEPENDENCIES:
   - Alamofire (~> 4.5)
   - BrightFutures
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - GoogleMaps
+  - GooglePlaces
   - Koloda
   - PromiseKit (~> 4.4)
   - YelpAPI
@@ -43,12 +52,14 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: 18a392c959497df199f16f18f82e47ffdafac893
+PODFILE CHECKSUM: 7a97298c348dafb090baf2b53142e594c0315653
 
 COCOAPODS: 1.3.1
