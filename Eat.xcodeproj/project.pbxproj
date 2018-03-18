@@ -19,6 +19,10 @@
 		05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE2720578EA400C52F4A /* RestaurantInfoAddressCell.swift */; };
 		05A3EE2A205CEE6300C52F4A /* RestaurantPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE29205CEE6300C52F4A /* RestaurantPhotoCell.swift */; };
 		5225CB1E2038E1C4000726E7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225CB1D2038E1C4000726E7 /* Font.swift */; };
+		5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */; };
+		5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5246DA67205E2E10002513E1 /* RatingPrice.storyboard */; };
+		5246DA6A205E3C83002513E1 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA69205E3C83002513E1 /* Double+Round.swift */; };
+		5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6C205E3E4A002513E1 /* EatSlider.swift */; };
 		52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322C205DC5EB00A5E441 /* circular-book.otf */; };
 		52B73230205DC5EB00A5E441 /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322D205DC5EB00A5E441 /* circular-medium.otf */; };
 		52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322E205DC5EB00A5E441 /* circular-bold.otf */; };
@@ -71,6 +75,10 @@
 		05A3EE2720578EA400C52F4A /* RestaurantInfoAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoAddressCell.swift; sourceTree = "<group>"; };
 		05A3EE29205CEE6300C52F4A /* RestaurantPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPhotoCell.swift; sourceTree = "<group>"; };
 		5225CB1D2038E1C4000726E7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPriceViewController.swift; sourceTree = "<group>"; };
+		5246DA67205E2E10002513E1 /* RatingPrice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatingPrice.storyboard; sourceTree = "<group>"; };
+		5246DA69205E3C83002513E1 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
+		5246DA6C205E3E4A002513E1 /* EatSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSlider.swift; sourceTree = "<group>"; };
 		52B7322C205DC5EB00A5E441 /* circular-book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-book.otf"; sourceTree = "<group>"; };
 		52B7322D205DC5EB00A5E441 /* circular-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium.otf"; sourceTree = "<group>"; };
 		52B7322E205DC5EB00A5E441 /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
@@ -184,6 +192,16 @@
 			path = DietaryRestrictionsScreen;
 			sourceTree = "<group>";
 		};
+		5246DA6B205E3E39002513E1 /* RatingPrice */ = {
+			isa = PBXGroup;
+			children = (
+				5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */,
+				5246DA67205E2E10002513E1 /* RatingPrice.storyboard */,
+				5246DA6C205E3E4A002513E1 /* EatSlider.swift */,
+			);
+			path = RatingPrice;
+			sourceTree = "<group>";
+		};
 		52B7322B205DC5BD00A5E441 /* Font Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +260,7 @@
 				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
 				52D0C02F202670B1001CFCB5 /* Info.plist */,
 				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
+				5246DA6B205E3E39002513E1 /* RatingPrice */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -286,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				781616CD204B4895005E8649 /* Date.swift */,
+				5246DA69205E3C83002513E1 /* Double+Round.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +437,7 @@
 				52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */,
 				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
+				5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */,
 				7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */,
 				52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */,
 			);
@@ -514,16 +535,19 @@
 				781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				05A3EE242055001C00C52F4A /* RestaurantInfoCell.swift in Sources */,
+				5246DA6A205E3C83002513E1 /* Double+Round.swift in Sources */,
 				05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */,
 				05A3EE2A205CEE6300C52F4A /* RestaurantPhotoCell.swift in Sources */,
 				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
+				5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */,
 				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				55A34F582038EE1300331534 /* PriceRatingFilterViewController.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
+				5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
