@@ -19,7 +19,7 @@ class RestaurantCardSelectionViewController: UIViewController {
   var keptRestaurantCount: [Int] = []
   var numberOfPlayers = 3
   var currNumOfPlayer = 1
-  let dataManager = DataManager()
+  let dataManager = DataManager.default
   var query = SearchQuery(latitude: 51.5033640, longitude: -0.1276250, radius: 500, limit: 5, price: 2, isVegetarian: false)
 
 
@@ -90,7 +90,9 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
     //TODO: directs to RestaurantInfoView
-    UIApplication.shared.open(URL(string: "https://yelp.ca/")!, completionHandler: nil)
+    if let url = URL(string: "https://yelp.ca/") {
+      UIApplication.shared.open(url, completionHandler: nil)
+    }
     print("card selected")
   }
 
