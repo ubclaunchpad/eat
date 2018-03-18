@@ -19,12 +19,23 @@ class PeopleCountViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
 
-  static func viewController(searchQuery: SearchQuery) -> PeopleCountViewController {
+//  YONNI uncomment this
+//  static func viewController(searchQuery: SearchQuery) -> PeopleCountViewController {
+//    let storyboard = UIStoryboard(name: "PeopleCountScreen", bundle: nil)
+//
+//    guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
+//      else { fatalError() }
+//
+//    vc.searchQuery = searchQuery
+//
+//    return vc
+//  }
+
+  // YONNI delete this
+  static func viewController() -> UINavigationController {
     let storyboard = UIStoryboard(name: "PeopleCountScreen", bundle: nil)
-    guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
-      else { fatalError() }
-    vc.searchQuery = searchQuery
-    return vc
+    guard let navigationVC = storyboard.instantiateInitialViewController() as? UINavigationController else { fatalError() }
+    return navigationVC
   }
 
   var searchQuery: SearchQuery = SearchQuery()

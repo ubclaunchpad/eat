@@ -32,7 +32,7 @@ class Onboarding {
 
     let thirdPage = OnboardingContentViewController.content(withTitle: "Eat.", body: "", image: onboardingImageFit(image: #imageLiteral(resourceName: "OnboardingThirdScreen")), buttonText: "EAT NOW") { _ in
       // YONNI change this to the map screen
-      let vc = PeopleCountViewController.viewController(searchQuery: SearchQuery())
+      let vc = PeopleCountViewController.viewController()
       onboardingVC.present(vc, animated: true, completion: nil)
     }
 

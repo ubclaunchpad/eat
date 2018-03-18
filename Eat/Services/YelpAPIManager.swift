@@ -70,7 +70,7 @@ extension YelpAPIManager {
       eatingTimeQuery = URLQueryItem(name: "open_now", value: "true")
       break
     case .later(let date):
-      eatingTimeQuery = URLQueryItem(name: "open_at", value: String(date.timeIntervalSince1970))
+      eatingTimeQuery = URLQueryItem(name: "open_at", value: String(Int(date.timeIntervalSince1970)))
       break
     }
 
