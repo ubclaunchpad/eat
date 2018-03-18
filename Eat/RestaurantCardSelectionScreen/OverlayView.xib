@@ -15,12 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7L-of-n4T">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u7L-of-n4T">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="u7L-of-n4T" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5qr-gN-9RE"/>
+                <constraint firstAttribute="trailing" secondItem="u7L-of-n4T" secondAttribute="trailing" id="NjJ-7C-iYS"/>
+                <constraint firstAttribute="bottom" secondItem="u7L-of-n4T" secondAttribute="bottom" id="cU1-dj-UbC"/>
+                <constraint firstItem="u7L-of-n4T" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zpF-YI-N2B"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

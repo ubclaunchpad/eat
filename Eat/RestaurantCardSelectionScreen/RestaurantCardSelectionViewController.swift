@@ -10,29 +10,35 @@ import UIKit
 import Koloda
 
 class RestaurantCardSelectionViewController: UIViewController {
-  var restaurants : [Restaurant] {
-    let res1 = Restaurant(name: "Res 1", rating: 0, phone: "", status: true)
-    let res2 = Restaurant(name: "Res 2", rating: 0, phone: "", status: true)
-    let res3 = Restaurant(name: "Res 3", rating: 0, phone: "", status: true)
-    return [res1, res2, res3]
-  }
 
+  var restaurants : [Restaurant] = [] {
+    didSet {
+      kolodaView.reloadData()
+    }
+  }
   var keptRestaurantCount: [Int] = []
   var numberOfPlayers = 3
+  var currNumOfPlayer = 1
+  let dataManager = DataManager()
+  var query = SearchQuery(latitude: 51.5033640, longitude: -0.1276250, radius: 500, limit: 5, price: 2, isVegetarian: false)
 
 
+  @IBOutlet weak var eaterProgressBar: UIView!
   @IBOutlet weak var skipButton: UIButton!
-  @IBOutlet weak var nextPlayerLabel: UILabel!
+  @IBOutlet weak var nextEaterLabel: UILabel!
   @IBOutlet weak var restartButton: UIButton!
   @IBOutlet weak var keepButton: UIButton!
   @IBOutlet weak var kolodaView: KolodaView!
+  @IBOutlet weak var eaterCountLabel: UILabel!
 
   @IBAction func restartButtonPressed(_ sender: Any) {
+    kolodaView.isHidden = false
     kolodaView.resetCurrentCardIndex()
     skipButton.isEnabled = true
     keepButton.isEnabled = true
     numberOfPlayers = numberOfPlayers - 1
-    print("number of players:" + String(numberOfPlayers))
+    currNumOfPlayer = currNumOfPlayer + 1
+    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers+currNumOfPlayer-1) + " eaters"
   }
 
   @IBAction func skipButtonTapped(_ sender: Any) {
@@ -41,40 +47,41 @@ class RestaurantCardSelectionViewController: UIViewController {
 
 
   @IBAction func keepButtonTapped(_ sender: Any) {
-    //keptRestaurantCount[kolodaView.currentCardIndex] = keptRestaurantCount[kolodaView.currentCardIndex] + 1
     kolodaView.swipe(.right)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    //TODO: call to yelp
-//    var query = SearchQuery(latitude: 0.0, longitude: 0.0, radius: 500, limit: 0, price: 0, isVegetarian: false)
-//    let yelpApiManager = YelpAPIManager()
-//    restaurants = yelpApiManager.search(query: query)
-    
-    keptRestaurantCount = [Int](repeating: 0, count: restaurants.count)
-    restartButton.isUserInteractionEnabled = false
-    restartButton.isHidden = true
-    nextPlayerLabel.isHidden = true
-    nextPlayerLabel.isUserInteractionEnabled = false
-
     kolodaView.dataSource = self
     kolodaView.delegate = self
 
+    dataManager.fetchRestaurants(with: query)
+      .onSuccess { res in
+        self.restaurants = res
+        self.keptRestaurantCount = [Int](repeating: 0, count: self.restaurants.count)
+      }.onFailure { error in
+        // TODO: Error handling
+        print(error)
+    }
+    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers+currNumOfPlayer-1) + " eaters"
+    restartButton.isUserInteractionEnabled = false
+    restartButton.isHidden = true
+    nextEaterLabel.isHidden = true
+    nextEaterLabel.isUserInteractionEnabled = false
   }
 }
 
 extension RestaurantCardSelectionViewController: KolodaViewDelegate {
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-    if numberOfPlayers > 0 {
+    kolodaView.isHidden = true
+    if currNumOfPlayer <= numberOfPlayers {
       skipButton.isEnabled = false
       keepButton.isEnabled = false
       restartButton.isUserInteractionEnabled = true
-      nextPlayerLabel.isHidden = false
+      nextEaterLabel.isHidden = false
       restartButton.isHidden = false
     } else {
-      nextPlayerLabel.isHidden = true
+      nextEaterLabel.isHidden = true
       restartButton.isHidden = true
       print("Go to next screen")
     }
@@ -82,7 +89,7 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
   }
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-    //TODO: jump to yelp page of restaurant?
+    //TODO: directs to RestaurantInfoView
     UIApplication.shared.open(URL(string: "https://yelp.ca/")!, completionHandler: nil)
     print("card selected")
   }
@@ -104,18 +111,14 @@ extension RestaurantCardSelectionViewController: KolodaViewDataSource {
     return restaurants.count
   }
 
-  //TODO: return UIView instead of image
-  // https://stackoverflow.com/questions/32111556/using-yalantis-koloda-library-to-load-more-than-just-1-uiview
-
   func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
     return .fast
   }
 
   func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
     let viewModel = restaurants[index]
-    let card = RestaurantCard()
+    let card = RestaurantCard(restaurant: viewModel)
     card.viewModel = viewModel
-//    let card = UIImageView(image: UIImage(named: "Card_\(index+1)"))
     return card
   }
 

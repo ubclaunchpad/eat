@@ -68,11 +68,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4C-Ml-8oH">
-                                <rect key="frame" x="165" y="476" width="45" height="45"/>
+                                <rect key="frame" x="162.5" y="462" width="50" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="auM-GH-0HQ"/>
-                                    <constraint firstAttribute="height" constant="45" id="yIG-zt-hWh"/>
+                                    <constraint firstAttribute="width" constant="50" id="auM-GH-0HQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="yIG-zt-hWh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <state key="normal" title="-">
@@ -93,7 +93,7 @@
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="centerY" secondItem="AgL-vd-kul" secondAttribute="centerY" id="C56-PM-MQS"/>
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="FpN-np-zLv"/>
                             <constraint firstItem="6TA-lT-da5" firstAttribute="top" secondItem="2rU-eN-CVJ" secondAttribute="bottom" constant="18" id="GFe-Ff-0QL"/>
-                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="q4C-Ml-8oH" secondAttribute="bottom" constant="146" id="GIE-yM-mAF"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="bottom" secondItem="q4C-Ml-8oH" secondAttribute="bottom" constant="155" id="GIE-yM-mAF"/>
                             <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="AgL-vd-kul" secondAttribute="centerY" id="Mt0-Qd-d1R"/>
                             <constraint firstItem="q4C-Ml-8oH" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="PPY-im-Myh"/>
                             <constraint firstItem="sAr-iE-ohv" firstAttribute="top" secondItem="6TA-lT-da5" secondAttribute="bottom" constant="147" id="R9I-bL-ivR"/>

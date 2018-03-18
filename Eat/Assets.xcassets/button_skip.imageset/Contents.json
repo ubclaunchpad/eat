@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "No button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "btn_skip_normal@2x.png",
       "scale" : "2x"
     },
     {

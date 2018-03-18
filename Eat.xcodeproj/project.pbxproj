@@ -33,7 +33,6 @@
 		5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */; };
 		5544B9AD205A46230094D7E0 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5544B9AC205A46230094D7E0 /* OverlayView.xib */; };
 		5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */; };
-		5555C840205CB8E90067B5F7 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555C83F205CB8E90067B5F7 /* NibView.swift */; };
 		556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */; };
 		556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
@@ -92,7 +91,6 @@
 		5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		5544B9AC205A46230094D7E0 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCard.xib; sourceTree = "<group>"; };
-		5555C83F205CB8E90067B5F7 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeopleCountScreen.storyboard; sourceTree = "<group>"; };
 		556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCountViewController.swift; sourceTree = "<group>"; };
 		7216E7BC4D4B4412FA106F25 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 				5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */,
 				5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */,
 				5544B9AC205A46230094D7E0 /* OverlayView.xib */,
-				5555C83F205CB8E90067B5F7 /* NibView.swift */,
 			);
 			path = RestaurantCardSelectionScreen;
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
-				5555C840205CB8E90067B5F7 /* NibView.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
 			);
