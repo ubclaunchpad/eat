@@ -12,6 +12,7 @@ target 'Eat' do
   pod 'YelpAPI'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Koloda'
+  pod 'Onboard'
   target 'EatTests' do
     inherit! :search_paths
     # Pods for testing

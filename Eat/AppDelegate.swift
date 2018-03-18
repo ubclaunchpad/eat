@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Onboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    // Initialize onboarding view controller
+    var onboardingVC = OnboardingViewController()
+
+    // Create slides
+    let firstPage = OnboardingContentViewController.content(withTitle: "Set your location and food preferences", body: "", image: UIImage(named: "OnboardingFirstScreen")?.resize(maxWidthHeight: 277), buttonText: nil, action: nil)
+
+    // Setup first page
+    firstPage.topPadding = 277
+    firstPage.titleLabel.textColor = UIColor(red: 0.42, green: 0.44, blue: 0.6, alpha: 1)
+    firstPage.titleLabel.font = UIFont(name: "CircularStd-Medium", size: 16)
+    firstPage.underIconPadding = 32
+    firstPage.underPageControlPadding = 96
+
+    let secondPage = OnboardingContentViewController.content(withTitle: "Pass the phone around to let your friends vote on nearby restaurants", body: "", image: UIImage(named: "OnboardingSecondScreen")?.resize(maxWidthHeight: 277), buttonText: nil, action: nil)
+
+    // Setup second page
+    secondPage.topPadding = 277
+    secondPage.titleLabel.textColor = UIColor(red: 0.42, green: 0.44, blue: 0.6, alpha: 1)
+    secondPage.titleLabel.font = UIFont(name: "CircularStd-Medium", size: 16)
+    secondPage.underIconPadding = 32
+    secondPage.underPageControlPadding = 96
+
+    let thirdPage = OnboardingContentViewController.content(withTitle: "Eat.", body: "", image: UIImage(named: "OnboardingThirdScreen")?.resize(maxWidthHeight: 277), buttonText: "EAT NOW", action: nil)
+
+    // Setup third page
+    thirdPage.topPadding = 277
+    thirdPage.titleLabel.textColor = UIColor(red: 0.42, green: 0.44, blue: 0.6, alpha: 1)
+    thirdPage.titleLabel.font = UIFont(name: "CircularStd-Medium", size: 16)
+    thirdPage.underIconPadding = 32
+    thirdPage.actionButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+    thirdPage.actionButton.backgroundColor = UIColor(red: 0.36, green: 0.41, blue: 1, alpha: 1)
+    thirdPage.underPageControlPadding = 0
+
+    // Define onboarding view controller properties
+    onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(named: "OnboardingBackground"), contents: [firstPage, secondPage, thirdPage])
+    onboardingVC.shouldFadeTransitions = true
+    onboardingVC.shouldMaskBackground = false
+    onboardingVC.shouldBlurBackground = false
+    onboardingVC.fadePageControlOnLastPage = true
+    onboardingVC.pageControl.pageIndicatorTintColor = UIColor(red: 0.92, green: 0.9, blue: 0.95, alpha: 1)
+    onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor(red: 1.00, green: 0.76, blue: 0.47, alpha: 1)
+    onboardingVC.allowSkipping = false
+    onboardingVC.underPageControlPadding = 96
+
+    self.window?.rootViewController = onboardingVC
+
     return true
   }
 
@@ -41,6 +88,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+  
+
+
+}
+
+extension UIImage {
+
+  func resize(maxWidthHeight : Double)-> UIImage? {
+
+    let actualHeight = Double(size.height)
+    let actualWidth = Double(size.width)
+    var maxWidth = 0.0
+    var maxHeight = 0.0
+
+    if actualWidth > actualHeight {
+      maxWidth = maxWidthHeight
+      let per = (100.0 * maxWidthHeight / actualWidth)
+      maxHeight = (actualHeight * per) / 100.0
+    }else{
+      maxHeight = maxWidthHeight
+      let per = (100.0 * maxWidthHeight / actualHeight)
+      maxWidth = (actualWidth * per) / 100.0
+    }
+
+    let hasAlpha = true
+    let scale: CGFloat = 0.0
+
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: maxWidth, height: maxHeight), !hasAlpha, scale)
+    self.draw(in: CGRect(origin: .zero, size: CGSize(width: maxWidth, height: maxHeight)))
+
+    let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+    return scaledImage
+  }
 
 }
 
