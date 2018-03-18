@@ -39,7 +39,6 @@ class PeopleCountViewController: UIViewController {
   private func setupButtons(){
     countButton.layer.cornerRadius = 0.5 * countButton.bounds.size.width
     countButton.clipsToBounds = true
-    countButton.backgroundColor = .gray
 
     minusButton.layer.cornerRadius = 0.5 * minusButton.bounds.size.width
     minusButton.clipsToBounds = true
