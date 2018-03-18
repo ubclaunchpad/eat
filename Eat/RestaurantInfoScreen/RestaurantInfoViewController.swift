@@ -13,7 +13,7 @@ class RestaurantInfoViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false)
+  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "")
 
   static func viewController() -> RestaurantInfoViewController {
     let storyboard = UIStoryboard(name: "RestaurantInfoStoryboard", bundle: nil)

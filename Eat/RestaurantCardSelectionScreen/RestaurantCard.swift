@@ -33,6 +33,12 @@ class RestaurantCard : UIView {
     if let viewModel = viewModel {
       titleLabel.text = viewModel.name
       ratingLabel.text = String(viewModel.rating)
+      if let url = URL(string: viewModel.imageUrl), let data = try? Data(contentsOf: url) {
+        imageView.image = UIImage(data: data)
+      } else {
+        imageView.image = #imageLiteral(resourceName: "default_restaurant_photo")
+      }
+
     }
   }
 

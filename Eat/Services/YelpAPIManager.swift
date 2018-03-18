@@ -99,8 +99,9 @@ extension YelpAPIManager {
           let restaurantRating = businessDict["rating"] as! Float
           let restaurantPhone = businessDict["phone"] as! String
           let restaurantStatus = businessDict["is_closed"] as! Bool
+          let imageUrl = businessDict["image_url"] as! String
 
-          let newResto = Restaurant(name: restaurantName, rating: restaurantRating, phone: restaurantPhone, status: restaurantStatus)
+          let newResto = Restaurant(name: restaurantName, rating: restaurantRating, phone: restaurantPhone, status: restaurantStatus, imageUrl: imageUrl)
           restaurants.append(newResto)
         }
       }
