@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 
 class Onboarding {
+  let window: UIWindow?
+
+  init (window: UIWindow?) {
+    self.window = window
+  }
   let height = UIScreen.main.bounds.height
   let width = UIScreen.main.bounds.width
 
-  func viewController(window: UIWindow?) -> OnboardingViewController {
+  func viewController() -> OnboardingViewController {
     var onboardingVC = OnboardingViewController()
 
     let safeArea = window?.safeAreaInsets

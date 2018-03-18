@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     GMSServices.provideAPIKey("AIzaSyBVITHbz5T7Zyr-E6wsvWiZY6wbkpYTah4")
 
-    self.window?.rootViewController = Onboarding().viewController(window: window)
+    self.window?.rootViewController = Onboarding(window: window).viewController()
     
     return true
   }
