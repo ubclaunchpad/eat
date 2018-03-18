@@ -12,7 +12,7 @@
         <!--Eating Time View Controller-->
         <scene sceneID="X5T-kB-gbT">
             <objects>
-                <viewController id="HjH-W2-ngv" customClass="EatingTimeViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EatingTimeViewController" id="HjH-W2-ngv" customClass="EatingTimeViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayV-3g-1Qt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

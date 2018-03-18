@@ -12,7 +12,7 @@ import ChameleonFramework
 class DietaryRestrictionsViewController: UIViewController {
   @IBOutlet weak var restrictionQuestion: UILabel!
   @IBOutlet weak var VeganButton: UIButton!
-  @IBOutlet weak var None: UIButton!
+  @IBOutlet weak var halalButton: UIButton!
   @IBOutlet weak var VegetarianButton: UIButton!
 
   @IBOutlet weak var preferenceQuestion: UILabel!
@@ -22,9 +22,17 @@ class DietaryRestrictionsViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var finishButton: UIButton!
 
-  var vegan = false
-  var vegetarian = false
-  var none = false
+  static func viewController(searchQuery: SearchQuery) -> DietaryRestrictionsViewController {
+    let storyboard = UIStoryboard(name: "DietaryRestrictionsScreen", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "DietaryRestrictionsViewController") as? DietaryRestrictionsViewController
+      else { fatalError() }
+    vc.searchQuery = searchQuery
+    return vc
+  }
+
+  var searchQuery: SearchQuery!
+
+  var dietary: DietaryRestrictions = .none
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,7 +42,7 @@ class DietaryRestrictionsViewController: UIViewController {
 
     VeganButton.setTitle("Vegan", for: .normal)
     VegetarianButton.setTitle("Vegetarian", for: .normal)
-    None.setTitle("None", for: .normal)
+    halalButton.setTitle("Halal", for: .normal)
 
     OtherPrefs.delegate = self
     OtherPrefs.placeholder = "Eg: Vietnamese, bubble tea"
@@ -63,9 +71,9 @@ class DietaryRestrictionsViewController: UIViewController {
     VegetarianButton.titleLabel?.font = Font.button(size: 16)
 
     // None
-    None.layer.cornerRadius = 8
-    None.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
-    None.titleLabel?.font = Font.button(size: 16)
+    halalButton.layer.cornerRadius = 8
+    halalButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    halalButton.titleLabel?.font = Font.button(size: 16)
 
     preferenceLine.backgroundColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
   }
@@ -75,45 +83,43 @@ class DietaryRestrictionsViewController: UIViewController {
   }
 
   @IBAction func VeganButtonPress(_ sender: Any) {
-    if (vegan) {
+    if (dietary == .vegan) {
       resetAll()
     } else {
       resetAll()
       VeganButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VeganButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
       VeganButton.setTitleColor(UIColor.white, for: .normal)
       VeganButton.layer.borderWidth = 0
-      vegan = true
+      dietary = .vegan
     }
   }
 
   @IBAction func VegetarianButtonPress(_ sender: UIButton) {
-    if (vegetarian) {
+    if (dietary == .vegetarian) {
       resetAll()
     } else {
       resetAll()
       VegetarianButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VegetarianButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
       VegetarianButton.setTitleColor(UIColor.white, for: .normal)
       VegetarianButton.layer.borderWidth = 0
-      vegetarian = true
+      dietary = .vegetarian
     }
   }
 
-  @IBAction func NoneButtonPress(_ sender: Any) {
-    if (none) {
+  @IBAction func halalButtonPress(_ sender: Any) {
+    if (dietary == .halal) {
       resetAll()
     } else {
       resetAll()
-      None.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: None.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
-      None.setTitleColor(UIColor.white, for: .normal)
-      None.layer.borderWidth = 0
-      none = true
+      halalButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: halalButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
+      halalButton.setTitleColor(UIColor.white, for: .normal)
+      halalButton.layer.borderWidth = 0
+      dietary = .halal
     }
   }
 
   func resetAll() {
-    vegan = false
-    vegetarian = false
-    none = false
+    dietary = .none
     VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     VeganButton.layer.borderWidth = 2
     VeganButton.backgroundColor = UIColor.white
@@ -122,16 +128,16 @@ class DietaryRestrictionsViewController: UIViewController {
     VegetarianButton.layer.borderWidth = 2
     VegetarianButton.backgroundColor = UIColor.white
 
-    None.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
-    None.layer.borderWidth = 2
-    None.backgroundColor = UIColor.white
+    halalButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
+    halalButton.layer.borderWidth = 2
+    halalButton.backgroundColor = UIColor.white
   }
 }
 
 extension DietaryRestrictionsViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    // TODO: segue to next screen
-    print("segue")
+    let restaurantCardsVC = RestaurantCardSelectionViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(restaurantCardsVC, animated: true)
     return true
   }
 }
@@ -154,6 +160,9 @@ extension DietaryRestrictionsViewController {
   }
 
   @IBAction private func finishTapped() {
-
+    searchQuery.dietary = dietary
+    searchQuery.searchTerm = OtherPrefs.text
+    let restaurantCardsVC = RestaurantCardSelectionViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(restaurantCardsVC, animated: true)
   }
 }
