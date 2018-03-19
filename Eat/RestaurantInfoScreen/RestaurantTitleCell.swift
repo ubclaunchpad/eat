@@ -25,13 +25,13 @@ class RestaurantTitleCell: UITableViewCell {
       title.font = UIFont.boldSystemFont(ofSize: 24)
 
       // set distance
-      distance.text = "0.7km"
+      distance.text = String(format: "%.2f", restaurant.distance/1000) + "km"
       distance.textColor = UIColor.gray
       distance.alpha = 0.9
       distance.font = UIFont.systemFont(ofSize: 18)
 
       // set foodtype
-      foodtype.text = "Lebanese"
+      foodtype.text = restaurant.foodType
       foodtype.textColor = UIColor.gray
       foodtype.alpha = 0.9
       foodtype.font = UIFont.systemFont(ofSize: 16)
@@ -42,7 +42,7 @@ class RestaurantTitleCell: UITableViewCell {
       hoursofoperation.font = UIFont.boldSystemFont(ofSize: 16)
 
       // set ReviewSize
-      ReviewSize.text = "23 Reviews"
+      ReviewSize.text = String(restaurant.reviewCount) + " Reviews"
       ReviewSize.textColor = UIColor.gray
       ReviewSize.alpha = 0.9
       ReviewSize.font = UIFont.systemFont(ofSize: 16)

@@ -10,15 +10,18 @@ import UIKit
 
 class RestaurantPhotoCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var restaurantImageView: UIImageView!
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+  func configure(imageUrl: String) {
+    if let url = URL(string: imageUrl), let data = try? Data(contentsOf: url) {
+      restaurantImageView.image = UIImage(data: data)
+    } else {
+      restaurantImageView.image = #imageLiteral(resourceName: "default_restaurant_photo")
     }
+  }
 
 }

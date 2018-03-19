@@ -13,14 +13,17 @@ class RestaurantInfoViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "")
 
-  static func viewController() -> RestaurantInfoViewController {
-    let storyboard = UIStoryboard(name: "RestaurantInfoStoryboard", bundle: nil)
+
+  static func viewController(restaurant: Restaurant) -> RestaurantInfoViewController {
+    let storyboard = UIStoryboard(name: "RestaurantInfoScreen", bundle: nil)
     guard let restaurantVC = storyboard.instantiateViewController(withIdentifier: "RestaurantInfoVC") as? RestaurantInfoViewController
       else { fatalError() }
+    restaurantVC.myRestaurant = restaurant
     return restaurantVC
   }
+
+  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,7 +52,8 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     case .photo:
       guard let cell =
         tableView.dequeueReusableCell(withIdentifier: "RestaurantPhotoCell", for: indexPath) as? RestaurantPhotoCell else { fatalError() }
-        return cell
+      cell.configure(imageUrl: myRestaurant.imageUrl)
+      return cell
     case .title:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTitleCell",for: indexPath) as? RestaurantTitleCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
