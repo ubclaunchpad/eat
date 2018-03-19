@@ -10,6 +10,23 @@ import UIKit
 import Koloda
 
 class RestaurantCardSelectionViewController: UIViewController {
+  @IBOutlet weak var eaterProgressBar: UIView!
+  @IBOutlet weak var skipButton: UIButton!
+  @IBOutlet weak var nextEaterLabel: UILabel!
+  @IBOutlet weak var restartButton: UIButton!
+  @IBOutlet weak var keepButton: UIButton!
+  @IBOutlet weak var kolodaView: KolodaView!
+  @IBOutlet weak var eaterCountLabel: UILabel!
+
+  static func viewController(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
+    let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "RestaurantCardSelectionViewController") as? RestaurantCardSelectionViewController
+      else { fatalError() }
+    vc.searchQuery = searchQuery
+    return vc
+  }
+
+  var searchQuery: SearchQuery!
 
   var restaurants : [Restaurant] = [] {
     didSet {
@@ -20,16 +37,6 @@ class RestaurantCardSelectionViewController: UIViewController {
   var numberOfPlayers = 3
   var currNumOfPlayer = 1
   let dataManager = DataManager.default
-  var query = SearchQuery(latitude: 51.5033640, longitude: -0.1276250, radius: 500, limit: 5, price: 2, isVegetarian: false)
-
-
-  @IBOutlet weak var eaterProgressBar: UIView!
-  @IBOutlet weak var skipButton: UIButton!
-  @IBOutlet weak var nextEaterLabel: UILabel!
-  @IBOutlet weak var restartButton: UIButton!
-  @IBOutlet weak var keepButton: UIButton!
-  @IBOutlet weak var kolodaView: KolodaView!
-  @IBOutlet weak var eaterCountLabel: UILabel!
 
   @IBAction func restartButtonPressed(_ sender: Any) {
     kolodaView.isHidden = false
@@ -55,7 +62,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.dataSource = self
     kolodaView.delegate = self
 
-    dataManager.fetchRestaurants(with: query)
+    dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
         self.restaurants = res
         self.keptRestaurantCount = [Int](repeating: 0, count: self.restaurants.count)

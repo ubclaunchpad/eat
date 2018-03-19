@@ -12,7 +12,7 @@
         <!--Dietary Restrictions View Controller-->
         <scene sceneID="Ssh-wW-BHQ">
             <objects>
-                <viewController id="xk8-Qc-nET" customClass="DietaryRestrictionsViewController" customModule="Eat" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DietaryRestrictionsViewController" id="xk8-Qc-nET" customClass="DietaryRestrictionsViewController" customModule="Eat" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pD6-DO-iys">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,9 +46,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="103" id="Mvy-qM-jnP"/>
                                         </constraints>
-                                        <state key="normal" title="None"/>
+                                        <state key="normal" title="Halal"/>
                                         <connections>
-                                            <action selector="NoneButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="1Mb-cT-EGh"/>
+                                            <action selector="halalButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="eGg-mo-unO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -153,12 +153,12 @@
                         <viewLayoutGuide key="safeArea" id="jWe-P5-L1y"/>
                     </view>
                     <connections>
-                        <outlet property="None" destination="Fza-vk-G6H" id="Ihc-aM-DfV"/>
                         <outlet property="OtherPrefs" destination="vym-Bn-QE5" id="lzZ-oJ-scc"/>
                         <outlet property="VeganButton" destination="0gD-7s-ogP" id="KaQ-BM-3od"/>
                         <outlet property="VegetarianButton" destination="C5R-T4-uca" id="N1Q-EB-ogv"/>
                         <outlet property="backButton" destination="lxE-5e-gty" id="SDA-7u-oHm"/>
                         <outlet property="finishButton" destination="un8-uG-Emq" id="z5F-fI-2hf"/>
+                        <outlet property="halalButton" destination="Fza-vk-G6H" id="G5T-Lc-brw"/>
                         <outlet property="preferenceLine" destination="4Bl-2l-Vgo" id="GEq-aW-BQ5"/>
                         <outlet property="preferenceQuestion" destination="X9d-ks-aSF" id="1w5-sP-WEd"/>
                         <outlet property="restrictionQuestion" destination="9Vl-5F-Tyw" id="Pes-9A-B2g"/>
