@@ -21,7 +21,7 @@ class RestaurantCard : UIView {
   @IBOutlet weak var ratingSquare3: UIImageView!
   @IBOutlet weak var ratingSquare4: UIImageView!
   @IBOutlet weak var ratingSquare5: UIImageView!
-  @IBOutlet weak var moreInfoButton: UIButton!
+  @IBOutlet weak var moreInfoLabel: UILabel!
 
   var contentView : UIView!
   var viewModel: Restaurant?
@@ -88,16 +88,12 @@ class RestaurantCard : UIView {
     reviewLabel.textColor = UIColor.gray
     reviewLabel.alpha = 0.9
     reviewLabel.font = Font.body(size: 14)
-    moreInfoButton.titleLabel?.font = Font.boldButton(size: 16)
+    moreInfoLabel.font = Font.boldButton(size: 16)
 
     layer.shadowColor = #colorLiteral(red: 0.6151413766, green: 0.6227521808, blue: 0.6790529822, alpha: 1)
     layer.shadowOffset = CGSize(width: 7, height: 7)
     layer.masksToBounds = false
     layer.shadowRadius = 15.0
     layer.shadowOpacity = 0.7
-  }
-
-  @IBAction func moreInfoButtonPressed(_ sender: Any) {
-
   }
 }

@@ -12,7 +12,7 @@ import UIKit
 class RestaurantInfoViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
-
+  @IBOutlet weak var exitButton: UIButton!
 
 
   static func viewController(restaurant: Restaurant) -> RestaurantInfoViewController {
@@ -32,6 +32,11 @@ class RestaurantInfoViewController: UIViewController {
     tableView.separatorStyle = .singleLine
     tableView.allowsSelection = false
   }
+
+  @IBAction func exitButtonPressed(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+  }
+
 }
 
 extension RestaurantInfoViewController: UITableViewDataSource {

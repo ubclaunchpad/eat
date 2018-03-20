@@ -70,8 +70,10 @@ class RestaurantCardSelectionViewController: UIViewController {
     setStyling()
   }
 
+  @IBAction func closeButtonPressed(_ sender: Any) {
+    navigationController?.popToRootViewController(animated: true)
+  }
   @IBAction func restartButtonPressed(_ sender: Any) {
-//    buttonsView.isHidden = false
     kolodaView.isHidden = false
     kolodaView.resetCurrentCardIndex()
     skipButton.isUserInteractionEnabled = true
@@ -127,11 +129,6 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
   }
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-    //TODO: directs to RestaurantInfoView
-//    if let url = URL(string: "https://yelp.ca/") {
-//      UIApplication.shared.open(url, completionHandler: nil)
-//    }
-
     let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: restaurants[index])
     navigationController?.pushViewController(restaurantInfoVC, animated: true)
     print("card selected")
