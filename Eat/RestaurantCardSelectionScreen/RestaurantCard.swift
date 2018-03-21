@@ -14,7 +14,7 @@ class RestaurantCard : UIView {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var reviewLabel: UILabel!
   @IBOutlet weak var typeLabel: UILabel!
-  @IBOutlet weak var hourLabel: UILabel!
+  @IBOutlet weak var phoneLabel: UILabel!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var ratingSquare1: UIImageView!
   @IBOutlet weak var ratingSquare2: UIImageView!
@@ -43,11 +43,10 @@ class RestaurantCard : UIView {
   private func configure(forViewModel viewModel: Restaurant?) {
     if let viewModel = viewModel {
       titleLabel.text = viewModel.name
-//      ratingLabel.text = String(viewModel.rating)
       typeLabel.text = viewModel.foodType
       distanceLabel.text = String(format: "%.2f", viewModel.distance/1000) + "km"
       reviewLabel.text = String(viewModel.reviewCount) + " Reviews"
-      hourLabel.text = "Open Now"
+      phoneLabel.text = viewModel.phone
       setStyling()
       if let url = URL(string: viewModel.imageUrl), let data = try? Data(contentsOf: url) {
         imageView.image = UIImage(data: data)
@@ -83,8 +82,8 @@ class RestaurantCard : UIView {
     typeLabel.textColor = UIColor.gray
     typeLabel.alpha = 0.9
     typeLabel.font = Font.body(size: 14)
-    hourLabel.textColor = #colorLiteral(red: 0.1527305841, green: 0.6796044707, blue: 0.3771348, alpha: 1)
-    hourLabel.font = Font.body(size: 14)
+    phoneLabel.textColor = #colorLiteral(red: 0.1527305841, green: 0.6796044707, blue: 0.3771348, alpha: 1)
+    phoneLabel.font = Font.body(size: 14)
     reviewLabel.textColor = UIColor.gray
     reviewLabel.alpha = 0.9
     reviewLabel.font = Font.body(size: 14)

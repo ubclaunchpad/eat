@@ -61,7 +61,7 @@ class RestaurantCardSelectionViewController: UIViewController {
 
     restartButton.isUserInteractionEnabled = false
     restartButton.isHidden = true
-    nextEaterLabel.isHidden = true
+    nextEaterLabel.text = "Finding Restaurants..."
     nextEaterLabel.isUserInteractionEnabled = false
     eaterIcon.isHidden = true
     numberOfPlayers = searchQuery.numberOfPeople
@@ -114,11 +114,12 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
     skipButton.isUserInteractionEnabled = false
     keepButton.isUserInteractionEnabled = false
     eaterIcon.isHidden = false
-    nextEaterLabel.isHidden = false
+    //nextEaterLabel.isHidden = false
     if currNumOfPlayer < numberOfPlayers {
       restartButton.isUserInteractionEnabled = true
       restartButton.isHidden = false
       restartButton.isEnabled = true
+      nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
     } else {
       nextEaterLabel.text = "Finding a place to eat..."
       restartButton.isHidden = true

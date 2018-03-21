@@ -14,7 +14,6 @@ class RestaurantInfoViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var exitButton: UIButton!
 
-
   static func viewController(restaurant: Restaurant) -> RestaurantInfoViewController {
     let storyboard = UIStoryboard(name: "RestaurantInfoScreen", bundle: nil)
     guard let restaurantVC = storyboard.instantiateViewController(withIdentifier: "RestaurantInfoVC") as? RestaurantInfoViewController

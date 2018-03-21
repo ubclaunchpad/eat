@@ -11,6 +11,7 @@ import UIKit
 class RestaurantInfoAddressCell: UITableViewCell {
 
   @IBOutlet weak var RestaurantAddress: UILabel!
+  @IBOutlet weak var addressImage: UIImageView!
 
   func configure(restaurant: Restaurant) {
     RestaurantAddress.text = restaurant.address
@@ -18,6 +19,7 @@ class RestaurantInfoAddressCell: UITableViewCell {
 
   override func awakeFromNib() {
         super.awakeFromNib()
+        addressImage.layer.cornerRadius = 5
         // Initialization code
     }
 

@@ -11,8 +11,10 @@ import UIKit
 class RestaurantPhotoCell: UITableViewCell {
 
   @IBOutlet weak var restaurantImageView: UIImageView!
+  @IBOutlet weak var seeMoreImageButton: UIButton!
   override func awakeFromNib() {
         super.awakeFromNib()
+        seeMoreImageButton.titleLabel?.font = Font.button(size: 16)
         // Initialization code
     }
 

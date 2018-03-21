@@ -15,44 +15,54 @@ class RestaurantTitleCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
   @IBOutlet weak var distance: UILabel!
   @IBOutlet weak var foodtype: UILabel!
-  @IBOutlet weak var hoursofoperation: UILabel!
-  @IBOutlet weak var ReviewSize: UILabel!
+  @IBOutlet weak var phoneLabel: UILabel!
+  @IBOutlet weak var reviewSize: UILabel!
+  @IBOutlet weak var ratingSquare1: UIImageView!
+  @IBOutlet weak var ratingSquare2: UIImageView!
+  @IBOutlet weak var ratingSquare3: UIImageView!
+  @IBOutlet weak var ratingSquare4: UIImageView!
+  @IBOutlet weak var ratingSquare5: UIImageView!
+  var ratingSquares: [UIImageView] = []
 
 
   func configure(restaurant: Restaurant) {
       // set Title
       title.text = restaurant.name
-      title.font = UIFont.boldSystemFont(ofSize: 24)
+      title.font = Font.header(size: 22)
 
       // set distance
       distance.text = String(format: "%.2f", restaurant.distance/1000) + "km"
       distance.textColor = UIColor.gray
       distance.alpha = 0.9
-      distance.font = UIFont.systemFont(ofSize: 18)
+      distance.font = Font.body(size: 14)
 
       // set foodtype
       foodtype.text = restaurant.foodType
       foodtype.textColor = UIColor.gray
       foodtype.alpha = 0.9
-      foodtype.font = UIFont.systemFont(ofSize: 16)
+      foodtype.font = Font.body(size: 14)
 
       // set hours
-      hoursofoperation.text = "Open until 11pm"
-      hoursofoperation.textColor = UIColor.init(red: 0.40, green: 0.71, blue: 0.48, alpha: 1)
-      hoursofoperation.font = UIFont.boldSystemFont(ofSize: 16)
+      phoneLabel.text = restaurant.phone
+      phoneLabel.textColor = UIColor.init(red: 0.40, green: 0.71, blue: 0.48, alpha: 1)
+      phoneLabel.font = Font.body(size: 14)
 
       // set ReviewSize
-      ReviewSize.text = String(restaurant.reviewCount) + " Reviews"
-      ReviewSize.textColor = UIColor.gray
-      ReviewSize.alpha = 0.9
-      ReviewSize.font = UIFont.systemFont(ofSize: 16)
+      reviewSize.text = String(restaurant.reviewCount) + " Reviews"
+      reviewSize.textColor = UIColor.gray
+      reviewSize.alpha = 0.9
+      reviewSize.font = Font.body(size: 14)
 
       // set up button
+      for i in 0 ..< Int(round(restaurant.rating)){
+        ratingSquares[i].image = #imageLiteral(resourceName: "FilledRatingSquare")
+      }
 
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        ratingSquares = [ratingSquare1, ratingSquare2, ratingSquare3, ratingSquare4, ratingSquare5]
         // Initialization code
     }
 
