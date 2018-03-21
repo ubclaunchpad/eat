@@ -19,9 +19,14 @@ class MapScreenController: UIViewController{
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
-  @IBOutlet var mapView: GMSMapView!
-
-  
+    @IBOutlet var mapView: GMSMapView!
+    @IBOutlet weak var nextView: UIButton!
+    
+    static func viewController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "MapScreen", bundle: nil)
+        guard let navigationVC = storyboard.instantiateInitialViewController() as? UINavigationController else { fatalError() }
+        return navigationVC
+    }
 
   // Whether a user has selected a location other than their current location.
   // If this value is true, then the map should not recenter when the user's location
@@ -57,19 +62,21 @@ class MapScreenController: UIViewController{
     self.mapView.isUserInteractionEnabled = true
     self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.mapView.isMyLocationEnabled = true
+    self.mapView.padding = UIEdgeInsetsMake(0, 0, 100, 0)
     self.mapView.delegate = self
 
     // Add title to the navigation bar
     navigationItem.title = "Where do you want to eat?"
     // Add a next button to the navigation bar
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MapScreenController.next(_:)))
+    
+    self.view.bringSubview(toFront: nextView)
   }
   @objc func next(_ sender:UIBarButtonItem!) {
     print("Next has been click")
     // TODO: create a search query object when this button is clicked and move onto the next
     //       screen
   }
-
 }
 
 extension MapScreenController : CLLocationManagerDelegate {
