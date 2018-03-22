@@ -13,4 +13,9 @@ struct Restaurant {
   let rating: Float
   let phone: String
   let status: Bool
+  let imageUrl: String
+  let address: String
+  let foodType: String
+  let reviewCount: Int
+  let distance: Double
 }
