@@ -19,14 +19,14 @@ class MapScreenController: UIViewController{
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
-    @IBOutlet var mapView: GMSMapView!
-    @IBOutlet weak var nextView: UIButton!
-    
-    static func viewController() -> UINavigationController {
-        let storyboard = UIStoryboard(name: "MapScreen", bundle: nil)
-        guard let navigationVC = storyboard.instantiateInitialViewController() as? UINavigationController else { fatalError() }
-        return navigationVC
-    }
+  @IBOutlet var mapView: GMSMapView!
+  @IBOutlet weak var nextView: UIButton!
+
+  static func viewController() -> UINavigationController {
+    let storyboard = UIStoryboard(name: "MapScreen", bundle: nil)
+    guard let navigationVC = storyboard.instantiateInitialViewController() as? UINavigationController else { fatalError() }
+    return navigationVC
+  }
 
   // Whether a user has selected a location other than their current location.
   // If this value is true, then the map should not recenter when the user's location
@@ -69,9 +69,22 @@ class MapScreenController: UIViewController{
     navigationItem.title = "Where do you want to eat?"
     // Add a next button to the navigation bar
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MapScreenController.next(_:)))
-    
+
+    applyStyling()
+  }
+
+  func applyStyling() {
+    let actionText = NSMutableAttributedString(string: "LET'S EAT!")
+    actionText.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: actionText.length))
+    nextView.setAttributedTitle(actionText, for: .normal)
+
+    nextView.titleLabel?.font = Font.onboarding(size: 17)
+    nextView.layer.cornerRadius = 12
+    nextView.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
+
     self.view.bringSubview(toFront: nextView)
   }
+
   @objc func next(_ sender:UIBarButtonItem!) {
     print("Next has been click")
     // TODO: create a search query object when this button is clicked and move onto the next
@@ -80,42 +93,42 @@ class MapScreenController: UIViewController{
     let peopleCountVc = PeopleCountViewController.viewController(searchQuery: searchQuery)
     navigationController?.pushViewController(peopleCountVc, animated: true)
   }
-    @IBAction func nextTapped(_ sender: Any) {
-        let searchQuery = buildQueryFromMap()
-        let peopleCountVc = PeopleCountViewController.viewController(searchQuery: searchQuery)
-        navigationController?.pushViewController(peopleCountVc, animated: true)
-    }
-    
-    /*
-     * Using the center of the map to the North East point on the map view, Build a radius for the search query
-     * from the difference in longatide of the two positions
-     */
-    private func buildQueryFromMap()->SearchQuery {
-        let center = self.mapView.camera.target
-        
-        let projection = mapView.projection.visibleRegion()
-//        print("Top left", proection.farLeft)
-//        print("Bottom Right", proection.nearRight)
-        
-        let radius = getLongatudeRadius(center: self.mapView.camera.target.longitude, outerCoord: projection.farRight.longitude)
-        
-        var searchQuery = SearchQuery()
-        searchQuery.latitude = Float(center.latitude)
-        searchQuery.longitude = Float(center.longitude)
-        searchQuery.radius = radius
-        return searchQuery
-    }
-    
-    /*
-     * At the equator, one degree of longitude and latitude both cover about 111 kilometers
-     * Using this calculation, find the difference of the two and calculate the rough distance
-     */
-    private func getLongatudeRadius(center:Double, outerCoord:Double)->Int {
-        let latDifference = abs(outerCoord - center)
-        let radius = latDifference * (111 * 1000) //degree * (111km * 1000m/km)
-        print("lat diff:", latDifference, "radius", radius)
-        return Int(radius)
-    }
+  @IBAction func nextTapped(_ sender: Any) {
+    let searchQuery = buildQueryFromMap()
+    let peopleCountVc = PeopleCountViewController.viewController(searchQuery: searchQuery)
+    navigationController?.pushViewController(peopleCountVc, animated: true)
+  }
+
+  /*
+   * Using the center of the map to the North East point on the map view, Build a radius for the search query
+   * from the difference in longatide of the two positions
+   */
+  private func buildQueryFromMap()->SearchQuery {
+    let center = self.mapView.camera.target
+
+    let projection = mapView.projection.visibleRegion()
+    //        print("Top left", proection.farLeft)
+    //        print("Bottom Right", proection.nearRight)
+
+    let radius = getLongatudeRadius(center: self.mapView.camera.target.longitude, outerCoord: projection.farRight.longitude)
+
+    var searchQuery = SearchQuery()
+    searchQuery.latitude = Float(center.latitude)
+    searchQuery.longitude = Float(center.longitude)
+    searchQuery.radius = radius
+    return searchQuery
+  }
+
+  /*
+   * At the equator, one degree of longitude and latitude both cover about 111 kilometers
+   * Using this calculation, find the difference of the two and calculate the rough distance
+   */
+  private func getLongatudeRadius(center:Double, outerCoord:Double)->Int {
+    let latDifference = abs(outerCoord - center)
+    let radius = latDifference * (111 * 1000) //degree * (111km * 1000m/km)
+    print("lat diff:", latDifference, "radius", radius)
+    return Int(radius)
+  }
 }
 
 extension MapScreenController : CLLocationManagerDelegate {
@@ -156,7 +169,7 @@ extension MapScreenController : GMSMapViewDelegate {
     let marker = GMSMarker(position: coordinate)
     marker.map = self.mapView
 
-   let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
+    let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
     if self.mapView.isHidden {
       self.mapView.isHidden = false
       self.mapView.camera = camera
