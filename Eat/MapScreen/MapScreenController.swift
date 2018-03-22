@@ -21,6 +21,9 @@ class MapScreenController: UIViewController{
 
   @IBOutlet var mapView: GMSMapView!
   @IBOutlet weak var nextView: UIButton!
+  @IBOutlet weak var headerView: UIView!
+  @IBOutlet weak var questionLabel: UILabel!
+  @IBOutlet weak var instructionLabel: UILabel!
 
   static func viewController() -> UINavigationController {
     let storyboard = UIStoryboard(name: "MapScreen", bundle: nil)
@@ -74,6 +77,19 @@ class MapScreenController: UIViewController{
   }
 
   func applyStyling() {
+    headerView.layer.shadowRadius = 10
+    headerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+    headerView.layer.shadowColor = UIColor.black.cgColor
+    headerView.layer.shadowOpacity = 0.25
+
+    questionLabel.text = "Where do you want to eat?"
+    questionLabel.font = Font.onboarding(size: 13)
+    questionLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
+
+    instructionLabel.text = "Drag to select the active map area"
+    instructionLabel.font = Font.onboarding(size: 13)
+    instructionLabel.textColor = #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1)
+
     let actionText = NSMutableAttributedString(string: "LET'S EAT!")
     actionText.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: actionText.length))
     nextView.setAttributedTitle(actionText, for: .normal)
@@ -156,33 +172,33 @@ extension MapScreenController : CLLocationManagerDelegate {
 }
 
 extension MapScreenController : GMSMapViewDelegate {
-  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
-  {
-    print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-
-    // Set didSelect to true as map should not recenter if the user's current location
-    // changes
-    didSelect = true
-
-    // There should only be one pin on the map max
-    self.mapView.clear()
-    let marker = GMSMarker(position: coordinate)
-    marker.map = self.mapView
-
-    let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
-    if self.mapView.isHidden {
-      self.mapView.isHidden = false
-      self.mapView.camera = camera
-    } else {
-      self.mapView.animate(to: camera)
-    }
-  }
-  func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
-    didSelect = false
-
-    // Default behaviour for false is for the map to recenter at the user's current location
-    return false
-  }
+//  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
+//  {
+//    print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+//
+//    // Set didSelect to true as map should not recenter if the user's current location
+//    // changes
+//    didSelect = true
+//
+//    // There should only be one pin on the map max
+//    self.mapView.clear()
+//    let marker = GMSMarker(position: coordinate)
+//    marker.map = self.mapView
+//
+//    let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: zoomLevel)
+//    if self.mapView.isHidden {
+//      self.mapView.isHidden = false
+//      self.mapView.camera = camera
+//    } else {
+//      self.mapView.animate(to: camera)
+//    }
+//  }
+//  func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+//    didSelect = false
+//
+//    // Default behaviour for false is for the map to recenter at the user's current location
+//    return false
+//  }
 }
 
 
