@@ -75,6 +75,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.isHidden = true
     nextEaterLabel.isHidden = true
     nextEaterLabel.isUserInteractionEnabled = false
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 }
 
