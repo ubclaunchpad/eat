@@ -50,6 +50,8 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.dataSource = self
     kolodaView.delegate = self
 
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
         self.restaurants = res
@@ -63,6 +65,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.isHidden = true
     nextEaterLabel.text = "Finding Restaurants..."
     nextEaterLabel.isUserInteractionEnabled = false
+
     eaterIcon.isHidden = true
     numberOfPlayers = searchQuery.numberOfPeople
     let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
