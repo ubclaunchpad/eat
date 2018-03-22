@@ -49,10 +49,15 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>YelpAPI.xcscheme</key>
+		<key>SearchTextField.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
+		</dict>
+		<key>YelpAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>pop.xcscheme</key>
 		<dict>

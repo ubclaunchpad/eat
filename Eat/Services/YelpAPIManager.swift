@@ -107,13 +107,38 @@ extension YelpAPIManager {
         let restaurantName = businessDict["name"] as? String,
         let restaurantRating = businessDict["rating"] as? Float,
         let restaurantPhone = businessDict["phone"] as? String,
-        let restaurantStatus = businessDict["is_closed"] as? Bool
+        let restaurantStatus = businessDict["is_closed"] as? Bool,
+        let imageUrl = businessDict["image_url"] as? String,
+        let distance = businessDict["distance"] as? Double,
+        let location = businessDict["location"] as? [String: Any],
+        let address1 = location["address1"] as? String,
+        let address2 = location["address2"] as? String,
+        let address3 = location["address3"] as? String,
+        let city = location["city"] as? String,
+        let categories = businessDict["categories"] as? NSArray,
+        let firstCategory = categories[0] as? [String: Any],
+        let type = firstCategory["title"] as? String,
+        let reviewCount = businessDict["review_count"] as? Int
         else { return nil }
+
+      var address = address1
+      if !address2.isEmpty {
+        address = address + " " + address2
+      }
+      if !address3.isEmpty {
+        address = address + " " + address3
+      }
+      address = address + ", " + city
 
       return Restaurant(name: restaurantName,
                         rating: restaurantRating,
                         phone: restaurantPhone,
-                        status: restaurantStatus)
+                        status: restaurantStatus,
+                        imageUrl: imageUrl,
+                        address: address,
+                        foodType: type,
+                        reviewCount: reviewCount,
+                        distance: distance)
     }
   }
 }

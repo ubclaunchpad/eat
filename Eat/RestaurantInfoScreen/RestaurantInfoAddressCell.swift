@@ -11,13 +11,15 @@ import UIKit
 class RestaurantInfoAddressCell: UITableViewCell {
 
   @IBOutlet weak var RestaurantAddress: UILabel!
+  @IBOutlet weak var addressImage: UIImageView!
 
   func configure(restaurant: Restaurant) {
-    RestaurantAddress.text = "6035 University Blvd"
+    RestaurantAddress.text = restaurant.address
   }
 
   override func awakeFromNib() {
         super.awakeFromNib()
+        addressImage.layer.cornerRadius = 5
         // Initialization code
     }
 
