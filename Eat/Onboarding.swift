@@ -30,7 +30,7 @@ class Onboarding {
     let secondPage = OnboardingContentViewController.content(withTitle: "Pass the phone around to let your \n friends vote on nearby restaurants", body: "", image: onboardingImageFit(image: #imageLiteral(resourceName: "OnboardingSecondScreen")), buttonText: nil, action: nil)
     applyStyling(to: secondPage)
 
-    let thirdPage = OnboardingContentViewController.content(withTitle: "Eat.", body: "", image: onboardingImageFit(image: #imageLiteral(resourceName: "OnboardingThirdScreen")), buttonText: "EAT NOW") { _ in
+    let thirdPage = OnboardingContentViewController.content(withTitle: "Eat.", body: "", image: onboardingImageFit(image: #imageLiteral(resourceName: "OnboardingThirdScreen")), buttonText: "LET'S EAT") { _ in
       // YONNI change this to the map screen
 //      let vc = PeopleCountViewController.viewController()
         let vc = MapScreenController.viewController()
@@ -42,7 +42,7 @@ class Onboarding {
     thirdPage.actionButton.setTitleColor(UIColor.white, for: UIControlState.normal)
     thirdPage.actionButton.titleLabel?.font = Font.onboarding(size: 17)
 
-    let actionText = NSMutableAttributedString(string: "EAT NOW")
+    let actionText = NSMutableAttributedString(string: "LET'S EAT")
     actionText.addAttribute(NSAttributedStringKey.kern, value: CGFloat(2), range: NSRange(location: 0, length: actionText.length))
 
     thirdPage.actionButton.titleLabel?.attributedText = actionText
