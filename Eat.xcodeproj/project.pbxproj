@@ -57,8 +57,6 @@
 		781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */; };
 		7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7826DC6E2038DF9700A320BE /* EatingTime.storyboard */; };
 		9A779CE4204B4FE4009A22E0 /* MapScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */; };
-		9A79F66C204BD0EA003A3E3A /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79F66B204BD0EA003A3E3A /* MapController.swift */; };
-		9A79F66E204BD1B5003A3E3A /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A79F66D204BD1B5003A3E3A /* Map.storyboard */; };
 		9A79F674204BF80C003A3E3A /* MapScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A79F673204BF80C003A3E3A /* MapScreen.storyboard */; };
 		AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF03A42F204B0E6E00A4574F /* FindLocation.storyboard */; };
 		AF03A432204B129200A4574F /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF03A431204B129200A4574F /* FindLocationViewController.swift */; };
@@ -147,8 +145,6 @@
 		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
 		7F158878358682BA047372E0 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenController.swift; sourceTree = "<group>"; };
-		9A79F66B204BD0EA003A3E3A /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
-		9A79F66D204BD1B5003A3E3A /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		9A79F673204BF80C003A3E3A /* MapScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapScreen.storyboard; sourceTree = "<group>"; };
 		A7D88D3817ED433C15BE330B /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		AA7FCDE19EB2AEEEA0BF202B /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,7 +301,6 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
-				9A79F66A204BD0C1003A3E3A /* MapScreen2 */,
 				9A779CDE204B4786009A22E0 /* MapScreen */,
 				AF03A42E204B0E4A00A4574F /* FindLocationScreen */,
 				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
@@ -440,15 +435,6 @@
 			path = MapScreen;
 			sourceTree = "<group>";
 		};
-		9A79F66A204BD0C1003A3E3A /* MapScreen2 */ = {
-			isa = PBXGroup;
-			children = (
-				9A79F66B204BD0EA003A3E3A /* MapController.swift */,
-				9A79F66D204BD1B5003A3E3A /* Map.storyboard */,
-			);
-			path = MapScreen2;
-			sourceTree = "<group>";
-		};
 		AF03A42E204B0E4A00A4574F /* FindLocationScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,7 +567,6 @@
 				52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */,
 				05A3EE2D205DAE0800C52F4A /* ChosenRestaurant.storyboard in Resources */,
 				52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */,
-				9A79F66E204BD1B5003A3E3A /* Map.storyboard in Resources */,
 				AF03A430204B0E6E00A4574F /* FindLocation.storyboard in Resources */,
 				5544B9A7205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard in Resources */,
 				05A3EE1E20538BB500C52F4A /* RestaurantInfoScreen.storyboard in Resources */,
@@ -800,7 +785,6 @@
 				5246DA71205EE445002513E1 /* UIImage.swift in Sources */,
 				781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
-				9A79F66C204BD0EA003A3E3A /* MapController.swift in Sources */,
 				05A3EE242055001C00C52F4A /* RestaurantInfoCell.swift in Sources */,
 				5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */,
 				5246DA6A205E3C83002513E1 /* Double+Round.swift in Sources */,
