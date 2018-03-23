@@ -26,24 +26,24 @@ class ChosenRestaurantInfoCell: UITableViewCell {
     distance.text = "0.7km"
     distance.textColor = UIColor.gray
     distance.alpha = 0.9
-    distance.font = UIFont.systemFont(ofSize: 18)
+    distance.font = UIFont.systemFont(ofSize: 12)
 
     // set foodtype
     foodtype.text = "Lebanese"
     foodtype.textColor = UIColor.gray
     foodtype.alpha = 0.9
-    foodtype.font = UIFont.systemFont(ofSize: 16)
+    foodtype.font = UIFont.systemFont(ofSize: 12)
 
     // set hours
     hoursofoperation.text = "Open until 11pm"
     hoursofoperation.textColor = UIColor.init(red: 0.40, green: 0.71, blue: 0.48, alpha: 1)
-    hoursofoperation.font = UIFont.boldSystemFont(ofSize: 16)
+    hoursofoperation.font = UIFont.boldSystemFont(ofSize: 12)
 
     // set ReviewSize
     reviewSize.text = "23 Reviews"
     reviewSize.textColor = UIColor.gray
     reviewSize.alpha = 0.9
-    reviewSize.font = UIFont.systemFont(ofSize: 16)
+    reviewSize.font = UIFont.systemFont(ofSize: 12)
   }
 
   override func awakeFromNib() {
