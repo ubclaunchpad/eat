@@ -57,6 +57,7 @@ class RatingPriceViewController: UIViewController {
     minimumRatingLabel.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
     priceLabel.font = Font.header(size: 13)
     priceLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
 
     onePriceButton.layer.cornerRadius = 8
     onePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)

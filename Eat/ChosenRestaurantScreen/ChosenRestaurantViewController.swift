@@ -14,7 +14,7 @@ class ChosenRestaurantViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false)
+  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "www.yelp.ca", address: "", foodType: "", reviewCount: 0, distance: 0.0)
 
   static func viewController() -> RestaurantInfoViewController {
     let storyboard = UIStoryboard(name: "ChosenRestaurantStoryboard", bundle: nil)
@@ -29,6 +29,7 @@ class ChosenRestaurantViewController: UIViewController {
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
     tableView.allowsSelection = false
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 }
 

@@ -13,7 +13,8 @@ class RestaurantReviewCell: UITableViewCell {
 
   @IBOutlet weak var ReviewerName: UILabel!
   @IBOutlet weak var Review: UILabel!
-
+  @IBOutlet weak var reviewerImage: UIImageView!
+  
   func configure(restaurant: Restaurant) {
     ReviewerName.text = "Gina"
 
@@ -23,6 +24,7 @@ class RestaurantReviewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        reviewerImage.layer.cornerRadius = 5
         // Initialization code
     }
 
