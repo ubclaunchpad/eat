@@ -17,7 +17,7 @@ class ChosenRestaurantViewController: UIViewController {
   var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "www.yelp.ca", address: "", foodType: "", reviewCount: 0, distance: 0.0)
 
   static func viewController() -> RestaurantInfoViewController {
-    let storyboard = UIStoryboard(name: "ChosenRestaurantStoryboard", bundle: nil)
+    let storyboard = UIStoryboard(name: "ChosenRestaurant", bundle: nil)
     guard let chosenVC = storyboard.instantiateViewController(withIdentifier: "ChosenRestaurantVC") as? RestaurantInfoViewController
       else { fatalError() }
     return chosenVC
