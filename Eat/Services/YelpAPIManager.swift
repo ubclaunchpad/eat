@@ -24,7 +24,6 @@ extension YelpAPIManager {
   // RETURN: Promise<JSON>
   // INFO: Returns a Promise<JSON> which contains the list of restaurants matching the query
   func search(query: SearchQuery) -> Future<[Restaurant], ReadmeError> {
-
     return Future { complete in
       // Launch async call to get restaurants
       let returnVal = getRestaurantList(query: query)
@@ -33,6 +32,7 @@ extension YelpAPIManager {
         switch result {
         case .success(let val):
           let restaurants = self.generateRestaurantsList(json: val)
+          print(restaurants)
           complete(.success(restaurants))
         case .failure(_):
           print("No Restaurants returned")
@@ -56,6 +56,7 @@ extension YelpAPIManager {
     return Future { complete in
       Alamofire.request(url, headers: headers).responseJSON { response in
         if let json = response.result.value {
+          print(json)
           complete(.success(json))
         }
       }
@@ -108,6 +109,8 @@ extension YelpAPIManager {
         let restaurantRating = businessDict["rating"] as? Float,
         let restaurantPhone = businessDict["phone"] as? String,
         let restaurantStatus = businessDict["is_closed"] as? Bool,
+        let id = businessDict["id"] as? String,
+        let url = businessDict["url"] as? String,
         let imageUrl = businessDict["image_url"] as? String,
         let distance = businessDict["distance"] as? Double,
         let location = businessDict["location"] as? [String: Any],
@@ -138,7 +141,71 @@ extension YelpAPIManager {
                         address: address,
                         foodType: type,
                         reviewCount: reviewCount,
-                        distance: distance)
+                        distance: distance,
+                        id: id,
+                        yelpUrl: url)
+    }
+  }
+
+  func getReviews(resId: String) -> Future<[Review], ReadmeError> {
+    return Future { complete in
+      // Launch async call to get restaurants
+      let returnVal = retrieveYelpReviews(resId: resId)
+
+      returnVal.andThen { result in
+        switch result {
+        case .success(let val):
+          let reviews = self.parseReviews(json: val)
+          print(reviews)
+          complete(.success(reviews))
+        case .failure(_):
+          print("No Reviews found")
+        }
+      }
+    }
+  }
+
+
+  func retrieveYelpReviews(resId: String) -> Future<Any, ReadmeError> {
+    // Declare the headers for the query
+    let headers = [
+      "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
+      ]
+    var urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
+    guard let url = URL(string: urlString) else {
+      print("Problem retrieve reviews from yelp API")
+      return Future(error: ReadmeError.RequestFailed)
+    }
+    print("Getting list of reviews")
+
+    return Future { complete in
+      Alamofire.request(url, headers: headers).responseJSON { response in
+        if let json = response.result.value {
+          print(json)
+          complete(.success(json))
+        }
+      }
+    }
+  }
+
+  func parseReviews(json: Any) -> [Review] {
+    guard let dictionary = json as? [String: Any] else { return [] }
+    let reviews = dictionary["reviews"] as! NSArray
+
+    return reviews.flatMap { review in
+      guard let reviewDict = review as? [String: Any],
+        let rating = reviewDict["rating"] as? Float,
+        let content = reviewDict["text"] as? String,
+        let time = reviewDict["time_created"] as? String,
+
+        let user = reviewDict["user"] as? [String: Any],
+        let userName = user["name"] as? String,
+        let userImage = user["image_url"] as? String
+        else {
+          return nil
+      }
+
+      return Review(userName: userName, userRating: rating, userImage: userImage, content: content, timeStamp: time)
     }
   }
 }

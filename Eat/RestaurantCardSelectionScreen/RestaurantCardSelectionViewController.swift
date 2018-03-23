@@ -59,6 +59,7 @@ class RestaurantCardSelectionViewController: UIViewController {
         print(error)
     }
 
+    kolodaView.layer.cornerRadius = 15
     restartButton.isUserInteractionEnabled = false
     restartButton.isHidden = true
     nextEaterLabel.text = "Finding Restaurants..."
@@ -130,8 +131,18 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
   }
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-    let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: restaurants[index])
-    navigationController?.pushViewController(restaurantInfoVC, animated: true)
+//    dataManager.fetchReviews(with: self.restaurants[index].id)
+//      .onSuccess { rev in
+//        let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index], reviews: rev)
+//        self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
+//      }.onFailure { error in
+//        print("in fail")
+//        let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index], reviews: [])
+//        self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
+//        print(error)
+//    }
+    let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index])
+    self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
     print("card selected")
   }
 

@@ -195,7 +195,7 @@
                                                         <constraint firstAttribute="width" constant="28" id="tex-UC-QAF"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5j-oV-Yip">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5j-oV-Yip">
                                                     <rect key="frame" x="84" y="23.5" width="125" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="LK4-eD-UfX"/>
@@ -253,14 +253,14 @@
                                             <outlet property="addressImage" destination="ibl-21-qd7" id="TTY-yY-Ih1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantReviewCell" rowHeight="147" id="1cj-Ys-67L" userLabel="RestaurantReviewCell" customClass="RestaurantReviewCell" customModule="Eat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="579" width="375" height="147"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantReviewCell" rowHeight="160" id="1cj-Ys-67L" userLabel="RestaurantReviewCell" customClass="RestaurantReviewCell" customModule="Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="579" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cj-Ys-67L" id="dyd-EI-EuQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-QF-49s">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-QF-49s">
                                                     <rect key="frame" x="25" y="21" width="50" height="50"/>
                                                     <color key="backgroundColor" red="0.57316782994923865" green="0.57316782994923865" blue="0.57316782994923865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -268,32 +268,39 @@
                                                         <constraint firstAttribute="width" constant="50" id="gHb-n8-ZVv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilledRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="7QG-hZ-z8n">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="7QG-hZ-z8n">
                                                     <rect key="frame" x="85" y="44" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="BfU-VA-LFe"/>
                                                         <constraint firstAttribute="width" constant="27" id="kid-ns-zMg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilledRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-cE-Jbz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-cE-Jbz">
                                                     <rect key="frame" x="120" y="44" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="CYz-X3-zYJ"/>
                                                         <constraint firstAttribute="width" constant="27" id="UOa-jV-5dN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilledRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-Yl-oYL">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-Yl-oYL">
                                                     <rect key="frame" x="155" y="44" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="aIi-mU-Uw9"/>
                                                         <constraint firstAttribute="width" constant="27" id="cJm-rI-hRC"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilledRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="yfg-Vw-l9l">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="yfg-Vw-l9l">
                                                     <rect key="frame" x="190" y="44" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="sgC-IS-CCu"/>
                                                         <constraint firstAttribute="width" constant="27" id="uZr-6x-N2o"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="9iu-Iv-jKE">
+                                                    <rect key="frame" x="225" y="44" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="tQT-OK-90V"/>
+                                                        <constraint firstAttribute="height" constant="27" id="wqr-Ea-V3c"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byF-yX-kyT">
@@ -302,33 +309,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COa-J5-PVh">
-                                                    <rect key="frame" x="25" y="86" width="335" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COa-J5-PVh">
+                                                    <rect key="frame" x="25" y="86" width="335" height="63"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilledRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="9iu-Iv-jKE">
-                                                    <rect key="frame" x="225" y="44" width="13.5" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="13.5" id="FAA-XV-ijd"/>
-                                                        <constraint firstAttribute="height" constant="27" id="wqr-Ea-V3c"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="Gra-B4-10O">
-                                                    <rect key="frame" x="238" y="44" width="13.5" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="13.5" id="Fmc-ij-KJc"/>
-                                                        <constraint firstAttribute="height" constant="27" id="lmp-cu-nr4"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Gra-B4-10O" firstAttribute="bottom" secondItem="yfg-Vw-l9l" secondAttribute="bottom" id="0D7-h3-QJm"/>
                                                 <constraint firstItem="byF-yX-kyT" firstAttribute="leading" secondItem="dhf-QF-49s" secondAttribute="trailing" constant="10" id="1oS-Q5-HzF"/>
                                                 <constraint firstItem="yfg-Vw-l9l" firstAttribute="bottom" secondItem="Crf-Yl-oYL" secondAttribute="bottom" id="3Su-9n-VxQ"/>
                                                 <constraint firstItem="dhf-QF-49s" firstAttribute="top" secondItem="dyd-EI-EuQ" secondAttribute="top" constant="21" id="5Ty-v6-DeK"/>
-                                                <constraint firstItem="Gra-B4-10O" firstAttribute="leading" secondItem="9iu-Iv-jKE" secondAttribute="trailing" constant="-0.5" id="9zP-UU-6kv"/>
                                                 <constraint firstItem="iCd-cE-Jbz" firstAttribute="leading" secondItem="7QG-hZ-z8n" secondAttribute="trailing" constant="8" id="FUg-7F-Wsv"/>
                                                 <constraint firstAttribute="trailing" secondItem="COa-J5-PVh" secondAttribute="trailing" constant="15" id="H1K-Tu-bao"/>
                                                 <constraint firstItem="yfg-Vw-l9l" firstAttribute="leading" secondItem="Crf-Yl-oYL" secondAttribute="trailing" constant="8" id="JC6-iA-M0x"/>
@@ -350,6 +341,11 @@
                                         <connections>
                                             <outlet property="Review" destination="COa-J5-PVh" id="MdD-al-a98"/>
                                             <outlet property="ReviewerName" destination="byF-yX-kyT" id="4Bq-sg-oZ0"/>
+                                            <outlet property="ratingSquare1" destination="7QG-hZ-z8n" id="0X5-Ob-wFU"/>
+                                            <outlet property="ratingSquare2" destination="iCd-cE-Jbz" id="g7R-P5-oCY"/>
+                                            <outlet property="ratingSquare3" destination="Crf-Yl-oYL" id="k3o-TV-RSq"/>
+                                            <outlet property="ratingSquare4" destination="yfg-Vw-l9l" id="Oqc-hR-YOq"/>
+                                            <outlet property="ratingSquare5" destination="9iu-Iv-jKE" id="IvC-8Y-oea"/>
                                             <outlet property="reviewerImage" destination="dhf-QF-49s" id="WQ6-cE-41N"/>
                                         </connections>
                                     </tableViewCell>
@@ -389,8 +385,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EmptyRatingSquare" width="12" height="27"/>
-        <image name="FilledRatingSquare" width="24" height="27"/>
+        <image name="EmptyRatingSquare" width="17" height="19"/>
         <image name="RestaurantPhoto" width="700" height="699"/>
         <image name="close" width="14" height="14"/>
     </resources>

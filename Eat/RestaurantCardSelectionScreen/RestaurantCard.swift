@@ -75,7 +75,7 @@ class RestaurantCard : UIView {
   }
 
   private func setStyling(){
-    titleLabel.font = Font.header(size: 24)
+    titleLabel.font = Font.header(size: 22)
     distanceLabel.textColor = UIColor.gray
     distanceLabel.alpha = 0.9
     distanceLabel.font = Font.body(size: 16)
@@ -89,6 +89,10 @@ class RestaurantCard : UIView {
     reviewLabel.font = Font.body(size: 14)
     moreInfoLabel.font = Font.boldButton(size: 16)
 
+
+    contentView.layer.cornerRadius = 15
+    contentView.clipsToBounds = true
+    layer.cornerRadius = 15
     layer.shadowColor = #colorLiteral(red: 0.6151413766, green: 0.6227521808, blue: 0.6790529822, alpha: 1)
     layer.shadowOffset = CGSize(width: 7, height: 7)
     layer.masksToBounds = false

@@ -22,7 +22,9 @@ class RestaurantInfoViewController: UIViewController {
     return restaurantVC
   }
 
-  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0)
+  var myRestaurant = Restaurant(name: "", rating: 0, phone: "", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "")
+  let dataManager = DataManager.default
+  var reviews: [Review] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,12 +32,23 @@ class RestaurantInfoViewController: UIViewController {
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
     tableView.allowsSelection = false
+
+    self.getReviews()
   }
 
   @IBAction func exitButtonPressed(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
 
+  func getReviews(){
+    dataManager.fetchReviews(with: myRestaurant.id)
+      .onSuccess { rev in
+        self.reviews = rev
+        self.tableView.reloadSections(IndexSet(integer: Section.reviews.rawValue), with: .none)
+      }.onFailure { error in
+        print(error)
+    }
+  }
 }
 
 extension RestaurantInfoViewController: UITableViewDataSource {
@@ -71,7 +84,8 @@ extension RestaurantInfoViewController: UITableViewDataSource {
       return cell
     case .reviews:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell",for: indexPath) as? RestaurantReviewCell else { fatalError() }
-      cell.configure(restaurant: myRestaurant)
+      print(indexPath.row)
+      cell.configure(review: reviews[indexPath.row])
       return cell
     }
   }
@@ -89,7 +103,7 @@ extension RestaurantInfoViewController: UITableViewDataSource {
       return ""
     case .reviews:
       return "Reviews"
-  }
+    }
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,7 +118,7 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     case .InfoAddress:
       return 1
     case .reviews:
-      return 5
+      return reviews.count
     }
   }
 
