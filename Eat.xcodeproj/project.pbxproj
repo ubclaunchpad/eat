@@ -54,6 +54,7 @@
 		5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */; };
 		556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */; };
 		556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */; };
+		55E240792065F2E900C2FEAF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E240782065F2E900C2FEAF /* Review.swift */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
 		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
 		781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */; };
@@ -142,6 +143,7 @@
 		556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeopleCountScreen.storyboard; sourceTree = "<group>"; };
 		556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCountViewController.swift; sourceTree = "<group>"; };
 		556F4485490550D65F04B6C9 /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E240782065F2E900C2FEAF /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		5A2F768957CCA8E5852BB30D /* Pods_EatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		052B4A7C202FB2AF00291EE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55E240782065F2E900C2FEAF /* Review.swift */,
 				052B4A7D202FB2BD00291EE9 /* SearchQuery.swift */,
 				052B4A7F202FB2ED00291EE9 /* Restaurant.swift */,
 			);
@@ -807,6 +810,7 @@
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
+				55E240792065F2E900C2FEAF /* Review.swift in Sources */,
 				05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */,

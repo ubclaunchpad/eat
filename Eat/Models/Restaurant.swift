@@ -18,4 +18,6 @@ struct Restaurant {
   let foodType: String
   let reviewCount: Int
   let distance: Double
+  let id: String
+  let yelpUrl: String
 }

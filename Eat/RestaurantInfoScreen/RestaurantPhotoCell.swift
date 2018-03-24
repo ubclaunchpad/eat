@@ -15,6 +15,7 @@ class RestaurantPhotoCell: UITableViewCell {
   override func awakeFromNib() {
         super.awakeFromNib()
         seeMoreImageButton.titleLabel?.font = Font.button(size: 16)
+        seeMoreImageButton.isHidden = true
         // Initialization code
     }
 
