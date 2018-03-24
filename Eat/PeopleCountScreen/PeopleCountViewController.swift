@@ -19,23 +19,15 @@ class PeopleCountViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
 
-//  YONNI uncomment this
-//  static func viewController(searchQuery: SearchQuery) -> PeopleCountViewController {
-//    let storyboard = UIStoryboard(name: "PeopleCountScreen", bundle: nil)
-//
-//    guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
-//      else { fatalError() }
-//
-//    vc.searchQuery = searchQuery
-//
-//    return vc
-//  }
-
-  // YONNI delete this
-  static func viewController() -> UINavigationController {
+  static func viewController(searchQuery: SearchQuery) -> PeopleCountViewController {
     let storyboard = UIStoryboard(name: "PeopleCountScreen", bundle: nil)
-    guard let navigationVC = storyboard.instantiateInitialViewController() as? UINavigationController else { fatalError() }
-    return navigationVC
+
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
+      else { fatalError() }
+
+    vc.searchQuery = searchQuery
+
+    return vc
   }
 
   var searchQuery: SearchQuery = SearchQuery()
@@ -44,6 +36,7 @@ class PeopleCountViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     setupButtons()
     setupLabels()
     setNavigation()

@@ -18,8 +18,19 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Show your location on the map</string>
+	<key>NSLocationWhenInUseUsageDescription </key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>circular-bold.otf</string>
@@ -29,7 +40,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>PeopleCountScreen</string>
+	<string>ChosenRestaurant</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

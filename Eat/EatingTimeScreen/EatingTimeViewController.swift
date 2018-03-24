@@ -46,6 +46,7 @@ class EatingTimeViewController: UIViewController {
     restaurantHoursTextField.font = Font.body(size: 22)
     restaurantHoursTextField.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
     restaurantHoursTextField.tintColor = .clear
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 
   private func setGradient() {

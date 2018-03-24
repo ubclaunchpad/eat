@@ -32,8 +32,8 @@ class RestaurantInfoViewController: UIViewController {
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
     tableView.allowsSelection = false
-
     self.getReviews()
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 
   @IBAction func exitButtonPressed(_ sender: Any) {

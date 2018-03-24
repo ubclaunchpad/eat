@@ -76,6 +76,7 @@ class DietaryRestrictionsViewController: UIViewController {
     halalButton.titleLabel?.font = Font.button(size: 16)
 
     preferenceLine.backgroundColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 
   @objc func dismissKeyboard() {

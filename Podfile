@@ -6,10 +6,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target ‘Eat’ do
   pod 'Alamofire', '~> 4.5’
+  pod 'GooglePlaces'
+  pod ‘GooglePlacePicker’
+  pod 'GoogleMaps’
+  pod 'SearchTextField'
   pod 'PromiseKit', '~> 4.4'
   pod 'BrightFutures'
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
   pod 'YelpAPI'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Koloda'
