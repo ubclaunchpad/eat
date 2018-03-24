@@ -17,7 +17,7 @@ class ChosenRestaurantViewController: UIViewController {
   var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "www.yelp.ca", address: "", foodType: "", reviewCount: 0, distance: 0.0)
 
   static func viewController() -> RestaurantInfoViewController {
-    let storyboard = UIStoryboard(name: "ChosenRestaurantStoryboard", bundle: nil)
+    let storyboard = UIStoryboard(name: "ChosenRestaurant", bundle: nil)
     guard let chosenVC = storyboard.instantiateViewController(withIdentifier: "ChosenRestaurantVC") as? RestaurantInfoViewController
       else { fatalError() }
     return chosenVC
@@ -36,9 +36,9 @@ class ChosenRestaurantViewController: UIViewController {
 extension ChosenRestaurantViewController: UITableViewDataSource {
 
   enum Section: Int {
-    case photo, title, map, buttons
+    case photo, title, callRestaurant, exploreMenu, map
 
-    static let count = 4
+    static let count = 5
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,12 +56,17 @@ extension ChosenRestaurantViewController: UITableViewDataSource {
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChosenRestaurantInfoCell",for: indexPath) as? ChosenRestaurantInfoCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
       return cell
+    case .callRestaurant:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "CallRestaurantCell",for: indexPath) as? CallRestaurantCell else { fatalError() }
+      cell.configure(restaurant: myRestaurant)
+      return cell
+    case .exploreMenu:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreMenuCell",for: indexPath) as? ExploreMenuCell else { fatalError() }
+      cell.configure(restaurant: myRestaurant)
+      return cell
     case .map:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChosenRestauantMapCell",for: indexPath) as? ChosenRestaurantMapCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
-      return cell
-    case .buttons:
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "MapButtonsCell",for: indexPath) as? MapButtonsCell else { fatalError() }
       return cell
     }
   }
@@ -73,9 +78,11 @@ extension ChosenRestaurantViewController: UITableViewDataSource {
       return ""
     case .title:
       return ""
-    case .map:
+    case .callRestaurant:
       return ""
-    case .buttons:
+    case .exploreMenu:
+      return ""
+    case .map:
       return ""
     }
   }
@@ -87,13 +94,14 @@ extension ChosenRestaurantViewController: UITableViewDataSource {
       return 1
     case .title:
       return 1
-    case .map:
+    case .callRestaurant:
       return 1
-    case .buttons:
+    case .exploreMenu:
+      return 1
+    case .map:
       return 1
     }
   }
-
 }
 
 extension ChosenRestaurantViewController: UITableViewDelegate {
@@ -103,11 +111,13 @@ extension ChosenRestaurantViewController: UITableViewDelegate {
     case .photo:
       return 267
     case .title:
-      return 160
+      return 145
+    case .callRestaurant:
+      return 51
+    case .exploreMenu:
+      return 51
     case .map:
-      return 300
-    case .buttons:
-      return 260
+      return 221
     }
   }
 }

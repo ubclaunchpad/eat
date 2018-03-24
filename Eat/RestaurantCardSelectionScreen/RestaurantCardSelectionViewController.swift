@@ -128,6 +128,9 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
       restartButton.isHidden = true
       buttonsView.isHidden = true
       print("Go to next screen")
+      // Added code to go to the next screen
+      let viewController:UIViewController = UIStoryboard(name: "ChosenRestaurant", bundle: nil).instantiateViewController(withIdentifier: "ChosenRestaurantVC") as UIViewController
+      self.present(viewController, animated: false, completion: nil)
     }
     print("No more card left")
   }

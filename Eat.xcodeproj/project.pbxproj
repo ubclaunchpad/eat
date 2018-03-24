@@ -24,6 +24,8 @@
 		05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE32205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift */; };
 		05A3EE35205DB04300C52F4A /* ChosenRestaurantMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE34205DB04300C52F4A /* ChosenRestaurantMapCell.swift */; };
 		05A3EE37205DCE7A00C52F4A /* MapButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE36205DCE7A00C52F4A /* MapButtonsCell.swift */; };
+		05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE392063469C00C52F4A /* CallRestaurantCell.swift */; };
+		05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE3B206346C800C52F4A /* ExploreMenuCell.swift */; };
 		5113162BFFE1A0EC599F7653 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2F768957CCA8E5852BB30D /* Pods_EatUITests.framework */; };
 		5225CB1E2038E1C4000726E7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225CB1D2038E1C4000726E7 /* Font.swift */; };
 		5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */; };
@@ -99,6 +101,8 @@
 		05A3EE32205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenRestaurantInfoCell.swift; sourceTree = "<group>"; };
 		05A3EE34205DB04300C52F4A /* ChosenRestaurantMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenRestaurantMapCell.swift; sourceTree = "<group>"; };
 		05A3EE36205DCE7A00C52F4A /* MapButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonsCell.swift; sourceTree = "<group>"; };
+		05A3EE392063469C00C52F4A /* CallRestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRestaurantCell.swift; sourceTree = "<group>"; };
+		05A3EE3B206346C800C52F4A /* ExploreMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMenuCell.swift; sourceTree = "<group>"; };
 		15C00D4E69CBD22444BAC06B /* Pods-EatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5225CB1D2038E1C4000726E7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPriceViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				05A3EE32205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift */,
 				05A3EE34205DB04300C52F4A /* ChosenRestaurantMapCell.swift */,
 				05A3EE36205DCE7A00C52F4A /* MapButtonsCell.swift */,
+				05A3EE392063469C00C52F4A /* CallRestaurantCell.swift */,
+				05A3EE3B206346C800C52F4A /* ExploreMenuCell.swift */,
 			);
 			path = ChosenRestaurantScreen;
 			sourceTree = "<group>";
@@ -801,7 +807,9 @@
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
+				05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
+				05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */,
 				AF03A432204B129200A4574F /* FindLocationViewController.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,
 				5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */,
