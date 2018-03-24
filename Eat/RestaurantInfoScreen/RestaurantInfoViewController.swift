@@ -98,11 +98,11 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     case .title:
       return ""
     case .InfoMenu:
-      return "Info"
+      return "INFO"
     case .InfoAddress:
       return ""
     case .reviews:
-      return "Reviews"
+      return "REVIEWS"
     }
   }
 
