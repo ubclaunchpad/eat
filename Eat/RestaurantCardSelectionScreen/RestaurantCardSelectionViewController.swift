@@ -52,6 +52,9 @@ class RestaurantCardSelectionViewController: UIViewController {
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
+        if res.count <= 0 {
+          
+        }
         self.restaurants = res
         self.keptRestaurantCount = [Int](repeating: 0, count: self.restaurants.count)
       }.onFailure { error in
@@ -136,13 +139,18 @@ class RestaurantCardSelectionViewController: UIViewController {
 }
 
 extension RestaurantCardSelectionViewController: KolodaViewDelegate {
+
+  @objc func pushRestaurantInfoVC(index: Int) {
+    let viewController:UIViewController = UIStoryboard(name: "ChosenRestaurant", bundle: nil).instantiateViewController(withIdentifier: "ChosenRestaurantVC") as UIViewController
+    self.navigationController?.pushViewController(viewController, animated: true)
+  }
+
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
     self.setOutOfCardStyling()
     if currNumOfPlayer >= numberOfPlayers {
       print("Go to next screen")
       // Added code to go to the next screen
-      let viewController:UIViewController = UIStoryboard(name: "ChosenRestaurant", bundle: nil).instantiateViewController(withIdentifier: "ChosenRestaurantVC") as UIViewController
-      self.present(viewController, animated: false, completion: nil)
+      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushRestaurantInfoVC(index:)), userInfo: nil, repeats: false)
     }
   }
 
