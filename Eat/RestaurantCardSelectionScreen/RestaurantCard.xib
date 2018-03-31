@@ -39,8 +39,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3me-1u-Duv">
-                    <rect key="frame" x="16" y="406" width="120.5" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3me-1u-Duv">
+                    <rect key="frame" x="16" y="406" width="233" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="W7u-tC-s2d"/>
                     </constraints>
@@ -107,7 +107,7 @@
                         <constraint firstItem="jHI-JX-2sR" firstAttribute="top" secondItem="lfN-2M-bKb" secondAttribute="top" id="zj0-Hy-SxH"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HK-Op-JOt">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HK-Op-JOt">
                     <rect key="frame" x="254" y="406" width="66" height="25"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -159,6 +159,7 @@
                 <constraint firstItem="O5Y-v2-hRx" firstAttribute="leading" secondItem="n39-ZG-Oea" secondAttribute="leading" id="mqN-2X-4s4"/>
                 <constraint firstItem="N2A-9L-gG0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="n42-t6-hiN"/>
                 <constraint firstItem="uV9-0p-h9a" firstAttribute="bottom" secondItem="O5Y-v2-hRx" secondAttribute="bottom" id="nMk-qy-dCA"/>
+                <constraint firstItem="3HK-Op-JOt" firstAttribute="leading" secondItem="3me-1u-Duv" secondAttribute="trailing" constant="5" id="pm9-Rs-f6o"/>
                 <constraint firstItem="N2A-9L-gG0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rmg-aE-04s"/>
                 <constraint firstItem="3HK-Op-JOt" firstAttribute="bottom" secondItem="3me-1u-Duv" secondAttribute="bottom" id="sWe-xL-haR"/>
                 <constraint firstItem="n39-ZG-Oea" firstAttribute="leading" secondItem="3me-1u-Duv" secondAttribute="leading" id="tGo-wz-ENA"/>

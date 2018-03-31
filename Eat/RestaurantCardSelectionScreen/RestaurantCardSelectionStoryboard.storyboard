@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vwj-fN-jVp">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="RestaurantCardSelectionViewController" id="Vwj-fN-jVp" customClass="RestaurantCardSelectionViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7C-h6-Usy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eater_icon" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-Ri-zO5">
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqt-QZ-VU4" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="22" y="95" width="331" height="451"/>
+                                <rect key="frame" x="22" y="95" width="331" height="596"/>
                                 <color key="backgroundColor" red="0.53605007123072146" green="0.60592484139048441" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxi-zG-GVT">
@@ -96,12 +96,13 @@
                                 <color key="progressTintColor" red="0.47866302728652954" green="0.53127205371856689" blue="0.92126697301864624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-Sr-y38">
-                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="748" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62G-so-4Wn">
-                                        <rect key="frame" x="40" y="-46" width="129" height="100"/>
+                                        <rect key="frame" x="40" y="-46" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="pVC-ql-5rd"/>
+                                            <constraint firstAttribute="width" constant="100" id="u6c-AM-Xag"/>
                                         </constraints>
                                         <state key="normal" title="No" image="button_skip"/>
                                         <connections>
@@ -142,7 +143,7 @@
                             <constraint firstItem="xHa-qF-LNW" firstAttribute="trailing" secondItem="qqt-QZ-VU4" secondAttribute="trailing" constant="22" id="XO8-1b-xpl"/>
                             <constraint firstItem="2bw-Sr-y38" firstAttribute="trailing" secondItem="xHa-qF-LNW" secondAttribute="trailing" id="XUX-gd-0eZ"/>
                             <constraint firstItem="62G-so-4Wn" firstAttribute="top" secondItem="qqt-QZ-VU4" secondAttribute="bottom" constant="11" id="Yhf-ry-OzG"/>
-                            <constraint firstItem="2bw-Sr-y38" firstAttribute="bottom" secondItem="xHa-qF-LNW" secondAttribute="bottom" id="aNK-wc-uTz"/>
+                            <constraint firstItem="2bw-Sr-y38" firstAttribute="bottom" secondItem="t7C-h6-Usy" secondAttribute="bottom" id="aNK-wc-uTz"/>
                             <constraint firstItem="ncW-H0-Ne4" firstAttribute="top" secondItem="Nxi-zG-GVT" secondAttribute="bottom" constant="1" id="brA-Kd-7Bu"/>
                             <constraint firstItem="Nxi-zG-GVT" firstAttribute="leading" secondItem="xHa-qF-LNW" secondAttribute="leading" id="fUR-Ob-AYd"/>
                             <constraint firstItem="tcc-Yb-KLe" firstAttribute="top" secondItem="YHV-Ri-zO5" secondAttribute="bottom" constant="17" id="foa-kI-Bm6"/>
@@ -173,8 +174,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_keep" width="105" height="105"/>
-        <image name="button_skip" width="105" height="105"/>
+        <image name="button_keep" width="105" height="101"/>
+        <image name="button_skip" width="105" height="100"/>
         <image name="close" width="14" height="14"/>
         <image name="eater_icon" width="100" height="72"/>
     </resources>
