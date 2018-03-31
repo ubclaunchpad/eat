@@ -77,8 +77,8 @@ class MapScreenController: UIViewController{
   }
 
   func applyStyling() {
-    headerView.layer.shadowRadius = 10
-    headerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+    headerView.layer.shadowRadius = 5
+    headerView.layer.shadowOffset = CGSize(width: 0, height: 9)
     headerView.layer.shadowColor = UIColor.black.cgColor
     headerView.layer.shadowOpacity = 0.25
 
