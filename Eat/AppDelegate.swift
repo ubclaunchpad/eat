@@ -12,8 +12,8 @@ import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
   var window: UIWindow?
+  let dataManager = DataManager.default
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -21,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSServices.provideAPIKey("AIzaSyCxsiAIumcoDHZZ9H48Pf0SaJ1zt--kD9A")
     GMSPlacesClient.provideAPIKey("AIzaSyCxsiAIumcoDHZZ9H48Pf0SaJ1zt--kD9A")
 
-    self.window?.rootViewController = Onboarding(window: window).viewController()
-    
+    if dataManager.isFirstLaunch() {
+      self.window?.rootViewController = Onboarding(window: window).viewController()
+    } else {
+      self.window?.rootViewController = MapScreenController.viewController()
+    }
     return true
   }
 

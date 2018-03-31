@@ -13,6 +13,8 @@ import Alamofire
 internal final class DataManager {
   static var `default` = DataManager()
 
+  //check first launch for onboarding tutorial
+
   fileprivate let yelpAPIManager: YelpAPIManager
   init(yelpAPIManager: YelpAPIManager = YelpAPIManager()) {
     self.yelpAPIManager = yelpAPIManager
@@ -55,3 +57,14 @@ extension DataManager {
     }
   }
 }
+
+// check first launch to show tutorial
+extension DataManager {
+  func isFirstLaunch() -> Bool {
+    return !UserDefaults.standard.bool(forKey: "launchedBefore")
+  }
+  func setFirstLaunch(value: Bool) {
+    UserDefaults.standard.set(value, forKey: "launchedBefore")
+  }
+}
+
