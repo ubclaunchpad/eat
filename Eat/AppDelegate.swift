@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSPlacesClient.provideAPIKey("AIzaSyCxsiAIumcoDHZZ9H48Pf0SaJ1zt--kD9A")
 
     if dataManager.isFirstLaunch() {
-      print("First launch, onboarding screen should show.")
       self.window?.rootViewController = Onboarding(window: window).viewController()
     } else {
-      print("Not first launch, onboarding screen skipped.")
       self.window?.rootViewController = MapScreenController.viewController()
     }
     return true
