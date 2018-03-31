@@ -42,15 +42,15 @@ class Onboarding {
     applyStyling(to: thirdPage)
 
     thirdPage.actionButton.setTitleColor(UIColor.white, for: UIControlState.normal)
-    thirdPage.actionButton.titleLabel?.font = Font.onboarding(size: 17)
+    thirdPage.actionButton.titleLabel?.font = Font.onboardingAction(size: 17)
 
     let actionText = NSMutableAttributedString(string: "LET'S EAT")
     actionText.addAttribute(NSAttributedStringKey.kern, value: CGFloat(2), range: NSRange(location: 0, length: actionText.length))
 
     thirdPage.actionButton.titleLabel?.attributedText = actionText
     thirdPage.actionButton.backgroundColor = UIColor(red: 0.36, green: 0.41, blue: 1, alpha: 1)
-    thirdPage.actionButtonBottomMargin = 10 + (safeArea?.bottom ?? 0)
-    thirdPage.actionButtonHorizontalMargin = 10 + (safeArea?.left ?? 0)
+    thirdPage.actionButtonBottomMargin = 15 + (safeArea?.bottom ?? 0)
+    thirdPage.actionButtonHorizontalMargin = 15 + (safeArea?.left ?? 0)
     thirdPage.actionButtonCornerRadius = 12
 
     // Define onboarding view controller properties
