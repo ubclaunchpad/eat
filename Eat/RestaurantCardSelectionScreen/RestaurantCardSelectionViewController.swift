@@ -20,6 +20,7 @@ class RestaurantCardSelectionViewController: UIViewController {
   @IBOutlet weak var eaterCountLabel: UILabel!
   @IBOutlet weak var eaterIcon: UIImageView!
   @IBOutlet weak var buttonsView: UIView!
+  @IBOutlet weak var backgroundView: UIView!
 
   static func viewController(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
     let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
@@ -94,7 +95,8 @@ class RestaurantCardSelectionViewController: UIViewController {
 
 
   private func setStyling() {
-    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+    backgroundView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+    self.view.backgroundColor = .white
     kolodaView.layer.cornerRadius = 15
 
     nextEaterLabel.font = Font.body(size: 20)
