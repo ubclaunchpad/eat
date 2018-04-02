@@ -20,4 +20,6 @@ struct Restaurant {
   let distance: Double
   let id: String
   let yelpUrl: String
+  let lat: Double
+  let lon: Double
 }

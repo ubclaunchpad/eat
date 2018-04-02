@@ -22,7 +22,7 @@ class RestaurantInfoViewController: UIViewController {
     return restaurantVC
   }
 
-  var myRestaurant = Restaurant(name: "", rating: 0, phone: "", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "")
+  var myRestaurant = Restaurant(name: "", rating: 0, phone: "", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "", lat: 0, lon: 0)
   let dataManager = DataManager.default
   var reviews: [Review] = []
 

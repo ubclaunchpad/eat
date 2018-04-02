@@ -17,7 +17,7 @@ class ChosenRestaurantMapCell: UITableViewCell {
   func configure(restaurant: Restaurant) {
 
     myRestaurant = restaurant
-    let camera = GMSCameraPosition.camera(withLatitude: 49.26626, longitude: -123.2408, zoom: 15.0)
+    let camera = GMSCameraPosition.camera(withLatitude: restaurant.lat, longitude: restaurant.lon, zoom: 15.0)
     let googleMap = GMSMapView.map(withFrame: mapView.bounds, camera: camera)
     googleMap.settings.myLocationButton = true
     googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -31,7 +31,7 @@ class ChosenRestaurantMapCell: UITableViewCell {
 
     // Creates a marker in the center of the map.
     let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: 49.26626, longitude: -123.2408)
+    marker.position = CLLocationCoordinate2D(latitude: restaurant.lat, longitude: restaurant.lon)
     marker.title = restaurant.name
     marker.map = googleMap
   }
@@ -69,7 +69,7 @@ class ChosenRestaurantMapCell: UITableViewCell {
     if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
     {
       UIApplication.shared.openURL(NSURL(string:
-        "comgooglemaps://?saddr=&daddr=\(Float(49.26626)),\(Float(-123.2408))&directionsmode=driving")! as URL)
+        "comgooglemaps://?saddr=&daddr=\(Float(myRestaurant.lat)),\(Float(myRestaurant.lon))&directionsmode=driving")! as URL)
     } else
     {
       NSLog("Can't use com.google.maps://");

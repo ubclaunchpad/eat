@@ -121,7 +121,10 @@ extension YelpAPIManager {
         let categories = businessDict["categories"] as? NSArray,
         let firstCategory = categories[0] as? [String: Any],
         let type = firstCategory["title"] as? String,
-        let reviewCount = businessDict["review_count"] as? Int
+        let reviewCount = businessDict["review_count"] as? Int,
+        let coord = businessDict["coordinates"] as? [String: Any],
+        let lat = coord["latitude"] as? Double,
+        let lon = coord["longitude"] as? Double
         else { return nil }
 
       var address = address1
@@ -143,7 +146,9 @@ extension YelpAPIManager {
                         reviewCount: reviewCount,
                         distance: distance,
                         id: id,
-                        yelpUrl: url)
+                        yelpUrl: url,
+                        lat: lat,
+                        lon: lon)
     }
   }
 
