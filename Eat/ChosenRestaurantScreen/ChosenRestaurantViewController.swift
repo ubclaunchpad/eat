@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class ChosenRestaurantViewController: UIViewController {
 
@@ -41,14 +42,12 @@ class ChosenRestaurantViewController: UIViewController {
   }
 
   func openInSafari() {
-    guard let url = URL(string: myRestaurant.yelpUrl) else {
-      return //be safe
-    }
+    if let url = URL(string: myRestaurant.yelpUrl) {
+      let config = SFSafariViewController.Configuration()
+      config.entersReaderIfAvailable = true
 
-    if #available(iOS 10.0, *) {
-      UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    } else {
-      UIApplication.shared.openURL(url)
+      let vc = SFSafariViewController(url: url, configuration: config)
+      present(vc, animated: true)
     }
   }
 

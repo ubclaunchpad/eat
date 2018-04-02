@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mF9-mQ-4aM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mF9-mQ-4aM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +91,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-hj-tjb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenNow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-hj-tjb">
                                                     <rect key="frame" x="25" y="110" width="335" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hqm-mo-9mc"/>
@@ -184,7 +184,7 @@
                                         <connections>
                                             <outlet property="distance" destination="k2y-yW-Muh" id="Kbh-gH-X3X"/>
                                             <outlet property="foodtype" destination="rdH-mj-iy0" id="ke7-vV-cHQ"/>
-                                            <outlet property="phoneLabel" destination="xQX-hj-tjb" id="njE-fu-Vj6"/>
+                                            <outlet property="openNow" destination="xQX-hj-tjb" id="odd-QO-Gq5"/>
                                             <outlet property="ratingSquare1" destination="OWd-LM-gOH" id="waW-eQ-glG"/>
                                             <outlet property="ratingSquare2" destination="HNU-qS-X59" id="2Nz-A4-yvi"/>
                                             <outlet property="ratingSquare3" destination="KeT-Fc-T83" id="rVg-cb-kvh"/>
@@ -201,9 +201,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bbh-sa-jpE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KnifeSpoonIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bbh-sa-jpE">
                                                     <rect key="frame" x="25" y="23" width="28" height="28"/>
-                                                    <color key="backgroundColor" red="0.57316782994923865" green="0.57316782994923865" blue="0.57316782994923865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="44z-yd-kti"/>
                                                         <constraint firstAttribute="width" constant="28" id="tex-UC-QAF"/>
@@ -241,9 +240,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibl-21-qd7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DirectionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ibl-21-qd7">
                                                     <rect key="frame" x="25" y="19" width="28" height="28"/>
-                                                    <color key="backgroundColor" red="0.57316782994923865" green="0.57316782994923865" blue="0.57316782994923865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="6UZ-Oo-qXl"/>
                                                         <constraint firstAttribute="width" constant="28" id="UR2-gE-vrM"/>
@@ -407,7 +405,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DirectionIcon" width="37" height="40"/>
         <image name="EmptyRatingSquare" width="17" height="19"/>
+        <image name="KnifeSpoonIcon" width="40" height="42"/>
         <image name="RestaurantPhoto" width="700" height="699"/>
         <image name="close" width="14" height="14"/>
     </resources>

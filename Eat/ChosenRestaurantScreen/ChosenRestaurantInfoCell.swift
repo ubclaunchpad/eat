@@ -45,7 +45,7 @@ class ChosenRestaurantInfoCell: UITableViewCell {
 
     // set hours
     if(!restaurant.status) {
-      hoursofoperation.text = "Open Now!"
+      hoursofoperation.text = "Open Now"
       hoursofoperation.textColor = #colorLiteral(red: 0.1512300968, green: 0.6803299785, blue: 0.3782986999, alpha: 1)
     } else {
       hoursofoperation.text = "Closed"

@@ -14,7 +14,7 @@ class RestaurantCard : UIView {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var reviewLabel: UILabel!
   @IBOutlet weak var typeLabel: UILabel!
-  @IBOutlet weak var phoneLabel: UILabel!
+  @IBOutlet weak var openNowLabel: UILabel!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var ratingSquare1: UIImageView!
   @IBOutlet weak var ratingSquare2: UIImageView!
@@ -46,7 +46,14 @@ class RestaurantCard : UIView {
       typeLabel.text = viewModel.foodType
       distanceLabel.text = String(format: "%.2f", viewModel.distance/1000) + "km"
       reviewLabel.text = String(viewModel.reviewCount) + " Reviews"
-      phoneLabel.text = viewModel.phone
+      // set hours
+      if(!viewModel.status) {
+        openNowLabel.text = "Open Now"
+        openNowLabel.textColor = #colorLiteral(red: 0.1512300968, green: 0.6803299785, blue: 0.3782986999, alpha: 1)
+      } else {
+        openNowLabel.text = "Closed"
+        openNowLabel.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+      }
       setStyling()
       if let url = URL(string: viewModel.imageUrl), let data = try? Data(contentsOf: url) {
         imageView.image = UIImage(data: data)
@@ -82,8 +89,7 @@ class RestaurantCard : UIView {
     typeLabel.textColor = UIColor.gray
     typeLabel.alpha = 0.9
     typeLabel.font = Font.body(size: 14)
-    phoneLabel.textColor = #colorLiteral(red: 0.1527305841, green: 0.6796044707, blue: 0.3771348, alpha: 1)
-    phoneLabel.font = Font.body(size: 14)
+    openNowLabel.font = Font.body(size: 14)
     reviewLabel.textColor = UIColor.gray
     reviewLabel.alpha = 0.9
     reviewLabel.font = Font.body(size: 14)
