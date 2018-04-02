@@ -15,7 +15,7 @@ class RestaurantTitleCell: UITableViewCell {
   @IBOutlet weak var title: UILabel!
   @IBOutlet weak var distance: UILabel!
   @IBOutlet weak var foodtype: UILabel!
-  @IBOutlet weak var phoneLabel: UILabel!
+  @IBOutlet weak var openNow: UILabel!
   @IBOutlet weak var reviewSize: UILabel!
   @IBOutlet weak var ratingSquare1: UIImageView!
   @IBOutlet weak var ratingSquare2: UIImageView!
@@ -43,9 +43,14 @@ class RestaurantTitleCell: UITableViewCell {
       foodtype.font = Font.body(size: 14)
 
       // set hours
-      phoneLabel.text = restaurant.phone
-      phoneLabel.textColor = UIColor.init(red: 0.40, green: 0.71, blue: 0.48, alpha: 1)
-      phoneLabel.font = Font.body(size: 14)
+      if(!restaurant.status) {
+        openNow.text = "Open Now"
+        openNow.textColor = #colorLiteral(red: 0.1512300968, green: 0.6803299785, blue: 0.3782986999, alpha: 1)
+      } else {
+        openNow.text = "Closed"
+        openNow.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+      }
+      openNow.font = Font.body(size: 14)
 
       // set ReviewSize
       reviewSize.text = String(restaurant.reviewCount) + " Reviews"
