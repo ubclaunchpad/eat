@@ -141,7 +141,7 @@ class RestaurantCardSelectionViewController: UIViewController {
 extension RestaurantCardSelectionViewController: KolodaViewDelegate {
 
   @objc func pushRestaurantInfoVC(index: Int) {
-    let viewController:UIViewController = UIStoryboard(name: "ChosenRestaurant", bundle: nil).instantiateViewController(withIdentifier: "ChosenRestaurantVC") as UIViewController
+    let viewController = ChosenRestaurantViewController.viewController(restaurant: self.restaurants[0])
     self.navigationController?.pushViewController(viewController, animated: true)
   }
 

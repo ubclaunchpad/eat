@@ -19,7 +19,7 @@ class CallRestaurantCell: UITableViewCell {
       callRestaurantLabel.text = "Call restaurant"
       callRestaurantLabel.font = UIFont.systemFont(ofSize: 16)
       callRestaurantLabel.textColor = UIColor(red: 0.42, green: 0.44, blue: 0.6, alpha: 1)
-      phoneNumber.text = "604-515-1251"
+      phoneNumber.text = restaurant.phone
       phoneNumber.font = UIFont.systemFont(ofSize: 11)
       phoneNumber.textColor = UIColor(red: 0.62, green: 0.62, blue: 0.75, alpha: 1)
     }

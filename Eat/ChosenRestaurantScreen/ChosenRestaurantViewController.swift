@@ -14,13 +14,22 @@ class ChosenRestaurantViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  var myRestaurant = Restaurant(name: "Jam Jar", rating: 4, phone: "604-152-1521", status: false, imageUrl: "www.yelp.ca", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "")
 
-  static func viewController() -> RestaurantInfoViewController {
+  var myRestaurant: Restaurant!
+  var urlString: String!
+
+  static func viewController(restaurant: Restaurant) -> ChosenRestaurantViewController {
     let storyboard = UIStoryboard(name: "ChosenRestaurant", bundle: nil)
-    guard let chosenVC = storyboard.instantiateViewController(withIdentifier: "ChosenRestaurantVC") as? RestaurantInfoViewController
+    guard let chosenVC = storyboard.instantiateViewController(withIdentifier: "ChosenRestaurantVC") as? ChosenRestaurantViewController
       else { fatalError() }
+    chosenVC.myRestaurant = restaurant
+    chosenVC.urlString = restaurant.yelpUrl
     return chosenVC
+  }
+
+  @IBAction func exitButton(_ sender: Any) {
+    let viewController = MapScreenController.viewController()
+    self.present(viewController, animated: true)
   }
 
   override func viewDidLoad() {
@@ -28,9 +37,21 @@ class ChosenRestaurantViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
-    tableView.allowsSelection = false
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
+
+  func openInSafari() {
+    guard let url = URL(string: myRestaurant.yelpUrl) else {
+      return //be safe
+    }
+
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+      UIApplication.shared.openURL(url)
+    }
+  }
+
 }
 
 extension ChosenRestaurantViewController: UITableViewDataSource {
@@ -51,10 +72,13 @@ extension ChosenRestaurantViewController: UITableViewDataSource {
     case .photo:
       guard let cell =
         tableView.dequeueReusableCell(withIdentifier: "ChosenRestaurantPhotoCell", for: indexPath) as? ChosenRestaurantPhotoCell else { fatalError() }
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
+      cell.configure(restaurant: myRestaurant)
       return cell
     case .title:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChosenRestaurantInfoCell",for: indexPath) as? ChosenRestaurantInfoCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell
     case .callRestaurant:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "CallRestaurantCell",for: indexPath) as? CallRestaurantCell else { fatalError() }
@@ -66,24 +90,9 @@ extension ChosenRestaurantViewController: UITableViewDataSource {
       return cell
     case .map:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChosenRestauantMapCell",for: indexPath) as? ChosenRestaurantMapCell else { fatalError() }
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       cell.configure(restaurant: myRestaurant)
       return cell
-    }
-  }
-
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    guard let section = Section(rawValue: section) else { fatalError() }
-    switch section {
-    case .photo:
-      return ""
-    case .title:
-      return ""
-    case .callRestaurant:
-      return ""
-    case .exploreMenu:
-      return ""
-    case .map:
-      return ""
     }
   }
 
@@ -111,13 +120,36 @@ extension ChosenRestaurantViewController: UITableViewDelegate {
     case .photo:
       return 267
     case .title:
-      return 145
+      return 130
     case .callRestaurant:
       return 51
     case .exploreMenu:
       return 51
     case .map:
       return 221
+    }
+  }
+
+  func tableView(_ tableView: UITableView,
+                 didSelectRowAt indexPath: IndexPath) {
+    guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+    switch section {
+    case .photo:
+      print("Selected Photo")
+    case .title:
+      print("Selected Info")
+    case .callRestaurant:
+      if let phoneCallURL = URL(string: "tel://\(myRestaurant.phone)") {
+
+        let application:UIApplication = UIApplication.shared
+        if (application.canOpenURL(phoneCallURL)) {
+          application.open(phoneCallURL, options: [:], completionHandler: nil)
+        }
+      }
+    case .exploreMenu:
+      openInSafari()
+    case .map:
+      print("Selected Map")
     }
   }
 }
