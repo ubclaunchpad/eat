@@ -25,12 +25,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Show your location on the map</string>
-	<key>NSLocationWhenInUseUsageDescription </key>
-	<string></string>
+	<string>To find restaurants near you</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>circular-bold.otf</string>
