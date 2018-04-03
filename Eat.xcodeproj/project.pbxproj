@@ -52,6 +52,7 @@
 		5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */; };
 		5544B9AD205A46230094D7E0 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5544B9AC205A46230094D7E0 /* OverlayView.xib */; };
 		5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */; };
+		555BDA8520734616005E6EEA /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BDA8420734616005E6EEA /* GameStateManager.swift */; };
 		556B856C2037F8F700B71F44 /* PeopleCountScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */; };
 		556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */; };
 		55E240792065F2E900C2FEAF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E240782065F2E900C2FEAF /* Review.swift */; };
@@ -140,6 +141,7 @@
 		5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		5544B9AC205A46230094D7E0 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCard.xib; sourceTree = "<group>"; };
+		555BDA8420734616005E6EEA /* GameStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
 		556B856B2037F8F700B71F44 /* PeopleCountScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeopleCountScreen.storyboard; sourceTree = "<group>"; };
 		556B856E2037F94E00B71F44 /* PeopleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCountViewController.swift; sourceTree = "<group>"; };
 		556F4485490550D65F04B6C9 /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 		052B4A77202FB05300291EE9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				555BDA8420734616005E6EEA /* GameStateManager.swift */,
 				052B4A78202FB08E00291EE9 /* DataManager.swift */,
 				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
 			);
@@ -804,6 +807,7 @@
 				05A3EE35205DB04300C52F4A /* ChosenRestaurantMapCell.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				05A3EE37205DCE7A00C52F4A /* MapButtonsCell.swift in Sources */,
+				555BDA8520734616005E6EEA /* GameStateManager.swift in Sources */,
 				5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */,
 				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
