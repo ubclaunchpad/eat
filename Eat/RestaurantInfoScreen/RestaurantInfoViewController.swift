@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class RestaurantInfoViewController: UIViewController {
 
@@ -22,7 +23,7 @@ class RestaurantInfoViewController: UIViewController {
     return restaurantVC
   }
 
-  var myRestaurant = Restaurant(name: "", rating: 0, phone: "", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "")
+  var myRestaurant = Restaurant(name: "", rating: 0, phone: "", status: false, imageUrl: "", address: "", foodType: "", reviewCount: 0, distance: 0.0, id: "", yelpUrl: "", lat: 0, lon: 0)
   let dataManager = DataManager.default
   var reviews: [Review] = []
 
@@ -31,7 +32,6 @@ class RestaurantInfoViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
-    tableView.allowsSelection = false
     self.getReviews()
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
@@ -47,6 +47,16 @@ class RestaurantInfoViewController: UIViewController {
         self.tableView.reloadSections(IndexSet(integer: Section.reviews.rawValue), with: .none)
       }.onFailure { error in
         print(error)
+    }
+  }
+
+  func openInSafari() {
+    if let url = URL(string: myRestaurant.yelpUrl) {
+      let config = SFSafariViewController.Configuration()
+      config.entersReaderIfAvailable = true
+
+      let vc = SFSafariViewController(url: url, configuration: config)
+      present(vc, animated: true)
     }
   }
 }
@@ -70,10 +80,12 @@ extension RestaurantInfoViewController: UITableViewDataSource {
       guard let cell =
         tableView.dequeueReusableCell(withIdentifier: "RestaurantPhotoCell", for: indexPath) as? RestaurantPhotoCell else { fatalError() }
       cell.configure(imageUrl: myRestaurant.imageUrl)
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell
     case .title:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTitleCell",for: indexPath) as? RestaurantTitleCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell
     case .InfoMenu:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoCell",for: indexPath) as? RestaurantInfoCell else { fatalError() }
@@ -81,11 +93,13 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     case .InfoAddress:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantInfoAddressCell",for: indexPath) as? RestaurantInfoAddressCell else { fatalError() }
       cell.configure(restaurant: myRestaurant)
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell
     case .reviews:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell",for: indexPath) as? RestaurantReviewCell else { fatalError() }
       print(indexPath.row)
       cell.configure(review: reviews[indexPath.row])
+      cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell
     }
   }
@@ -131,13 +145,30 @@ extension RestaurantInfoViewController: UITableViewDelegate {
     case .photo:
       return 267
     case .title:
-      return 160
+      return 145
     case .InfoMenu:
       return 65
     case .InfoAddress:
       return 65
     case .reviews:
       return 150
+    }
+  }
+
+  func tableView(_ tableView: UITableView,
+                 didSelectRowAt indexPath: IndexPath) {
+    guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+    switch section {
+    case .photo:
+      print("Selected photo")
+    case .title:
+      print("Selected title")
+    case .InfoMenu:
+      openInSafari()
+    case .InfoAddress:
+      print("Selected address")
+    case .reviews:
+      print("Selected Reviews")
     }
   }
 }

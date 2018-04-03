@@ -47,7 +47,7 @@ class MapScreenController: UIViewController{
     // Initialize location manager
     locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.requestAlwaysAuthorization()
+    locationManager.requestWhenInUseAuthorization()
     locationManager.distanceFilter = 50
 
     // Location manager should start fetching current location
@@ -60,11 +60,19 @@ class MapScreenController: UIViewController{
                                           longitude: defaultLocation.coordinate.longitude,
                                           zoom: zoomLevel)
     self.mapView.camera = camera
-    self.mapView.settings.myLocationButton = true
+
+    // Only show the location button when location is authorized for the app.
+    if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
+      print("status")
+      print(CLLocationManager.locationServicesEnabled())
+      print(CLLocationManager.authorizationStatus())
+      self.mapView.settings.myLocationButton = true
+      self.mapView.isMyLocationEnabled = true
+    }
+
     self.mapView.settings.setAllGesturesEnabled(true)
     self.mapView.isUserInteractionEnabled = true
     self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    self.mapView.isMyLocationEnabled = true
     self.mapView.padding = UIEdgeInsetsMake(0, 0, 100, 0)
     self.mapView.delegate = self
 
@@ -77,8 +85,8 @@ class MapScreenController: UIViewController{
   }
 
   func applyStyling() {
-    headerView.layer.shadowRadius = 10
-    headerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+    headerView.layer.shadowRadius = 5
+    headerView.layer.shadowOffset = CGSize(width: 0, height: 9)
     headerView.layer.shadowColor = UIColor.black.cgColor
     headerView.layer.shadowOpacity = 0.25
 

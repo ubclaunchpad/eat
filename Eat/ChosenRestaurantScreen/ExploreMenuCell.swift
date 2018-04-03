@@ -14,7 +14,7 @@ class ExploreMenuCell: UITableViewCell {
   @IBOutlet weak var exploreIcon: UIImageView!
 
     func configure(restaurant: Restaurant) {
-      ExploreLabel.text = "Explore the menu"
+      ExploreLabel.text = "Explore on Yelp"
       ExploreLabel.font = UIFont.systemFont(ofSize: 16)
       ExploreLabel.textColor = UIColor(red: 0.42, green: 0.44, blue: 0.6, alpha: 1)
     }

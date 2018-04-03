@@ -12,10 +12,12 @@ import GoogleMaps
 class ChosenRestaurantMapCell: UITableViewCell {
 
   @IBOutlet weak var mapView: UIView!
+  var myRestaurant: Restaurant!
 
   func configure(restaurant: Restaurant) {
 
-    let camera = GMSCameraPosition.camera(withLatitude: 49.26626, longitude: -123.2408, zoom: 15.0)
+    myRestaurant = restaurant
+    let camera = GMSCameraPosition.camera(withLatitude: restaurant.lat, longitude: restaurant.lon, zoom: 15.0)
     let googleMap = GMSMapView.map(withFrame: mapView.bounds, camera: camera)
     googleMap.settings.myLocationButton = true
     googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -29,8 +31,8 @@ class ChosenRestaurantMapCell: UITableViewCell {
 
     // Creates a marker in the center of the map.
     let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: 49.26626, longitude: -123.2408)
-    marker.title = "Jam Jar"
+    marker.position = CLLocationCoordinate2D(latitude: restaurant.lat, longitude: restaurant.lon)
+    marker.title = restaurant.name
     marker.map = googleMap
   }
 
@@ -40,6 +42,7 @@ class ChosenRestaurantMapCell: UITableViewCell {
     let btn: UIButton = UIButton(type: UIButtonType.roundedRect)
     btn.frame = CGRect(x: 85, y: 150, width: 215, height: 60)
     btn.setBackgroundImage(#imageLiteral(resourceName: "MapButton"), for: UIControlState.normal)
+    btn.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
     self.addSubview(btn)
 
     // Add the overlaying text
@@ -60,5 +63,16 @@ class ChosenRestaurantMapCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
 
     // Configure the view for the selected state
+  }
+
+  @objc private func buttonClicked() {
+    if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
+    {
+      UIApplication.shared.openURL(NSURL(string:
+        "comgooglemaps://?saddr=&daddr=\(Float(myRestaurant.lat)),\(Float(myRestaurant.lon))&directionsmode=driving")! as URL)
+    } else
+    {
+      NSLog("Can't use com.google.maps://");
+    }
   }
 }
