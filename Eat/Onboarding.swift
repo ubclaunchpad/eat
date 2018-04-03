@@ -49,9 +49,9 @@ class Onboarding {
 
     thirdPage.actionButton.titleLabel?.attributedText = actionText
     thirdPage.actionButton.backgroundColor = UIColor(red: 0.36, green: 0.41, blue: 1, alpha: 1)
-    thirdPage.actionButtonBottomMargin = 15 + (safeArea?.bottom ?? 0)
-    thirdPage.actionButtonHorizontalMargin = 15 + (safeArea?.left ?? 0)
-    thirdPage.actionButtonCornerRadius = 12
+    thirdPage.actionButtonBottomMargin = 20 + (safeArea?.bottom ?? 0)
+    thirdPage.actionButtonHorizontalMargin = 32 + (safeArea?.left ?? 0)
+    thirdPage.actionButtonCornerRadius = 16
 
     // Define onboarding view controller properties
     onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(color: #colorLiteral(red: 0.9882352941, green: 0.9882352941, blue: 0.9882352941, alpha: 1)), contents: [firstPage, secondPage, thirdPage])

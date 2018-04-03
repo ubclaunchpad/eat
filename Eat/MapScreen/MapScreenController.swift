@@ -83,7 +83,7 @@ class MapScreenController: UIViewController{
 
     applyStyling()
   }
-
+    
   func applyStyling() {
     headerView.layer.shadowRadius = 5
     headerView.layer.shadowOffset = CGSize(width: 0, height: 9)
@@ -102,9 +102,12 @@ class MapScreenController: UIViewController{
     actionText.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: actionText.length))
     nextView.setAttributedTitle(actionText, for: .normal)
 
-    nextView.titleLabel?.font = Font.onboarding(size: 17)
+    nextView.titleLabel?.font = Font.onboardingAction(size: 17)
     nextView.layer.cornerRadius = 12
     nextView.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
+//    let window: UIWindow?
+//    let safeArea = window?.safeAreaInsets
+//    nextView = 32 + (safeArea?.left ?? 0)
 
     self.view.bringSubview(toFront: nextView)
   }
