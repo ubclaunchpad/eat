@@ -156,12 +156,33 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.isHidden = true
     buttonsView.isHidden = true
   }
+
+  private func pickTopRestaurnt() -> Restaurant? {
+    guard let gameStateManager = self.gameStateManager else {
+      return nil
+    }
+    let restaurantScore = gameStateManager.restaurantScore
+    let restaurants = gameStateManager.restaurants
+    var topScore: Int = -(gameStateManager.numberOfPlayer)
+    var topScoringRestaurant: Restaurant = restaurants[0]
+
+    for index in 0..<restaurantScore.count {
+      if (restaurantScore[index] > topScore) {
+        topScore = restaurantScore[index]
+        topScoringRestaurant = restaurants[index]
+      }
+    }
+    return topScoringRestaurant
+  }
 }
 
 extension RestaurantCardSelectionViewController: KolodaViewDelegate {
 
-  @objc func pushRestaurantInfoVC(index: Int) {
-    let viewController = ChosenRestaurantViewController.viewController(restaurant: self.restaurants[0])
+  @objc func pushChosenRestaurantVC(index: Int) {
+    guard let topRestaurant = self.pickTopRestaurnt() else {
+      return
+    }
+    let viewController = ChosenRestaurantViewController.viewController(restaurant: topRestaurant)
     self.navigationController?.pushViewController(viewController, animated: true)
   }
 
@@ -175,7 +196,7 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
     } else {
       self.setFindingRestaurantStyling()
       print("Go to next screen")
-      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushRestaurantInfoVC(index:)), userInfo: nil, repeats: false)
+      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
     }
   }
 

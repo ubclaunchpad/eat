@@ -16,8 +16,8 @@ internal final class GameStateManager {
   var currRestaurant: Int
   var perUserRestaurantCount: Int {
     switch numberOfPlayer {
-    case 1, 2, 3:   return 4
-    default:        return 3
+    case 1, 2, 3:   return min(4, restaurants.count)
+    default:        return min(3, restaurants.count)
     }
   }
 
