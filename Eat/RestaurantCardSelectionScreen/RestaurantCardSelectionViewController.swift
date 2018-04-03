@@ -31,12 +31,12 @@ class RestaurantCardSelectionViewController: UIViewController {
 
   var searchQuery: SearchQuery!
   let dataManager = DataManager.default
+  var gameStateManager: GameStateManager?
   var restaurants : [Restaurant] = [] {
     didSet {
       kolodaView.reloadData()
     }
   }
-  var keptRestaurantCount: [Int] = []
   var numberOfPlayers = 0
   var currNumOfPlayer = 1 {
     didSet {
@@ -49,20 +49,29 @@ class RestaurantCardSelectionViewController: UIViewController {
     super.viewDidLoad()
     kolodaView.dataSource = self
     kolodaView.delegate = self
+    numberOfPlayers = searchQuery.numberOfPeople
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
-        if res.count <= 0 {
-          
+//     TODO: error screen for empty restaurant array
+//        if res.count <= 0 {
+//
+//        }
+
+        self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)
+        guard let gameStateManager = self.gameStateManager else {
+          return
         }
-        self.restaurants = res
-        self.keptRestaurantCount = [Int](repeating: 0, count: self.restaurants.count)
+        self.currNumOfPlayer = gameStateManager.currentPlayer
+        self.restaurants = gameStateManager.getSubsetOfRestaurants()
+
       }.onFailure { error in
         // TODO: Error handling
         print(error)
     }
 
-    numberOfPlayers = searchQuery.numberOfPeople
+
+
     let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
     eaterProgressBar.setProgress(progress, animated: true)
     setStyling()
@@ -80,6 +89,12 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.isEnabled = false
     currNumOfPlayer = currNumOfPlayer + 1
     eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+
+    guard let gameStateManager = self.gameStateManager else {
+      return
+    }
+    self.restaurants = gameStateManager.getSubsetOfRestaurants()
+    self.currNumOfPlayer = gameStateManager.currentPlayer
   }
 
   @IBAction func skipButtonTapped(_ sender: Any) {
@@ -125,16 +140,19 @@ class RestaurantCardSelectionViewController: UIViewController {
     skipButton.isEnabled = false
     keepButton.isEnabled = false
     eaterIcon.isHidden = false
-    if currNumOfPlayer < numberOfPlayers {
-      restartButton.isUserInteractionEnabled = true
-      restartButton.isHidden = false
-      restartButton.isEnabled = true
-      nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
-    } else {
-      nextEaterLabel.text = "Finding a place to eat..."
-      restartButton.isHidden = true
-      buttonsView.isHidden = true
-    }
+  }
+
+  private func setNextPlayerStyling() {
+    restartButton.isUserInteractionEnabled = true
+    restartButton.isHidden = false
+    restartButton.isEnabled = true
+    nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
+  }
+
+  private func setFindingRestaurantStyling() {
+    nextEaterLabel.text = "Finding a place to eat..."
+    restartButton.isHidden = true
+    buttonsView.isHidden = true
   }
 }
 
@@ -147,9 +165,14 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
 
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
     self.setOutOfCardStyling()
-    if currNumOfPlayer >= numberOfPlayers {
+    guard let gameStateManager = self.gameStateManager else {
+      return
+    }
+    if (gameStateManager.updateStateForNextPlayer()) {
+      self.setNextPlayerStyling()
+    } else {
+      self.setFindingRestaurantStyling()
       print("Go to next screen")
-      // Added code to go to the next screen
       Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushRestaurantInfoVC(index:)), userInfo: nil, repeats: false)
     }
   }
@@ -161,12 +184,15 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
   }
 
   func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+    guard let gameState = gameStateManager else {
+      return
+    }
     if direction == SwipeResultDirection.left {
-      keptRestaurantCount[index] = keptRestaurantCount[index] - 1
-      print(keptRestaurantCount)
+      gameState.updateScore(index: index, score: -1)
+      print(gameState.restaurantScore)
     } else {
-      keptRestaurantCount[index] = keptRestaurantCount[index] + 1
-      print(keptRestaurantCount)
+      gameState.updateScore(index: index, score: 1)
+      print(gameState.restaurantScore)
     }
   }
 }

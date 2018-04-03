@@ -50,10 +50,11 @@ struct SearchQuery {
 extension SearchQuery {
   var numberOfRestaurants: Int {
     switch numberOfPeople {
-    case 1, 2, 3: return 5
-    case 4:       return 8
-    case 5, 7:    return 10
+    case 1, 2:    return 4
+    case 3, 4:    return 6
+    case 5:       return 8
     case 6:       return 9
+    case 7:       return 11
     case 8:       return 12
     case 9:       return 13
     case 10:      return 15
