@@ -56,7 +56,6 @@ extension YelpAPIManager {
     return Future { complete in
       Alamofire.request(url, headers: headers).responseJSON { response in
         if let json = response.result.value {
-          print(json)
           complete(.success(json))
         }
       }
@@ -101,7 +100,7 @@ extension YelpAPIManager {
   // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
   func generateRestaurantsList(json: Any) -> [Restaurant] {
     guard let dictionary = json as? [String: Any] else { return [] }
-    let businesses = dictionary["businesses"] as! NSArray
+    guard let businesses = dictionary["businesses"] as? NSArray else { return [] }
 
     return businesses.flatMap { business in
       guard let businessDict = business as? [String: Any],
@@ -195,7 +194,7 @@ extension YelpAPIManager {
 
   func parseReviews(json: Any) -> [Review] {
     guard let dictionary = json as? [String: Any] else { return [] }
-    let reviews = dictionary["reviews"] as! NSArray
+    guard let reviews = dictionary["reviews"] as? NSArray else { return [] }
 
     return reviews.flatMap { review in
       guard let reviewDict = review as? [String: Any],
