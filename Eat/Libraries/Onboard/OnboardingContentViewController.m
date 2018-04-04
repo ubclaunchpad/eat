@@ -25,7 +25,7 @@ static CGFloat const kDefaultTitleFontSize = 38;
 static CGFloat const kDefaultBodyFontSize = 28;
 static CGFloat const kDefaultButtonFontSize = 24;
 
-static CGFloat const kActionButtonHeight = 64;
+static CGFloat const kActionButtonHeight = 56;
 static CGFloat const kMainPageControlHeight = 35;
 
 NSString * const kOnboardMainTextAccessibilityIdentifier = @"OnboardMainTextAccessibilityIdentifier";
