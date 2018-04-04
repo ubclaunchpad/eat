@@ -20,7 +20,6 @@ class RestaurantCardSelectionViewController: UIViewController {
   @IBOutlet weak var eaterCountLabel: UILabel!
   @IBOutlet weak var eaterIcon: UIImageView!
   @IBOutlet weak var buttonsView: UIView!
-  @IBOutlet weak var backgroundView: UIView!
 
   static func viewController(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
     let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
@@ -55,9 +54,11 @@ class RestaurantCardSelectionViewController: UIViewController {
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
 //     TODO: error screen for empty restaurant array
-//        if res.count <= 0 {
-//
-//        }
+        if res.count <= 0 {
+          let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
+          self.navigationController?.pushViewController(noRestaurantFoundVC, animated: true)
+
+        }
 
         self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)
         guard let gameStateManager = self.gameStateManager else {
@@ -65,14 +66,12 @@ class RestaurantCardSelectionViewController: UIViewController {
         }
         self.currNumOfPlayer = gameStateManager.currentPlayer
         self.restaurants = gameStateManager.getSubsetOfRestaurants()
+        self.enableSelectionButtons()
 
       }.onFailure { error in
         // TODO: Error handling
         print(error)
     }
-
-
-
     let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
     eaterProgressBar.setProgress(progress, animated: true)
     setStyling()
@@ -85,11 +84,10 @@ class RestaurantCardSelectionViewController: UIViewController {
   @IBAction func restartButtonPressed(_ sender: Any) {
     kolodaView.isHidden = false
     kolodaView.resetCurrentCardIndex()
-    skipButton.isEnabled = true
-    keepButton.isEnabled = true
     restartButton.isEnabled = false
     currNumOfPlayer = currNumOfPlayer + 1
     eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+    enableSelectionButtons()
 
     guard let gameStateManager = self.gameStateManager else {
       return
@@ -110,8 +108,7 @@ class RestaurantCardSelectionViewController: UIViewController {
 
 
   private func setStyling() {
-    backgroundView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
-    self.view.backgroundColor = .white
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     kolodaView.layer.cornerRadius = 15
 
     nextEaterLabel.font = Font.body(size: 20)
@@ -130,7 +127,14 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.titleLabel?.font =  Font.button(size: 16)
     restartButton.isUserInteractionEnabled = false
     restartButton.isHidden = true
+    restartButton.layer.shadowColor = #colorLiteral(red: 0.2009466769, green: 0.2274558959, blue: 0.5609335343, alpha: 1)
+    restartButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+    restartButton.layer.masksToBounds = false
+    restartButton.layer.shadowRadius = 5.0
+    restartButton.layer.shadowOpacity = 0.25
 
+    skipButton.isEnabled = false
+    keepButton.isEnabled = false
     skipButton.setImage(#imageLiteral(resourceName: "grey_button_skip"), for: .disabled)
     keepButton.setImage(#imageLiteral(resourceName: "grey_button_keep"), for: .disabled)
     skipButton.setImage(#imageLiteral(resourceName: "button_skip"), for: .normal)
@@ -155,6 +159,11 @@ class RestaurantCardSelectionViewController: UIViewController {
     nextEaterLabel.text = "Finding a place to eat..."
     restartButton.isHidden = true
     buttonsView.isHidden = true
+  }
+
+  private func enableSelectionButtons(){
+    skipButton.isEnabled = true
+    keepButton.isEnabled = true
   }
 
   private func pickTopRestaurnt() -> Restaurant? {

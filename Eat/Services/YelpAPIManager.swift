@@ -114,8 +114,6 @@ extension YelpAPIManager {
         let distance = businessDict["distance"] as? Double,
         let location = businessDict["location"] as? [String: Any],
         let address1 = location["address1"] as? String,
-        let address2 = location["address2"] as? String,
-        let address3 = location["address3"] as? String,
         let city = location["city"] as? String,
         let categories = businessDict["categories"] as? NSArray,
         let firstCategory = categories[0] as? [String: Any],
@@ -125,6 +123,9 @@ extension YelpAPIManager {
         let lat = coord["latitude"] as? Double,
         let lon = coord["longitude"] as? Double
         else { return nil }
+
+      let address2 = location["address2"] as? String ?? ""
+      let address3 = location["address3"] as? String ?? ""
 
       var address = address1
       if !address2.isEmpty {
@@ -175,7 +176,7 @@ extension YelpAPIManager {
     let headers = [
       "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
       ]
-    var urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
+    let urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
     guard let url = URL(string: urlString) else {
       print("Problem retrieve reviews from yelp API")
       return Future(error: ReadmeError.RequestFailed)

@@ -59,6 +59,7 @@ class RestaurantCard : UIView {
         imageView.image = UIImage(data: data)
       } else {
         imageView.image = #imageLiteral(resourceName: "default_restaurant_photo")
+        imageView.layer.backgroundColor = #colorLiteral(red: 0.9134720564, green: 0.9174253345, blue: 0.9339053035, alpha: 1)
       }
       ratingSquares = [ratingSquare1, ratingSquare2, ratingSquare3, ratingSquare4, ratingSquare5]
       for i in 0 ..< Int(round(viewModel.rating)){
