@@ -61,6 +61,7 @@ class Onboarding {
     onboardingVC.fadePageControlOnLastPage = false
     onboardingVC.pageControl.pageIndicatorTintColor = UIColor(red: 0.92, green: 0.9, blue: 0.95, alpha: 1)
     onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor(red: 1.00, green: 0.76, blue: 0.47, alpha: 1)
+    print(UIScreen.main.nativeBounds.height)
     onboardingVC.allowSkipping = false
     underPageControlPadding(viewController: onboardingVC)
 
@@ -112,7 +113,7 @@ class Onboarding {
       viewController.underPageControlPadding = 0.17 * height
       break
     case 2436: // iPhone X
-      viewController.underPageControlPadding = 0.17 * height
+      viewController.underPageControlPadding = 0.14 * height
       break
     default:
       viewController.underPageControlPadding = 0.15 * height
