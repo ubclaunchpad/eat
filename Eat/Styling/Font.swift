@@ -33,4 +33,7 @@ internal struct Font {
   static func onboardingAction(size: CGFloat) -> UIFont {
     return UIFont(name: "CircularStd-Bold", size: size)!
   }
+  static func navigationHeaders(size: CGFloat) -> UIFont {
+    return UIFont(name: "CircularStd-Book", size: size)!
+  }
 }

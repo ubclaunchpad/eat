@@ -14,6 +14,7 @@ class ChosenRestaurantViewController: UIViewController {
 
 
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var headerLabel: UILabel!
 
 
   var myRestaurant: Restaurant!
@@ -41,6 +42,8 @@ class ChosenRestaurantViewController: UIViewController {
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+    headerLabel.font = Font.navigationHeaders(size: 18)
+    headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
   }
 
   func openInSafari() {

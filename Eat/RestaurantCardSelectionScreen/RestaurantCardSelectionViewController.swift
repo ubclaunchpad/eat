@@ -120,7 +120,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     nextEaterLabel.isUserInteractionEnabled = false
 
     eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
-    eaterCountLabel.font = Font.body(size: 18)
+    eaterCountLabel.font = Font.navigationHeaders(size: 18)
     eaterCountLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
     eaterIcon.isHidden = true
