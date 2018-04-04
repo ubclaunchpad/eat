@@ -112,7 +112,7 @@ class Onboarding {
       viewController.underPageControlPadding = 0.17 * height
       break
     case 2436: // iPhone X
-      viewController.underPageControlPadding = 0.14 * height
+      viewController.underPageControlPadding = 0.17 * height
       break
     default:
       viewController.underPageControlPadding = 0.15 * height
