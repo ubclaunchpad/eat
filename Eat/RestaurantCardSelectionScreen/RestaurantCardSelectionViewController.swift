@@ -53,11 +53,9 @@ class RestaurantCardSelectionViewController: UIViewController {
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
-//     TODO: error screen for empty restaurant array
         if res.count <= 0 {
           let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
           self.navigationController?.pushViewController(noRestaurantFoundVC, animated: true)
-
         }
 
         self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)
