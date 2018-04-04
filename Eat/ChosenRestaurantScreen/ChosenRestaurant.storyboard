@@ -285,7 +285,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B4v-7m-flt" firstAttribute="bottom" secondItem="x3W-4W-zXU" secondAttribute="bottom" constant="672" id="7sf-4r-bmB"/>
                             <constraint firstItem="Qsx-VS-wtI" firstAttribute="trailing" secondItem="B4v-7m-flt" secondAttribute="trailing" id="HZW-ZI-nXo"/>
                             <constraint firstItem="x3W-4W-zXU" firstAttribute="top" secondItem="B4v-7m-flt" secondAttribute="top" id="YPz-1i-5LY"/>
                             <constraint firstItem="Qsx-VS-wtI" firstAttribute="bottom" secondItem="kfA-nw-qcX" secondAttribute="bottom" id="dbK-kX-owF"/>
