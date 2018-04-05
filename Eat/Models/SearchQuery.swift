@@ -69,7 +69,7 @@ extension SearchQuery {
       var returnPrice = price.map { String($0) }.joined(separator: ",")
       // If user selected highest price value available, give them the most
       // expensive restaurants too
-      if price.contains(3) { returnPrice.append("4") }
+      if price.contains(3) { returnPrice.append(",4") }
       return returnPrice
     }
   }

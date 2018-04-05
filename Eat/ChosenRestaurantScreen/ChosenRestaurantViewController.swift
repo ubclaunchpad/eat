@@ -14,6 +14,7 @@ class ChosenRestaurantViewController: UIViewController {
 
 
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var headerLabel: UILabel!
 
 
   var myRestaurant: Restaurant!
@@ -25,10 +26,12 @@ class ChosenRestaurantViewController: UIViewController {
       else { fatalError() }
     chosenVC.myRestaurant = restaurant
     chosenVC.urlString = restaurant.yelpUrl
+    chosenVC.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     return chosenVC
   }
 
-  @IBAction func exitButton(_ sender: Any) {
+
+  @IBAction func exit(_ sender: Any) {
     let viewController = MapScreenController.viewController()
     self.present(viewController, animated: true)
   }
@@ -39,6 +42,8 @@ class ChosenRestaurantViewController: UIViewController {
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+    headerLabel.font = Font.navigationHeaders(size: 18)
+    headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
   }
 
   func openInSafari() {
@@ -125,7 +130,7 @@ extension ChosenRestaurantViewController: UITableViewDelegate {
     case .exploreMenu:
       return 51
     case .map:
-      return 221
+      return 225
     }
   }
 
