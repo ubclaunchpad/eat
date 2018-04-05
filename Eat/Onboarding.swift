@@ -125,16 +125,12 @@ class Onboarding {
     switch UIScreen.main.nativeBounds.height {
     case 1136: // iPhone SE
       return 24 + (safeArea?.left ?? 0)
-      break
     case 1334: // iPhone 8
       return (width - 311)/2 + (safeArea?.left ?? 0)
-      break
     case 2208: // iPhone 8 Plus
       return (width - 311)/2 + (safeArea?.left ?? 0)
-      break
     case 2436: // iPhone X
       return (width - 311)/2 + (safeArea?.left ?? 0)
-      break
     default:
       return (width - 311)/2 + (safeArea?.left ?? 0)
     }
