@@ -49,9 +49,9 @@ class Onboarding {
 
     thirdPage.actionButton.titleLabel?.attributedText = actionText
     thirdPage.actionButton.backgroundColor = UIColor(red: 0.36, green: 0.41, blue: 1, alpha: 1)
-    thirdPage.actionButtonBottomMargin = 15 + (safeArea?.bottom ?? 0)
-    thirdPage.actionButtonHorizontalMargin = 15 + (safeArea?.left ?? 0)
-    thirdPage.actionButtonCornerRadius = 12
+    thirdPage.actionButtonBottomMargin = 20 + (safeArea?.bottom ?? 0)
+    thirdPage.actionButtonHorizontalMargin = calculateButtonHorizontalMargin()
+    thirdPage.actionButtonCornerRadius = 16
 
     // Define onboarding view controller properties
     onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(color: #colorLiteral(red: 0.9882352941, green: 0.9882352941, blue: 0.9882352941, alpha: 1)), contents: [firstPage, secondPage, thirdPage])
@@ -62,7 +62,7 @@ class Onboarding {
     onboardingVC.pageControl.pageIndicatorTintColor = UIColor(red: 0.92, green: 0.9, blue: 0.95, alpha: 1)
     onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor(red: 1.00, green: 0.76, blue: 0.47, alpha: 1)
     onboardingVC.allowSkipping = false
-    underPageControlPadding(viewController: onboardingVC)
+    onboardingVC.underPageControlPadding = 90
 
     return onboardingVC
   }
@@ -100,22 +100,13 @@ class Onboarding {
     }
   }
 
-  private func underPageControlPadding(viewController: OnboardingViewController) {
+  private func calculateButtonHorizontalMargin()->CGFloat {
+    let safeArea = window?.safeAreaInsets
     switch UIScreen.main.nativeBounds.height {
     case 1136: // iPhone SE
-      viewController.underPageControlPadding = 0.14 * height
-      break
-    case 1334: // iPhone 8
-      viewController.underPageControlPadding = 0.13 * height
-      break
-    case 2208: // iPhone 8 Plus
-      viewController.underPageControlPadding = 0.17 * height
-      break
-    case 2436: // iPhone X
-      viewController.underPageControlPadding = 0.17 * height
-      break
+      return 24 + (safeArea?.left ?? 0)
     default:
-      viewController.underPageControlPadding = 0.15 * height
+      return (width - 311)/2 + (safeArea?.left ?? 0)
     }
   }
 }

@@ -22,10 +22,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJk-9X-IXN">
-                                <rect key="frame" x="10" y="582" width="355" height="75"/>
+                                <rect key="frame" x="32" y="579" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Zrt-mq-uyf"/>
+                                    <constraint firstAttribute="width" constant="311" id="52E-oC-rcD"/>
+                                    <constraint firstAttribute="height" constant="56" id="Zrt-mq-uyf"/>
                                 </constraints>
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,11 +64,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3QP-mn-qY2" firstAttribute="leading" secondItem="kHa-La-gFe" secondAttribute="leading" id="8b6-1I-cKZ"/>
-                            <constraint firstItem="kHa-La-gFe" firstAttribute="trailing" secondItem="uJk-9X-IXN" secondAttribute="trailing" constant="10" id="9b9-9T-IC3"/>
                             <constraint firstItem="12e-6C-Mko" firstAttribute="leading" secondItem="kHa-La-gFe" secondAttribute="leading" id="A4R-zu-lod"/>
-                            <constraint firstItem="uJk-9X-IXN" firstAttribute="leading" secondItem="kHa-La-gFe" secondAttribute="leading" constant="10" id="Bxx-AT-Cw7"/>
+                            <constraint firstItem="uJk-9X-IXN" firstAttribute="centerX" secondItem="Y7g-Th-32x" secondAttribute="centerX" id="Aa4-qv-bEf"/>
                             <constraint firstItem="3QP-mn-qY2" firstAttribute="trailing" secondItem="kHa-La-gFe" secondAttribute="trailing" id="GG8-LB-H7f"/>
-                            <constraint firstItem="kHa-La-gFe" firstAttribute="bottom" secondItem="uJk-9X-IXN" secondAttribute="bottom" constant="10" id="Gsr-PI-K2S"/>
+                            <constraint firstItem="kHa-La-gFe" firstAttribute="bottom" secondItem="uJk-9X-IXN" secondAttribute="bottom" constant="32" id="Gsr-PI-K2S"/>
                             <constraint firstItem="kHa-La-gFe" firstAttribute="trailing" secondItem="12e-6C-Mko" secondAttribute="trailing" id="KqN-Mc-8VC"/>
                             <constraint firstItem="3QP-mn-qY2" firstAttribute="top" secondItem="12e-6C-Mko" secondAttribute="bottom" constant="-15" id="VVz-ZX-Z1z"/>
                             <constraint firstItem="12e-6C-Mko" firstAttribute="top" secondItem="kHa-La-gFe" secondAttribute="top" id="a1O-x7-1uB"/>
