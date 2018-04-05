@@ -62,7 +62,8 @@ class Onboarding {
     onboardingVC.pageControl.pageIndicatorTintColor = UIColor(red: 0.92, green: 0.9, blue: 0.95, alpha: 1)
     onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor(red: 1.00, green: 0.76, blue: 0.47, alpha: 1)
     onboardingVC.allowSkipping = false
-    underPageControlPadding(viewController: onboardingVC)
+    onboardingVC.underPageControlPadding = 90
+//    underPageControlPadding(viewController: onboardingVC)
 
     return onboardingVC
   }
@@ -100,37 +101,31 @@ class Onboarding {
     }
   }
 
-  private func underPageControlPadding(viewController: OnboardingViewController) {
-    let safeArea = window?.safeAreaInsets
-    switch UIScreen.main.nativeBounds.height {
-    case 1136: // iPhone SE
-      viewController.underPageControlPadding = 0.76470588 * (120 - (safeArea?.bottom ?? 0)/2)
-      break
-    case 1334: // iPhone 8
-      viewController.underPageControlPadding = 0.8235294118 * (120 - (safeArea?.bottom ?? 0)/2)
-      break
-    case 2208: // iPhone 8 Plus
-      viewController.underPageControlPadding = 1 * (120 - (safeArea?.bottom ?? 0)/2)
-      break
-    case 2436: // iPhone X
-      viewController.underPageControlPadding = 1 * (120 - (safeArea?.bottom ?? 0)/2)
-      break
-    default:
-      viewController.underPageControlPadding = 0.8823529412 * (120 - (safeArea?.bottom ?? 0)/2)
-    }
-  }
+//  private func underPageControlPadding(viewController: OnboardingViewController) {
+//    let safeArea = window?.safeAreaInsets
+//    switch UIScreen.main.nativeBounds.height {
+//    case 1136: // iPhone SE
+//      viewController.underPageControlPadding = 0.76470588 * (120 - (safeArea?.bottom ?? 0)/2)
+//      break
+//    case 1334: // iPhone 8
+//      viewController.underPageControlPadding = 0.8235294118 * (120 - (safeArea?.bottom ?? 0)/2)
+//      break
+//    case 2208: // iPhone 8 Plus
+//      viewController.underPageControlPadding = 1 * (120 - (safeArea?.bottom ?? 0)/2)
+//      break
+//    case 2436: // iPhone X
+//      viewController.underPageControlPadding = 1 * (90 - (safeArea?.bottom ?? 0)/2)
+//      break
+//    default:
+//      viewController.underPageControlPadding = 0.8823529412 * (120 - (safeArea?.bottom ?? 0)/2)
+//    }
+//  }
 
   private func calculateButtonHorizontalMargin()->CGFloat {
     let safeArea = window?.safeAreaInsets
     switch UIScreen.main.nativeBounds.height {
     case 1136: // iPhone SE
       return 24 + (safeArea?.left ?? 0)
-    case 1334: // iPhone 8
-      return (width - 311)/2 + (safeArea?.left ?? 0)
-    case 2208: // iPhone 8 Plus
-      return (width - 311)/2 + (safeArea?.left ?? 0)
-    case 2436: // iPhone X
-      return (width - 311)/2 + (safeArea?.left ?? 0)
     default:
       return (width - 311)/2 + (safeArea?.left ?? 0)
     }
