@@ -50,7 +50,7 @@ class Onboarding {
     thirdPage.actionButton.titleLabel?.attributedText = actionText
     thirdPage.actionButton.backgroundColor = UIColor(red: 0.36, green: 0.41, blue: 1, alpha: 1)
     thirdPage.actionButtonBottomMargin = 20 + (safeArea?.bottom ?? 0)
-    thirdPage.actionButtonHorizontalMargin = 32 + (safeArea?.left ?? 0)
+    thirdPage.actionButtonHorizontalMargin = calculateButtonHorizontalMargin()
     thirdPage.actionButtonCornerRadius = 16
 
     // Define onboarding view controller properties
@@ -101,21 +101,42 @@ class Onboarding {
   }
 
   private func underPageControlPadding(viewController: OnboardingViewController) {
+    let safeArea = window?.safeAreaInsets
     switch UIScreen.main.nativeBounds.height {
     case 1136: // iPhone SE
-      viewController.underPageControlPadding = 0.14 * height
+      viewController.underPageControlPadding = 0.76470588 * (120 - (safeArea?.bottom ?? 0)/2)
       break
     case 1334: // iPhone 8
-      viewController.underPageControlPadding = 0.13 * height
+      viewController.underPageControlPadding = 0.8235294118 * (120 - (safeArea?.bottom ?? 0)/2)
       break
     case 2208: // iPhone 8 Plus
-      viewController.underPageControlPadding = 0.17 * height
+      viewController.underPageControlPadding = 1 * (120 - (safeArea?.bottom ?? 0)/2)
       break
     case 2436: // iPhone X
-      viewController.underPageControlPadding = 120
+      viewController.underPageControlPadding = 1 * (120 - (safeArea?.bottom ?? 0)/2)
       break
     default:
-      viewController.underPageControlPadding = 0.15 * height
+      viewController.underPageControlPadding = 0.8823529412 * (120 - (safeArea?.bottom ?? 0)/2)
+    }
+  }
+
+  private func calculateButtonHorizontalMargin()->CGFloat {
+    let safeArea = window?.safeAreaInsets
+    switch UIScreen.main.nativeBounds.height {
+    case 1136: // iPhone SE
+      return 24 + (safeArea?.left ?? 0)
+      break
+    case 1334: // iPhone 8
+      return (width - 311)/2 + (safeArea?.left ?? 0)
+      break
+    case 2208: // iPhone 8 Plus
+      return (width - 311)/2 + (safeArea?.left ?? 0)
+      break
+    case 2436: // iPhone X
+      return (width - 311)/2 + (safeArea?.left ?? 0)
+      break
+    default:
+      return (width - 311)/2 + (safeArea?.left ?? 0)
     }
   }
 }
