@@ -50,6 +50,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.dataSource = self
     kolodaView.delegate = self
     numberOfPlayers = searchQuery.numberOfPeople
+    setStyling()
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
@@ -64,15 +65,18 @@ class RestaurantCardSelectionViewController: UIViewController {
         }
         self.currNumOfPlayer = gameStateManager.currentPlayer
         self.restaurants = gameStateManager.getSubsetOfRestaurants()
+        let progress = Float(self.currNumOfPlayer) / Float(self.numberOfPlayers)
+        self.eaterProgressBar.setProgress(progress, animated: true)
         self.enableSelectionButtons()
-
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+          self.nextEaterLabel.alpha = 0
+        }, completion: { _ in
+          self.nextEaterLabel.isHidden = true
+        })
       }.onFailure { error in
         // TODO: Error handling
         print(error)
     }
-    let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
-    eaterProgressBar.setProgress(progress, animated: true)
-    setStyling()
   }
 
   @IBAction func closeButtonPressed(_ sender: Any) {
@@ -141,31 +145,49 @@ class RestaurantCardSelectionViewController: UIViewController {
     eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
   }
 
-  private func setOutOfCardStyling() {
-    kolodaView.isHidden = true
-    skipButton.isEnabled = false
-    keepButton.isEnabled = false
-    eaterIcon.isHidden = false
+  private func hideNextPlayerViewElements(){
+    restartButton.isEnabled = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+      self.nextEaterLabel.alpha = 0
+      self.restartButton.alpha = 0
+      self.eaterIcon.alpha = 0
+    }, completion: { _ in
+      self.nextEaterLabel.isHidden = true
+      self.restartButton.isHidden = true
+      self.eaterIcon.isHidden = true
+    })
   }
 
-  private func hideNextPlayerViewElements(){
-    nextEaterLabel.isHidden = true
-    restartButton.isHidden = true
-    restartButton.isEnabled = false
-    eaterIcon.isHidden = true
+  private func setOutOfCardStyling() {
+    skipButton.isEnabled = false
+    keepButton.isEnabled = false
+    self.kolodaView.isHidden = true
   }
 
   private func setNextPlayerStyling() {
-    restartButton.isHidden = false
-    restartButton.isEnabled = true
-    nextEaterLabel.isHidden = false
     nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
+    restartButton.isEnabled = true
+    self.eaterIcon.isHidden = false
+    self.nextEaterLabel.isHidden = false
+    self.restartButton.isHidden = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+      self.eaterIcon.alpha = 1
+      self.nextEaterLabel.alpha = 1
+      self.restartButton.alpha = 1
+    }, completion: nil)
   }
 
   private func setFindingRestaurantStyling() {
-    nextEaterLabel.isHidden = false
     nextEaterLabel.text = "Finding a place for us to eat..."
-    buttonsView.isHidden = true
+    self.eaterIcon.isHidden = false
+    self.nextEaterLabel.isHidden = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+      self.eaterIcon.alpha = 1
+      self.nextEaterLabel.alpha = 1
+      self.buttonsView.alpha = 0
+    }, completion: { _ in
+      self.buttonsView.isHidden = true
+    })
   }
 
   private func enableSelectionButtons(){
