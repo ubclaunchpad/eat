@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FvV-NS-iRb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FvV-NS-iRb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,12 +52,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9x-f1-Jn5">
-                                <rect key="frame" x="16" y="37" width="40" height="40"/>
+                                <rect key="frame" x="11" y="37" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="H2w-BN-gcj"/>
                                     <constraint firstAttribute="height" constant="40" id="nUo-YP-Pxe"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="close"/>
+                                <state key="normal" title="Button" image="formClose"/>
                                 <connections>
                                     <action selector="closeTapped" destination="Stj-Lw-hR2" eventType="touchUpInside" id="58d-oQ-AAp"/>
                                 </connections>
@@ -128,7 +128,7 @@
                             <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="wb2-Ne-UZk" secondAttribute="centerY" id="H6t-pI-gLi"/>
                             <constraint firstItem="2rU-eN-CVJ" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="24" id="Kqw-dL-tYa"/>
                             <constraint firstItem="q4C-Ml-8oH" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="PPY-im-Myh"/>
-                            <constraint firstItem="q9x-f1-Jn5" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="16" id="iTA-P3-Atn"/>
+                            <constraint firstItem="q9x-f1-Jn5" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="11" id="iTA-P3-Atn"/>
                             <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="ILV-qK-13i" secondAttribute="trailing" id="m0S-Bd-fJE"/>
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="width" secondItem="iPe-qT-BQ7" secondAttribute="width" id="m3N-M2-SQ3"/>
                             <constraint firstItem="v4E-fg-isG" firstAttribute="centerY" secondItem="sAr-iE-ohv" secondAttribute="centerY" id="pzG-QH-zyT"/>
@@ -176,7 +176,7 @@
     </scenes>
     <resources>
         <image name="button_eggyolk" width="200" height="200"/>
-        <image name="close" width="14" height="14"/>
         <image name="eggwhite" width="375" height="398"/>
+        <image name="formClose" width="40" height="40"/>
     </resources>
 </document>
