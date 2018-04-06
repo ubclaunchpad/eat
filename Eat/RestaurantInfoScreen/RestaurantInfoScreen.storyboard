@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mF9-mQ-4aM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mF9-mQ-4aM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,11 +29,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="268.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RestaurantPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="wfJ-U5-u7c">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RestaurantPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="wfJ-U5-u7c">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wfJ-U5-u7c" firstAttribute="leading" secondItem="4bb-hi-SuS" secondAttribute="leading" id="0rO-Xq-RfN"/>
+                                                <constraint firstItem="wfJ-U5-u7c" firstAttribute="top" secondItem="4bb-hi-SuS" secondAttribute="top" id="haU-2H-Tsz"/>
+                                                <constraint firstAttribute="trailing" secondItem="wfJ-U5-u7c" secondAttribute="trailing" id="oX9-8S-EnA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="restaurantImageView" destination="wfJ-U5-u7c" id="M4y-yV-X1y"/>
@@ -320,14 +324,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="Review" destination="COa-J5-PVh" id="MdD-al-a98"/>
-                                            <outlet property="ReviewerName" destination="byF-yX-kyT" id="4Bq-sg-oZ0"/>
                                             <outlet property="ratingSquare1" destination="7QG-hZ-z8n" id="0X5-Ob-wFU"/>
                                             <outlet property="ratingSquare2" destination="iCd-cE-Jbz" id="g7R-P5-oCY"/>
                                             <outlet property="ratingSquare3" destination="Crf-Yl-oYL" id="k3o-TV-RSq"/>
                                             <outlet property="ratingSquare4" destination="yfg-Vw-l9l" id="Oqc-hR-YOq"/>
                                             <outlet property="ratingSquare5" destination="9iu-Iv-jKE" id="IvC-8Y-oea"/>
+                                            <outlet property="reviewContent" destination="COa-J5-PVh" id="byK-8w-wcz"/>
                                             <outlet property="reviewerImage" destination="dhf-QF-49s" id="WQ6-cE-41N"/>
+                                            <outlet property="reviewerName" destination="byF-yX-kyT" id="4Bq-sg-oZ0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

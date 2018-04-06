@@ -17,10 +17,11 @@ class RestaurantPhotoCell: UITableViewCell {
     }
 
   func configure(imageUrl: String) {
-    if let url = URL(string: imageUrl), let data = try? Data(contentsOf: url) {
-      restaurantImageView.image = UIImage(data: data)
+    if let url = URL(string: imageUrl) {
+      restaurantImageView.kf.setImage(with: url)
     } else {
       restaurantImageView.image = #imageLiteral(resourceName: "default_restaurant_photo")
+      restaurantImageView.layer.backgroundColor = #colorLiteral(red: 0.9134720564, green: 0.9174253345, blue: 0.9339053035, alpha: 1)
     }
   }
 

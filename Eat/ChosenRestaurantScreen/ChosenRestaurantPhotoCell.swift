@@ -14,8 +14,8 @@ class ChosenRestaurantPhotoCell: UITableViewCell {
   @IBOutlet weak var restaurantPhoto: UIImageView!
 
   func configure(restaurant: Restaurant) {
-      if let url = URL(string: restaurant.imageUrl), let data = try? Data(contentsOf: url) {
-        restaurantPhoto.image = UIImage(data: data)
+      if let url = URL(string: restaurant.imageUrl) {
+        restaurantPhoto.kf.setImage(with: url)
       } else {
         restaurantPhoto.image = #imageLiteral(resourceName: "default_restaurant_photo")
       }

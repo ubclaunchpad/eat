@@ -9,6 +9,7 @@
 import Foundation
 import BrightFutures
 import Alamofire
+import Kingfisher
 
 internal final class DataManager {
   static var `default` = DataManager()
