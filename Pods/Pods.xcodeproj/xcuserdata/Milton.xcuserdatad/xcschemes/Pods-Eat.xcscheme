@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F971CC7D95498A5E14854EA3E7854F2F"
+               BlueprintIdentifier = "5F2A62440B8CDABD52A3809F44B502EB"
                BuildableName = "Pods_Eat.framework"
                BlueprintName = "Pods-Eat"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F971CC7D95498A5E14854EA3E7854F2F"
+            BlueprintIdentifier = "5F2A62440B8CDABD52A3809F44B502EB"
             BuildableName = "Pods_Eat.framework"
             BlueprintName = "Pods-Eat"
             ReferencedContainer = "container:Pods.xcodeproj">
