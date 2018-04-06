@@ -34,6 +34,10 @@ class NoRestaurantFoundViewController: UIViewController {
     view.layer.backgroundColor = #colorLiteral(red: 0.9685223699, green: 0.9686879516, blue: 0.9685119987, alpha: 1)
     noRestaurantFoundLabel.font = Font.body(size: 18)
     noRestaurantFoundLabel.textColor = #colorLiteral(red: 0.4183886945, green: 0.4357136786, blue: 0.601531148, alpha: 1)
+
+    let adjustPreferenceButtonTitle = NSMutableAttributedString(string: "ADJUST PREFERENCES")
+    adjustPreferenceButtonTitle.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: adjustPreferenceButtonTitle.length))
+    adjustPreferenceButton.setAttributedTitle(adjustPreferenceButtonTitle, for: .normal)
     adjustPreferenceButton.titleLabel?.font = Font.boldButton(size: 18)
     adjustPreferenceButton.backgroundColor = #colorLiteral(red: 0.362785995, green: 0.4117482901, blue: 0.9952250123, alpha: 1)
     adjustPreferenceButton.layer.cornerRadius = 15
@@ -42,7 +46,6 @@ class NoRestaurantFoundViewController: UIViewController {
     adjustPreferenceButton.layer.masksToBounds = false
     adjustPreferenceButton.layer.shadowRadius = 5.0
     adjustPreferenceButton.layer.shadowOpacity = 0.25
-
   }
 
 }
