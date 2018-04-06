@@ -11,8 +11,8 @@ import UIKit
 class RestaurantReviewCell: UITableViewCell {
 
 
-  @IBOutlet weak var ReviewerName: UILabel!
-  @IBOutlet weak var Review: UILabel!
+  @IBOutlet weak var reviewerName: UILabel!
+  @IBOutlet weak var reviewContent: UILabel!
   @IBOutlet weak var reviewerImage: UIImageView!
   @IBOutlet weak var ratingSquare1: UIImageView!
   @IBOutlet weak var ratingSquare2: UIImageView!
@@ -22,28 +22,24 @@ class RestaurantReviewCell: UITableViewCell {
   var ratingSquares: [UIImageView] = []
 
   func configure(review: Review) {
-    ReviewerName.text = review.userName
-    Review.text = review.content
-    if let url = URL(string: review.userImage), let data = try? Data(contentsOf: url) {
-      reviewerImage.image = UIImage(data: data)
+    reviewerName.text = review.userName
+    reviewContent.text = review.content
+    reviewerImage.layer.cornerRadius = 5
+    if let url = URL(string: review.userImage) {
+      reviewerImage.kf.setImage(with: url)
     }
+    
     ratingSquares = [ratingSquare1, ratingSquare2, ratingSquare3, ratingSquare4, ratingSquare5]
     for i in 0 ..< Int(round(review.userRating)){
       ratingSquares[i].image = #imageLiteral(resourceName: "FilledRatingSquare")
     }
-
   }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        reviewerImage.layer.cornerRadius = 5
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

@@ -56,7 +56,6 @@ extension YelpAPIManager {
     return Future { complete in
       Alamofire.request(url, headers: headers).responseJSON { response in
         if let json = response.result.value {
-          print(json)
           complete(.success(json))
         }
       }
@@ -101,7 +100,7 @@ extension YelpAPIManager {
   // Given the JSON from the Yelp API call, parse the data into a list of restaurant objects
   func generateRestaurantsList(json: Any) -> [Restaurant] {
     guard let dictionary = json as? [String: Any] else { return [] }
-    let businesses = dictionary["businesses"] as! NSArray
+    guard let businesses = dictionary["businesses"] as? NSArray else { return [] }
 
     return businesses.flatMap { business in
       guard let businessDict = business as? [String: Any],
@@ -115,8 +114,6 @@ extension YelpAPIManager {
         let distance = businessDict["distance"] as? Double,
         let location = businessDict["location"] as? [String: Any],
         let address1 = location["address1"] as? String,
-        let address2 = location["address2"] as? String,
-        let address3 = location["address3"] as? String,
         let city = location["city"] as? String,
         let categories = businessDict["categories"] as? NSArray,
         let firstCategory = categories[0] as? [String: Any],
@@ -126,6 +123,9 @@ extension YelpAPIManager {
         let lat = coord["latitude"] as? Double,
         let lon = coord["longitude"] as? Double
         else { return nil }
+
+      let address2 = location["address2"] as? String ?? ""
+      let address3 = location["address3"] as? String ?? ""
 
       var address = address1
       if !address2.isEmpty {
@@ -176,7 +176,7 @@ extension YelpAPIManager {
     let headers = [
       "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
       ]
-    var urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
+    let urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
     guard let url = URL(string: urlString) else {
       print("Problem retrieve reviews from yelp API")
       return Future(error: ReadmeError.RequestFailed)
@@ -195,7 +195,7 @@ extension YelpAPIManager {
 
   func parseReviews(json: Any) -> [Review] {
     guard let dictionary = json as? [String: Any] else { return [] }
-    let reviews = dictionary["reviews"] as! NSArray
+    guard let reviews = dictionary["reviews"] as? NSArray else { return [] }
 
     return reviews.flatMap { review in
       guard let reviewDict = review as? [String: Any],
