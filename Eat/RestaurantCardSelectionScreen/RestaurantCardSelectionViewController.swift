@@ -81,11 +81,12 @@ class RestaurantCardSelectionViewController: UIViewController {
 
   @IBAction func restartButtonPressed(_ sender: Any) {
     kolodaView.isHidden = false
-    kolodaView.resetCurrentCardIndex()
-    restartButton.isEnabled = false
-    currNumOfPlayer = currNumOfPlayer + 1
-    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+    hideNextPlayerViewElements()
     enableSelectionButtons()
+
+    kolodaView.resetCurrentCardIndex()
+    currNumOfPlayer = currNumOfPlayer + 1
+    updateEaterCountLabel()
 
     guard let gameStateManager = self.gameStateManager else {
       return
@@ -103,8 +104,6 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.swipe(.right)
   }
 
-
-
   private func setStyling() {
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     kolodaView.layer.cornerRadius = 15
@@ -114,7 +113,7 @@ class RestaurantCardSelectionViewController: UIViewController {
     nextEaterLabel.text = "Finding Restaurants..."
     nextEaterLabel.isUserInteractionEnabled = false
 
-    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+    updateEaterCountLabel()
     eaterCountLabel.font = Font.body(size: 18)
     eaterCountLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
@@ -123,7 +122,6 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.layer.cornerRadius = 10
     restartButton.backgroundColor = #colorLiteral(red: 0.362785995, green: 0.4117482901, blue: 0.9952250123, alpha: 1)
     restartButton.titleLabel?.font =  Font.button(size: 16)
-    restartButton.isUserInteractionEnabled = false
     restartButton.isHidden = true
     restartButton.layer.shadowColor = #colorLiteral(red: 0.2009466769, green: 0.2274558959, blue: 0.5609335343, alpha: 1)
     restartButton.layer.shadowOffset = CGSize(width: 0, height: 10)
@@ -139,6 +137,10 @@ class RestaurantCardSelectionViewController: UIViewController {
     keepButton.setImage(#imageLiteral(resourceName: "button_keep"), for: .normal)
   }
 
+  private func updateEaterCountLabel(){
+    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+  }
+
   private func setOutOfCardStyling() {
     kolodaView.isHidden = true
     skipButton.isEnabled = false
@@ -146,16 +148,23 @@ class RestaurantCardSelectionViewController: UIViewController {
     eaterIcon.isHidden = false
   }
 
+  private func hideNextPlayerViewElements(){
+    nextEaterLabel.isHidden = true
+    restartButton.isHidden = true
+    restartButton.isEnabled = false
+    eaterIcon.isHidden = true
+  }
+
   private func setNextPlayerStyling() {
-    restartButton.isUserInteractionEnabled = true
     restartButton.isHidden = false
     restartButton.isEnabled = true
+    nextEaterLabel.isHidden = false
     nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
   }
 
   private func setFindingRestaurantStyling() {
-    nextEaterLabel.text = "Finding a place to eat..."
-    restartButton.isHidden = true
+    nextEaterLabel.isHidden = false
+    nextEaterLabel.text = "Finding a place for us to eat..."
     buttonsView.isHidden = true
   }
 
@@ -202,15 +211,13 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
       self.setNextPlayerStyling()
     } else {
       self.setFindingRestaurantStyling()
-      print("Go to next screen")
-      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
+      Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
     }
   }
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
     let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index])
     self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
-    print("card selected")
   }
 
   func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
