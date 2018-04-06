@@ -20,7 +20,6 @@ class RestaurantCardSelectionViewController: UIViewController {
   @IBOutlet weak var eaterCountLabel: UILabel!
   @IBOutlet weak var eaterIcon: UIImageView!
   @IBOutlet weak var buttonsView: UIView!
-  @IBOutlet weak var backgroundView: UIView!
 
   static func viewController(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
     let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
@@ -51,13 +50,14 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.dataSource = self
     kolodaView.delegate = self
     numberOfPlayers = searchQuery.numberOfPeople
+    setStyling()
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
-//     TODO: error screen for empty restaurant array
-//        if res.count <= 0 {
-//
-//        }
+        if res.count <= 0 {
+          let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
+          self.navigationController?.pushViewController(noRestaurantFoundVC, animated: true)
+        }
 
         self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)
         guard let gameStateManager = self.gameStateManager else {
@@ -65,17 +65,18 @@ class RestaurantCardSelectionViewController: UIViewController {
         }
         self.currNumOfPlayer = gameStateManager.currentPlayer
         self.restaurants = gameStateManager.getSubsetOfRestaurants()
-
+        let progress = Float(self.currNumOfPlayer) / Float(self.numberOfPlayers)
+        self.eaterProgressBar.setProgress(progress, animated: true)
+        self.enableSelectionButtons()
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+          self.nextEaterLabel.alpha = 0
+        }, completion: { _ in
+          self.nextEaterLabel.isHidden = true
+        })
       }.onFailure { error in
         // TODO: Error handling
         print(error)
     }
-
-
-
-    let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
-    eaterProgressBar.setProgress(progress, animated: true)
-    setStyling()
   }
 
   @IBAction func closeButtonPressed(_ sender: Any) {
@@ -84,12 +85,12 @@ class RestaurantCardSelectionViewController: UIViewController {
 
   @IBAction func restartButtonPressed(_ sender: Any) {
     kolodaView.isHidden = false
+    hideNextPlayerViewElements()
+    enableSelectionButtons()
+
     kolodaView.resetCurrentCardIndex()
-    skipButton.isEnabled = true
-    keepButton.isEnabled = true
-    restartButton.isEnabled = false
     currNumOfPlayer = currNumOfPlayer + 1
-    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+    updateEaterCountLabel()
 
     guard let gameStateManager = self.gameStateManager else {
       return
@@ -107,11 +108,8 @@ class RestaurantCardSelectionViewController: UIViewController {
     kolodaView.swipe(.right)
   }
 
-
-
   private func setStyling() {
-    backgroundView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
-    self.view.backgroundColor = .white
+    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     kolodaView.layer.cornerRadius = 15
 
     nextEaterLabel.font = Font.body(size: 20)
@@ -119,8 +117,8 @@ class RestaurantCardSelectionViewController: UIViewController {
     nextEaterLabel.text = "Finding Restaurants..."
     nextEaterLabel.isUserInteractionEnabled = false
 
-    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
-    eaterCountLabel.font = Font.navigationHeaders(size: 18)
+    updateEaterCountLabel()
+    eaterCountLabel.font = Font.body(size: 18)
     eaterCountLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
     eaterIcon.isHidden = true
@@ -128,33 +126,73 @@ class RestaurantCardSelectionViewController: UIViewController {
     restartButton.layer.cornerRadius = 10
     restartButton.backgroundColor = #colorLiteral(red: 0.362785995, green: 0.4117482901, blue: 0.9952250123, alpha: 1)
     restartButton.titleLabel?.font =  Font.button(size: 16)
-    restartButton.isUserInteractionEnabled = false
     restartButton.isHidden = true
+    restartButton.layer.shadowColor = #colorLiteral(red: 0.2009466769, green: 0.2274558959, blue: 0.5609335343, alpha: 1)
+    restartButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+    restartButton.layer.masksToBounds = false
+    restartButton.layer.shadowRadius = 5.0
+    restartButton.layer.shadowOpacity = 0.25
 
+    skipButton.isEnabled = false
+    keepButton.isEnabled = false
     skipButton.setImage(#imageLiteral(resourceName: "grey_button_skip"), for: .disabled)
     keepButton.setImage(#imageLiteral(resourceName: "grey_button_keep"), for: .disabled)
     skipButton.setImage(#imageLiteral(resourceName: "button_skip"), for: .normal)
     keepButton.setImage(#imageLiteral(resourceName: "button_keep"), for: .normal)
   }
 
+  private func updateEaterCountLabel(){
+    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+  }
+
+  private func hideNextPlayerViewElements(){
+    restartButton.isEnabled = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+      self.nextEaterLabel.alpha = 0
+      self.restartButton.alpha = 0
+      self.eaterIcon.alpha = 0
+    }, completion: { _ in
+      self.nextEaterLabel.isHidden = true
+      self.restartButton.isHidden = true
+      self.eaterIcon.isHidden = true
+    })
+  }
+
   private func setOutOfCardStyling() {
-    kolodaView.isHidden = true
     skipButton.isEnabled = false
     keepButton.isEnabled = false
-    eaterIcon.isHidden = false
+    self.kolodaView.isHidden = true
   }
 
   private func setNextPlayerStyling() {
-    restartButton.isUserInteractionEnabled = true
-    restartButton.isHidden = false
-    restartButton.isEnabled = true
     nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
+    restartButton.isEnabled = true
+    self.eaterIcon.isHidden = false
+    self.nextEaterLabel.isHidden = false
+    self.restartButton.isHidden = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+      self.eaterIcon.alpha = 1
+      self.nextEaterLabel.alpha = 1
+      self.restartButton.alpha = 1
+    }, completion: nil)
   }
 
   private func setFindingRestaurantStyling() {
-    nextEaterLabel.text = "Finding a place to eat..."
-    restartButton.isHidden = true
-    buttonsView.isHidden = true
+    nextEaterLabel.text = "Finding a place for us to eat..."
+    self.eaterIcon.isHidden = false
+    self.nextEaterLabel.isHidden = false
+    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+      self.eaterIcon.alpha = 1
+      self.nextEaterLabel.alpha = 1
+      self.buttonsView.alpha = 0
+    }, completion: { _ in
+      self.buttonsView.isHidden = true
+    })
+  }
+
+  private func enableSelectionButtons(){
+    skipButton.isEnabled = true
+    keepButton.isEnabled = true
   }
 
   private func pickTopRestaurnt() -> Restaurant? {
@@ -195,15 +233,13 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
       self.setNextPlayerStyling()
     } else {
       self.setFindingRestaurantStyling()
-      print("Go to next screen")
-      Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
+      Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
     }
   }
 
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
     let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index])
     self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
-    print("card selected")
   }
 
   func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {

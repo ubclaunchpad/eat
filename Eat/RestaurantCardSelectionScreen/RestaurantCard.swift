@@ -55,10 +55,11 @@ class RestaurantCard : UIView {
         openNowLabel.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
       }
       setStyling()
-      if let url = URL(string: viewModel.imageUrl), let data = try? Data(contentsOf: url) {
-        imageView.image = UIImage(data: data)
+      if let url = URL(string: viewModel.imageUrl) {
+        imageView.kf.setImage(with: url)
       } else {
         imageView.image = #imageLiteral(resourceName: "default_restaurant_photo")
+        imageView.layer.backgroundColor = #colorLiteral(red: 0.9134720564, green: 0.9174253345, blue: 0.9339053035, alpha: 1)
       }
       ratingSquares = [ratingSquare1, ratingSquare2, ratingSquare3, ratingSquare4, ratingSquare5]
       for i in 0 ..< Int(round(viewModel.rating)){
