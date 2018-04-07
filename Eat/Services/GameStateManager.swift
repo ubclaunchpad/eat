@@ -55,4 +55,30 @@ internal final class GameStateManager {
     }
     return subset
   }
+
+  func getTopRestaurant() -> Restaurant? {
+    if restaurants.count == 0 {
+      return nil
+    }
+    var topScore: Int = -(self.numberOfPlayer)
+    var topScoringRestaurants: [Restaurant] = []
+
+    for index in 0..<restaurantScore.count {
+      if (restaurantScore[index] > topScore) {
+        topScore = restaurantScore[index]
+        topScoringRestaurants = [restaurants[index]]
+      } else if (restaurantScore[index] == topScore) {
+        topScoringRestaurants.append(restaurants[index])
+      }
+    }
+
+    let ranNum = randomNumber(min: 0, max: topScoringRestaurants.count)
+    print(topScoringRestaurants)
+    print(ranNum)
+    return topScoringRestaurants[ranNum]
+  }
+
+  func randomNumber(min: Int, max: Int)-> Int{
+    return Int(arc4random_uniform(UInt32(max-min)) + UInt32(min));
+  }
 }

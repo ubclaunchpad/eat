@@ -97,7 +97,6 @@ extension RestaurantInfoViewController: UITableViewDataSource {
       return cell
     case .reviews:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell",for: indexPath) as? RestaurantReviewCell else { fatalError() }
-      print(indexPath.row)
       cell.configure(review: reviews[indexPath.row])
       cell.selectionStyle = UITableViewCellSelectionStyle.none
       return cell

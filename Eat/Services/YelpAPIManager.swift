@@ -161,7 +161,6 @@ extension YelpAPIManager {
         switch result {
         case .success(let val):
           let reviews = self.parseReviews(json: val)
-          print(reviews)
           complete(.success(reviews))
         case .failure(_):
           print("No Reviews found")

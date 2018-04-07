@@ -194,32 +194,16 @@ class RestaurantCardSelectionViewController: UIViewController {
     skipButton.isEnabled = true
     keepButton.isEnabled = true
   }
-
-  private func pickTopRestaurnt() -> Restaurant? {
-    guard let gameStateManager = self.gameStateManager else {
-      return nil
-    }
-    let restaurantScore = gameStateManager.restaurantScore
-    let restaurants = gameStateManager.restaurants
-    var topScore: Int = -(gameStateManager.numberOfPlayer)
-    var topScoringRestaurant: Restaurant = restaurants[0]
-
-    for index in 0..<restaurantScore.count {
-      if (restaurantScore[index] > topScore) {
-        topScore = restaurantScore[index]
-        topScoringRestaurant = restaurants[index]
-      }
-    }
-    return topScoringRestaurant
-  }
 }
 
 extension RestaurantCardSelectionViewController: KolodaViewDelegate {
 
   @objc func pushChosenRestaurantVC(index: Int) {
-    guard let topRestaurant = self.pickTopRestaurnt() else {
+    guard let gameStateManager = self.gameStateManager,
+      let topRestaurant = gameStateManager.getTopRestaurant() else {
       return
     }
+
     let viewController = ChosenRestaurantViewController.viewController(restaurant: topRestaurant)
     self.navigationController?.pushViewController(viewController, animated: true)
   }
