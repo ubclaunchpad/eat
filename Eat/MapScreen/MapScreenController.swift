@@ -61,15 +61,6 @@ class MapScreenController: UIViewController{
                                           zoom: zoomLevel)
     self.mapView.camera = camera
 
-    // Only show the location button when location is authorized for the app.
-    if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
-      print("status")
-      print(CLLocationManager.locationServicesEnabled())
-      print(CLLocationManager.authorizationStatus())
-      self.mapView.settings.myLocationButton = true
-      self.mapView.isMyLocationEnabled = true
-    }
-
     self.mapView.settings.setAllGesturesEnabled(true)
     self.mapView.isUserInteractionEnabled = true
     self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -178,6 +169,15 @@ extension MapScreenController : CLLocationManagerDelegate {
     }
   }
 
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    switch status {
+    case .authorizedAlways, .authorizedWhenInUse:
+      self.mapView.settings.myLocationButton = true
+      self.mapView.isMyLocationEnabled = true
+    default:
+      break
+    }
+  }
 }
 
 extension MapScreenController : GMSMapViewDelegate {
