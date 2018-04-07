@@ -105,7 +105,6 @@ class MapScreenController: UIViewController{
     nextView.titleLabel?.font = Font.onboardingAction(size: 17)
     nextView.layer.cornerRadius = 16
     nextView.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
-    nextView.frame.size = CGSize(width: 311, height: 56)
 
     self.view.bringSubview(toFront: nextView)
   }
