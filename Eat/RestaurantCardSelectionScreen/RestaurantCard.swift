@@ -83,7 +83,7 @@ class RestaurantCard : UIView {
   }
 
   private func setStyling(){
-    titleLabel.font = Font.header(size: 22)
+    titleLabel.font = Font.header(size: 20)
     distanceLabel.textColor = UIColor.gray
     distanceLabel.alpha = 0.9
     distanceLabel.font = Font.body(size: 16)
