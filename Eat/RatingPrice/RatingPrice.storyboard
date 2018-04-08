@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNo-hk-gi3">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNo-hk-gi3">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,72 +14,46 @@
             <objects>
                 <viewController storyboardIdentifier="RatingPriceViewController" id="vNo-hk-gi3" customClass="RatingPriceViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6sC-iT-btH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QWF-Gd-766">
-                                <rect key="frame" x="24" y="293" width="325" height="76.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BXi-Va-Lph">
-                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your price range:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b6-Nq-16s">
-                                                <rect key="frame" x="0.0" y="0.0" width="192.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="inP-OF-Mrg">
-                                        <rect key="frame" x="0.0" y="36.5" width="325" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-wy-slc">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="103" id="peF-zC-cyK"/>
-                                                </constraints>
-                                                <state key="normal" title="$"/>
-                                                <connections>
-                                                    <action selector="onePriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="49F-ij-ddl"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-M7-akL">
-                                                <rect key="frame" x="111" y="0.0" width="103" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="103" id="s2i-BZ-yK7"/>
-                                                    <constraint firstAttribute="height" constant="40" id="vjH-zc-gwJ"/>
-                                                </constraints>
-                                                <state key="normal" title="$$"/>
-                                                <connections>
-                                                    <action selector="twoPriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="nSf-qQ-JKE"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-Ye-Roe">
-                                                <rect key="frame" x="222" y="0.0" width="103" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="103" id="0Ou-4w-rd4"/>
-                                                </constraints>
-                                                <state key="normal" title="$$$"/>
-                                                <connections>
-                                                    <action selector="threePriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="Fv5-Y7-HYB"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your price range:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b6-Nq-16s">
+                                <rect key="frame" x="24" y="324" width="192.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-M7-akL">
+                                <rect key="frame" x="117.5" y="363" width="85" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vjH-zc-gwJ"/>
+                                </constraints>
+                                <state key="normal" title="$$"/>
+                                <connections>
+                                    <action selector="twoPriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="nSf-qQ-JKE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-Ye-Roe">
+                                <rect key="frame" x="210.5" y="363" width="85.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fXw-Mr-yA1"/>
+                                </constraints>
+                                <state key="normal" title="$$$"/>
+                                <connections>
+                                    <action selector="threePriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="Fv5-Y7-HYB"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How picky are you with Yelp ratings?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckt-Mx-Zxq">
-                                <rect key="frame" x="24" y="121" width="327" height="20.5"/>
+                                <rect key="frame" x="24" y="121" width="272" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aK8-Ge-2Xx">
-                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <rect key="frame" x="0.0" y="491" width="320" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8D-BJ-Jcu">
-                                        <rect key="frame" x="275" y="0.0" width="76" height="77"/>
+                                        <rect key="frame" x="220" y="0.0" width="76" height="77"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="76" id="cd9-93-W9C"/>
                                         </constraints>
@@ -128,27 +102,47 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rsh-81-f1y" customClass="EatSlider" customModule="Eat" customModuleProvider="target">
-                                <rect key="frame" x="22" y="194" width="331" height="31"/>
+                                <rect key="frame" x="22" y="194" width="276" height="31"/>
                                 <connections>
                                     <action selector="ratingSliderChanged" destination="vNo-hk-gi3" eventType="valueChanged" id="gFw-Qq-hV6"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR7-wy-slc">
+                                <rect key="frame" x="24" y="363" width="85.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BjX-sk-dlX"/>
+                                </constraints>
+                                <state key="normal" title="$"/>
+                                <connections>
+                                    <action selector="onePriceTapped" destination="vNo-hk-gi3" eventType="touchUpInside" id="49F-ij-ddl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2bv-2j-NDP" firstAttribute="leading" secondItem="Ckt-Mx-Zxq" secondAttribute="leading" id="4g4-W8-A15"/>
                             <constraint firstItem="2bv-2j-NDP" firstAttribute="top" secondItem="Ckt-Mx-Zxq" secondAttribute="bottom" constant="16" id="4pN-8m-oPQ"/>
+                            <constraint firstItem="0b6-Nq-16s" firstAttribute="leading" secondItem="2bv-2j-NDP" secondAttribute="leading" id="6iH-GV-jOj"/>
                             <constraint firstItem="nOW-4g-3La" firstAttribute="top" secondItem="Om5-Wk-NvN" secondAttribute="top" constant="17" id="BiV-tk-wxh"/>
                             <constraint firstItem="Om5-Wk-NvN" firstAttribute="bottom" secondItem="aK8-Ge-2Xx" secondAttribute="bottom" id="D0U-BX-WDN"/>
                             <constraint firstItem="rsh-81-f1y" firstAttribute="leading" secondItem="2bv-2j-NDP" secondAttribute="leading" id="Gip-sT-uwU"/>
                             <constraint firstItem="rsh-81-f1y" firstAttribute="top" secondItem="2bv-2j-NDP" secondAttribute="bottom" constant="16" id="JwF-mQ-8LK"/>
-                            <constraint firstItem="QWF-Gd-766" firstAttribute="leading" secondItem="Om5-Wk-NvN" secondAttribute="leading" constant="24" id="Zxr-OQ-2x8"/>
+                            <constraint firstItem="NNz-Ye-Roe" firstAttribute="leading" secondItem="mVN-M7-akL" secondAttribute="trailing" constant="8" id="O2W-eS-158"/>
+                            <constraint firstItem="mVN-M7-akL" firstAttribute="width" secondItem="NNz-Ye-Roe" secondAttribute="width" id="PQH-mg-1Vv"/>
+                            <constraint firstItem="FR7-wy-slc" firstAttribute="leading" secondItem="0b6-Nq-16s" secondAttribute="leading" id="SOG-Bc-d2k"/>
+                            <constraint firstItem="Om5-Wk-NvN" firstAttribute="trailing" secondItem="NNz-Ye-Roe" secondAttribute="trailing" constant="24" id="WXQ-3a-bJp"/>
+                            <constraint firstItem="mVN-M7-akL" firstAttribute="leading" secondItem="FR7-wy-slc" secondAttribute="trailing" constant="8" id="ZRO-cf-5mF"/>
                             <constraint firstItem="Ckt-Mx-Zxq" firstAttribute="leading" secondItem="Om5-Wk-NvN" secondAttribute="leading" constant="24" id="daJ-Db-lIS"/>
                             <constraint firstItem="Om5-Wk-NvN" firstAttribute="trailing" secondItem="Ckt-Mx-Zxq" secondAttribute="trailing" constant="24" id="drH-Xc-Mxf"/>
+                            <constraint firstItem="mVN-M7-akL" firstAttribute="width" secondItem="FR7-wy-slc" secondAttribute="width" id="eyr-XB-RCg"/>
+                            <constraint firstItem="mVN-M7-akL" firstAttribute="centerX" secondItem="Om5-Wk-NvN" secondAttribute="centerX" id="fIl-QJ-PqH"/>
                             <constraint firstItem="Om5-Wk-NvN" firstAttribute="trailing" secondItem="rsh-81-f1y" secondAttribute="trailing" constant="24" id="hOp-2q-rDO"/>
+                            <constraint firstItem="FR7-wy-slc" firstAttribute="top" secondItem="0b6-Nq-16s" secondAttribute="bottom" constant="18.5" id="iZK-uB-wra"/>
                             <constraint firstItem="nOW-4g-3La" firstAttribute="leading" secondItem="Om5-Wk-NvN" secondAttribute="leading" constant="11" id="jJY-O1-ah3"/>
-                            <constraint firstItem="QWF-Gd-766" firstAttribute="top" secondItem="rsh-81-f1y" secondAttribute="bottom" constant="69" id="mpI-Kl-PV8"/>
+                            <constraint firstItem="NNz-Ye-Roe" firstAttribute="bottom" secondItem="FR7-wy-slc" secondAttribute="bottom" id="jyF-y3-iSb"/>
+                            <constraint firstItem="0b6-Nq-16s" firstAttribute="top" secondItem="rsh-81-f1y" secondAttribute="bottom" constant="100" id="knu-7n-zZe"/>
                             <constraint firstItem="Om5-Wk-NvN" firstAttribute="trailing" secondItem="aK8-Ge-2Xx" secondAttribute="trailing" id="sdC-hQ-i6o"/>
+                            <constraint firstItem="mVN-M7-akL" firstAttribute="bottom" secondItem="FR7-wy-slc" secondAttribute="bottom" id="thX-yb-YOl"/>
                             <constraint firstItem="Ckt-Mx-Zxq" firstAttribute="top" secondItem="Om5-Wk-NvN" secondAttribute="top" constant="101" id="vbs-i3-tu7"/>
                             <constraint firstItem="aK8-Ge-2Xx" firstAttribute="leading" secondItem="6sC-iT-btH" secondAttribute="leading" id="yl7-VT-NlM"/>
                         </constraints>
