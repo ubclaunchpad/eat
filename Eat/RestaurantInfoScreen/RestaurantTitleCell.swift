@@ -28,7 +28,7 @@ class RestaurantTitleCell: UITableViewCell {
   func configure(restaurant: Restaurant) {
       // set Title
       title.text = restaurant.name
-      title.font = Font.header(size: 22)
+      title.font = Font.header(size: 18)
 
       // set distance
       distance.text = String(format: "%.2f", restaurant.distance/1000) + "km"

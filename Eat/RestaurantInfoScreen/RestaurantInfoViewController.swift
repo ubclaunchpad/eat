@@ -119,6 +119,13 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     }
   }
 
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    guard let header = view as? UITableViewHeaderFooterView else { return }
+    header.textLabel?.textColor = #colorLiteral(red: 0.5107896924, green: 0.5111948848, blue: 0.5108524561, alpha: 1)
+    header.textLabel?.font = Font.boldButton(size: 10)
+    header.textLabel?.frame = header.frame
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard let section = Section(rawValue: section) else { fatalError() }
     switch section {

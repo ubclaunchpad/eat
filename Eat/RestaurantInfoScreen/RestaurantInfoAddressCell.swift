@@ -10,17 +10,17 @@ import UIKit
 
 class RestaurantInfoAddressCell: UITableViewCell {
 
-  @IBOutlet weak var RestaurantAddress: UILabel!
+  @IBOutlet weak var restaurantAddressLabel: UILabel!
   @IBOutlet weak var addressImage: UIImageView!
 
   func configure(restaurant: Restaurant) {
-    RestaurantAddress.text = restaurant.address
+    restaurantAddressLabel.text = restaurant.address
+    restaurantAddressLabel.font = Font.boldButton(size: 12)
+    restaurantAddressLabel.textColor = #colorLiteral(red: 0.4991080165, green: 0.4995048642, blue: 0.4991694689, alpha: 1)
   }
 
   override func awakeFromNib() {
         super.awakeFromNib()
-        addressImage.layer.cornerRadius = 5
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
