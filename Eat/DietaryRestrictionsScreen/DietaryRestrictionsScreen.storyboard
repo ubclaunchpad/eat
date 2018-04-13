@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xk8-Qc-nET">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xk8-Qc-nET">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,22 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-nF-li9">
-                                <rect key="frame" x="24" y="178" width="325" height="40"/>
+                                <rect key="frame" x="24" y="178" width="327" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gD-7s-ogP">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="x9O-6V-Yx0"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="40"/>
                                         <state key="normal" title="Vegan"/>
                                         <connections>
                                             <action selector="VeganButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="qc3-Ml-J7Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-T4-uca">
-                                        <rect key="frame" x="111" y="0.0" width="103" height="40"/>
+                                        <rect key="frame" x="111.5" y="0.0" width="104" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="g4L-Hn-TKJ"/>
                                             <constraint firstAttribute="height" constant="40" id="udd-gb-s67"/>
                                         </constraints>
                                         <state key="normal" title="Vegetarian"/>
@@ -42,16 +38,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-vk-G6H">
-                                        <rect key="frame" x="222" y="0.0" width="103" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="Mvy-qM-jnP"/>
-                                        </constraints>
+                                        <rect key="frame" x="223.5" y="0.0" width="103.5" height="40"/>
                                         <state key="normal" title="Halal"/>
                                         <connections>
                                             <action selector="halalButtonPress:" destination="xk8-Qc-nET" eventType="touchUpInside" id="eGg-mo-unO"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="C5R-T4-uca" firstAttribute="width" secondItem="Fza-vk-G6H" secondAttribute="width" id="HvV-ij-8Ei"/>
+                                    <constraint firstItem="Fza-vk-G6H" firstAttribute="leading" secondItem="C5R-T4-uca" secondAttribute="trailing" constant="8" id="RGY-5o-7ES"/>
+                                    <constraint firstItem="C5R-T4-uca" firstAttribute="leading" secondItem="0gD-7s-ogP" secondAttribute="trailing" constant="8" id="Xqo-ps-avW"/>
+                                    <constraint firstItem="C5R-T4-uca" firstAttribute="height" secondItem="Fza-vk-G6H" secondAttribute="height" id="fmK-lL-eeR"/>
+                                    <constraint firstItem="0gD-7s-ogP" firstAttribute="width" secondItem="C5R-T4-uca" secondAttribute="width" id="ugV-HH-NRg"/>
+                                    <constraint firstItem="C5R-T4-uca" firstAttribute="height" secondItem="0gD-7s-ogP" secondAttribute="height" id="zbf-59-F2C"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any preferences?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9d-ks-aSF">
                                 <rect key="frame" x="24" y="290" width="327" height="20.5"/>
@@ -137,11 +138,12 @@
                             <constraint firstItem="9Vl-5F-Tyw" firstAttribute="top" secondItem="jWe-P5-L1y" secondAttribute="top" constant="101" id="7PN-T5-2Ob"/>
                             <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="0NR-1k-7z0" secondAttribute="trailing" id="7Ub-02-TSM"/>
                             <constraint firstItem="vym-Bn-QE5" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="24" id="DvR-dE-iab"/>
-                            <constraint firstItem="C0n-nF-li9" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="24" id="Ja2-4p-0bC"/>
                             <constraint firstItem="0NR-1k-7z0" firstAttribute="leading" secondItem="pD6-DO-iys" secondAttribute="leading" id="YKp-RT-IAE"/>
                             <constraint firstItem="IRI-ev-EQn" firstAttribute="leading" secondItem="jWe-P5-L1y" secondAttribute="leading" constant="11" id="Yga-4V-P1D"/>
+                            <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="C0n-nF-li9" secondAttribute="trailing" constant="24" id="bkM-K6-rHj"/>
                             <constraint firstItem="vym-Bn-QE5" firstAttribute="top" secondItem="X9d-ks-aSF" secondAttribute="bottom" constant="16" id="dsK-wy-gOd"/>
                             <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="4Bl-2l-Vgo" secondAttribute="trailing" constant="24" id="dud-OK-GXI"/>
+                            <constraint firstItem="C0n-nF-li9" firstAttribute="leading" secondItem="9Vl-5F-Tyw" secondAttribute="leading" id="eiy-QW-1by"/>
                             <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="X9d-ks-aSF" secondAttribute="trailing" constant="24" id="fbP-Ea-NaQ"/>
                             <constraint firstItem="jWe-P5-L1y" firstAttribute="trailing" secondItem="vym-Bn-QE5" secondAttribute="trailing" constant="24" id="g2G-yq-YnJ"/>
                             <constraint firstItem="4Bl-2l-Vgo" firstAttribute="bottom" secondItem="vym-Bn-QE5" secondAttribute="bottom" constant="5" id="isl-zM-kzz"/>
