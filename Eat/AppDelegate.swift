@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     // Google Maps and Places API
-    GMSServices.provideAPIKey(APIKeys.maps)
+    GMSServices.provideAPIKey(APIKeys.googleMaps)
 
     if dataManager.isFirstLaunch() {
       self.window?.rootViewController = Onboarding(window: window).viewController()
