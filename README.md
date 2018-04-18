@@ -7,7 +7,7 @@ Eat Now is an app to help you decide where to eat.
 ## Mission
 Here’s to the indecisive ones. The hesitant. The ditherers. The fence-sitters. The donkey between two haystacks. The ones who can never make a decision. 
 
-We built Eat Now foor us. We'll help you pick the best restaurant for any occasion. It's that simple.
+We built Eat Now for us. We'll help you pick the best restaurant for any occasion. It's that simple.
 
 ## Features
 * Search restaurants based on location
