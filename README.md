@@ -1,6 +1,6 @@
-![Eat Now](./eat/Images/eatnow.png)
+![Eat Now](./Images/eatnow.png)
 
-[![Download on the App Store](./eat/Images/appstore.svg)](https://itunes.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100?mt=8)
+[![Download on the App Store](./Images/appstore.svg)](https://itunes.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100?mt=8)
 
 Eat Now is an app to help you decide where to eat.
 
