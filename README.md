@@ -1,4 +1,4 @@
-![Eat Now](./Images/eatnow.png)
+[![Eat Now](./Images/eatnow.png)](https://github.com/ubclaunchpad/eat)
 
 [![Download on the App Store](./Images/appstore.svg)](https://itunes.apple.com/ca/app/eat-now-find-where-to-eat/id1366648100?mt=8)
 
