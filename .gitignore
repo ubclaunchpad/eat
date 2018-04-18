@@ -77,6 +77,7 @@ fastlane/test_output
 ## Various settings
 
 ## Other
+APIKeys.swift
 
 ### Xcode Patch ###
 *.xcodeproj/*

@@ -173,7 +173,7 @@ extension YelpAPIManager {
   func retrieveYelpReviews(resId: String) -> Future<Any, ReadmeError> {
     // Declare the headers for the query
     let headers = [
-      "Authorization": "Bearer MM5X4kgi8SV3dsavDE8a-Tr_vyN7yWkZa4sYZIKUrzc0448Km9ri2No424GV8PfvAPMQU3hrYoxAuJev9gsDKNlabI3CRp5V-5qP3tlI8mdNWwst86TcsYc80pOIWnYx",
+      "Authorization": "Bearer \(APIKeys.yelp)",
       ]
     let urlString = "https://api.yelp.com/v3/businesses/" + resId + "/reviews"
     guard let url = URL(string: urlString) else {

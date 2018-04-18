@@ -33,6 +33,7 @@
 		5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6C205E3E4A002513E1 /* EatSlider.swift */; };
 		5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6E205EE28B002513E1 /* Onboarding.swift */; };
 		5246DA71205EE445002513E1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA70205EE445002513E1 /* UIImage.swift */; };
+		5261B1EF2087F57100198837 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261B1EE2087F57100198837 /* APIKeys.swift */; };
 		52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322C205DC5EB00A5E441 /* circular-book.otf */; };
 		52B73230205DC5EB00A5E441 /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322D205DC5EB00A5E441 /* circular-medium.otf */; };
 		52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322E205DC5EB00A5E441 /* circular-bold.otf */; };
@@ -113,6 +114,7 @@
 		5246DA6C205E3E4A002513E1 /* EatSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSlider.swift; sourceTree = "<group>"; };
 		5246DA6E205EE28B002513E1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		5246DA70205EE445002513E1 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5261B1EE2087F57100198837 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		52B7322C205DC5EB00A5E441 /* circular-book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-book.otf"; sourceTree = "<group>"; };
 		52B7322D205DC5EB00A5E441 /* circular-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium.otf"; sourceTree = "<group>"; };
 		52B7322E205DC5EB00A5E441 /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				555BDA8420734616005E6EEA /* GameStateManager.swift */,
 				052B4A78202FB08E00291EE9 /* DataManager.swift */,
 				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
+				5261B1EE2087F57100198837 /* APIKeys.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -794,6 +797,7 @@
 				5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */,
 				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
+				5261B1EF2087F57100198837 /* APIKeys.swift in Sources */,
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
