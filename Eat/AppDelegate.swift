@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMaps
-import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Google Maps and Places API
     GMSServices.provideAPIKey("AIzaSyCxsiAIumcoDHZZ9H48Pf0SaJ1zt--kD9A")
-    GMSPlacesClient.provideAPIKey("AIzaSyCxsiAIumcoDHZZ9H48Pf0SaJ1zt--kD9A")
 
     if dataManager.isFirstLaunch() {
       self.window?.rootViewController = Onboarding(window: window).viewController()

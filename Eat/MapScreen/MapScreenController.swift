@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 import GoogleMaps
-import GooglePlacePicker
-import GooglePlaces
 
 class MapScreenController: UIViewController{
 
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
-  var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
   @IBOutlet var mapView: GMSMapView!
