@@ -45,12 +45,29 @@ class RatingPriceViewController: UIViewController {
     applyStyling()
     setNavigation()
     setSlider()
-
-    ratingQuestionLabel.text = "How picky are you with Yelp ratings?"
-    priceLabel.text = "Choose your price range:"
+    setDefaults()
   }
 
-  func applyStyling() {
+  private func setDefaults() {
+    ratingSlider.value = Float(searchQuery.minimumRating)
+    ratingSliderChanged()
+    searchQuery.price.forEach {
+      switch $0 {
+      case 1:
+        isOneSelected = true
+        selectButton(button: onePriceButton)
+      case 2:
+        isTwoSelected = true
+        selectButton(button: twoPriceButton)
+      case 3:
+        isThreeSelected = true
+        selectButton(button: threePriceButton)
+      default: break
+      }
+    }
+  }
+
+  private func applyStyling() {
     ratingQuestionLabel.font = Font.header(size: 13)
     ratingQuestionLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     minimumRatingLabel.font = Font.header(size: 24)
@@ -73,29 +90,29 @@ class RatingPriceViewController: UIViewController {
     threePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     threePriceButton.titleLabel?.font =  Font.boldButton(size: 18)
     unselectButton(button: threePriceButton)
+
+    ratingQuestionLabel.text = "How picky are you with Yelp ratings?"
+    priceLabel.text = "Choose your price range:"
   }
 
-  func unselectButton(button: UIButton) {
+  private func unselectButton(button: UIButton) {
     button.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     button.layer.borderWidth = 2
-    button.backgroundColor = UIColor.white
+    button.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 
-  func selectButton(button: UIButton) {
+  private func selectButton(button: UIButton) {
     button.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: button.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
     button.setTitleColor(UIColor.white, for: .normal)
     button.layer.borderWidth = 0
   }
 
-  func setSlider() {
+  private func setSlider() {
     ratingSlider.setThumbImage(#imageLiteral(resourceName: "Slider"), for: .normal)
     ratingSlider.minimumTrackTintColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     ratingSlider.maximumTrackTintColor = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.8, alpha: 1)
     ratingSlider.maximumValue = 5
     ratingSlider.minimumValue = 0
-
-    ratingSlider.value = 3
-    ratingSliderChanged()
   }
 
   @IBAction func ratingSliderChanged() {
@@ -138,7 +155,7 @@ class RatingPriceViewController: UIViewController {
     }
   }
 
-  func transformPriceInput() -> [Int] {
+  private func transformPriceInput() -> [Int] {
     var prices: [Int] = []
     if isOneSelected { prices.append(1) }
     if isTwoSelected { prices.append(2) }

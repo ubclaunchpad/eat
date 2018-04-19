@@ -26,11 +26,11 @@ enum DietaryRestrictions {
   }
 }
 
-struct SearchQuery {
+class SearchQuery {
   // Map
-  var latitude: Float = 51.5033640 // Latitude of the restaurant
-  var longitude: Float = -0.1276250 // Longitude of the restaurant.
-  var radius: Int = 500 // Radius of search. Ssearch area is in METERS
+  var latitude: Float = 49.2827 // Latitude of the restaurant
+  var longitude: Float = 123.1207 // Longitude of the restaurant.
+  var radius: Int = 890 // Radius of search. Ssearch area is in METERS
 
   // People Count
   var numberOfPeople = 1
@@ -39,12 +39,12 @@ struct SearchQuery {
   var eatingTime: EatingTime = .now
 
   // Rating and Price
-  var minimumRating: Double = 0
+  var minimumRating: Double = 3
   var price: [Int] = [] // Matches one of "$", "$$" or "$$$" ($ = 1, $$ = 2, $$$ = 3)
 
   // Dietary Restrictions
   var dietary: DietaryRestrictions = .none
-  var searchTerm: String? = nil
+  var searchTerm: String = ""
 }
 
 extension SearchQuery {
