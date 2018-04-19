@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,26 +30,23 @@
             <rect key="frame" x="0.0" y="0.0" width="330" height="525"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-9L-gG0">
-                    <rect key="frame" x="0.0" y="0.0" width="330" height="381"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-9L-gG0">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="405.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBw-K3-53s">
-                    <rect key="frame" x="161" y="440" width="160" height="21"/>
+                    <rect key="frame" x="161" y="445" width="160" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3me-1u-Duv">
-                    <rect key="frame" x="16" y="391" width="249" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="W7u-tC-s2d"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Restaurant Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3me-1u-Duv">
+                    <rect key="frame" x="16" y="415.5" width="233" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfN-2M-bKb">
-                    <rect key="frame" x="16" y="439" width="130" height="22"/>
+                    <rect key="frame" x="16" y="444" width="130" height="22"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRatingSquare" translatesAutoresizingMaskIntoConstraints="NO" id="jHI-JX-2sR">
                             <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -107,17 +104,17 @@
                         <constraint firstItem="jHI-JX-2sR" firstAttribute="top" secondItem="lfN-2M-bKb" secondAttribute="top" id="zj0-Hy-SxH"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HK-Op-JOt">
-                    <rect key="frame" x="270" y="391" width="50" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HK-Op-JOt">
+                    <rect key="frame" x="254" y="415.5" width="66" height="20.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="lZa-Wv-d4s"/>
+                        <constraint firstAttribute="width" constant="66" id="Qx2-nr-rmP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n39-ZG-Oea">
-                    <rect key="frame" x="16" y="466" width="38" height="21"/>
+                    <rect key="frame" x="16" y="471" width="38" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="k30-Kn-ZqG"/>
                     </constraints>
@@ -152,7 +149,7 @@
                 <constraint firstItem="3me-1u-Duv" firstAttribute="top" secondItem="N2A-9L-gG0" secondAttribute="bottom" constant="10" id="5kk-B1-uAY"/>
                 <constraint firstItem="3HK-Op-JOt" firstAttribute="top" secondItem="N2A-9L-gG0" secondAttribute="bottom" constant="10" id="5z4-IB-Lz4"/>
                 <constraint firstItem="ZBw-K3-53s" firstAttribute="bottom" secondItem="lfN-2M-bKb" secondAttribute="bottom" id="CkW-CI-UCY"/>
-                <constraint firstItem="O5Y-v2-hRx" firstAttribute="top" secondItem="n39-ZG-Oea" secondAttribute="bottom" constant="5" id="Ebk-fM-rLe"/>
+                <constraint firstItem="O5Y-v2-hRx" firstAttribute="top" secondItem="n39-ZG-Oea" secondAttribute="bottom" id="Ebk-fM-rLe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uV9-0p-h9a" secondAttribute="trailing" constant="18" id="FE3-Vl-EyJ"/>
                 <constraint firstItem="3me-1u-Duv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Lpy-cN-RjY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="O5Y-v2-hRx" secondAttribute="bottom" constant="12" id="Vh9-63-hdK"/>

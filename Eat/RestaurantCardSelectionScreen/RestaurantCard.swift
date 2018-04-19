@@ -83,19 +83,16 @@ class RestaurantCard : UIView {
   }
 
   private func setStyling(){
-    titleLabel.font = Font.header(size: 20)
-    distanceLabel.textColor = UIColor.gray
-    distanceLabel.alpha = 0.9
-    distanceLabel.font = Font.body(size: 16)
-    typeLabel.textColor = UIColor.gray
-    typeLabel.alpha = 0.9
-    typeLabel.font = Font.body(size: 14)
-    openNowLabel.font = Font.body(size: 14)
-    reviewLabel.textColor = UIColor.gray
-    reviewLabel.alpha = 0.9
-    reviewLabel.font = Font.body(size: 14)
-    moreInfoLabel.font = Font.boldButton(size: 16)
-
+    titleLabel.font = Font.bold(size: 18)
+    distanceLabel.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
+    distanceLabel.font = Font.regular(size: 15)
+    typeLabel.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
+    typeLabel.font = Font.regular(size: 14)
+    openNowLabel.font = Font.regular(size: 14)
+    reviewLabel.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
+    reviewLabel.font = Font.regular(size: 14)
+    moreInfoLabel.font = Font.regular(size: 14)
+    moreInfoLabel.textColor = #colorLiteral(red: 0.3098039216, green: 0.3098039216, blue: 0.3098039216, alpha: 1)
 
     contentView.layer.cornerRadius = 15
     contentView.clipsToBounds = true

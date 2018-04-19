@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 import GoogleMaps
-import GooglePlacePicker
-import GooglePlaces
 
 class MapScreenController: UIViewController{
 
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
-  var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
 
   @IBOutlet var mapView: GMSMapView!
@@ -61,15 +58,6 @@ class MapScreenController: UIViewController{
                                           zoom: zoomLevel)
     self.mapView.camera = camera
 
-    // Only show the location button when location is authorized for the app.
-    if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
-      print("status")
-      print(CLLocationManager.locationServicesEnabled())
-      print(CLLocationManager.authorizationStatus())
-      self.mapView.settings.myLocationButton = true
-      self.mapView.isMyLocationEnabled = true
-    }
-
     self.mapView.settings.setAllGesturesEnabled(true)
     self.mapView.isUserInteractionEnabled = true
     self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -105,7 +93,6 @@ class MapScreenController: UIViewController{
     nextView.titleLabel?.font = Font.onboardingAction(size: 17)
     nextView.layer.cornerRadius = 16
     nextView.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
-    nextView.frame.size = CGSize(width: 311, height: 56)
 
     self.view.bringSubview(toFront: nextView)
   }
@@ -178,6 +165,15 @@ extension MapScreenController : CLLocationManagerDelegate {
     }
   }
 
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    switch status {
+    case .authorizedAlways, .authorizedWhenInUse:
+      self.mapView.settings.myLocationButton = true
+      self.mapView.isMyLocationEnabled = true
+    default:
+      break
+    }
+  }
 }
 
 extension MapScreenController : GMSMapViewDelegate {

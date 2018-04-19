@@ -62,8 +62,6 @@
 		</dict>
 		<key>PromiseKit.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
@@ -76,17 +74,13 @@
 		</dict>
 		<key>SearchTextField.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>12</integer>
 		</dict>
 		<key>YelpAPI.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>11</integer>
 		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
