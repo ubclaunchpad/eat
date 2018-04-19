@@ -56,7 +56,9 @@ class RestaurantCardSelectionViewController: UIViewController {
       .onSuccess { res in
         if res.count <= 0 {
           let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
-          self.navigationController?.pushViewController(noRestaurantFoundVC, animated: true)
+          self.present(noRestaurantFoundVC, animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+          }
         }
 
         self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)

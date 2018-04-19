@@ -24,10 +24,10 @@ class NoRestaurantFoundViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setStyling()
-    }
+  }
 
   @IBAction func adjustPreferenceButtonPressed(_ sender: Any) {
-    navigationController?.popToRootViewController(animated: true)
+    self.dismiss(animated: true)
   }
 
   private func setStyling(){

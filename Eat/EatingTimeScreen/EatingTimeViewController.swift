@@ -27,8 +27,21 @@ class EatingTimeViewController: UIViewController {
   }
 
   var searchQuery: SearchQuery!
-  var selectedDate: EatingTime = .now
   let datePicker = UIDatePicker()
+  var selectedDate: EatingTime = .now {
+    didSet {
+      switch selectedDate {
+      case .now:
+        setDateInput(date: "now")
+      case .later(let date):
+        if (date.sameDate(date: Date())) {
+          setDateInput(date: date.toStringToday())
+        } else {
+          setDateInput(date: date.toString())
+        }
+      }
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +49,11 @@ class EatingTimeViewController: UIViewController {
     setDatePicker()
     setGradient()
     setNavigation()
+    setDefaults()
+  }
+
+  private func setDefaults() {
+    selectedDate = searchQuery.eatingTime
   }
 
   private func applyStyling() {
@@ -76,6 +94,11 @@ class EatingTimeViewController: UIViewController {
   }
 
   @objc func datePickerChanged() {
+    if datePicker.date < Date() {
+      datePicker.date = Date()
+    }
+    selectedDate = .later(date: datePicker.date)
+    
     if (datePicker.date.sameDate(date: Date())) {
       setDateInput(date: datePicker.date.toStringToday())
     } else if datePicker.date < Date() {
@@ -84,12 +107,11 @@ class EatingTimeViewController: UIViewController {
     else {
       setDateInput(date: datePicker.date.toString())
     }
-    selectedDate = .later(date: datePicker.date)
+
   }
 
   @objc func nowTapped() {
     datePicker.date = Date()
-    setDateInput(date: "now")
     selectedDate = .now
   }
 

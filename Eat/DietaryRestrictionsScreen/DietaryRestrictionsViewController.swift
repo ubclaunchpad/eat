@@ -32,26 +32,47 @@ class DietaryRestrictionsViewController: UIViewController {
 
   var searchQuery: SearchQuery!
 
-  var dietary: DietaryRestrictions = .none
+  var dietary: DietaryRestrictions = .none {
+    didSet {
+      switch dietary {
+      case .vegan:
+        resetAll()
+        selectButton(button: VeganButton)
+      case .halal:
+        resetAll()
+        selectButton(button: halalButton)
+      case .vegetarian:
+        resetAll()
+        selectButton(button: VegetarianButton)
+      case .none:
+        resetAll()
+      }
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     applyStyling()
     resetAll()
     setNavigation()
+    setDefaults()
 
     VeganButton.setTitle("Vegan", for: .normal)
     VegetarianButton.setTitle("Vegetarian", for: .normal)
     halalButton.setTitle("Halal", for: .normal)
 
     OtherPrefs.delegate = self
-    OtherPrefs.placeholder = "Eg: Vietnamese, bubble tea"
 
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     view.addGestureRecognizer(tap)
   }
 
-  func applyStyling() {
+  private func setDefaults() {
+    dietary = searchQuery.dietary
+    OtherPrefs.placeholder = searchQuery.searchTerm.isEmpty ? "Eg: Vietnamese, bubble tea" : searchQuery.searchTerm
+  }
+
+  private func applyStyling() {
     restrictionQuestion.font = Font.header(size: 13)
     restrictionQuestion.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     preferenceQuestion.font = Font.header(size: 13)
@@ -83,55 +104,34 @@ class DietaryRestrictionsViewController: UIViewController {
     view.endEditing(true)
   }
 
+  private func unselectButton(button: UIButton) {
+    button.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
+    button.layer.borderWidth = 2
+    button.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+  }
+
+  private func selectButton(button: UIButton) {
+    button.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: button.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
+    button.setTitleColor(UIColor.white, for: .normal)
+    button.layer.borderWidth = 0
+  }
+
   @IBAction func VeganButtonPress(_ sender: Any) {
-    if (dietary == .vegan) {
-      resetAll()
-    } else {
-      resetAll()
-      VeganButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VeganButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
-      VeganButton.setTitleColor(UIColor.white, for: .normal)
-      VeganButton.layer.borderWidth = 0
-      dietary = .vegan
-    }
+    dietary = .vegan
   }
 
   @IBAction func VegetarianButtonPress(_ sender: UIButton) {
-    if (dietary == .vegetarian) {
-      resetAll()
-    } else {
-      resetAll()
-      VegetarianButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: VegetarianButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
-      VegetarianButton.setTitleColor(UIColor.white, for: .normal)
-      VegetarianButton.layer.borderWidth = 0
-      dietary = .vegetarian
-    }
+    dietary = .vegetarian
   }
 
   @IBAction func halalButtonPress(_ sender: Any) {
-    if (dietary == .halal) {
-      resetAll()
-    } else {
-      resetAll()
-      halalButton.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: halalButton.frame, andColors: [#colorLiteral(red: 1, green: 0.7647058824, blue: 0.4901960784, alpha: 1), #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)])
-      halalButton.setTitleColor(UIColor.white, for: .normal)
-      halalButton.layer.borderWidth = 0
-      dietary = .halal
-    }
+    dietary = .halal
   }
 
-  func resetAll() {
-    dietary = .none
-    VeganButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
-    VeganButton.layer.borderWidth = 2
-    VeganButton.backgroundColor = UIColor.white
-
-    VegetarianButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
-    VegetarianButton.layer.borderWidth = 2
-    VegetarianButton.backgroundColor = UIColor.white
-
-    halalButton.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
-    halalButton.layer.borderWidth = 2
-    halalButton.backgroundColor = UIColor.white
+  private func resetAll() {
+    unselectButton(button: VeganButton)
+    unselectButton(button: VegetarianButton)
+    unselectButton(button: halalButton)
   }
 }
 
@@ -162,7 +162,7 @@ extension DietaryRestrictionsViewController {
 
   @IBAction private func finishTapped() {
     searchQuery.dietary = dietary
-    searchQuery.searchTerm = OtherPrefs.text
+    searchQuery.searchTerm = OtherPrefs.text ?? ""
     let restaurantCardsVC = RestaurantCardSelectionViewController.viewController(searchQuery: searchQuery)
     navigationController?.pushViewController(restaurantCardsVC, animated: true)
   }
