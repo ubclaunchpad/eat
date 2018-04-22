@@ -24,13 +24,11 @@ class PeopleCountViewController: UIViewController {
 
     guard let vc = storyboard.instantiateViewController(withIdentifier: "PeopleCountViewController") as? PeopleCountViewController
       else { fatalError() }
-
     vc.searchQuery = searchQuery
-
     return vc
   }
 
-  var searchQuery: SearchQuery = SearchQuery()
+  var searchQuery: SearchQuery!
 
   var peopleCount: Int = 1
 
@@ -40,6 +38,7 @@ class PeopleCountViewController: UIViewController {
     setupButtons()
     setupLabels()
     setNavigation()
+    setDefaults()
   }
 
   @IBAction func countButtonTapped(_ sender: Any) {
@@ -54,6 +53,11 @@ class PeopleCountViewController: UIViewController {
       peopleCount -= 1
       scaleButton()
     }
+  }
+
+  private func setDefaults() {
+    peopleCount = searchQuery.numberOfPeople
+    scaleButton(animated: false)
   }
 
   private func setupButtons() {
@@ -75,14 +79,19 @@ class PeopleCountViewController: UIViewController {
     minusButton.layer.cornerRadius = 0.5 * minusButton.frame.width
   }
 
-  private func scaleButton() {
+  private func scaleButton(animated: Bool = true) {
     countLabel.text = String(peopleCount)
     let fontSize = CGFloat(25 + peopleCount * 7)
     countLabel.font = Font.header(size: fontSize)
     let scale = 1.0 + Double(self.peopleCount) / 7.0 * Double(self.peopleCount) / 10.0
-    UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+
+    if animated {
+      UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+        self.countButton.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
+      }, completion: nil)
+    } else {
       self.countButton.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
-    }, completion: nil)
+    }
   }
 
   private func setupLabels() {

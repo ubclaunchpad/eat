@@ -16,6 +16,8 @@ class MapScreenController: UIViewController{
   var currentLocation = CLLocation?.self
   var zoomLevel: Float = 15.0
 
+  let searchQuery = SearchQuery()
+
   @IBOutlet var mapView: GMSMapView!
   @IBOutlet weak var nextView: UIButton!
   @IBOutlet weak var headerView: UIView!
@@ -36,7 +38,7 @@ class MapScreenController: UIViewController{
   var didSelect: Bool = false
 
   // A default location to use when location permission is not granted.
-  let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+  let defaultLocation = CLLocation(latitude: 49.2827, longitude: 123.1207)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -124,7 +126,6 @@ class MapScreenController: UIViewController{
 
     let radius = getLongatudeRadius(center: self.mapView.camera.target.longitude, outerCoord: projection.farRight.longitude)
 
-    var searchQuery = SearchQuery()
     searchQuery.latitude = Float(center.latitude)
     searchQuery.longitude = Float(center.longitude)
     searchQuery.radius = radius
