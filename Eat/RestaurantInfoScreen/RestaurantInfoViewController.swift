@@ -153,13 +153,13 @@ extension RestaurantInfoViewController: UITableViewDelegate {
     case .photo:
       return 267
     case .title:
-      return 145
+      return 130
     case .InfoMenu:
-      return 65
+      return 40
     case .InfoAddress:
-      return 65
+      return 40
     case .reviews:
-      return 150
+      return 115
     }
   }
 
