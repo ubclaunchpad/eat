@@ -28,19 +28,19 @@ class RestaurantTitleCell: UITableViewCell {
   func configure(restaurant: Restaurant) {
       // set Title
       title.text = restaurant.name
-      title.font = Font.header(size: 22)
+      title.font = Font.header(size: 18)
 
       // set distance
       distance.text = String(format: "%.2f", restaurant.distance/1000) + "km"
       distance.textColor = UIColor.gray
       distance.alpha = 0.9
-      distance.font = Font.body(size: 14)
+      distance.font = Font.regular(size: 14)
 
       // set foodtype
       foodtype.text = restaurant.foodType
       foodtype.textColor = UIColor.gray
       foodtype.alpha = 0.9
-      foodtype.font = Font.body(size: 14)
+      foodtype.font = Font.regular(size: 14)
 
       // set hours
       if(!restaurant.status) {
@@ -50,13 +50,13 @@ class RestaurantTitleCell: UITableViewCell {
         openNow.text = "Closed"
         openNow.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
       }
-      openNow.font = Font.body(size: 14)
+      openNow.font = Font.regular(size: 14)
 
       // set ReviewSize
       reviewSize.text = String(restaurant.reviewCount) + " Reviews"
       reviewSize.textColor = UIColor.gray
       reviewSize.alpha = 0.9
-      reviewSize.font = Font.body(size: 14)
+      reviewSize.font = Font.regular(size: 14)
 
       // set up button
       for i in 0 ..< Int(round(restaurant.rating)){

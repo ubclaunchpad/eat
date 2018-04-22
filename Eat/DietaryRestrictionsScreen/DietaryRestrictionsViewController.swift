@@ -62,6 +62,7 @@ class DietaryRestrictionsViewController: UIViewController {
     halalButton.setTitle("Halal", for: .normal)
 
     OtherPrefs.delegate = self
+    OtherPrefs.placeholder = "Eg: French, bubble tea"
 
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     view.addGestureRecognizer(tap)

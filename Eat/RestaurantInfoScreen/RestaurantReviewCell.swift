@@ -23,8 +23,12 @@ class RestaurantReviewCell: UITableViewCell {
 
   func configure(review: Review) {
     reviewerName.text = review.userName
-    reviewContent.text = review.content
-    reviewerImage.layer.cornerRadius = 5
+    let trimmed = review.content.components(separatedBy: .newlines).joined()
+    reviewContent.text = trimmed
+    reviewerName.font = Font.regular(size: 12)
+    reviewerName.textColor = #colorLiteral(red: 0.3830927014, green: 0.3831023574, blue: 0.3830972314, alpha: 1)
+    reviewContent.font = Font.regular(size: 12)
+    reviewerImage.layer.cornerRadius = 4
     if let url = URL(string: review.userImage) {
       reviewerImage.kf.setImage(with: url)
     }

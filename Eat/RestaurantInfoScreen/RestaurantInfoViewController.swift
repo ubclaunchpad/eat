@@ -32,6 +32,8 @@ class RestaurantInfoViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
+    let headerInset: CGFloat = 24
+    tableView.separatorInset = UIEdgeInsets.init(top: 0, left: headerInset, bottom: 0, right: 0)
     self.getReviews()
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
@@ -119,6 +121,13 @@ extension RestaurantInfoViewController: UITableViewDataSource {
     }
   }
 
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    guard let header = view as? UITableViewHeaderFooterView else { return }
+    header.textLabel?.textColor = #colorLiteral(red: 0.5107896924, green: 0.5111948848, blue: 0.5108524561, alpha: 1)
+    header.textLabel?.font = Font.boldButton(size: 10)
+    header.textLabel?.frame = header.frame
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard let section = Section(rawValue: section) else { fatalError() }
     switch section {
@@ -144,13 +153,13 @@ extension RestaurantInfoViewController: UITableViewDelegate {
     case .photo:
       return 267
     case .title:
-      return 145
+      return 130
     case .InfoMenu:
-      return 65
+      return 40
     case .InfoAddress:
-      return 65
+      return 40
     case .reviews:
-      return 150
+      return 115
     }
   }
 

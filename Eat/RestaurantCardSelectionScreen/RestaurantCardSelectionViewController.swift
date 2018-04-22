@@ -54,7 +54,7 @@ class RestaurantCardSelectionViewController: UIViewController {
 
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { res in
-        if res.count <= 0 {
+        if res.count < 2 {
           let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
           self.present(noRestaurantFoundVC, animated: true) {
             self.navigationController?.popToRootViewController(animated: true)
