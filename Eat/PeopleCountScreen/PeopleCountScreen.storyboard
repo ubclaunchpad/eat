@@ -30,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the egg to increase the #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-lT-da5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the egg to increase the #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-lT-da5">
                                 <rect key="frame" x="24" y="185" width="327" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.48822176395939088" green="0.48822176395939088" blue="0.48822176395939088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,6 +128,7 @@
                             <constraint firstItem="sAr-iE-ohv" firstAttribute="centerY" secondItem="wb2-Ne-UZk" secondAttribute="centerY" id="H6t-pI-gLi"/>
                             <constraint firstItem="2rU-eN-CVJ" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="24" id="Kqw-dL-tYa"/>
                             <constraint firstItem="q4C-Ml-8oH" firstAttribute="centerX" secondItem="AgL-vd-kul" secondAttribute="centerX" id="PPY-im-Myh"/>
+                            <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="6TA-lT-da5" secondAttribute="trailing" constant="24" id="V5e-41-lzF"/>
                             <constraint firstItem="q9x-f1-Jn5" firstAttribute="leading" secondItem="AgL-vd-kul" secondAttribute="leading" constant="11" id="iTA-P3-Atn"/>
                             <constraint firstItem="AgL-vd-kul" firstAttribute="trailing" secondItem="ILV-qK-13i" secondAttribute="trailing" id="m0S-Bd-fJE"/>
                             <constraint firstItem="wb2-Ne-UZk" firstAttribute="width" secondItem="iPe-qT-BQ7" secondAttribute="width" id="m3N-M2-SQ3"/>

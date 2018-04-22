@@ -202,7 +202,7 @@
                                 <rect key="frame" x="32" y="721" width="311" height="56"/>
                                 <color key="backgroundColor" red="0.45924956925264815" green="0.57263133275441758" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="311" id="Z5j-6s-6km"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="311" id="LxN-ZH-R7c"/>
                                     <constraint firstAttribute="height" constant="56" id="c6t-pG-5lb"/>
                                 </constraints>
                                 <state key="normal" title="ADJUST PREFERENCES">
@@ -218,10 +218,12 @@
                             <constraint firstItem="xrP-gS-5Is" firstAttribute="leading" secondItem="aWc-fi-er8" secondAttribute="leading" constant="50" id="0tb-HI-8pA"/>
                             <constraint firstItem="xrP-gS-5Is" firstAttribute="centerY" secondItem="aWc-fi-er8" secondAttribute="centerY" multiplier="0.8" id="4pE-n4-Dr8"/>
                             <constraint firstItem="xkO-pr-Hrh" firstAttribute="centerX" secondItem="aWc-fi-er8" secondAttribute="centerX" id="8NF-Ss-fze"/>
+                            <constraint firstItem="aWc-fi-er8" firstAttribute="trailing" secondItem="xkO-pr-Hrh" secondAttribute="trailing" constant="32" id="Phs-Jv-xrk"/>
                             <constraint firstItem="oMg-lx-3Wt" firstAttribute="centerX" secondItem="aWc-fi-er8" secondAttribute="centerX" id="VNK-b6-mhC"/>
                             <constraint firstAttribute="bottom" secondItem="xkO-pr-Hrh" secondAttribute="bottom" constant="35" id="W2c-Ty-GZQ"/>
                             <constraint firstItem="oMg-lx-3Wt" firstAttribute="top" secondItem="xrP-gS-5Is" secondAttribute="bottom" constant="32" id="bJk-qw-HdC"/>
                             <constraint firstItem="aWc-fi-er8" firstAttribute="trailing" secondItem="xrP-gS-5Is" secondAttribute="trailing" constant="50" id="viI-TI-Oez"/>
+                            <constraint firstItem="xkO-pr-Hrh" firstAttribute="leading" secondItem="aWc-fi-er8" secondAttribute="leading" constant="32" id="wtk-SW-hqh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWc-fi-er8"/>
                     </view>

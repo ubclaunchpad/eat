@@ -32,6 +32,8 @@ class RestaurantInfoViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.separatorStyle = .singleLine
+    let headerInset: CGFloat = 24
+    tableView.separatorInset = UIEdgeInsets.init(top: 0, left: headerInset, bottom: 0, right: 0)
     self.getReviews()
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }

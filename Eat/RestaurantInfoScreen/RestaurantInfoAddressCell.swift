@@ -15,7 +15,7 @@ class RestaurantInfoAddressCell: UITableViewCell {
 
   func configure(restaurant: Restaurant) {
     restaurantAddressLabel.text = restaurant.address
-    restaurantAddressLabel.font = Font.boldButton(size: 12)
+    restaurantAddressLabel.font = Font.regular(size: 12)
     restaurantAddressLabel.textColor = #colorLiteral(red: 0.4991080165, green: 0.4995048642, blue: 0.4991694689, alpha: 1)
   }
 

@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -164,22 +163,22 @@
                                             <outlet property="title" destination="Cuz-H9-L7g" id="KwQ-DI-mD8"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantInfoCell" rowHeight="74" id="fGj-qE-izy" userLabel="RestaurantInfoCell" customClass="RestaurantInfoCell" customModule="Eat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="439" width="320" height="74"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantInfoCell" rowHeight="40" id="fGj-qE-izy" userLabel="RestaurantInfoCell" customClass="RestaurantInfoCell" customModule="Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="439" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGj-qE-izy" id="ejV-kL-GQd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bbh-sa-jpE">
-                                                    <rect key="frame" x="24" y="29.5" width="18" height="15"/>
+                                                    <rect key="frame" x="24" y="12.5" width="18" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="44z-yd-kti"/>
                                                         <constraint firstAttribute="width" constant="18" id="tex-UC-QAF"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore on Yelp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGg-SN-2cJ">
-                                                    <rect key="frame" x="50" y="26" width="87.5" height="21"/>
+                                                    <rect key="frame" x="50" y="12" width="87.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -189,7 +188,8 @@
                                                 <constraint firstItem="mGg-SN-2cJ" firstAttribute="leading" secondItem="bbh-sa-jpE" secondAttribute="trailing" constant="8" id="2Vu-iI-uH0"/>
                                                 <constraint firstItem="bbh-sa-jpE" firstAttribute="leading" secondItem="ejV-kL-GQd" secondAttribute="leading" constant="24" id="36D-D0-Xd6"/>
                                                 <constraint firstItem="mGg-SN-2cJ" firstAttribute="centerY" secondItem="bbh-sa-jpE" secondAttribute="centerY" id="4xl-7n-gW7"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mGg-SN-2cJ" secondAttribute="bottom" constant="16" id="Ab5-el-vJX"/>
+                                                <constraint firstItem="bbh-sa-jpE" firstAttribute="centerY" secondItem="ejV-kL-GQd" secondAttribute="centerY" id="7d4-43-sxq"/>
+                                                <constraint firstItem="mGg-SN-2cJ" firstAttribute="centerY" secondItem="ejV-kL-GQd" secondAttribute="centerY" id="dOZ-XW-05I"/>
                                                 <constraint firstItem="bbh-sa-jpE" firstAttribute="centerY" secondItem="ejV-kL-GQd" secondAttribute="centerY" id="tve-V0-UgS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -198,33 +198,35 @@
                                             <outlet property="yelpLabel" destination="mGg-SN-2cJ" id="Clf-w0-BMp"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantInfoAddressCell" rowHeight="66" id="iML-bA-gzC" userLabel="RestaurantInfoAddressCell" customClass="RestaurantInfoAddressCell" customModule="Eat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="513" width="320" height="66"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantInfoAddressCell" rowHeight="40" id="iML-bA-gzC" userLabel="RestaurantInfoAddressCell" customClass="RestaurantInfoAddressCell" customModule="Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="479" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iML-bA-gzC" id="AJh-nX-251">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ibl-21-qd7">
-                                                    <rect key="frame" x="24" y="22.5" width="15" height="21"/>
+                                                    <rect key="frame" x="24" y="9.5" width="15" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="6UZ-Oo-qXl"/>
                                                         <constraint firstAttribute="width" constant="15" id="UR2-gE-vrM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhh-aH-Ixg">
-                                                    <rect key="frame" x="47" y="2" width="249" height="62"/>
+                                                    <rect key="frame" x="47" y="2" width="249" height="35.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Lhh-aH-Ixg" firstAttribute="centerY" secondItem="AJh-nX-251" secondAttribute="centerY" id="1ts-CB-2so"/>
                                                 <constraint firstItem="Lhh-aH-Ixg" firstAttribute="leading" secondItem="ibl-21-qd7" secondAttribute="trailing" constant="8" id="IXC-Od-1X5"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lhh-aH-Ixg" secondAttribute="bottom" constant="2" id="J0y-LJ-66M"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lhh-aH-Ixg" secondAttribute="trailing" constant="24" id="JQK-Jh-aPJ"/>
                                                 <constraint firstItem="Lhh-aH-Ixg" firstAttribute="top" secondItem="AJh-nX-251" secondAttribute="top" constant="2" id="ReI-YA-pxT"/>
                                                 <constraint firstItem="ibl-21-qd7" firstAttribute="leading" secondItem="AJh-nX-251" secondAttribute="leading" constant="24" id="SpS-si-78J"/>
+                                                <constraint firstItem="ibl-21-qd7" firstAttribute="centerY" secondItem="AJh-nX-251" secondAttribute="centerY" id="iXI-Zl-JMr"/>
                                                 <constraint firstItem="Lhh-aH-Ixg" firstAttribute="top" secondItem="AJh-nX-251" secondAttribute="top" constant="2" id="r0c-OK-R6a"/>
                                                 <constraint firstItem="ibl-21-qd7" firstAttribute="centerY" secondItem="AJh-nX-251" secondAttribute="centerY" id="zMB-QF-gVa"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lhh-aH-Ixg" secondAttribute="bottom" constant="2" id="zuQ-xP-cVG"/>
@@ -235,11 +237,11 @@
                                             <outlet property="restaurantAddressLabel" destination="Lhh-aH-Ixg" id="x0b-ZJ-VCa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantReviewCell" rowHeight="160" id="1cj-Ys-67L" userLabel="RestaurantReviewCell" customClass="RestaurantReviewCell" customModule="Eat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="579" width="320" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantReviewCell" rowHeight="130" id="1cj-Ys-67L" userLabel="RestaurantReviewCell" customClass="RestaurantReviewCell" customModule="Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="519" width="320" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cj-Ys-67L" id="dyd-EI-EuQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-QF-49s">
@@ -294,8 +296,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COa-J5-PVh">
-                                                    <rect key="frame" x="24" y="81" width="272" height="68"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COa-J5-PVh">
+                                                    <rect key="frame" x="24" y="81" width="272" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
