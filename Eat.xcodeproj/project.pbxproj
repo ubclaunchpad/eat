@@ -282,6 +282,22 @@
 			path = RatingPrice;
 			sourceTree = "<group>";
 		};
+		525A9B7F209CDBBE00AD1CCA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9A779CDE204B4786009A22E0 /* MapScreen */,
+				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
+				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
+				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
+				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
+				52B73232205DC90300A5E441 /* EatingTimeScreen */,
+				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
+				5246DA6B205E3E39002513E1 /* RatingPrice */,
+				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		52B7322B205DC5BD00A5E441 /* Font Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,24 +343,16 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
-				9A779CDE204B4786009A22E0 /* MapScreen */,
-				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
-				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
-				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
-				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
+				525A9B7F209CDBBE00AD1CCA /* Screens */,
 				781616CC204B4874005E8649 /* Extensions */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
-				52B73232205DC90300A5E441 /* EatingTimeScreen */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
 				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
 				52D0C02F202670B1001CFCB5 /* Info.plist */,
-				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
-				5246DA6B205E3E39002513E1 /* RatingPrice */,
-				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 				52FCEF7B205EF2CB00A46022 /* Libraries */,
 			);
 			path = Eat;
