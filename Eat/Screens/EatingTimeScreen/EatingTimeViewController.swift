@@ -11,9 +11,8 @@ import ChameleonFramework
 
 class EatingTimeViewController: UIViewController {
   @IBOutlet weak var headerLabel: UILabel!
-  @IBOutlet weak var restaurantHoursLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var restaurantHoursTextField: UITextField!
+  @IBOutlet weak var restaurantHoursTextView: UITextView!
   @IBOutlet weak var bottomGradientView: UIView!
   @IBOutlet weak var backButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
@@ -59,11 +58,10 @@ class EatingTimeViewController: UIViewController {
   private func applyStyling() {
     headerLabel.font = Font.header(size: 13)
     headerLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
-    restaurantHoursLabel.font = Font.body(size: 22)
-    restaurantHoursLabel.textColor = #colorLiteral(red: 0.3098039216, green: 0.3098039216, blue: 0.3098039216, alpha: 1)
-    restaurantHoursTextField.font = Font.body(size: 22)
-    restaurantHoursTextField.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
-    restaurantHoursTextField.tintColor = .clear
+    restaurantHoursTextView.tintColor = .clear
+    restaurantHoursTextView.backgroundColor = .clear
+    restaurantHoursTextView.textContainerInset = UIEdgeInsets.zero
+    restaurantHoursTextView.textContainer.lineFragmentPadding = 0
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
   }
 
@@ -77,7 +75,7 @@ class EatingTimeViewController: UIViewController {
     datePicker.minuteInterval = 5
     datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
 
-    restaurantHoursTextField.inputView = datePicker
+    restaurantHoursTextView.inputView = datePicker
 
     let toolbar = UIToolbar()
     toolbar.barStyle = .default
@@ -88,7 +86,7 @@ class EatingTimeViewController: UIViewController {
     toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
     toolbar.isUserInteractionEnabled = true
     
-    restaurantHoursTextField.inputAccessoryView = toolbar
+    restaurantHoursTextView.inputAccessoryView = toolbar
 
     setDateInput(date: "now")
   }
@@ -116,12 +114,21 @@ class EatingTimeViewController: UIViewController {
   }
 
   @objc func doneTapped() {
-    restaurantHoursTextField.resignFirstResponder()
+    restaurantHoursTextView.resignFirstResponder()
   }
 
   private func setDateInput(date: String) {
-    restaurantHoursTextField.attributedText = NSAttributedString(string: date, attributes:
-      [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+    let displayString = NSMutableAttributedString()
+    let staticText = NSAttributedString(string: "The restaurant should be open ", attributes:
+      [.font: Font.body(size: 22),
+       .foregroundColor: #colorLiteral(red: 0.3098039216, green: 0.3098039216, blue: 0.3098039216, alpha: 1)])
+    let datePickerText = NSAttributedString(string: date, attributes:
+      [.font:  Font.body(size: 22),
+       .underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+       .foregroundColor: #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)])
+    displayString.append(staticText)
+    displayString.append(datePickerText)
+    restaurantHoursTextView.attributedText = displayString
   }
 }
 
