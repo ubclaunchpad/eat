@@ -12,6 +12,9 @@ import GoogleMaps
 class ChosenRestaurantMapCell: UITableViewCell {
 
   @IBOutlet weak var mapView: UIView!
+  @IBOutlet weak var openMapsButton: UIButton!
+  @IBOutlet weak var openMapsButtonLabel: UILabel!
+
   var myRestaurant: Restaurant!
 
   func configure(restaurant: Restaurant) {
@@ -27,7 +30,7 @@ class ChosenRestaurantMapCell: UITableViewCell {
     //mapView.isMyLocationEnabled = true
 
     // Add the map to the view, hide it until we've got a location update.
-    mapView.addSubview(googleMap)
+    mapView.insertSubview(googleMap, at: 0)
 
     // Creates a marker in the center of the map.
     let marker = GMSMarker()
@@ -38,40 +41,28 @@ class ChosenRestaurantMapCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Add the button object
-    let btn: UIButton = UIButton(type: UIButtonType.roundedRect)
-    btn.frame = CGRect(x: 85, y: 150, width: 215, height: 60)
-    btn.setBackgroundImage(#imageLiteral(resourceName: "MapButton"), for: UIControlState.normal)
-    btn.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
-    self.addSubview(btn)
 
-    // Add the overlaying text
-    let myText: UILabel = UILabel(frame: CGRect(x: 137, y: 147, width: 206, height: 56))
-    myText.text = "Open in Google Maps"
-    myText.font = UIFont.systemFont(ofSize: 14)
-    myText.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
-    self.addSubview(myText)
-
-    // Add the image
-    let myImage: UIImage = #imageLiteral(resourceName: "DirectionIcon")
-    let imageView = UIImageView(image: myImage)
-    imageView.frame = CGRect(x: 108, y: 161, width: 24.55, height: 27)
-    self.addSubview(imageView)
+    setButton()
   }
 
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
+  private func setButton() {
+    openMapsButton.layer.cornerRadius = 24
+    openMapsButton.layer.shadowColor = UIColor.black.cgColor
+    openMapsButton.layer.shadowRadius = 14
+    openMapsButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+    openMapsButton.layer.shadowOpacity = 0.15
+    openMapsButton.layer.backgroundColor = UIColor.white.cgColor
 
-    // Configure the view for the selected state
+    openMapsButtonLabel.font = Font.bold(size: 14)
+    openMapsButtonLabel.textColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
+    openMapsButtonLabel.text = "Open in Google Maps"
   }
 
-  @objc private func buttonClicked() {
-    if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
-    {
+  @IBAction private func openMapsButtonTapped() {
+    if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
       UIApplication.shared.openURL(NSURL(string:
         "comgooglemaps://?saddr=&daddr=\(Float(myRestaurant.lat)),\(Float(myRestaurant.lon))&directionsmode=driving")! as URL)
-    } else
-    {
+    } else {
       NSLog("Can't use com.google.maps://");
     }
   }
