@@ -11,7 +11,7 @@ We built Eat Now for us. We'll help you pick the best restaurant for any occasio
 
 ## Features
 * Search restaurants based on location
-* Select a preffered time to dine
+* Select a preferred time to dine
 * View restaurant photos and reviews
 * Vote for the restaurant you want to eat
 
