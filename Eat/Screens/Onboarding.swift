@@ -20,6 +20,8 @@ class Onboarding {
 
   let dataManager = DataManager.default
 
+  var onFinishTapped: (() -> Void)?
+
   func viewController() -> OnboardingViewController {
     var onboardingVC = OnboardingViewController()
 
@@ -35,8 +37,7 @@ class Onboarding {
     let thirdPage = OnboardingContentViewController.content(withTitle: "Eat.", body: "", image: onboardingImageFit(image: #imageLiteral(resourceName: "OnboardingThirdScreen")), buttonText: "LET'S EAT") { _ in
       // set that the app has been launched before so onboarding won't show next time
       self.dataManager.setFirstLaunch(value: true)
-      let vc = MapScreenController.viewController()
-      onboardingVC.present(vc, animated: true, completion: nil)
+      self.onFinishTapped?()
     }
 
     applyStyling(to: thirdPage)

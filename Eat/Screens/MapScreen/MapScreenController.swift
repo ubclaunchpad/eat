@@ -11,7 +11,6 @@ import UIKit
 import GoogleMaps
 
 class MapScreenController: UIViewController{
-
   var locationManager = CLLocationManager()
   var currentLocation = CLLocation?.self
   var zoomLevel: Float = 15.0
@@ -70,34 +69,8 @@ class MapScreenController: UIViewController{
     navigationItem.title = "Where do you want to eat?"
     // Add a next button to the navigation bar
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MapScreenController.next(_:)))
-
-    applyStyling()
   }
-    
-  func applyStyling() {
-    headerView.layer.shadowRadius = 5
-    headerView.layer.shadowOffset = CGSize(width: 0, height: 9)
-    headerView.layer.shadowColor = UIColor.black.cgColor
-    headerView.layer.shadowOpacity = 0.25
 
-    questionLabel.text = "Where do you want to eat?"
-    questionLabel.font = Font.onboarding(size: 13)
-    questionLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
-
-    instructionLabel.text = "Drag to select the active map area"
-    instructionLabel.font = Font.onboarding(size: 13)
-    instructionLabel.textColor = #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1)
-
-    let actionText = NSMutableAttributedString(string: "NEXT")
-    actionText.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: actionText.length))
-    nextView.setAttributedTitle(actionText, for: .normal)
-
-    nextView.titleLabel?.font = Font.onboardingAction(size: 17)
-    nextView.layer.cornerRadius = 16
-    nextView.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
-
-    self.view.bringSubview(toFront: nextView)
-  }
 
   @objc func next(_ sender:UIBarButtonItem!) {
     print("Next has been click")
