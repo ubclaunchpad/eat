@@ -19,11 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Google Maps and Places API
     GMSServices.provideAPIKey(APIKeys.googleMaps)
 
-    if dataManager.isFirstLaunch() {
-      self.window?.rootViewController = Onboarding(window: window).viewController()
-    } else {
-      self.window?.rootViewController = MapScreenController.viewController()
-    }
+    let window = UIWindow()
+    let coordinator = AppCoordinator(window: window)
+    coordinator.start()
+    self.window = window
+//
+//    if dataManager.isFirstLaunch() {
+//      self.window?.rootViewController = Onboarding(window: window).viewController()
+//    } else {
+//      self.window?.rootViewController = MapScreenController.viewController()
+//    }
     return true
   }
 
