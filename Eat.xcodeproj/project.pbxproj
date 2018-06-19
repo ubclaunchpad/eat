@@ -34,6 +34,16 @@
 		5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6C205E3E4A002513E1 /* EatSlider.swift */; };
 		5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6E205EE28B002513E1 /* Onboarding.swift */; };
 		5246DA71205EE445002513E1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA70205EE445002513E1 /* UIImage.swift */; };
+		525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E220D720AB00AE6B44 /* AppCoordinator.swift */; };
+		525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E420D720B400AE6B44 /* Coordinator.swift */; };
+		525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */; };
+		525F77EF20D782D300AE6B44 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EE20D782D300AE6B44 /* ContentCoordinator.swift */; };
+		525F77F220D83A8400AE6B44 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77F020D83A8400AE6B44 /* MapViewController.swift */; };
+		525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525F77F120D83A8400AE6B44 /* MapViewController.xib */; };
+		525F77F520D83B2700AE6B44 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77F420D83B2700AE6B44 /* MapViewModel.swift */; };
+		525F77F720D866AE00AE6B44 /* LocationAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77F620D866AE00AE6B44 /* LocationAuthorizationManager.swift */; };
+		525F77F920D86C1F00AE6B44 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77F820D86C1F00AE6B44 /* LocationManager.swift */; };
+		525F77FB20D8B57100AE6B44 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77FA20D8B57100AE6B44 /* String+Localization.swift */; };
 		52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322C205DC5EB00A5E441 /* circular-book.otf */; };
 		52B73230205DC5EB00A5E441 /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322D205DC5EB00A5E441 /* circular-medium.otf */; };
 		52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322E205DC5EB00A5E441 /* circular-bold.otf */; };
@@ -115,6 +125,16 @@
 		5246DA6C205E3E4A002513E1 /* EatSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSlider.swift; sourceTree = "<group>"; };
 		5246DA6E205EE28B002513E1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		5246DA70205EE445002513E1 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		525F77E220D720AB00AE6B44 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		525F77E420D720B400AE6B44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		525F77EE20D782D300AE6B44 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
+		525F77F020D83A8400AE6B44 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		525F77F120D83A8400AE6B44 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		525F77F420D83B2700AE6B44 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		525F77F620D866AE00AE6B44 /* LocationAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationManager.swift; sourceTree = "<group>"; };
+		525F77F820D86C1F00AE6B44 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		525F77FA20D8B57100AE6B44 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		52B7322C205DC5EB00A5E441 /* circular-book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-book.otf"; sourceTree = "<group>"; };
 		52B7322D205DC5EB00A5E441 /* circular-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-medium.otf"; sourceTree = "<group>"; };
 		52B7322E205DC5EB00A5E441 /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
@@ -195,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				555BDA8420734616005E6EEA /* GameStateManager.swift */,
+				525F77F620D866AE00AE6B44 /* LocationAuthorizationManager.swift */,
+				525F77F820D86C1F00AE6B44 /* LocationManager.swift */,
 				052B4A78202FB08E00291EE9 /* DataManager.swift */,
 				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
 				522191FD20881E540075C480 /* APIKeys.swift */,
@@ -272,14 +294,14 @@
 			path = DietaryRestrictionsScreen;
 			sourceTree = "<group>";
 		};
-		5246DA6B205E3E39002513E1 /* RatingPrice */ = {
+		5246DA6B205E3E39002513E1 /* RatingPriceScreen */ = {
 			isa = PBXGroup;
 			children = (
 				5246DA67205E2E10002513E1 /* RatingPrice.storyboard */,
 				5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */,
 				5246DA6C205E3E4A002513E1 /* EatSlider.swift */,
 			);
-			path = RatingPrice;
+			path = RatingPriceScreen;
 			sourceTree = "<group>";
 		};
 		525A9B7F209CDBBE00AD1CCA /* Screens */ = {
@@ -292,10 +314,28 @@
 				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
 				52B73232205DC90300A5E441 /* EatingTimeScreen */,
 				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
-				5246DA6B205E3E39002513E1 /* RatingPrice */,
+				5246DA6B205E3E39002513E1 /* RatingPriceScreen */,
 				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		525F77EA20D73A2F00AE6B44 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				525F77E220D720AB00AE6B44 /* AppCoordinator.swift */,
+				525F77EE20D782D300AE6B44 /* ContentCoordinator.swift */,
+				525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		525F77ED20D782AD00AE6B44 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				525F77E420D720B400AE6B44 /* Coordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		52B7322B205DC5BD00A5E441 /* Font Files */ = {
@@ -348,6 +388,8 @@
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
 				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
+				525F77EA20D73A2F00AE6B44 /* Coordinators */,
+				525F77ED20D782AD00AE6B44 /* Protocols */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
 				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
@@ -432,6 +474,7 @@
 			children = (
 				781616CD204B4895005E8649 /* Date.swift */,
 				5246DA69205E3C83002513E1 /* Double+Round.swift */,
+				525F77FA20D8B57100AE6B44 /* String+Localization.swift */,
 				5246DA70205EE445002513E1 /* UIImage.swift */,
 			);
 			path = Extensions;
@@ -442,6 +485,9 @@
 			children = (
 				9A779CE3204B4FE4009A22E0 /* MapScreenController.swift */,
 				9A79F673204BF80C003A3E3A /* MapScreen.storyboard */,
+				525F77F020D83A8400AE6B44 /* MapViewController.swift */,
+				525F77F420D83B2700AE6B44 /* MapViewModel.swift */,
+				525F77F120D83A8400AE6B44 /* MapViewController.xib */,
 			);
 			path = MapScreen;
 			sourceTree = "<group>";
@@ -585,6 +631,7 @@
 				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 				5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */,
+				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
 				5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */,
 				7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */,
 				52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */,
@@ -782,21 +829,25 @@
 				5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */,
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
 				5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */,
+				525F77EF20D782D300AE6B44 /* ContentCoordinator.swift in Sources */,
 				52FCEF82205EF2CB00A46022 /* OnboardingViewController.m in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
 				05A3EE2020538C5500C52F4A /* RestaurantInfoViewController.swift in Sources */,
 				05A3EE222054FFF000C52F4A /* RestaurantTitleCell.swift in Sources */,
 				05A3EE2F205DAEE500C52F4A /* ChosenRestaurantViewController.swift in Sources */,
+				525F77F220D83A8400AE6B44 /* MapViewController.swift in Sources */,
 				5246DA71205EE445002513E1 /* UIImage.swift in Sources */,
 				781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				555BDA8B20745ABC005E6EEA /* NoRestaurantFoundViewController.swift in Sources */,
 				05A3EE242055001C00C52F4A /* RestaurantInfoCell.swift in Sources */,
+				525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */,
 				5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */,
 				5246DA6A205E3C83002513E1 /* Double+Round.swift in Sources */,
 				05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */,
 				05A3EE2A205CEE6300C52F4A /* RestaurantPhotoCell.swift in Sources */,
 				05A3EE31205DB01900C52F4A /* ChosenRestaurantPhotoCell.swift in Sources */,
+				525F77FB20D8B57100AE6B44 /* String+Localization.swift in Sources */,
 				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				05A3EE35205DB04300C52F4A /* ChosenRestaurantMapCell.swift in Sources */,
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
@@ -804,13 +855,18 @@
 				555BDA8520734616005E6EEA /* GameStateManager.swift in Sources */,
 				5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */,
 				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
+				525F77F920D86C1F00AE6B44 /* LocationManager.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				522191FE20881E540075C480 /* APIKeys.swift in Sources */,
+				525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */,
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
+				525F77F720D866AE00AE6B44 /* LocationAuthorizationManager.swift in Sources */,
 				556B856F2037F94E00B71F44 /* PeopleCountViewController.swift in Sources */,
+				525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
 				55E240792065F2E900C2FEAF /* Review.swift in Sources */,
 				05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */,
+				525F77F520D83B2700AE6B44 /* MapViewModel.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,

@@ -5,10 +5,10 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
   - Kingfisher (4.7.0)
   - Koloda (4.3.1):
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   BrightFutures: 9c03dab79e73ffe504b7bafc15c5bfdaeee54890
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
