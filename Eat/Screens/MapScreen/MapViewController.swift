@@ -66,8 +66,6 @@ final class MapViewController: UIViewController {
   }
 
   func configure() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel.navigationButton, style: .plain, target: self, action: #selector(didTapNext))
-
     let camera = GMSCameraPosition.camera(withLatitude: viewModel.defaultLocation.coordinate.latitude,
                                           longitude: viewModel.defaultLocation.coordinate.longitude,
                                           zoom: Constants.zoomLevel)
@@ -101,7 +99,7 @@ final class MapViewController: UIViewController {
 
 // MARK: Actions
 extension MapViewController {
-  @objc func didTapNext() {
+  @IBAction private func didTapNext() {
     let target = self.mapView.camera.target
     let edge = self.mapView.projection.visibleRegion().farRight
 
