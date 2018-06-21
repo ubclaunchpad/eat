@@ -25,9 +25,44 @@ final class ContentCoordinator: Coordinator {
 
   func start() {
     let viewModel = MapViewModelImpl()
+    viewModel.onTapNext = showPeopleCount(searchQuery:)
     let mapViewController = MapViewController(viewModel: viewModel)
     navigationController.viewControllers = [mapViewController]
     navigationController.setNavigationBarHidden(true, animated: false)
     fromViewController.present(navigationController, animated: true, completion: nil)
+  }
+}
+
+// MARK: Routing
+extension ContentCoordinator {
+  func instantiatePeopleCount(searchQuery: SearchQuery) -> PeopleCountViewController {
+    let viewModel = PeopleCountViewModelImpl(searchQuery: searchQuery)
+    let vc = PeopleCountViewController(viewModel: viewModel)
+
+    viewModel.onNextButtonTapped = { searchQuery in
+      self.showEatingTime(viewController: vc, searchQuery: searchQuery)
+    }
+    viewModel.onBackButtonTapped = goBack
+    viewModel.onCloseButtonTapped = close
+
+    return vc
+  }
+
+  func showPeopleCount(searchQuery: SearchQuery) {
+    let vc = instantiatePeopleCount(searchQuery: searchQuery)
+    navigationController.pushViewController(vc, animated: true)
+  }
+
+  func showEatingTime(viewController: PeopleCountViewController, searchQuery: SearchQuery) {
+    let vc = instantiatePeopleCount(searchQuery: searchQuery)
+    navigationController.pushViewController(vc, animated: true)
+  }
+
+  func goBack() {
+    _ = navigationController.popViewController(animated: true)
+  }
+
+  func close() {
+    _ = navigationController.popToRootViewController(animated: true)
   }
 }
