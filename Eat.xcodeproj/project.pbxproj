@@ -62,7 +62,6 @@
 		52EB8CAADC6B81675986D4AC /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D099244DC53FF5E1E289339 /* Pods_Eat.framework */; };
 		52FCEF82205EF2CB00A46022 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF7D205EF2CB00A46022 /* OnboardingViewController.m */; };
 		52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF81205EF2CB00A46022 /* OnboardingContentViewController.m */; };
-		52FCEF8B205F42D600A46022 /* EatingTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */; };
 		5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9A4205A35120094D7E0 /* RestaurantCardSelectionViewController.swift */; };
 		5544B9A7205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544B9A6205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard */; };
 		5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9A8205A38D00094D7E0 /* RestaurantCard.swift */; };
@@ -75,7 +74,6 @@
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
 		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
 		781616D4204B7D97005E8649 /* DietaryRestrictionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */; };
-		7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7826DC6E2038DF9700A320BE /* EatingTime.storyboard */; };
 		893553634AD346AFB9A505FE /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551CB03B243D0B4D3A91C996 /* Pods_EatUITests.framework */; };
 		DADEB0404108D0E965025F36 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B753C184826DD19D4E7E9F71 /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
@@ -148,7 +146,6 @@
 		52B7322E205DC5EB00A5E441 /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
 		52D0C020202670B1001CFCB5 /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C023202670B1001CFCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingTimeViewController.swift; sourceTree = "<group>"; };
 		52D0C028202670B1001CFCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52D0C02A202670B1001CFCB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D0C02D202670B1001CFCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,7 +177,6 @@
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
 		781616D3204B7D97005E8649 /* DietaryRestrictionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionsViewController.swift; sourceTree = "<group>"; };
-		7826DC6E2038DF9700A320BE /* EatingTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EatingTime.storyboard; sourceTree = "<group>"; };
 		9EDE8DFC3E033480D5ACEFB5 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		A0D3565957BCE424A51BC311 /* Pods-EatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B753C184826DD19D4E7E9F71 /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +310,6 @@
 				9A779CDE204B4786009A22E0 /* Map */,
 				556B856D2037F92F00B71F44 /* PeopleCount */,
 				52CD62F920DC7A7900F5B00B /* MealTime */,
-				52B73232205DC90300A5E441 /* RestaurantTime */,
 				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
@@ -351,15 +346,6 @@
 				52B7322D205DC5EB00A5E441 /* circular-medium.otf */,
 			);
 			path = "Font Files";
-			sourceTree = "<group>";
-		};
-		52B73232205DC90300A5E441 /* RestaurantTime */ = {
-			isa = PBXGroup;
-			children = (
-				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
-				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
-			);
-			path = RestaurantTime;
 			sourceTree = "<group>";
 		};
 		52CD62F920DC7A7900F5B00B /* MealTime */ = {
@@ -646,7 +632,6 @@
 				5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */,
 				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
 				5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */,
-				7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */,
 				5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */,
 				52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */,
 			);
@@ -838,7 +823,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FCEF8B205F42D600A46022 /* EatingTimeViewController.swift in Sources */,
 				5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */,
 				5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */,
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
