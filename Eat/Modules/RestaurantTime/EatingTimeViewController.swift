@@ -27,7 +27,7 @@ class EatingTimeViewController: UIViewController {
 
   var searchQuery: SearchQuery!
   let datePicker = UIDatePicker()
-  var selectedDate: EatingTime = .now {
+  var selectedDate: MealTime = .now {
     didSet {
       switch selectedDate {
       case .now:
@@ -52,7 +52,7 @@ class EatingTimeViewController: UIViewController {
   }
 
   private func setDefaults() {
-    selectedDate = searchQuery.eatingTime
+    selectedDate = searchQuery.mealTime
   }
 
   private func applyStyling() {
@@ -150,7 +150,7 @@ extension EatingTimeViewController {
   }
 
   @IBAction private func nextTapped() {
-    searchQuery.eatingTime = selectedDate
+    searchQuery.mealTime = selectedDate
     let ratingPriceVC = RatingPriceViewController.viewController(searchQuery: searchQuery)
     navigationController?.pushViewController(ratingPriceVC, animated: true)
   }

@@ -34,6 +34,9 @@
 		5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6C205E3E4A002513E1 /* EatSlider.swift */; };
 		5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6E205EE28B002513E1 /* Onboarding.swift */; };
 		5246DA71205EE445002513E1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA70205EE445002513E1 /* UIImage.swift */; };
+		5254BAB020DC7ADD00059764 /* MealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */; };
+		5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */; };
+		5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */; };
 		525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E220D720AB00AE6B44 /* AppCoordinator.swift */; };
 		525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E420D720B400AE6B44 /* Coordinator.swift */; };
 		525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */; };
@@ -68,7 +71,6 @@
 		5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */; };
 		555BDA8520734616005E6EEA /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BDA8420734616005E6EEA /* GameStateManager.swift */; };
 		555BDA8B20745ABC005E6EEA /* NoRestaurantFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BDA8A20745ABC005E6EEA /* NoRestaurantFoundViewController.swift */; };
-		556B856F2037F94E00B71F44 /* PeopleCountViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556B856E2037F94E00B71F44 /* PeopleCountViewController1.swift */; };
 		55E240792065F2E900C2FEAF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E240782065F2E900C2FEAF /* Review.swift */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
 		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
@@ -125,6 +127,9 @@
 		5246DA6C205E3E4A002513E1 /* EatSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSlider.swift; sourceTree = "<group>"; };
 		5246DA6E205EE28B002513E1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		5246DA70205EE445002513E1 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTimeViewController.swift; sourceTree = "<group>"; };
+		5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealTimeViewController.xib; sourceTree = "<group>"; };
+		5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeViewModel.swift; sourceTree = "<group>"; };
 		525F77E220D720AB00AE6B44 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		525F77E420D720B400AE6B44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -169,7 +174,6 @@
 		5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCard.xib; sourceTree = "<group>"; };
 		555BDA8420734616005E6EEA /* GameStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
 		555BDA8A20745ABC005E6EEA /* NoRestaurantFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRestaurantFoundViewController.swift; sourceTree = "<group>"; };
-		556B856E2037F94E00B71F44 /* PeopleCountViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCountViewController1.swift; sourceTree = "<group>"; };
 		55E240782065F2E900C2FEAF /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		55FA7A31357012E7F265471E /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		763818683036BBF36369FAD5 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,20 +308,21 @@
 			path = RatingPriceScreen;
 			sourceTree = "<group>";
 		};
-		525A9B7F209CDBBE00AD1CCA /* Screens */ = {
+		525A9B7F209CDBBE00AD1CCA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9A779CDE204B4786009A22E0 /* MapScreen */,
-				556B856D2037F92F00B71F44 /* PeopleCountScreen */,
+				9A779CDE204B4786009A22E0 /* Map */,
+				556B856D2037F92F00B71F44 /* PeopleCount */,
+				52CD62F920DC7A7900F5B00B /* MealTime */,
+				52B73232205DC90300A5E441 /* RestaurantTime */,
 				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
 				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
-				52B73232205DC90300A5E441 /* EatingTimeScreen */,
 				5246DA6B205E3E39002513E1 /* RatingPriceScreen */,
 				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 			);
-			path = Screens;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		525F77EA20D73A2F00AE6B44 /* Coordinators */ = {
@@ -348,13 +353,23 @@
 			path = "Font Files";
 			sourceTree = "<group>";
 		};
-		52B73232205DC90300A5E441 /* EatingTimeScreen */ = {
+		52B73232205DC90300A5E441 /* RestaurantTime */ = {
 			isa = PBXGroup;
 			children = (
 				7826DC6E2038DF9700A320BE /* EatingTime.storyboard */,
 				52D0C025202670B1001CFCB5 /* EatingTimeViewController.swift */,
 			);
-			path = EatingTimeScreen;
+			path = RestaurantTime;
+			sourceTree = "<group>";
+		};
+		52CD62F920DC7A7900F5B00B /* MealTime */ = {
+			isa = PBXGroup;
+			children = (
+				5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */,
+				5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */,
+				5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */,
+			);
+			path = MealTime;
 			sourceTree = "<group>";
 		};
 		52D0C017202670B1001CFCB5 = {
@@ -383,7 +398,7 @@
 		52D0C022202670B1001CFCB5 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
-				525A9B7F209CDBBE00AD1CCA /* Screens */,
+				525A9B7F209CDBBE00AD1CCA /* Modules */,
 				781616CC204B4874005E8649 /* Extensions */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
@@ -460,15 +475,14 @@
 			path = RestaurantCardSelectionScreen;
 			sourceTree = "<group>";
 		};
-		556B856D2037F92F00B71F44 /* PeopleCountScreen */ = {
+		556B856D2037F92F00B71F44 /* PeopleCount */ = {
 			isa = PBXGroup;
 			children = (
-				556B856E2037F94E00B71F44 /* PeopleCountViewController1.swift */,
 				525F77FC20DAC1B500AE6B44 /* PeopleCountViewController.swift */,
 				525F77FD20DAC1B500AE6B44 /* PeopleCountViewController.xib */,
 				525F780020DAC1CD00AE6B44 /* PeopleCountViewModel.swift */,
 			);
-			path = PeopleCountScreen;
+			path = PeopleCount;
 			sourceTree = "<group>";
 		};
 		781616CC204B4874005E8649 /* Extensions */ = {
@@ -482,14 +496,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		9A779CDE204B4786009A22E0 /* MapScreen */ = {
+		9A779CDE204B4786009A22E0 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				525F77F020D83A8400AE6B44 /* MapViewController.swift */,
 				525F77F420D83B2700AE6B44 /* MapViewModel.swift */,
 				525F77F120D83A8400AE6B44 /* MapViewController.xib */,
 			);
-			path = MapScreen;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		E70EF8F5DD6B5F1CDC245604 /* Frameworks */ = {
@@ -633,6 +647,7 @@
 				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
 				5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */,
 				7826DC6F2038DF9700A320BE /* EatingTime.storyboard in Resources */,
+				5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */,
 				52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +840,7 @@
 			files = (
 				52FCEF8B205F42D600A46022 /* EatingTimeViewController.swift in Sources */,
 				5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */,
+				5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */,
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
 				5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */,
 				525F77FE20DAC1B500AE6B44 /* PeopleCountViewController.swift in Sources */,
@@ -861,12 +877,12 @@
 				525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */,
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
 				525F77F720D866AE00AE6B44 /* LocationAuthorizationManager.swift in Sources */,
-				556B856F2037F94E00B71F44 /* PeopleCountViewController1.swift in Sources */,
 				525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
 				55E240792065F2E900C2FEAF /* Review.swift in Sources */,
 				05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */,
 				525F77F520D83B2700AE6B44 /* MapViewModel.swift in Sources */,
+				5254BAB020DC7ADD00059764 /* MealTimeViewController.swift in Sources */,
 				052B4A7B202FB0FB00291EE9 /* YelpAPIManager.swift in Sources */,
 				05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */,
 				52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */,

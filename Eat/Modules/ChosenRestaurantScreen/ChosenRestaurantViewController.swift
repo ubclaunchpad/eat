@@ -32,8 +32,8 @@ class ChosenRestaurantViewController: UIViewController {
 
 
   @IBAction func exit(_ sender: Any) {
-    let viewController = MapScreenController.viewController()
-    self.present(viewController, animated: true)
+//    let viewController = MapScreenController.viewController()
+//    self.present(viewController, animated: true)
   }
 
   override func viewDidLoad() {

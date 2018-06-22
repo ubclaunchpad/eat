@@ -62,8 +62,10 @@ final class PeopleCountViewController: UIViewController {
 
     backButton.titleLabel?.font = Font.formNavigation(size: 18)
     backButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
+    backButton.setTitle(viewModel.backButtonTitle, for: .normal)
     nextButton.titleLabel?.font = Font.formNavigation(size: 18)
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
+    nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
 
     viewModel.onNumberOfPeopleChange = scaleButton(animated:to:)
   }

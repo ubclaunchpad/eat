@@ -33,14 +33,14 @@ final class ContentCoordinator: Coordinator {
   }
 }
 
-// MARK: Routing
+// MARK: View Controller Instantiations
 extension ContentCoordinator {
   func instantiatePeopleCount(searchQuery: SearchQuery) -> PeopleCountViewController {
     let viewModel = PeopleCountViewModelImpl(searchQuery: searchQuery)
     let vc = PeopleCountViewController(viewModel: viewModel)
 
     viewModel.onNextButtonTapped = { searchQuery in
-      self.showEatingTime(viewController: vc, searchQuery: searchQuery)
+      self.showMealTime(viewController: vc, searchQuery: searchQuery)
     }
     viewModel.onBackButtonTapped = goBack
     viewModel.onCloseButtonTapped = close
@@ -48,12 +48,33 @@ extension ContentCoordinator {
     return vc
   }
 
+  func instantiateMealTime(searchQuery: SearchQuery) -> MealTimeViewController {
+    let viewModel = MealTimeViewModelImpl(searchQuery: searchQuery)
+    let vc = MealTimeViewController(viewModel: viewModel)
+
+    viewModel.onNextButtonTapped = { searchQuery in
+      self.showMealTime(viewController: vc, searchQuery: searchQuery)
+    }
+    viewModel.onBackButtonTapped = goBack
+    viewModel.onCloseButtonTapped = close
+
+    return vc
+  }
+}
+
+// MARK: Routing
+extension ContentCoordinator {
   func showPeopleCount(searchQuery: SearchQuery) {
     let vc = instantiatePeopleCount(searchQuery: searchQuery)
     navigationController.pushViewController(vc, animated: true)
   }
 
-  func showEatingTime(viewController: PeopleCountViewController, searchQuery: SearchQuery) {
+  func showMealTime(viewController: PeopleCountViewController, searchQuery: SearchQuery) {
+    let vc = instantiateMealTime(searchQuery: searchQuery)
+    navigationController.pushViewController(vc, animated: true)
+  }
+
+  func showMealTime(viewController: MealTimeViewController, searchQuery: SearchQuery) {
     let vc = instantiatePeopleCount(searchQuery: searchQuery)
     navigationController.pushViewController(vc, animated: true)
   }

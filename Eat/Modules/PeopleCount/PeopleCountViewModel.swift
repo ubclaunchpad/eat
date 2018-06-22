@@ -7,7 +7,8 @@
 //
 
 protocol PeopleCountViewModel {
-  var numberOfPeople: Int { get set }
+  var nextButtonTitle: String { get }
+  var backButtonTitle: String { get }
 
   func setDefaults()
   func increasePeople()
@@ -22,7 +23,10 @@ protocol PeopleCountViewModel {
 }
 
 final class PeopleCountViewModelImpl {
-  private let searchQuery: SearchQuery
+  let nextButtonTitle = "Next".localize()
+  let backButtonTitle = "Back".localize()
+  
+  fileprivate let searchQuery: SearchQuery
 
   var numberOfPeople: Int = 1
 
@@ -48,6 +52,7 @@ extension PeopleCountViewModelImpl: PeopleCountViewModel {
   func increasePeople() {
     if numberOfPeople < 10 {
       numberOfPeople += 1
+      searchQuery.numberOfPeople = numberOfPeople
       self.onNumberOfPeopleChange?(true, numberOfPeople)
     }
   }
@@ -55,12 +60,12 @@ extension PeopleCountViewModelImpl: PeopleCountViewModel {
   func decreasePeople() {
     if numberOfPeople > 1 {
       numberOfPeople -= 1
+      searchQuery.numberOfPeople = numberOfPeople
       onNumberOfPeopleChange?(true, numberOfPeople)
     }
   }
 
   func didTapNext() {
-    searchQuery.numberOfPeople = numberOfPeople
     onNextButtonTapped?(searchQuery)
   }
 }

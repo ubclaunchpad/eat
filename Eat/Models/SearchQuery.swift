@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EatingTime {
+enum MealTime {
   case now
   case later(date: Date)
 }
@@ -36,7 +36,7 @@ class SearchQuery {
   var numberOfPeople = 1
 
   // Eating Time
-  var eatingTime: EatingTime = .now
+  var mealTime: MealTime = .now
 
   // Rating and Price
   var minimumRating: Double = 3

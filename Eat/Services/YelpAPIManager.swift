@@ -65,7 +65,7 @@ extension YelpAPIManager {
   func createURLString(query: SearchQuery) -> URL? {
     // Declare the additonal filters for the query
     let eatingTimeQuery: URLQueryItem
-    switch query.eatingTime {
+    switch query.mealTime {
     case .now:
       eatingTimeQuery = URLQueryItem(name: "open_now", value: "true")
       break
