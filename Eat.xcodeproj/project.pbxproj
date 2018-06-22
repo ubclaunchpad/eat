@@ -28,8 +28,6 @@
 		05A3EE3C206346C800C52F4A /* ExploreMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3EE3B206346C800C52F4A /* ExploreMenuCell.swift */; };
 		522191FE20881E540075C480 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522191FD20881E540075C480 /* APIKeys.swift */; };
 		5225CB1E2038E1C4000726E7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225CB1D2038E1C4000726E7 /* Font.swift */; };
-		5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */; };
-		5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5246DA67205E2E10002513E1 /* RatingPrice.storyboard */; };
 		5246DA6A205E3C83002513E1 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA69205E3C83002513E1 /* Double+Round.swift */; };
 		5246DA6D205E3E4A002513E1 /* EatSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6C205E3E4A002513E1 /* EatSlider.swift */; };
 		5246DA6F205EE28B002513E1 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246DA6E205EE28B002513E1 /* Onboarding.swift */; };
@@ -37,6 +35,9 @@
 		5254BAB020DC7ADD00059764 /* MealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */; };
 		5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */; };
 		5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */; };
+		5254BAB620DCABC500059764 /* RatingPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAB420DCABC500059764 /* RatingPriceViewController.swift */; };
+		5254BAB720DCABC500059764 /* RatingPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BAB520DCABC500059764 /* RatingPriceViewController.xib */; };
+		5254BABA20DCABEA00059764 /* RatingPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAB920DCABEA00059764 /* RatingPriceViewModel.swift */; };
 		525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E220D720AB00AE6B44 /* AppCoordinator.swift */; };
 		525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E420D720B400AE6B44 /* Coordinator.swift */; };
 		525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */; };
@@ -119,8 +120,6 @@
 		3446994A8FB9D8C4C6FC0442 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		522191FD20881E540075C480 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5225CB1D2038E1C4000726E7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPriceViewController.swift; sourceTree = "<group>"; };
-		5246DA67205E2E10002513E1 /* RatingPrice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatingPrice.storyboard; sourceTree = "<group>"; };
 		5246DA69205E3C83002513E1 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		5246DA6C205E3E4A002513E1 /* EatSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatSlider.swift; sourceTree = "<group>"; };
 		5246DA6E205EE28B002513E1 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -128,6 +127,9 @@
 		5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTimeViewController.swift; sourceTree = "<group>"; };
 		5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealTimeViewController.xib; sourceTree = "<group>"; };
 		5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeViewModel.swift; sourceTree = "<group>"; };
+		5254BAB420DCABC500059764 /* RatingPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPriceViewController.swift; sourceTree = "<group>"; };
+		5254BAB520DCABC500059764 /* RatingPriceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingPriceViewController.xib; sourceTree = "<group>"; };
+		5254BAB920DCABEA00059764 /* RatingPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPriceViewModel.swift; sourceTree = "<group>"; };
 		525F77E220D720AB00AE6B44 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		525F77E420D720B400AE6B44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -294,14 +296,15 @@
 			path = DietaryRestrictionsScreen;
 			sourceTree = "<group>";
 		};
-		5246DA6B205E3E39002513E1 /* RatingPriceScreen */ = {
+		5254BAB820DCABD000059764 /* RatingPrice */ = {
 			isa = PBXGroup;
 			children = (
-				5246DA67205E2E10002513E1 /* RatingPrice.storyboard */,
-				5246DA65205E2E01002513E1 /* RatingPriceViewController.swift */,
+				5254BAB420DCABC500059764 /* RatingPriceViewController.swift */,
+				5254BAB520DCABC500059764 /* RatingPriceViewController.xib */,
+				5254BAB920DCABEA00059764 /* RatingPriceViewModel.swift */,
 				5246DA6C205E3E4A002513E1 /* EatSlider.swift */,
 			);
-			path = RatingPriceScreen;
+			path = RatingPrice;
 			sourceTree = "<group>";
 		};
 		525A9B7F209CDBBE00AD1CCA /* Modules */ = {
@@ -310,11 +313,11 @@
 				9A779CDE204B4786009A22E0 /* Map */,
 				556B856D2037F92F00B71F44 /* PeopleCount */,
 				52CD62F920DC7A7900F5B00B /* MealTime */,
+				5254BAB820DCABD000059764 /* RatingPrice */,
 				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
 				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
-				5246DA6B205E3E39002513E1 /* RatingPriceScreen */,
 				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 			);
 			path = Modules;
@@ -629,7 +632,7 @@
 				52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */,
 				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
-				5246DA68205E2E10002513E1 /* RatingPrice.storyboard in Resources */,
+				5254BAB720DCABC500059764 /* RatingPriceViewController.xib in Resources */,
 				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
 				5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */,
 				5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */,
@@ -824,7 +827,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */,
+				5254BABA20DCABEA00059764 /* RatingPriceViewModel.swift in Sources */,
 				5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */,
+				5254BAB620DCABC500059764 /* RatingPriceViewController.swift in Sources */,
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
 				5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */,
 				525F77FE20DAC1B500AE6B44 /* PeopleCountViewController.swift in Sources */,
@@ -853,7 +858,6 @@
 				052B4A80202FB2ED00291EE9 /* Restaurant.swift in Sources */,
 				05A3EE37205DCE7A00C52F4A /* MapButtonsCell.swift in Sources */,
 				555BDA8520734616005E6EEA /* GameStateManager.swift in Sources */,
-				5246DA66205E2E01002513E1 /* RatingPriceViewController.swift in Sources */,
 				05A3EE2820578EA400C52F4A /* RestaurantInfoAddressCell.swift in Sources */,
 				525F77F920D86C1F00AE6B44 /* LocationManager.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,

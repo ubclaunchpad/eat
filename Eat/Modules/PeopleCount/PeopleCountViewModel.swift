@@ -30,6 +30,10 @@ final class PeopleCountViewModelImpl {
 
   var numberOfPeople: Int = 1
 
+  init(searchQuery: SearchQuery) {
+    self.searchQuery = searchQuery
+  }
+  
   /// Coordinator Handlers
   var onCloseButtonTapped: (() -> Void)?
   var onBackButtonTapped: (() -> Void)?
@@ -37,10 +41,6 @@ final class PeopleCountViewModelImpl {
 
   // View Controller Handlers
   var onNumberOfPeopleChange: ((Bool, Int) -> Void)?
-
-  init(searchQuery: SearchQuery) {
-    self.searchQuery = searchQuery
-  }
 }
 
 extension PeopleCountViewModelImpl: PeopleCountViewModel {

@@ -53,7 +53,20 @@ extension ContentCoordinator {
     let vc = MealTimeViewController(viewModel: viewModel)
 
     viewModel.onNextButtonTapped = { searchQuery in
-      self.showMealTime(viewController: vc, searchQuery: searchQuery)
+      self.showRatingPrice(viewController: vc, searchQuery: searchQuery)
+    }
+    viewModel.onBackButtonTapped = goBack
+    viewModel.onCloseButtonTapped = close
+
+    return vc
+  }
+
+  func instantiateRatingPrice(searchQuery: SearchQuery) -> RatingPriceViewController {
+    let viewModel = RatingPriceViewModelImpl(searchQuery: searchQuery)
+    let vc = RatingPriceViewController(viewModel: viewModel)
+
+    viewModel.onNextButtonTapped = { searchQuery in
+//      self.showMealTime(viewController: vc, searchQuery: searchQuery)
     }
     viewModel.onBackButtonTapped = goBack
     viewModel.onCloseButtonTapped = close
@@ -74,8 +87,8 @@ extension ContentCoordinator {
     navigationController.pushViewController(vc, animated: true)
   }
 
-  func showMealTime(viewController: MealTimeViewController, searchQuery: SearchQuery) {
-    let vc = instantiatePeopleCount(searchQuery: searchQuery)
+  func showRatingPrice(viewController: MealTimeViewController, searchQuery: SearchQuery) {
+    let vc = instantiateRatingPrice(searchQuery: searchQuery)
     navigationController.pushViewController(vc, animated: true)
   }
 
