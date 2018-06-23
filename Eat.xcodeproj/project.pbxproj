@@ -77,8 +77,6 @@
 		555BDA8B20745ABC005E6EEA /* NoRestaurantFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BDA8A20745ABC005E6EEA /* NoRestaurantFoundViewController.swift */; };
 		55E240792065F2E900C2FEAF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E240782065F2E900C2FEAF /* Review.swift */; };
 		781616CE204B4895005E8649 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616CD204B4895005E8649 /* Date.swift */; };
-		781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */; };
-		781616D4204B7D97005E8649 /* DietaryRestric1tionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781616D3204B7D97005E8649 /* DietaryRestric1tionsViewController.swift */; };
 		893553634AD346AFB9A505FE /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551CB03B243D0B4D3A91C996 /* Pods_EatUITests.framework */; };
 		DADEB0404108D0E965025F36 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B753C184826DD19D4E7E9F71 /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
@@ -185,8 +183,6 @@
 		55FA7A31357012E7F265471E /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		763818683036BBF36369FAD5 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		781616CD204B4895005E8649 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietaryRestrictionsScreen.storyboard; sourceTree = "<group>"; };
-		781616D3204B7D97005E8649 /* DietaryRestric1tionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestric1tionsViewController.swift; sourceTree = "<group>"; };
 		9EDE8DFC3E033480D5ACEFB5 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		A0D3565957BCE424A51BC311 /* Pods-EatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B753C184826DD19D4E7E9F71 /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,16 +292,14 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
-		5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */ = {
+		5246DA64205E200B002513E1 /* FoodPreferences */ = {
 			isa = PBXGroup;
 			children = (
-				781616CF204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard */,
-				781616D3204B7D97005E8649 /* DietaryRestric1tionsViewController.swift */,
 				5254BABB20DDA73C00059764 /* FoodPreferencesViewController.swift */,
 				5254BABC20DDA73C00059764 /* FoodPreferencesViewController.xib */,
 				5254BABF20DDA75800059764 /* FoodPreferencesViewModel.swift */,
 			);
-			path = DietaryRestrictionsScreen;
+			path = FoodPreferences;
 			sourceTree = "<group>";
 		};
 		5254BAB820DCABD000059764 /* RatingPrice */ = {
@@ -326,7 +320,7 @@
 				556B856D2037F92F00B71F44 /* PeopleCount */,
 				52CD62F920DC7A7900F5B00B /* MealTime */,
 				5254BAB820DCABD000059764 /* RatingPrice */,
-				5246DA64205E200B002513E1 /* DietaryRestrictionsScreen */,
+				5246DA64205E200B002513E1 /* FoodPreferences */,
 				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
@@ -642,7 +636,6 @@
 				5544B9A7205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard in Resources */,
 				05A3EE1E20538BB500C52F4A /* RestaurantInfoScreen.storyboard in Resources */,
 				52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */,
-				781616D0204B7AEB005E8649 /* DietaryRestrictionsScreen.storyboard in Resources */,
 				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 				5254BAB720DCABC500059764 /* RatingPriceViewController.xib in Resources */,
 				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
@@ -855,7 +848,6 @@
 				05A3EE2F205DAEE500C52F4A /* ChosenRestaurantViewController.swift in Sources */,
 				525F77F220D83A8400AE6B44 /* MapViewController.swift in Sources */,
 				5246DA71205EE445002513E1 /* UIImage.swift in Sources */,
-				781616D4204B7D97005E8649 /* DietaryRestric1tionsViewController.swift in Sources */,
 				5225CB1E2038E1C4000726E7 /* Font.swift in Sources */,
 				525F780120DAC1CD00AE6B44 /* PeopleCountViewModel.swift in Sources */,
 				555BDA8B20745ABC005E6EEA /* NoRestaurantFoundViewController.swift in Sources */,
