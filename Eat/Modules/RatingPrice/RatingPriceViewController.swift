@@ -50,20 +50,24 @@ final class RatingPriceViewController: UIViewController {
     minimumRatingLabel.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
     priceLabel.font = Font.header(size: 13)
     priceLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
-    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+
+    self.view.backgroundColor = Colors.backgroundColor
 
     onePriceButton.layer.cornerRadius = 8
     onePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    onePriceButton.backgroundColor = Colors.backgroundColor
     onePriceButton.titleLabel?.font =  Font.boldButton(size: 18)
     unselectButton(button: onePriceButton)
 
     twoPriceButton.layer.cornerRadius = 8
     twoPriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    twoPriceButton.backgroundColor = Colors.backgroundColor
     twoPriceButton.titleLabel?.font =  Font.boldButton(size: 18)
     unselectButton(button: twoPriceButton)
 
     threePriceButton.layer.cornerRadius = 8
     threePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
+    threePriceButton.backgroundColor = Colors.backgroundColor
     threePriceButton.titleLabel?.font =  Font.boldButton(size: 18)
     unselectButton(button: threePriceButton)
 
@@ -112,7 +116,7 @@ final class RatingPriceViewController: UIViewController {
   private func unselectButton(button: UIButton) {
     button.setTitleColor(#colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1), for: .normal)
     button.layer.borderWidth = 2
-    button.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+    button.backgroundColor = Colors.backgroundColor
   }
 
   private func selectButton(button: UIButton) {

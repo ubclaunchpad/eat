@@ -32,7 +32,7 @@ class DietaryRestrictionsViewController: UIViewController {
 
   var searchQuery: SearchQuery!
 
-  var dietary: DietaryRestrictions = .none {
+  var dietary: DietaryRestriction = .none {
     didSet {
       switch dietary {
       case .vegan:

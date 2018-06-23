@@ -167,7 +167,7 @@
     </objects>
     <resources>
         <image name="button_eggyolk" width="200" height="200"/>
-        <image name="eggwhite" width="375" height="398"/>
+        <image name="eggwhite" width="398" height="419"/>
         <image name="formClose" width="40" height="40"/>
     </resources>
 </document>

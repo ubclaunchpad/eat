@@ -13,7 +13,7 @@ enum MealTime {
   case later(date: Date)
 }
 
-enum DietaryRestrictions {
+enum DietaryRestriction {
   case vegan, vegetarian, halal, none
 
   var keyword: String? {
@@ -43,7 +43,7 @@ class SearchQuery {
   var price: [Int] = [] // Matches one of "$", "$$" or "$$$" ($ = 1, $$ = 2, $$$ = 3)
 
   // Dietary Restrictions
-  var dietary: DietaryRestrictions = .none
+  var dietary: DietaryRestriction = .none
   var searchTerm: String = ""
 }
 

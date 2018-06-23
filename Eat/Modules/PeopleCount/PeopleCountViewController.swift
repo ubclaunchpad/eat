@@ -67,6 +67,8 @@ final class PeopleCountViewController: UIViewController {
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
 
+    self.view.backgroundColor = Colors.backgroundColor
+
     viewModel.onNumberOfPeopleChange = scaleButton(animated:to:)
   }
 

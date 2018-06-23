@@ -46,7 +46,6 @@ final class MealTimeViewController: UIViewController {
     restaurantHoursTextView.backgroundColor = .clear
     restaurantHoursTextView.textContainerInset = UIEdgeInsets.zero
     restaurantHoursTextView.textContainer.lineFragmentPadding = 0
-    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
 
     bottomGradientView.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: bottomGradientView.frame, andColors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0), #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)])
 
@@ -56,6 +55,8 @@ final class MealTimeViewController: UIViewController {
     nextButton.titleLabel?.font = Font.formNavigation(size: 18)
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
+
+    self.view.backgroundColor = Colors.backgroundColor
 
     datePicker.datePickerMode = .dateAndTime
     datePicker.backgroundColor = .white
