@@ -9,32 +9,28 @@
 import UIKit
 import Koloda
 
-private let overlayRightImageName = "overlay_keep"
-private let overlayLeftImageName = "overlay_skip"
-
-class CustomOverlayView: OverlayView {
-
-  @IBOutlet lazy var overlayImageView: UIImageView! = {
-    [unowned self] in
-
-    var imageView = UIImageView(frame: self.bounds)
-    self.addSubview(imageView)
-
-    return imageView
-    }()
-
+final class CustomOverlayView: OverlayView {
   override var overlayState: SwipeResultDirection? {
     didSet {
       switch overlayState {
-      case .left? :
-        overlayImageView.image = #imageLiteral(resourceName: "overlay_skip")
-      case .right? :
-        overlayImageView.image = #imageLiteral(resourceName: "overlay_keep")
+      case .left?:
+        layer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.35)
+      case .right?:
+        layer.backgroundColor = #colorLiteral(red: 0.6470588235, green: 0.8117647059, blue: 0.4352941176, alpha: 0.35)
       default:
-        overlayImageView.image = nil
+        break
       }
     }
   }
 
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    applyStyling()
+  }
 
+  func applyStyling() {
+    layer.backgroundColor = UIColor.clear.cgColor
+    layer.cornerRadius = 15
+    layer.masksToBounds = true
+  }
 }
