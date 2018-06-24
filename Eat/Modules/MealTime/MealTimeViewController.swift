@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 final class MealTimeViewController: UIViewController {
   fileprivate struct Constants {

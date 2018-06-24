@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 final class FoodPreferencesViewController: UIViewController {
   @IBOutlet weak var restrictionHeader: UILabel!

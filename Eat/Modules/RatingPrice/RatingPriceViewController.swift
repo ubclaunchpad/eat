@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 final class RatingPriceViewController: UIViewController {
   private struct Constants {
