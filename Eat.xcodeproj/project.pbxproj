@@ -42,6 +42,11 @@
 		5254BABE20DDA73C00059764 /* FoodPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BABC20DDA73C00059764 /* FoodPreferencesViewController.xib */; };
 		5254BAC020DDA75800059764 /* FoodPreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BABF20DDA75800059764 /* FoodPreferencesViewModel.swift */; };
 		5254BAC220DDC93100059764 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAC120DDC93100059764 /* Colors.swift */; };
+		5254BAC520DDF92000059764 /* RestaurantCardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAC320DDF92000059764 /* RestaurantCardSelectionViewController.swift */; };
+		5254BAC620DDF92000059764 /* RestaurantCardSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BAC420DDF92000059764 /* RestaurantCardSelectionViewController.xib */; };
+		5254BAC820DDF9EF00059764 /* RestaurantCardSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAC720DDF9EF00059764 /* RestaurantCardSelectionViewModel.swift */; };
+		5254BACA20DF036E00059764 /* RestaurantCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAC920DF036E00059764 /* RestaurantCardViewModel.swift */; };
+		5254BACC20DF05CB00059764 /* UIView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BACB20DF05CB00059764 /* UIView+Xib.swift */; };
 		525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E220D720AB00AE6B44 /* AppCoordinator.swift */; };
 		525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E420D720B400AE6B44 /* Coordinator.swift */; };
 		525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */; };
@@ -59,7 +64,6 @@
 		52B73230205DC5EB00A5E441 /* circular-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322D205DC5EB00A5E441 /* circular-medium.otf */; };
 		52B73231205DC5EB00A5E441 /* circular-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7322E205DC5EB00A5E441 /* circular-bold.otf */; };
 		52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C023202670B1001CFCB5 /* AppDelegate.swift */; };
-		52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C027202670B1001CFCB5 /* Main.storyboard */; };
 		52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C02A202670B1001CFCB5 /* Assets.xcassets */; };
 		52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */; };
 		52D0C039202670B1001CFCB5 /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C038202670B1001CFCB5 /* EatTests.swift */; };
@@ -67,7 +71,6 @@
 		52EB8CAADC6B81675986D4AC /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D099244DC53FF5E1E289339 /* Pods_Eat.framework */; };
 		52FCEF82205EF2CB00A46022 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF7D205EF2CB00A46022 /* OnboardingViewController.m */; };
 		52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF81205EF2CB00A46022 /* OnboardingContentViewController.m */; };
-		5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9A4205A35120094D7E0 /* RestaurantCardSelectionViewController.swift */; };
 		5544B9A7205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544B9A6205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard */; };
 		5544B9A9205A38D00094D7E0 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9A8205A38D00094D7E0 /* RestaurantCard.swift */; };
 		5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */; };
@@ -136,6 +139,11 @@
 		5254BABC20DDA73C00059764 /* FoodPreferencesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPreferencesViewController.xib; sourceTree = "<group>"; };
 		5254BABF20DDA75800059764 /* FoodPreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPreferencesViewModel.swift; sourceTree = "<group>"; };
 		5254BAC120DDC93100059764 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5254BAC320DDF92000059764 /* RestaurantCardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardSelectionViewController.swift; sourceTree = "<group>"; };
+		5254BAC420DDF92000059764 /* RestaurantCardSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCardSelectionViewController.xib; sourceTree = "<group>"; };
+		5254BAC720DDF9EF00059764 /* RestaurantCardSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardSelectionViewModel.swift; sourceTree = "<group>"; };
+		5254BAC920DF036E00059764 /* RestaurantCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardViewModel.swift; sourceTree = "<group>"; };
+		5254BACB20DF05CB00059764 /* UIView+Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Xib.swift"; sourceTree = "<group>"; };
 		525F77E220D720AB00AE6B44 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		525F77E420D720B400AE6B44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -154,7 +162,6 @@
 		52B7322E205DC5EB00A5E441 /* circular-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "circular-bold.otf"; sourceTree = "<group>"; };
 		52D0C020202670B1001CFCB5 /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C023202670B1001CFCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52D0C028202670B1001CFCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52D0C02A202670B1001CFCB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D0C02D202670B1001CFCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0C02F202670B1001CFCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,7 +178,6 @@
 		52FCEF81205EF2CB00A46022 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingContentViewController.m; sourceTree = "<group>"; };
 		52FCEF86205EF46800A46022 /* Eat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eat-Bridging-Header.h"; sourceTree = "<group>"; };
 		551CB03B243D0B4D3A91C996 /* Pods_EatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5544B9A4205A35120094D7E0 /* RestaurantCardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardSelectionViewController.swift; sourceTree = "<group>"; };
 		5544B9A6205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantCardSelectionStoryboard.storyboard; sourceTree = "<group>"; };
 		5544B9A8205A38D00094D7E0 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
@@ -313,18 +319,26 @@
 			path = RatingPrice;
 			sourceTree = "<group>";
 		};
+		5254BACD20DF650600059764 /* NoRestaurantFound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NoRestaurantFound;
+			sourceTree = "<group>";
+		};
 		525A9B7F209CDBBE00AD1CCA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 				9A779CDE204B4786009A22E0 /* Map */,
 				556B856D2037F92F00B71F44 /* PeopleCount */,
 				52CD62F920DC7A7900F5B00B /* MealTime */,
 				5254BAB820DCABD000059764 /* RatingPrice */,
 				5246DA64205E200B002513E1 /* FoodPreferences */,
-				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */,
+				5254BACD20DF650600059764 /* NoRestaurantFound */,
+				05A3EE2B205DADE800C52F4A /* ChosenRestaurantScreen */,
 				05A3EE1C20538B6800C52F4A /* RestaurantInfoScreen */,
-				5246DA6E205EE28B002513E1 /* Onboarding.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -401,7 +415,6 @@
 				525F77EA20D73A2F00AE6B44 /* Coordinators */,
 				525F77ED20D782AD00AE6B44 /* Protocols */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
-				52D0C027202670B1001CFCB5 /* Main.storyboard */,
 				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
 				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
 				52D0C02F202670B1001CFCB5 /* Info.plist */,
@@ -459,9 +472,12 @@
 		5544B9A3205A34E00094D7E0 /* RestaurantCardSelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5544B9A4205A35120094D7E0 /* RestaurantCardSelectionViewController.swift */,
-				555BDA8A20745ABC005E6EEA /* NoRestaurantFoundViewController.swift */,
+				5254BAC320DDF92000059764 /* RestaurantCardSelectionViewController.swift */,
+				5254BAC720DDF9EF00059764 /* RestaurantCardSelectionViewModel.swift */,
+				5254BAC420DDF92000059764 /* RestaurantCardSelectionViewController.xib */,
+				5254BAC920DF036E00059764 /* RestaurantCardViewModel.swift */,
 				5544B9A6205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard */,
+				555BDA8A20745ABC005E6EEA /* NoRestaurantFoundViewController.swift */,
 				5544B9A8205A38D00094D7E0 /* RestaurantCard.swift */,
 				5555C83D205B8CB10067B5F7 /* RestaurantCard.xib */,
 				5544B9AA205A45880094D7E0 /* CustomOverlayView.swift */,
@@ -487,6 +503,7 @@
 				5246DA69205E3C83002513E1 /* Double+Round.swift */,
 				525F77FA20D8B57100AE6B44 /* String+Localization.swift */,
 				5246DA70205EE445002513E1 /* UIImage.swift */,
+				5254BACB20DF05CB00059764 /* UIView+Xib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -636,8 +653,8 @@
 				5544B9A7205A35250094D7E0 /* RestaurantCardSelectionStoryboard.storyboard in Resources */,
 				05A3EE1E20538BB500C52F4A /* RestaurantInfoScreen.storyboard in Resources */,
 				52B7322F205DC5EB00A5E441 /* circular-book.otf in Resources */,
-				52D0C029202670B1001CFCB5 /* Main.storyboard in Resources */,
 				5254BAB720DCABC500059764 /* RatingPriceViewController.xib in Resources */,
+				5254BAC620DDF92000059764 /* RestaurantCardSelectionViewController.xib in Resources */,
 				525F77F320D83A8400AE6B44 /* MapViewController.xib in Resources */,
 				5555C83E205B8CB10067B5F7 /* RestaurantCard.xib in Resources */,
 				5254BABE20DDA73C00059764 /* FoodPreferencesViewController.xib in Resources */,
@@ -837,7 +854,6 @@
 				5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */,
 				5254BAB620DCABC500059764 /* RatingPriceViewController.swift in Sources */,
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
-				5544B9A5205A35120094D7E0 /* RestaurantCardSelectionViewController.swift in Sources */,
 				525F77FE20DAC1B500AE6B44 /* PeopleCountViewController.swift in Sources */,
 				525F77EF20D782D300AE6B44 /* ContentCoordinator.swift in Sources */,
 				5254BAC020DDA75800059764 /* FoodPreferencesViewModel.swift in Sources */,
@@ -859,6 +875,7 @@
 				05A3EE262055003200C52F4A /* RestaurantReviewCell.swift in Sources */,
 				05A3EE2A205CEE6300C52F4A /* RestaurantPhotoCell.swift in Sources */,
 				05A3EE31205DB01900C52F4A /* ChosenRestaurantPhotoCell.swift in Sources */,
+				5254BAC520DDF92000059764 /* RestaurantCardSelectionViewController.swift in Sources */,
 				525F77FB20D8B57100AE6B44 /* String+Localization.swift in Sources */,
 				781616CE204B4895005E8649 /* Date.swift in Sources */,
 				05A3EE35205DB04300C52F4A /* ChosenRestaurantMapCell.swift in Sources */,
@@ -869,11 +886,14 @@
 				525F77F920D86C1F00AE6B44 /* LocationManager.swift in Sources */,
 				052B4A7E202FB2BD00291EE9 /* SearchQuery.swift in Sources */,
 				522191FE20881E540075C480 /* APIKeys.swift in Sources */,
+				5254BACA20DF036E00059764 /* RestaurantCardViewModel.swift in Sources */,
+				5254BACC20DF05CB00059764 /* UIView+Xib.swift in Sources */,
 				525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */,
 				05A3EE33205DB02F00C52F4A /* ChosenRestaurantInfoCell.swift in Sources */,
 				525F77F720D866AE00AE6B44 /* LocationAuthorizationManager.swift in Sources */,
 				525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */,
 				5544B9AB205A45880094D7E0 /* CustomOverlayView.swift in Sources */,
+				5254BAC820DDF9EF00059764 /* RestaurantCardSelectionViewModel.swift in Sources */,
 				55E240792065F2E900C2FEAF /* Review.swift in Sources */,
 				05A3EE3A2063469C00C52F4A /* CallRestaurantCell.swift in Sources */,
 				525F77F520D83B2700AE6B44 /* MapViewModel.swift in Sources */,
@@ -918,14 +938,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		52D0C027202670B1001CFCB5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52D0C028202670B1001CFCB5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

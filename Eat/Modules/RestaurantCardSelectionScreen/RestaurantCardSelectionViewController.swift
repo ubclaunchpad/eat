@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class RestaurantCardSelectionViewController: UIViewController {
+final class RestaurantCardSelectionViewController: UIViewController {
   @IBOutlet weak var eaterProgressHeaderView: UIView!
   @IBOutlet weak var eaterProgressBar: UIProgressView!
   @IBOutlet weak var skipButton: UIButton!
@@ -21,107 +21,40 @@ class RestaurantCardSelectionViewController: UIViewController {
   @IBOutlet weak var eaterIcon: UIImageView!
   @IBOutlet weak var buttonsView: UIView!
 
-  static func viewController(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
-    let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
-    guard let vc = storyboard.instantiateViewController(withIdentifier: "RestaurantCardSelectionViewController") as? RestaurantCardSelectionViewController
-      else { fatalError() }
-    vc.searchQuery = searchQuery
-    return vc
+  fileprivate var viewModel: RestaurantCardSelectionViewModel
+
+  init(viewModel: RestaurantCardSelectionViewModel) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
   }
 
-  var searchQuery: SearchQuery!
-  let dataManager = DataManager.default
-  var gameStateManager: GameStateManager?
-  var restaurants : [Restaurant] = [] {
-    didSet {
-      kolodaView.reloadData()
-    }
-  }
-  var numberOfPlayers = 0
-  var currNumOfPlayer = 1 {
-    didSet {
-      let progress = Float(currNumOfPlayer) / Float(numberOfPlayers)
-      eaterProgressBar.setProgress(progress, animated: true)
-    }
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    kolodaView.dataSource = self
-    kolodaView.delegate = self
-    numberOfPlayers = searchQuery.numberOfPeople
-    setStyling()
-
-    dataManager.fetchRestaurants(with: searchQuery)
-      .onSuccess { res in
-        if res.count < 2 {
-          let noRestaurantFoundVC = NoRestaurantFoundViewController.viewController()
-          self.present(noRestaurantFoundVC, animated: true) {
-            self.navigationController?.popToRootViewController(animated: true)
-          }
-        }
-
-        self.gameStateManager = GameStateManager(restaurants: res, peopleNum: self.numberOfPlayers, currentPlayer: 1, currRestaurant: 0)
-        guard let gameStateManager = self.gameStateManager else {
-          return
-        }
-        self.currNumOfPlayer = gameStateManager.currentPlayer
-        self.restaurants = gameStateManager.getSubsetOfRestaurants()
-        let progress = Float(self.currNumOfPlayer) / Float(self.numberOfPlayers)
-        self.eaterProgressBar.setProgress(progress, animated: true)
-        self.enableSelectionButtons()
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-          self.nextEaterLabel.alpha = 0
-        }, completion: { _ in
-          self.nextEaterLabel.isHidden = true
-        })
-      }.onFailure { error in
-        // TODO: Error handling
-        print(error)
-    }
+    configure()
+    updateHeader()
+    viewModel.fetchRestaurants()
   }
 
-  @IBAction func closeButtonPressed(_ sender: Any) {
-    navigationController?.popToRootViewController(animated: true)
-  }
+  func configure() {
+    view.backgroundColor = Colors.backgroundColor
 
-  @IBAction func restartButtonPressed(_ sender: Any) {
-    kolodaView.isHidden = false
-    hideNextPlayerViewElements()
-    enableSelectionButtons()
-
-    kolodaView.resetCurrentCardIndex()
-    currNumOfPlayer = currNumOfPlayer + 1
-    updateEaterCountLabel()
-
-    guard let gameStateManager = self.gameStateManager else {
-      return
-    }
-    self.restaurants = gameStateManager.getSubsetOfRestaurants()
-    self.currNumOfPlayer = gameStateManager.currentPlayer
-  }
-
-  @IBAction func skipButtonTapped(_ sender: Any) {
-    kolodaView.swipe(.left)
-  }
-
-
-  @IBAction func keepButtonTapped(_ sender: Any) {
-    kolodaView.swipe(.right)
-  }
-
-  private func setStyling() {
-    self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     kolodaView.layer.cornerRadius = 15
+    kolodaView.delegate = self
+    kolodaView.dataSource = self
 
     nextEaterLabel.font = Font.body(size: 20)
     nextEaterLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
-    nextEaterLabel.text = "Finding Restaurants..."
+    nextEaterLabel.text = viewModel.eaterSearchingText
     nextEaterLabel.isUserInteractionEnabled = false
 
-    updateEaterCountLabel()
     eaterCountLabel.font = Font.body(size: 18)
     eaterCountLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+
+    eaterProgressBar.setProgress(0, animated: false)
 
     eaterIcon.isHidden = true
 
@@ -141,13 +74,27 @@ class RestaurantCardSelectionViewController: UIViewController {
     keepButton.setImage(#imageLiteral(resourceName: "grey_button_keep"), for: .disabled)
     skipButton.setImage(#imageLiteral(resourceName: "button_skip"), for: .normal)
     keepButton.setImage(#imageLiteral(resourceName: "button_keep"), for: .normal)
+
+    viewModel.onRestaurantsUpdated = updateKolodaView
+    viewModel.onTurnStart = updateHeader
+    viewModel.onGameActive = setupActiveGameViews
+    viewModel.onTurnEnd = setupEndTurnViews
+    viewModel.onGameEnd = endGame
   }
 
-  private func updateEaterCountLabel(){
-    eaterCountLabel.text = String(currNumOfPlayer) + "/" + String(numberOfPlayers) + " eaters"
+  func updateKolodaView() {
+    kolodaView.reloadData()
   }
 
-  private func hideNextPlayerViewElements(){
+  private func updateHeader() {
+    eaterProgressBar.setProgress(viewModel.progressPercentage, animated: true)
+    eaterCountLabel.text = viewModel.progressTitle
+  }
+
+  func setupActiveGameViews() {
+    skipButton.isEnabled = true
+    keepButton.isEnabled = true
+
     restartButton.isEnabled = false
     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
       self.nextEaterLabel.alpha = 0
@@ -160,14 +107,14 @@ class RestaurantCardSelectionViewController: UIViewController {
     })
   }
 
-  private func setOutOfCardStyling() {
+  func setupNoCardsViews() {
     skipButton.isEnabled = false
     keepButton.isEnabled = false
     self.kolodaView.isHidden = true
   }
 
-  private func setNextPlayerStyling() {
-    nextEaterLabel.text = "Thanks for your input! Pass the phone to the next person"
+  private func setupEndTurnViews() {
+    nextEaterLabel.text = viewModel.eaterEndTurnText
     restartButton.isEnabled = true
     self.eaterIcon.isHidden = false
     self.nextEaterLabel.isHidden = false
@@ -179,8 +126,8 @@ class RestaurantCardSelectionViewController: UIViewController {
     }, completion: nil)
   }
 
-  private func setFindingRestaurantStyling() {
-    nextEaterLabel.text = "Finding a place for us to eat..."
+  private func setupFindingRestaurantViews() {
+    nextEaterLabel.text = viewModel.eaterCalculatingText
     self.eaterIcon.isHidden = false
     self.nextEaterLabel.isHidden = false
     UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
@@ -192,60 +139,42 @@ class RestaurantCardSelectionViewController: UIViewController {
     })
   }
 
-  private func enableSelectionButtons(){
-    skipButton.isEnabled = true
-    keepButton.isEnabled = true
+  private func endGame() {
+    setupFindingRestaurantViews()
+    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(onFindingTimerEnd), userInfo: nil, repeats: false)
+  }
+  
+  @objc func onFindingTimerEnd() {
+    viewModel.findGameResult()
   }
 }
 
-extension RestaurantCardSelectionViewController: KolodaViewDelegate {
-
-  @objc func pushChosenRestaurantVC(index: Int) {
-    guard let gameStateManager = self.gameStateManager,
-      let topRestaurant = gameStateManager.getTopRestaurant() else {
-      return
-    }
-
-    let viewController = ChosenRestaurantViewController.viewController(restaurant: topRestaurant)
-    self.navigationController?.pushViewController(viewController, animated: true)
+// MARK: IBActions
+extension RestaurantCardSelectionViewController {
+  @IBAction func skipButtonTapped() {
+    kolodaView.swipe(.left)
   }
 
-  func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-    self.setOutOfCardStyling()
-    guard let gameStateManager = self.gameStateManager else {
-      return
-    }
-    if (gameStateManager.updateStateForNextPlayer()) {
-      self.setNextPlayerStyling()
-    } else {
-      self.setFindingRestaurantStyling()
-      Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.pushChosenRestaurantVC(index:)), userInfo: nil, repeats: false)
-    }
+  @IBAction func startButtonPressed() {
+    kolodaView.isHidden = false
+    setupActiveGameViews()
+
+    kolodaView.resetCurrentCardIndex()
+    viewModel.nextTurn()
   }
 
-  func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-    let restaurantInfoVC = RestaurantInfoViewController.viewController(restaurant: self.restaurants[index])
-    self.navigationController?.pushViewController(restaurantInfoVC, animated: true)
+  @IBAction func keepButtonTapped() {
+    kolodaView.swipe(.right)
   }
 
-  func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-    guard let gameState = gameStateManager else {
-      return
-    }
-    if direction == SwipeResultDirection.left {
-      gameState.updateScore(index: index, score: -1)
-      print(gameState.restaurantScore)
-    } else {
-      gameState.updateScore(index: index, score: 1)
-      print(gameState.restaurantScore)
-    }
+  @IBAction func closeButtonTapped() {
+    viewModel.onCloseButtonTapped?()
   }
 }
 
 extension RestaurantCardSelectionViewController: KolodaViewDataSource {
-
-  func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-    return restaurants.count
+  func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+    return viewModel.numberOfRestaurants
   }
 
   func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -253,14 +182,34 @@ extension RestaurantCardSelectionViewController: KolodaViewDataSource {
   }
 
   func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-    let viewModel = restaurants[index]
-    let card = RestaurantCard(restaurant: viewModel)
-    card.viewModel = viewModel
+    let card: RestaurantCard = RestaurantCard.instanceFromNib()
+    card.configure(with: viewModel.itemViewModel(at: index))
     return card
   }
 
   func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-    return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
+    return CustomOverlayView.instanceFromNib()
   }
 }
 
+extension RestaurantCardSelectionViewController: KolodaViewDelegate {
+  func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+    self.setupNoCardsViews()
+    viewModel.outOfCards()
+  }
+
+  func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+    viewModel.selectItem(at: index)
+  }
+
+  func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+    switch direction {
+    case .left:
+      viewModel.cardSwiped(cardIndex: index, direction: .left)
+    case .right:
+      viewModel.cardSwiped(cardIndex: index, direction: .right)
+    default:
+      break
+    }
+  }
+}

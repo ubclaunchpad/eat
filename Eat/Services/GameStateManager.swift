@@ -8,12 +8,23 @@
 
 import Foundation
 
+enum Direction {
+  case left, right
+
+  var points: Int {
+    switch self {
+    case .left: return -1
+    case .right: return 1
+    }
+  }
+}
+
 internal final class GameStateManager {
   let restaurants: [Restaurant]
   let numberOfPlayer: Int
   var restaurantScore: [Int]
-  var currentPlayer: Int
-  var currRestaurant: Int
+  var currentPlayer: Int = 1
+  var currRestaurant: Int = 0
   var perUserRestaurantCount: Int {
     switch numberOfPlayer {
     case 1, 2, 3:   return min(4, restaurants.count)
@@ -21,33 +32,31 @@ internal final class GameStateManager {
     }
   }
 
-  init(restaurants: [Restaurant], peopleNum: Int, currentPlayer: Int, currRestaurant: Int) {
+  init?(restaurants: [Restaurant], peopleNum: Int) {
+    guard restaurants.count >= 2 else { return nil }
     self.restaurants = restaurants
     self.numberOfPlayer = peopleNum
-    self.currRestaurant = currRestaurant
-    self.currentPlayer = currentPlayer
     self.restaurantScore = [Int](repeating: 0, count: self.restaurants.count)
   }
 
-  func updateScore(index: Int, score: Int){
+  func updateScore(index: Int, direction: Direction){
     let resIndex = (index + currRestaurant) % restaurants.count
-    restaurantScore[resIndex] = restaurantScore[resIndex] + score
+    restaurantScore[resIndex] = restaurantScore[resIndex] + direction.points
   }
 
   // update state for next player
   // return true if current player is not the last player & state can be updated
   // else return false
-  func updateStateForNextPlayer() -> Bool {
-    if currentPlayer < numberOfPlayer {
-      currentPlayer = currentPlayer + 1
-      currRestaurant = currRestaurant + perUserRestaurantCount
-      return true
-    } else {
-      return false
-    }
+  func updateStateForNextPlayer() {
+    currentPlayer = currentPlayer + 1
+    currRestaurant = currRestaurant + perUserRestaurantCount
   }
 
-  func getSubsetOfRestaurants() -> [Restaurant]{
+  func isGameOver() -> Bool {
+    return currentPlayer == numberOfPlayer
+  }
+
+  func getSubsetOfRestaurants() -> [Restaurant] {
     var subset: [Restaurant] = []
     for i in 0..<perUserRestaurantCount {
       let index = (currRestaurant+i) % restaurants.count
@@ -56,10 +65,7 @@ internal final class GameStateManager {
     return subset
   }
 
-  func getTopRestaurant() -> Restaurant? {
-    if restaurants.count == 0 {
-      return nil
-    }
+  func getTopRestaurant() -> Restaurant {
     var topScore: Int = -(self.numberOfPlayer)
     var topScoringRestaurants: [Restaurant] = []
 
@@ -78,7 +84,7 @@ internal final class GameStateManager {
     return topScoringRestaurants[ranNum]
   }
 
-  func randomNumber(min: Int, max: Int)-> Int{
-    return Int(arc4random_uniform(UInt32(max-min)) + UInt32(min));
+  func randomNumber(min: Int, max: Int) -> Int {
+    return Int(arc4random_uniform(UInt32(max-min)) + UInt32(min))
   }
 }

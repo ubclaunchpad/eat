@@ -79,9 +79,24 @@ extension ContentCoordinator {
     let vc = FoodPreferencesViewController(viewModel: viewModel)
 
     viewModel.onFinishButtonTapped = { searchQuery in
-      //      self.showMealTime(viewController: vc, searchQuery: searchQuery)
+      self.showRestaurantCardSelection(viewController: vc, searchQuery: searchQuery)
     }
     viewModel.onBackButtonTapped = goBack
+    viewModel.onCloseButtonTapped = close
+
+    return vc
+  }
+
+  func instantiateRestaurantCardSelection(searchQuery: SearchQuery) -> RestaurantCardSelectionViewController {
+    let viewModel = RestaurantCardSelectionViewModelImpl(searchQuery: searchQuery)
+    let vc = RestaurantCardSelectionViewController(viewModel: viewModel)
+
+    viewModel.onRestaurantTapped = { restaurant in
+
+    }
+    viewModel.onFinalRestaurantSelected = { restaurant in
+      
+    }
     viewModel.onCloseButtonTapped = close
 
     return vc
@@ -109,6 +124,13 @@ extension ContentCoordinator {
     let vc = instantiateFoodPreferences(searchQuery: searchQuery)
     navigationController.pushViewController(vc, animated: true)
   }
+
+  func showRestaurantCardSelection(viewController: FoodPreferencesViewController, searchQuery: SearchQuery) {
+    let vc = instantiateRestaurantCardSelection(searchQuery: searchQuery)
+    navigationController.pushViewController(vc, animated: true)
+  }
+
+
 
   func goBack() {
     _ = navigationController.popViewController(animated: true)
