@@ -8,17 +8,20 @@
 
 import UIKit
 
-class NoRestaurantFoundViewController: UIViewController {
-
+final class NoRestaurantFoundViewController: UIViewController {
   @IBOutlet weak var noRestaurantFoundImage: UIImageView!
   @IBOutlet weak var noRestaurantFoundLabel: UILabel!
   @IBOutlet weak var adjustPreferenceButton: UIButton!
 
-  static func viewController() -> NoRestaurantFoundViewController {
-    let storyboard = UIStoryboard(name: "RestaurantCardSelectionStoryboard", bundle: nil)
-    guard let vc = storyboard.instantiateViewController(withIdentifier: "NoRestaurantFoundViewController") as? NoRestaurantFoundViewController
-      else { fatalError() }
-    return vc
+  fileprivate var viewModel: NoRestaurantFoundViewModel
+
+  init(viewModel: NoRestaurantFoundViewModel) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func viewDidLoad() {
@@ -26,16 +29,16 @@ class NoRestaurantFoundViewController: UIViewController {
     setStyling()
   }
 
-  @IBAction func adjustPreferenceButtonPressed(_ sender: Any) {
-    self.dismiss(animated: true)
+  @IBAction func adjustPreferenceButtonTapped() {
+    viewModel.onAdjustPreferencesTapped?()
   }
 
   private func setStyling(){
-    view.layer.backgroundColor = #colorLiteral(red: 0.9685223699, green: 0.9686879516, blue: 0.9685119987, alpha: 1)
+    view.layer.backgroundColor = Colors.backgroundColor.cgColor
     noRestaurantFoundLabel.font = Font.body(size: 16)
     noRestaurantFoundLabel.textColor = #colorLiteral(red: 0.4183886945, green: 0.4357136786, blue: 0.601531148, alpha: 1)
 
-    let adjustPreferenceButtonTitle = NSMutableAttributedString(string: "ADJUST PREFERENCES")
+    let adjustPreferenceButtonTitle = NSMutableAttributedString(string: viewModel.actionButtonTitle)
     adjustPreferenceButtonTitle.addAttributes([NSAttributedStringKey.kern: CGFloat(2), NSAttributedStringKey.foregroundColor : UIColor.white], range: NSRange(location: 0, length: adjustPreferenceButtonTitle.length))
     adjustPreferenceButton.setAttributedTitle(adjustPreferenceButtonTitle, for: .normal)
     adjustPreferenceButton.titleLabel?.font = Font.boldButton(size: 17)

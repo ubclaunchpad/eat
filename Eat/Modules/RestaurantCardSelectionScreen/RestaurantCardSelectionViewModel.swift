@@ -23,6 +23,7 @@ protocol RestaurantCardSelectionViewModel {
   func selectItem(at index: Int)
   func findGameResult()
 
+  var onNoRestaurantsError: ((GameError) -> Void)? { get set }
   var onRestaurantTapped: ((Restaurant) -> Void)? { get set }
   var onFinalRestaurantSelected: ((Restaurant) -> Void)? { get set }
   var onCloseButtonTapped: (() -> Void)? { get set }
@@ -66,6 +67,7 @@ final class RestaurantCardSelectionViewModelImpl {
     self.numberOfPlayers = searchQuery.numberOfPeople
   }
 
+  var onNoRestaurantsError: ((GameError) -> Void)?
   var onRestaurantTapped: ((Restaurant) -> Void)?
   var onFinalRestaurantSelected: ((Restaurant) -> Void)?
   var onCloseButtonTapped: (() -> Void)?
@@ -111,7 +113,7 @@ extension RestaurantCardSelectionViewModelImpl: RestaurantCardSelectionViewModel
     dataManager.fetchRestaurants(with: searchQuery)
       .onSuccess { [weak self] restaurants in
         guard restaurants.count >= 2 else {
-          // TODO: present error screen
+          self?.onNoRestaurantsError?(GameError.noRestaurants)
           return
         }
         self?.startGame(restaurants: restaurants)
