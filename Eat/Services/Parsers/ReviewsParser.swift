@@ -17,14 +17,16 @@ struct ReviewParser {
 
       let user = json["user"] as? JSON,
       let userName = user["name"] as? String,
-      let userImage = user["image_url"] as? String
+      let userImageString = user["image_url"] as? String
       else {
         return nil
     }
 
+    let userImageURL = URL(string: userImageString)
+
     return Review(userName: userName,
                   userRating: rating,
-                  userImage: userImage,
+                  userImageURL: userImageURL,
                   content: content,
                   timeStamp: time)
   }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 protocol ContentCoordinatorDelegate: class {
   func contentCoordinatorDidFinish(_ coordinator: ContentCoordinator)
@@ -95,7 +96,7 @@ extension ContentCoordinator {
       self.restaurantCardSelection(vc, failedWith: error)
     }
     viewModel.onRestaurantTapped = { restaurant in
-
+      self.showRestaurantInfo(vc, restaurant: restaurant)
     }
     viewModel.onFinalRestaurantSelected = { restaurant in
       
@@ -111,6 +112,24 @@ extension ContentCoordinator {
 
     viewModel.onAdjustPreferencesTapped = {
       self.noRestaurantViewControllerFinished(vc)
+    }
+
+    return vc
+  }
+
+  func instantiateRestaurantInfo(restaurant: Restaurant) -> RestaurantInfoViewController {
+    let viewModel = RestaurantInfoViewModelImpl(restaurant: restaurant)
+    let vc = RestaurantInfoViewController(viewModel: viewModel)
+
+    viewModel.onOpenSafari = { url in
+      let config = SFSafariViewController.Configuration()
+
+      let safariVC = SFSafariViewController(url: url, configuration: config)
+      vc.present(safariVC, animated: true, completion: nil)
+    }
+
+    viewModel.onExitButtonTapped = {
+      self.restaurantInfoViewControllerFinished(vc)
     }
 
     return vc
@@ -152,6 +171,15 @@ extension ContentCoordinator {
   }
 
   func noRestaurantViewControllerFinished(_ viewController: NoRestaurantFoundViewController) {
+    viewController.dismiss(animated: true, completion: nil)
+  }
+
+  func showRestaurantInfo(_ viewController: RestaurantCardSelectionViewController, restaurant: Restaurant) {
+    let vc = instantiateRestaurantInfo(restaurant: restaurant)
+    viewController.present(vc, animated: true, completion: nil)
+  }
+
+  func restaurantInfoViewControllerFinished(_ viewController: RestaurantInfoViewController) {
     viewController.dismiss(animated: true, completion: nil)
   }
 

@@ -23,8 +23,6 @@ final class RestaurantCard : UIView {
   @IBOutlet weak var ratingSquare5: UIImageView!
   @IBOutlet weak var moreInfoLabel: UILabel!
 
-  var viewModel: RestaurantCardViewModel?
-
   override func awakeFromNib() {
     super.awakeFromNib()
     applyStyling()
@@ -54,7 +52,7 @@ final class RestaurantCard : UIView {
   private func applyStyling() {
     titleLabel.font = Font.bold(size: 18)
     distanceLabel.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
-    distanceLabel.font = Font.regular(size: 15)
+    distanceLabel.font = Font.regular(size: 14)
     typeLabel.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
     typeLabel.font = Font.regular(size: 14)
     openNowLabel.font = Font.regular(size: 14)

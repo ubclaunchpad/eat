@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantPhotoCell" rowHeight="269" id="un0-WW-4WS" userLabel="RestaurantPhotoCell" customClass="RestaurantPhotoCell" customModule="Eat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="un0-WW-4WS" id="LGX-ZR-BJf">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="268.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RestaurantPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Wuy-fH-0fq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="268.5"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Wuy-fH-0fq" secondAttribute="bottom" id="Aef-MH-QZd"/>
+                    <constraint firstItem="Wuy-fH-0fq" firstAttribute="leading" secondItem="LGX-ZR-BJf" secondAttribute="leading" id="LJU-Fu-wP7"/>
+                    <constraint firstItem="Wuy-fH-0fq" firstAttribute="top" secondItem="LGX-ZR-BJf" secondAttribute="top" id="QZK-aJ-FnK"/>
+                    <constraint firstAttribute="trailing" secondItem="Wuy-fH-0fq" secondAttribute="trailing" id="mqi-Dy-Zbz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="restaurantImageView" destination="Wuy-fH-0fq" id="f1d-tK-7IB"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="RestaurantPhoto" width="700" height="699"/>
+    </resources>
+</document>
