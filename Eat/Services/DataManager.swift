@@ -33,7 +33,7 @@ extension DataManager {
   }
 
   func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]> {
-    return yelpAPIManager.search(query: query)
+    return yelpAPIManager.search(searchQuery: query)
       .compactMap { RestaurantsParser().parse(from: $0) }
   }
 

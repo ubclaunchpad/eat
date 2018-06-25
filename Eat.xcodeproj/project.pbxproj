@@ -54,6 +54,8 @@
 		5254BAD520DF6DBF00059764 /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAD420DF6DBF00059764 /* InternalError.swift */; };
 		5254BAD720E03A5300059764 /* RestaurantParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAD620E03A5300059764 /* RestaurantParser.swift */; };
 		5254BADA20E0642000059764 /* ReviewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAD920E0642000059764 /* ReviewsParser.swift */; };
+		5254BADE20E0756300059764 /* YelpAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BADD20E0756300059764 /* YelpAPIRouter.swift */; };
+		5254BAE020E076D200059764 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BADF20E076D200059764 /* APIConfiguration.swift */; };
 		525F77E320D720AB00AE6B44 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E220D720AB00AE6B44 /* AppCoordinator.swift */; };
 		525F77E520D720B400AE6B44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77E420D720B400AE6B44 /* Coordinator.swift */; };
 		525F77EC20D73A4200AE6B44 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */; };
@@ -156,6 +158,8 @@
 		5254BAD420DF6DBF00059764 /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 		5254BAD620E03A5300059764 /* RestaurantParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantParser.swift; sourceTree = "<group>"; };
 		5254BAD920E0642000059764 /* ReviewsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsParser.swift; sourceTree = "<group>"; };
+		5254BADD20E0756300059764 /* YelpAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIRouter.swift; sourceTree = "<group>"; };
+		5254BADF20E076D200059764 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		525F77E220D720AB00AE6B44 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		525F77E420D720B400AE6B44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		525F77EB20D73A4200AE6B44 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				525F77F820D86C1F00AE6B44 /* LocationManager.swift */,
 				052B4A78202FB08E00291EE9 /* DataManager.swift */,
 				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
+				5254BADD20E0756300059764 /* YelpAPIRouter.swift */,
+				5254BADF20E076D200059764 /* APIConfiguration.swift */,
 				522191FD20881E540075C480 /* APIKeys.swift */,
 			);
 			path = Services;
@@ -874,9 +880,11 @@
 				52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */,
 				5254BAD520DF6DBF00059764 /* InternalError.swift in Sources */,
 				525F77FE20DAC1B500AE6B44 /* PeopleCountViewController.swift in Sources */,
+				5254BAE020E076D200059764 /* APIConfiguration.swift in Sources */,
 				525F77EF20D782D300AE6B44 /* ContentCoordinator.swift in Sources */,
 				5254BAC020DDA75800059764 /* FoodPreferencesViewModel.swift in Sources */,
 				52FCEF82205EF2CB00A46022 /* OnboardingViewController.m in Sources */,
+				5254BADE20E0756300059764 /* YelpAPIRouter.swift in Sources */,
 				052B4A79202FB08E00291EE9 /* DataManager.swift in Sources */,
 				05A3EE2020538C5500C52F4A /* RestaurantInfoViewController.swift in Sources */,
 				5254BAD720E03A5300059764 /* RestaurantParser.swift in Sources */,

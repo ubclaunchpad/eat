@@ -16,12 +16,12 @@ enum MealTime {
 enum DietaryRestriction {
   case vegan, vegetarian, halal, none
 
-  var keyword: String? {
+  var keyword: String {
     switch self {
     case .vegan: return "vegan"
     case .vegetarian: return "vegetarian"
     case .halal: return "halal"
-    case .none: return nil
+    case .none: return ""
     }
   }
 }
