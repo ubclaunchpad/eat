@@ -111,13 +111,13 @@ extension RestaurantCardSelectionViewModelImpl: RestaurantCardSelectionViewModel
 
   func fetchRestaurants() {
     dataManager.fetchRestaurants(with: searchQuery)
-      .onSuccess { [weak self] restaurants in
+      .done { [weak self] restaurants in
         guard restaurants.count >= 2 else {
           self?.onNoRestaurantsError?(GameError.noRestaurants)
           return
         }
         self?.startGame(restaurants: restaurants)
-      }.onFailure { error in
+      }.catch { error in
         // TODO: Error Handling
         print(error)
     }

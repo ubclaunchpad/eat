@@ -25,15 +25,15 @@ class ChosenRestaurantViewController: UIViewController {
     guard let chosenVC = storyboard.instantiateViewController(withIdentifier: "ChosenRestaurantVC") as? ChosenRestaurantViewController
       else { fatalError() }
     chosenVC.myRestaurant = restaurant
-    chosenVC.urlString = restaurant.yelpUrl
+//    chosenVC.urlString = restaurant.yelpURL
     chosenVC.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     return chosenVC
   }
 
 
   @IBAction func exit(_ sender: Any) {
-//    let viewController = MapScreenController.viewController()
-//    self.present(viewController, animated: true)
+    //    let viewController = MapScreenController.viewController()
+    //    self.present(viewController, animated: true)
   }
 
   override func viewDidLoad() {
@@ -47,13 +47,11 @@ class ChosenRestaurantViewController: UIViewController {
   }
 
   func openInSafari() {
-    if let url = URL(string: myRestaurant.yelpUrl) {
-      let config = SFSafariViewController.Configuration()
-      config.entersReaderIfAvailable = true
+    let config = SFSafariViewController.Configuration()
+    config.entersReaderIfAvailable = true
 
-      let vc = SFSafariViewController(url: url, configuration: config)
-      present(vc, animated: true)
-    }
+    let vc = SFSafariViewController(url: myRestaurant.yelpURL, configuration: config)
+    present(vc, animated: true)
   }
 
 }

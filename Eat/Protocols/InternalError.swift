@@ -15,3 +15,7 @@ protocol InternalError: Error {
 enum GameError: InternalError {
   case noRestaurants
 }
+
+enum NetworkingError: InternalError {
+  case invalidURL, requestFailed, timedOut
+}

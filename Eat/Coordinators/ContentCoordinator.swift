@@ -91,6 +91,9 @@ extension ContentCoordinator {
     let viewModel = RestaurantCardSelectionViewModelImpl(searchQuery: searchQuery)
     let vc = RestaurantCardSelectionViewController(viewModel: viewModel)
 
+    viewModel.onNoRestaurantsError = { error in
+      self.restaurantCardSelection(vc, failedWith: error)
+    }
     viewModel.onRestaurantTapped = { restaurant in
 
     }
@@ -98,6 +101,17 @@ extension ContentCoordinator {
       
     }
     viewModel.onCloseButtonTapped = close
+
+    return vc
+  }
+
+  func instantiateNoRestaurantError() -> NoRestaurantFoundViewController {
+    let viewModel = NoRestaurantFoundViewModelImpl()
+    let vc = NoRestaurantFoundViewController(viewModel: viewModel)
+
+    viewModel.onAdjustPreferencesTapped = {
+      self.noRestaurantViewControllerFinished(vc)
+    }
 
     return vc
   }
@@ -130,7 +144,16 @@ extension ContentCoordinator {
     navigationController.pushViewController(vc, animated: true)
   }
 
+  func restaurantCardSelection(_ viewController: RestaurantCardSelectionViewController, failedWith error: GameError) {
+    let vc = instantiateNoRestaurantError()
+    navigationController.present(vc, animated: true) {
+      self.navigationController.popToRootViewController(animated: false)
+    }
+  }
 
+  func noRestaurantViewControllerFinished(_ viewController: NoRestaurantFoundViewController) {
+    viewController.dismiss(animated: true, completion: nil)
+  }
 
   func goBack() {
     _ = navigationController.popViewController(animated: true)

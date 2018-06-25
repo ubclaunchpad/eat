@@ -14,8 +14,7 @@ protocol RestaurantCardViewModel {
   var numberOfReviews: String { get }
   var restaurantOpen: String { get }
   var restaurantOpenTextColor: UIColor { get }
-//  var restaurantImage
-//  var restaurantImage
+  var restaurantImageURL: URL? { get }
   var restaurantRating: Int { get }
 }
 
@@ -51,6 +50,10 @@ extension RestaurantCardViewModelImpl: RestaurantCardViewModel {
 
   var restaurantOpenTextColor: UIColor {
     return restaurant.status ? #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.1512300968, green: 0.6803299785, blue: 0.3782986999, alpha: 1)
+  }
+
+  var restaurantImageURL: URL? {
+    return restaurant.imageURL
   }
 
   var restaurantRating: Int {

@@ -212,4 +212,8 @@ extension RestaurantCardSelectionViewController: KolodaViewDelegate {
       break
     }
   }
+
+  func kolodaShouldTransparentizeNextCard(_ koloda: KolodaView) -> Bool {
+    return false
+  }
 }
