@@ -7,9 +7,12 @@
 //
 
 import Foundation
-import BrightFutures
 import Alamofire
 import Kingfisher
+import PromiseKit
+
+internal typealias JSON = [String: Any]
+internal typealias JSONArray = [JSON]
 
 internal final class DataManager {
   static var `default` = DataManager()
@@ -29,33 +32,14 @@ extension DataManager {
     case RequestFailed, TimeServiceError
   }
 
-  func fetchRestaurants(with query: SearchQuery) -> Future<[Restaurant], ReadmeError> {
-    return Future { complete in
-      let result = yelpAPIManager.search(query: query)
-      result.andThen { result in
-        switch result {
-        case .success(let val):
-          complete(.success(val))
-        case .failure(_):
-          // TODO: make this return an error
-          print("No Restaurants returned")
-        }
-      }
-    }
+  func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]> {
+    return yelpAPIManager.search(query: query)
+      .compactMap { RestaurantsParser().parse(from: $0) }
   }
 
-  func fetchReviews(with resId: String) -> Future<[Review], ReadmeError> {
-    return Future { complete in
-      let result = yelpAPIManager.getReviews(resId: resId)
-      result.andThen { result in
-        switch result {
-        case .success(let val):
-          complete(.success(val))
-        case .failure(_):
-          print("No reviews returned")
-        }
-      }
-    }
+  func fetchReviews(with restaurantID: String) -> Promise<[Review]> {
+    return yelpAPIManager.getReviews(restaurantID: restaurantID)
+      .compactMap { ReviewsParser().parse(from: $0) }
   }
 }
 
