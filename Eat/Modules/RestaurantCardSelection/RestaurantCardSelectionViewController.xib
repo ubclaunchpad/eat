@@ -71,7 +71,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x/y eaters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-rC-KST">
-                                    <rect key="frame" x="137.5" y="49" width="100" height="20"/>
+                                    <rect key="frame" x="137.5" y="46" width="100" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="1Ac-c8-c0x"/>
                                         <constraint firstAttribute="width" constant="100" id="F6I-kl-Uak"/>
@@ -98,9 +98,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="7zq-Lm-Scn"/>
                                 <constraint firstItem="CcB-rC-KST" firstAttribute="centerX" secondItem="5QF-9P-6M1" secondAttribute="centerX" id="A3C-pU-Akw"/>
-                                <constraint firstItem="H5f-81-ptU" firstAttribute="bottom" secondItem="CcB-rC-KST" secondAttribute="bottom" id="EJj-yn-GC5"/>
+                                <constraint firstItem="H5f-81-ptU" firstAttribute="bottom" secondItem="CcB-rC-KST" secondAttribute="bottom" constant="3" id="EJj-yn-GC5"/>
                                 <constraint firstItem="H5f-81-ptU" firstAttribute="leading" secondItem="5QF-9P-6M1" secondAttribute="leading" constant="20" id="X3i-lb-vS5"/>
-                                <constraint firstAttribute="bottom" secondItem="CcB-rC-KST" secondAttribute="bottom" constant="11" id="fhe-Rq-uP0"/>
+                                <constraint firstAttribute="bottom" secondItem="H5f-81-ptU" secondAttribute="bottom" constant="11" id="h6V-0N-oE3"/>
                             </constraints>
                         </view>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-RE-1Ul">
