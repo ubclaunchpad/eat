@@ -65,19 +65,19 @@ extension RestaurantInfoViewModelImpl: RestaurantInfoViewModel {
   }
 
   func photoViewModel(at indexPath: IndexPath) -> RestaurantPhotoCellViewModel {
-    return RestaurantInfoCellViewModelImpl(restaurant: restaurant)
+    return RestaurantCellViewModelImpl(restaurant: restaurant)
   }
 
   func titleViewModel(at indexPath: IndexPath) -> RestaurantTitleCellViewModel {
-    return RestaurantInfoCellViewModelImpl(restaurant: restaurant)
+    return RestaurantCellViewModelImpl(restaurant: restaurant)
   }
 
   func infoMenuViewModel(at indexPath: IndexPath) -> RestaurantInfoMenuCellViewModel {
-    return RestaurantInfoCellViewModelImpl(restaurant: restaurant)
+    return RestaurantCellViewModelImpl(restaurant: restaurant)
   }
 
   func infoAddressViewModel(at indexPath: IndexPath) -> RestaurantInfoAddressCellViewModel {
-    return RestaurantInfoCellViewModelImpl(restaurant: restaurant)
+    return RestaurantCellViewModelImpl(restaurant: restaurant)
   }
 
   func reviewViewModel(at indexPath: IndexPath) -> RestaurantReviewCellViewModel {

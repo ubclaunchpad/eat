@@ -99,7 +99,7 @@ extension ContentCoordinator {
       self.showRestaurantInfo(vc, restaurant: restaurant)
     }
     viewModel.onFinalRestaurantSelected = { restaurant in
-      
+      self.showChosenRestaurant(vc, restaurant: restaurant)
     }
     viewModel.onCloseButtonTapped = close
 
@@ -121,16 +121,22 @@ extension ContentCoordinator {
     let viewModel = RestaurantInfoViewModelImpl(restaurant: restaurant)
     let vc = RestaurantInfoViewController(viewModel: viewModel)
 
-    viewModel.onOpenSafari = { url in
-      let config = SFSafariViewController.Configuration()
-
-      let safariVC = SFSafariViewController(url: url, configuration: config)
-      vc.present(safariVC, animated: true, completion: nil)
-    }
+    viewModel.onOpenSafari = { self.openSafari(vc, url: $0) }
 
     viewModel.onExitButtonTapped = {
       self.restaurantInfoViewControllerFinished(vc)
     }
+
+    return vc
+  }
+
+  func instantiateChosenRestaurant(restaurant: Restaurant) -> ChosenRestaurantViewController {
+    let viewModel = ChosenRestaurantViewModelImpl(restaurant: restaurant)
+    let vc = ChosenRestaurantViewController(viewModel: viewModel)
+
+    viewModel.onCallPhone = { self.callPhone(phoneNumber: $0) }
+    viewModel.onOpenSafari = { self.openSafari(vc, url: $0) }
+    viewModel.onExitButtonTapped = close
 
     return vc
   }
@@ -181,6 +187,28 @@ extension ContentCoordinator {
 
   func restaurantInfoViewControllerFinished(_ viewController: RestaurantInfoViewController) {
     viewController.dismiss(animated: true, completion: nil)
+  }
+
+  func showChosenRestaurant(_ viewController: RestaurantCardSelectionViewController, restaurant: Restaurant) {
+    let vc = instantiateChosenRestaurant(restaurant: restaurant)
+    navigationController.pushViewController(vc, animated: true)
+  }
+
+  func callPhone(phoneNumber: String) {
+    if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+
+      let application:UIApplication = UIApplication.shared
+      if (application.canOpenURL(phoneCallURL)) {
+        application.open(phoneCallURL, options: [:], completionHandler: nil)
+      }
+    }
+  }
+
+  func openSafari(_ viewController: UIViewController, url: URL) {
+    let config = SFSafariViewController.Configuration()
+
+    let safariVC = SFSafariViewController(url: url, configuration: config)
+    viewController.present(safariVC, animated: true, completion: nil)
   }
 
   func goBack() {

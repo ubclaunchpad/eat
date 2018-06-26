@@ -9,20 +9,15 @@
 import Foundation
 import UIKit
 
-extension UITableView {
-  func register<T: UITableViewCell>(_: T.Type) {
-    self.register(UINib(nibName: String(describing: T.self), bundle: nil), forCellReuseIdentifier: String(describing: T()))
-  }
-}
 final class RestaurantInfoViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView! {
     didSet {
-      tableView.register(UINib(nibName: "RestaurantPhotoCell", bundle: nil), forCellReuseIdentifier: "RestaurantPhotoCell")
-      tableView.register(UINib(nibName: "RestaurantTitleCell", bundle: nil), forCellReuseIdentifier: "RestaurantTitleCell")
-      tableView.register(UINib(nibName: "RestaurantInfoMenuCell", bundle: nil), forCellReuseIdentifier: "RestaurantInfoMenuCell")
-      tableView.register(UINib(nibName: "RestaurantInfoAddressCell", bundle: nil), forCellReuseIdentifier: "RestaurantInfoAddressCell")
-      tableView.register(UINib(nibName: "RestaurantReviewCell", bundle: nil), forCellReuseIdentifier: "RestaurantReviewCell")
+      tableView.register(RestaurantPhotoCell.self)
+      tableView.register(RestaurantTitleCell.self)
+      tableView.register(RestaurantInfoMenuCell.self)
+      tableView.register(RestaurantInfoAddressCell.self)
+      tableView.register(RestaurantReviewCell.self)
     }
   }
   @IBOutlet weak var exitButton: UIButton!

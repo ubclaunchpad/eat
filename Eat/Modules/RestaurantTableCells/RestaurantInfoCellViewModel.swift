@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
+import Contacts
 
 protocol RestaurantTitleCellViewModel {
   var restaurantName: String { get }
@@ -30,8 +32,27 @@ protocol RestaurantPhotoCellViewModel {
   var restaurantImageURL: URL? { get }
 }
 
-final class RestaurantInfoCellViewModelImpl {
+protocol RestaurantPhoneCellViewModel {
+  var callRestaurantText: String { get }
+  var restaurantPhoneNumber: String { get }
+}
+
+protocol RestaurantExploreMenuCellViewModel {
+  var exploreMenuText: String { get }
+}
+
+protocol RestaurantMapCellViewModel {
+  var openMapsButtonTitle: String { get }
+  var restaurantName: String { get }
+  var addressDictionary: [String: Any] { get }
+  var location: CLLocationCoordinate2D { get }
+}
+
+final class RestaurantCellViewModelImpl {
   let exploreYelpText = "Explore on Yelp".localize()
+  let callRestaurantText = "Call restaurant".localize()
+  let exploreMenuText = "Explore on Yelp".localize()
+  let openMapsButtonTitle = "Open in Maps".localize()
 
   fileprivate let restaurant: Restaurant
 
@@ -40,9 +61,10 @@ final class RestaurantInfoCellViewModelImpl {
   }
 }
 
-extension RestaurantInfoCellViewModelImpl: RestaurantInfoMenuCellViewModel {}
+extension RestaurantCellViewModelImpl: RestaurantInfoMenuCellViewModel {}
+extension RestaurantCellViewModelImpl: RestaurantExploreMenuCellViewModel {}
 
-extension RestaurantInfoCellViewModelImpl: RestaurantTitleCellViewModel {
+extension RestaurantCellViewModelImpl: RestaurantTitleCellViewModel {
   var restaurantName: String {
     return restaurant.name
   }
@@ -72,14 +94,31 @@ extension RestaurantInfoCellViewModelImpl: RestaurantTitleCellViewModel {
   }
 }
 
-extension RestaurantInfoCellViewModelImpl: RestaurantInfoAddressCellViewModel {
+extension RestaurantCellViewModelImpl: RestaurantInfoAddressCellViewModel {
   var restaurantAddress: String {
     return restaurant.address
   }
 }
 
-extension RestaurantInfoCellViewModelImpl: RestaurantPhotoCellViewModel {
+extension RestaurantCellViewModelImpl: RestaurantPhotoCellViewModel {
   var restaurantImageURL: URL? {
     return restaurant.imageURL
   }
 }
+
+extension RestaurantCellViewModelImpl: RestaurantPhoneCellViewModel {
+  var restaurantPhoneNumber: String {
+    return restaurant.phone
+  }
+}
+
+extension RestaurantCellViewModelImpl: RestaurantMapCellViewModel {
+  var location: CLLocationCoordinate2D {
+    return CLLocationCoordinate2D(latitude: restaurant.lat, longitude: restaurant.lon)
+  }
+
+  var addressDictionary: [String: Any] {
+    return [CNPostalAddressStreetKey: restaurantName]
+  }
+}
+
