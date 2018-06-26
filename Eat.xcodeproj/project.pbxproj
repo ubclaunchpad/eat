@@ -259,13 +259,11 @@
 			isa = PBXGroup;
 			children = (
 				5254BAD820E0441500059764 /* Parsers */,
+				521BAC3920E1C5E000AEBE90 /* Networking */,
 				555BDA8420734616005E6EEA /* GameStateManager.swift */,
 				525F77F620D866AE00AE6B44 /* LocationAuthorizationManager.swift */,
 				525F77F820D86C1F00AE6B44 /* LocationManager.swift */,
 				052B4A78202FB08E00291EE9 /* DataManager.swift */,
-				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
-				5254BADD20E0756300059764 /* YelpAPIRouter.swift */,
-				5254BADF20E076D200059764 /* APIConfiguration.swift */,
 				522191FD20881E540075C480 /* APIKeys.swift */,
 			);
 			path = Services;
@@ -336,10 +334,39 @@
 			path = ChosenRestaurant;
 			sourceTree = "<group>";
 		};
+		521BAC3920E1C5E000AEBE90 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5254BADF20E076D200059764 /* APIConfiguration.swift */,
+				052B4A7A202FB0FB00291EE9 /* YelpAPIManager.swift */,
+				5254BADD20E0756300059764 /* YelpAPIRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		521BAC3A20E1C66800AEBE90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
+				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		521BAC3B20E1C68C00AEBE90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52B7322E205DC5EB00A5E441 /* circular-bold.otf */,
+				52B7322C205DC5EB00A5E441 /* circular-book.otf */,
+				52B7322D205DC5EB00A5E441 /* circular-medium.otf */,
+				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5225CB1F2038E1D8000726E7 /* Styling */ = {
 			isa = PBXGroup;
 			children = (
-				52B7322B205DC5BD00A5E441 /* Font Files */,
 				5225CB1D2038E1C4000726E7 /* Font.swift */,
 				5254BAC120DDC93100059764 /* Colors.swift */,
 			);
@@ -423,16 +450,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		52B7322B205DC5BD00A5E441 /* Font Files */ = {
-			isa = PBXGroup;
-			children = (
-				52B7322E205DC5EB00A5E441 /* circular-bold.otf */,
-				52B7322C205DC5EB00A5E441 /* circular-book.otf */,
-				52B7322D205DC5EB00A5E441 /* circular-medium.otf */,
-			);
-			path = "Font Files";
-			sourceTree = "<group>";
-		};
 		52CD62F920DC7A7900F5B00B /* MealTime */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,12 +490,11 @@
 				781616CC204B4874005E8649 /* Extensions */,
 				052B4A7C202FB2AF00291EE9 /* Models */,
 				052B4A77202FB05300291EE9 /* Services */,
-				52D0C023202670B1001CFCB5 /* AppDelegate.swift */,
+				521BAC3A20E1C66800AEBE90 /* Supporting Files */,
 				525F77EA20D73A2F00AE6B44 /* Coordinators */,
 				525F77ED20D782AD00AE6B44 /* Protocols */,
+				521BAC3B20E1C68C00AEBE90 /* Resources */,
 				5225CB1F2038E1D8000726E7 /* Styling */,
-				52D0C02A202670B1001CFCB5 /* Assets.xcassets */,
-				52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */,
 				52D0C02F202670B1001CFCB5 /* Info.plist */,
 				52FCEF7B205EF2CB00A46022 /* Libraries */,
 			);
