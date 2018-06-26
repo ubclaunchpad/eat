@@ -6,7 +6,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target ‘Eat’ do
   pod 'Alamofire', '~> 4.5’
-  pod 'GoogleMaps’
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Koloda'
   pod 'Kingfisher', '~> 4.0'

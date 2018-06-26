@@ -86,9 +86,6 @@ extension MapViewController: MKMapViewDelegate {
       self.userLocation = userLocation.coordinate
     }
   }
-
-  func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
-  }
 }
 
 // MARK: Actions

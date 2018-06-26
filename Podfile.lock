@@ -3,11 +3,6 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - GoogleMaps (2.7.0):
-    - GoogleMaps/Maps (= 2.7.0)
-  - GoogleMaps/Base (2.7.0)
-  - GoogleMaps/Maps (2.7.0):
-    - GoogleMaps/Base
   - Kingfisher (4.8.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
@@ -25,7 +20,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - GoogleMaps
   - Kingfisher (~> 4.0)
   - Koloda
   - PromiseKit (~> 6.0)
@@ -42,12 +36,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: e168626994ae29c38b51252a8d1b0a561fd3f2c7
 
-PODFILE CHECKSUM: 1ea03e170d048254b5308d5c2810de169a8a0a89
+PODFILE CHECKSUM: cf0b216ce471105d91e6575573578e7f46f62475
 
 COCOAPODS: 1.3.1

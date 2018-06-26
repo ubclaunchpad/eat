@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let dataManager = DataManager.default
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-    // Google Maps and Places API
-    GMSServices.provideAPIKey(APIKeys.googleMaps)
 
     let window = UIWindow()
     let coordinator = AppCoordinator(window: window)
