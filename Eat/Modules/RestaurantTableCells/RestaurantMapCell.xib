@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantMapCell" rowHeight="255" id="aq8-F6-Gxw" customClass="RestaurantMapCell" customModule="Eat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aq8-F6-Gxw" id="WZ2-vG-jj9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="254.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eKQ-ul-E0M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+                    </mapView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipy-u2-jX9">
+                        <rect key="frame" x="127" y="186.5" width="160" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="DK2-Uf-8ZF"/>
+                            <constraint firstAttribute="width" constant="160" id="MEk-zQ-THw"/>
+                        </constraints>
+                        <connections>
+                            <action selector="openMapsButtonTapped" destination="aq8-F6-Gxw" eventType="touchUpInside" id="ehA-Lp-Kyv"/>
+                        </connections>
+                    </button>
+                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-37-5Sa">
+                        <rect key="frame" x="146.5" y="195.5" width="121.5" height="27"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DirectionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uDe-Q8-sip">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="cNz-LL-ded"/>
+                                    <constraint firstAttribute="width" constant="24.5" id="wnF-bX-cQi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open in Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-fB-86y">
+                                <rect key="frame" x="32" y="0.0" width="89.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="eKQ-ul-E0M" secondAttribute="bottom" id="07w-Tm-Ap7"/>
+                    <constraint firstItem="eKQ-ul-E0M" firstAttribute="top" secondItem="WZ2-vG-jj9" secondAttribute="top" id="3a3-6i-zcJ"/>
+                    <constraint firstItem="eKQ-ul-E0M" firstAttribute="leading" secondItem="WZ2-vG-jj9" secondAttribute="leading" id="FL4-qC-U7Q"/>
+                    <constraint firstAttribute="bottom" secondItem="Ipy-u2-jX9" secondAttribute="bottom" constant="24" id="Tme-di-AZY"/>
+                    <constraint firstAttribute="trailing" secondItem="eKQ-ul-E0M" secondAttribute="trailing" id="XFG-C3-UFI"/>
+                    <constraint firstItem="5Ux-37-5Sa" firstAttribute="centerX" secondItem="Ipy-u2-jX9" secondAttribute="centerX" id="bLz-NR-Rfn"/>
+                    <constraint firstItem="5Ux-37-5Sa" firstAttribute="centerY" secondItem="Ipy-u2-jX9" secondAttribute="centerY" id="k9e-6L-R2r"/>
+                    <constraint firstItem="Ipy-u2-jX9" firstAttribute="centerX" secondItem="WZ2-vG-jj9" secondAttribute="centerX" id="nFV-aU-vib"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mapView" destination="eKQ-ul-E0M" id="fdO-vh-D71"/>
+                <outlet property="openMapsButton" destination="Ipy-u2-jX9" id="4PC-8W-5HT"/>
+                <outlet property="openMapsButtonLabel" destination="gvz-fB-86y" id="sIQ-iO-Omh"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="59.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="DirectionIcon" width="37" height="40"/>
+    </resources>
+</document>
