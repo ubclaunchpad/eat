@@ -11,6 +11,8 @@ import UIKit
 final class AppCoordinator: Coordinator {
   fileprivate var currentCoordinator: Coordinator?
 
+  fileprivate let dataManager = DataManager.default
+
   fileprivate let window: UIWindow
   
   init(window: UIWindow) {
@@ -18,7 +20,11 @@ final class AppCoordinator: Coordinator {
   }
 
   func start() {
-    showOnboarding()
+    if dataManager.isFirstLaunch() {
+      showOnboarding()
+    } else {
+      showContent()
+    }
     window.makeKeyAndVisible()
   }
 }
@@ -32,17 +38,18 @@ extension AppCoordinator {
     window.rootViewController = navigationController
   }
 
-  func showContent(from viewController: UIViewController) {
+  func showContent() {
     let navigationController = UINavigationController()
-    let contentCoordinator = ContentCoordinator(delegate: self, navigationController: navigationController, from: viewController)
+    let contentCoordinator = ContentCoordinator(delegate: self, navigationController: navigationController)
     contentCoordinator.start()
     currentCoordinator = contentCoordinator
+    window.rootViewController = navigationController
   }
 }
 
 extension AppCoordinator: OnboardingCoordinatorDelegate {
   func onboardingCoordinatorDidFinish(_ coordinator: OnboardingCoordinator, from viewController: UIViewController) {
-    showContent(from: viewController)
+    showContent()
   }
 }
 

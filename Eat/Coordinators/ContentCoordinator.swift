@@ -16,12 +16,10 @@ protocol ContentCoordinatorDelegate: class {
 final class ContentCoordinator: Coordinator {
   fileprivate weak var delegate: ContentCoordinatorDelegate?
   fileprivate let navigationController: UINavigationController
-  fileprivate let fromViewController: UIViewController
 
-  init(delegate: ContentCoordinatorDelegate, navigationController: UINavigationController, from viewController: UIViewController) {
+  init(delegate: ContentCoordinatorDelegate, navigationController: UINavigationController) {
     self.delegate = delegate
     self.navigationController = navigationController
-    self.fromViewController = viewController
   }
 
   func start() {
@@ -30,7 +28,6 @@ final class ContentCoordinator: Coordinator {
     let mapViewController = MapViewController(viewModel: viewModel)
     navigationController.viewControllers = [mapViewController]
     navigationController.setNavigationBarHidden(true, animated: false)
-    fromViewController.present(navigationController, animated: true, completion: nil)
   }
 }
 
