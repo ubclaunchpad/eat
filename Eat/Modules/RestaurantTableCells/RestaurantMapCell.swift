@@ -32,7 +32,7 @@ final class RestaurantMapCell: UITableViewCell {
     mapView.addAnnotation(annotation)
 
     mapView.selectAnnotation(annotation, animated: false)
-    mapView.showAnnotations(mapView.annotations, animated: false)
+    mapView.showAnnotations([annotation], animated: false)
   }
 
   private func applyStyling() {

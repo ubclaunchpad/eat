@@ -21,43 +21,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G24-k7-0Ku">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-HB-R8Y">
-                            <rect key="frame" x="0.0" y="78" width="375" height="589"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </tableView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pv-Ci-nS8">
-                            <rect key="frame" x="17" y="28" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="D0F-o4-wCM"/>
-                                <constraint firstAttribute="height" constant="40" id="ovb-p5-YMI"/>
-                            </constraints>
-                            <state key="normal" title="Button" image="close"/>
-                            <connections>
-                                <action selector="exitButtonPressed" destination="-1" eventType="touchUpInside" id="qS8-a5-gJ4"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pv-Ci-nS8">
+                    <rect key="frame" x="17" y="28" width="40" height="40"/>
                     <constraints>
-                        <constraint firstItem="7ib-HB-R8Y" firstAttribute="trailing" secondItem="JHk-ab-UzB" secondAttribute="trailing" id="7J1-ut-WfT"/>
-                        <constraint firstAttribute="bottom" secondItem="7ib-HB-R8Y" secondAttribute="bottom" id="Ffd-ki-3V2"/>
-                        <constraint firstItem="1Pv-Ci-nS8" firstAttribute="leading" secondItem="JHk-ab-UzB" secondAttribute="leading" constant="17" id="LJ5-Z5-pPH"/>
-                        <constraint firstItem="7ib-HB-R8Y" firstAttribute="top" secondItem="1Pv-Ci-nS8" secondAttribute="bottom" constant="10" id="RYt-Co-Wce"/>
-                        <constraint firstItem="7ib-HB-R8Y" firstAttribute="leading" secondItem="JHk-ab-UzB" secondAttribute="leading" id="jKQ-6O-Ymn"/>
-                        <constraint firstItem="1Pv-Ci-nS8" firstAttribute="top" secondItem="JHk-ab-UzB" secondAttribute="top" constant="8" id="oer-r8-ahs"/>
+                        <constraint firstAttribute="width" constant="40" id="D0F-o4-wCM"/>
+                        <constraint firstAttribute="height" constant="40" id="ovb-p5-YMI"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="JHk-ab-UzB"/>
-                </view>
+                    <state key="normal" title="Button" image="close"/>
+                    <connections>
+                        <action selector="exitButtonPressed" destination="-1" eventType="touchUpInside" id="qS8-a5-gJ4"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-HB-R8Y">
+                    <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="G24-k7-0Ku" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BCB-zF-h7V"/>
-                <constraint firstItem="G24-k7-0Ku" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Isb-fB-3vD"/>
-                <constraint firstAttribute="bottom" secondItem="G24-k7-0Ku" secondAttribute="bottom" id="clg-6e-bXd"/>
-                <constraint firstAttribute="trailing" secondItem="G24-k7-0Ku" secondAttribute="trailing" id="wIR-hn-7LT"/>
+                <constraint firstItem="7ib-HB-R8Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="89s-Cx-wp1"/>
+                <constraint firstItem="7ib-HB-R8Y" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Fxt-zp-t3c"/>
+                <constraint firstItem="1Pv-Ci-nS8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="MgO-Kw-hQA"/>
+                <constraint firstItem="7ib-HB-R8Y" firstAttribute="top" secondItem="1Pv-Ci-nS8" secondAttribute="bottom" constant="10" id="Pd9-5U-CYg"/>
+                <constraint firstItem="1Pv-Ci-nS8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="doI-5W-fo4"/>
+                <constraint firstAttribute="bottom" secondItem="7ib-HB-R8Y" secondAttribute="bottom" id="qo5-6o-84c"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

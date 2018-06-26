@@ -62,8 +62,12 @@ extension FoodPreferencesViewModelImpl: FoodPreferencesViewModel {
   }
 
   func dietaryChanged(dietary: DietaryRestriction) {
-    onDietaryChanged?(dietary)
-    searchQuery.dietary = dietary
+    if searchQuery.dietary == dietary {
+      searchQuery.dietary = .none
+    } else {
+      searchQuery.dietary = dietary
+    }
+    onDietaryChanged?(searchQuery.dietary)
   }
 
   func preferenceChanged(preference: String) {

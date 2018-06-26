@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
                     </mapView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipy-u2-jX9">
-                        <rect key="frame" x="127" y="186.5" width="160" height="44"/>
+                        <rect key="frame" x="127" y="190.5" width="160" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="DK2-Uf-8ZF"/>
                             <constraint firstAttribute="width" constant="160" id="MEk-zQ-THw"/>
@@ -31,7 +31,7 @@
                         </connections>
                     </button>
                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-37-5Sa">
-                        <rect key="frame" x="146.5" y="195.5" width="121.5" height="27"/>
+                        <rect key="frame" x="146.5" y="199.5" width="121.5" height="27"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DirectionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uDe-Q8-sip">
                                 <rect key="frame" x="0.0" y="0.0" width="25" height="27"/>
@@ -53,7 +53,7 @@
                     <constraint firstAttribute="bottom" secondItem="eKQ-ul-E0M" secondAttribute="bottom" id="07w-Tm-Ap7"/>
                     <constraint firstItem="eKQ-ul-E0M" firstAttribute="top" secondItem="WZ2-vG-jj9" secondAttribute="top" id="3a3-6i-zcJ"/>
                     <constraint firstItem="eKQ-ul-E0M" firstAttribute="leading" secondItem="WZ2-vG-jj9" secondAttribute="leading" id="FL4-qC-U7Q"/>
-                    <constraint firstAttribute="bottom" secondItem="Ipy-u2-jX9" secondAttribute="bottom" constant="24" id="Tme-di-AZY"/>
+                    <constraint firstAttribute="bottom" secondItem="Ipy-u2-jX9" secondAttribute="bottom" constant="20" id="Tme-di-AZY"/>
                     <constraint firstAttribute="trailing" secondItem="eKQ-ul-E0M" secondAttribute="trailing" id="XFG-C3-UFI"/>
                     <constraint firstItem="5Ux-37-5Sa" firstAttribute="centerX" secondItem="Ipy-u2-jX9" secondAttribute="centerX" id="bLz-NR-Rfn"/>
                     <constraint firstItem="5Ux-37-5Sa" firstAttribute="centerY" secondItem="Ipy-u2-jX9" secondAttribute="centerY" id="k9e-6L-R2r"/>
