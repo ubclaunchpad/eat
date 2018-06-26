@@ -13,11 +13,10 @@ protocol MapViewModel {
   var questionText: String { get }
   var instructionText: String { get }
   var actionText: String { get }
-  var defaultLocation: CLLocation { get }
+  var defaultLocation: CLLocationCoordinate2D { get }
 
   func requestLocationAuthorization()
-  func fetchLocation()
-  func didTapNext(targetLatitude: Float, targetLongitude: Float, edgeLongitude: Float)
+  func didTapNext(centerLocation: CLLocation, edgeLocation: CLLocation)
 
   var onTapNext: ((SearchQuery) -> Void)? { get set }
 
@@ -26,11 +25,14 @@ protocol MapViewModel {
 }
 
 final class MapViewModelImpl {
+  fileprivate struct Constants {
+    static let latitudeConversion: Float = 111
+  }
   let navigationButton = "Next".localize()
   let questionText = "Where do you want to eat?".localize()
   let instructionText = "Drag to select the active map area".localize()
   let actionText = "NEXT".localize()
-  let defaultLocation = CLLocation(latitude: 49.2827, longitude: -123.1207)
+  let defaultLocation = CLLocationCoordinate2D(latitude: 49.2827, longitude: -123.1207)
 
   let searchQuery = SearchQuery()
   let locationManager = LocationManager()
@@ -43,19 +45,13 @@ final class MapViewModelImpl {
   var onLocationAuthorized: (() -> Void)?
   var onLocationUpdated: ((CLLocation) -> Void)?
 
-  fileprivate func buildSearchQuery(targetLatitude: Float, targetLongitude: Float, edgeLongitude: Float) -> SearchQuery {
-    let radius = getLongatudeRadius(center: targetLongitude, outerCoord: edgeLongitude)
+  fileprivate func buildSearchQuery(centerLocation: CLLocation, edgeLocation: CLLocation) -> SearchQuery {
+    let radius = centerLocation.distance(from: edgeLocation)
 
-    searchQuery.latitude = targetLatitude
-    searchQuery.longitude = targetLongitude
-    searchQuery.radius = radius
+    searchQuery.latitude = centerLocation.coordinate.latitude
+    searchQuery.longitude = centerLocation.coordinate.longitude
+    searchQuery.radius = Int(radius)
     return searchQuery
-  }
-
-  private func getLongatudeRadius(center: Float, outerCoord: Float) -> Int {
-    let latDifference = abs(outerCoord - center)
-    let radius = latDifference * (111 * 1000) //degree * (111km * 1000m/km)
-    return Int(radius)
   }
 }
 
@@ -75,7 +71,7 @@ extension MapViewModelImpl: MapViewModel {
     locationManager.didUpdateLocation = onLocationUpdated
   }
 
-  func didTapNext(targetLatitude: Float, targetLongitude: Float, edgeLongitude: Float) {
-    onTapNext?(buildSearchQuery(targetLatitude: targetLatitude, targetLongitude: targetLongitude, edgeLongitude: edgeLongitude))
+  func didTapNext(centerLocation: CLLocation, edgeLocation: CLLocation) {
+    onTapNext?(buildSearchQuery(centerLocation: centerLocation, edgeLocation: edgeLocation))
   }
 }

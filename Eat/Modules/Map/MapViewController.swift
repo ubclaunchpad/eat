@@ -7,21 +7,24 @@
 //
 
 import UIKit
-import GoogleMaps
+import MapKit
 
 final class MapViewController: UIViewController {
   fileprivate struct Constants {
     static let zoomLevel: Float = 13
     static let actionButtonKern: CGFloat = 2
+    static let regionRadius: CLLocationDistance = 1000
   }
 
-  @IBOutlet var mapView: GMSMapView!
+  @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var headerView: UIView!
   @IBOutlet weak var questionLabel: UILabel!
   @IBOutlet weak var instructionLabel: UILabel!
 
   var viewModel: MapViewModel
+
+  var userLocation: CLLocationCoordinate2D?
 
   init(viewModel: MapViewModel) {
     self.viewModel = viewModel
@@ -37,7 +40,6 @@ final class MapViewController: UIViewController {
     applyStyling()
     configure()
     viewModel.requestLocationAuthorization()
-    viewModel.fetchLocation()
   }
 
   func applyStyling() {
@@ -62,47 +64,40 @@ final class MapViewController: UIViewController {
     nextButton.layer.cornerRadius = 16
     nextButton.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
 
+    mapView?.showsUserLocation = true
+
     self.view.bringSubview(toFront: nextButton)
   }
 
   func configure() {
-    let camera = GMSCameraPosition.camera(withLatitude: viewModel.defaultLocation.coordinate.latitude,
-                                          longitude: viewModel.defaultLocation.coordinate.longitude,
-                                          zoom: Constants.zoomLevel)
-    self.mapView.camera = camera
+    mapView.delegate = self
 
-    self.mapView.settings.setAllGesturesEnabled(true)
-    self.mapView.isUserInteractionEnabled = true
-    self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    self.mapView.padding = UIEdgeInsetsMake(0, 0, 100, 0)
-
-    viewModel.onLocationAuthorized = locationAuthorized
-    viewModel.onLocationUpdated = locationUpdated
+    let region = MKCoordinateRegionMakeWithDistance(viewModel.defaultLocation, Constants.regionRadius, Constants.regionRadius)
+    mapView.setRegion(region, animated: true)
+    mapView.userLocation.title = ""
   }
+}
 
-  func locationAuthorized() {
-    self.mapView.settings.myLocationButton = true
-    self.mapView.isMyLocationEnabled = true
-  }
-
-  func locationUpdated(location: CLLocation) {
-    let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: Constants.zoomLevel)
-
-    if self.mapView.isHidden {
-      self.mapView.isHidden = false
-      self.mapView.camera = camera
-    } else {
-      self.mapView.animate(to: camera)
+extension MapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+    if self.userLocation == nil {
+      let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, Constants.regionRadius, Constants.regionRadius)
+      mapView.setRegion(region, animated: true)
+      self.userLocation = userLocation.coordinate
     }
+  }
+
+  func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
   }
 }
 
 // MARK: Actions
 extension MapViewController {
   @IBAction private func didTapNext() {
-    let target = self.mapView.camera.target
-    let edge = self.mapView.projection.visibleRegion().farRight
+    let center = CLLocation(latitude: mapView.region.center.latitude, longitude: mapView.region.center.longitude)
+    let latitudeOffset = mapView.region.span.latitudeDelta
+    let edgeCoordinate = CLLocation(latitude: mapView.region.center.latitude + latitudeOffset, longitude: mapView.region.center.longitude)
 
-    viewModel.didTapNext(targetLatitude: Float(target.latitude), targetLongitude: Float(target.longitude), edgeLongitude: Float(edge.longitude))
+    viewModel.didTapNext(centerLocation: center, edgeLocation: edgeCoordinate)
   }
 }

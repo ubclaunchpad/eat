@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="headerView" destination="Bfa-bk-V2f" id="5oG-T2-O7b"/>
                 <outlet property="instructionLabel" destination="ct8-8l-zRE" id="4L7-Sn-Q6w"/>
-                <outlet property="mapView" destination="NUm-dx-P2Y" id="FsK-gZ-nx1"/>
+                <outlet property="mapView" destination="BaD-yM-5NN" id="aSl-B2-Kyo"/>
                 <outlet property="nextButton" destination="jdc-vJ-qf4" id="rfr-Mw-36k"/>
                 <outlet property="questionLabel" destination="TLL-fT-J6J" id="dE4-Gl-UCA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,10 +27,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-Ie-cKC">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-dx-P2Y" customClass="GMSMapView">
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BaD-yM-5NN">
                             <rect key="frame" x="0.0" y="77" width="375" height="590"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
+                        </mapView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdc-vJ-qf4">
                             <rect key="frame" x="32" y="579" width="311" height="56"/>
                             <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,17 +72,17 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="BaD-yM-5NN" firstAttribute="trailing" secondItem="hcg-Ih-6Di" secondAttribute="trailing" id="4of-aa-sSM"/>
                         <constraint firstItem="hcg-Ih-6Di" firstAttribute="bottom" secondItem="jdc-vJ-qf4" secondAttribute="bottom" constant="32" id="72N-Pl-2cL"/>
+                        <constraint firstItem="BaD-yM-5NN" firstAttribute="top" secondItem="Bfa-bk-V2f" secondAttribute="bottom" constant="-15" id="8uI-ar-bll"/>
                         <constraint firstItem="hcg-Ih-6Di" firstAttribute="trailing" secondItem="Bfa-bk-V2f" secondAttribute="trailing" id="EJd-Km-NdA"/>
                         <constraint firstItem="jdc-vJ-qf4" firstAttribute="centerX" secondItem="e6F-Ie-cKC" secondAttribute="centerX" id="GNW-sX-W4X"/>
-                        <constraint firstItem="NUm-dx-P2Y" firstAttribute="bottom" secondItem="e6F-Ie-cKC" secondAttribute="bottom" id="Hg6-js-kCv"/>
-                        <constraint firstItem="NUm-dx-P2Y" firstAttribute="trailing" secondItem="hcg-Ih-6Di" secondAttribute="trailing" id="Hoi-Fn-Esc"/>
                         <constraint firstItem="Bfa-bk-V2f" firstAttribute="top" secondItem="hcg-Ih-6Di" secondAttribute="top" id="KsG-8r-lfc"/>
-                        <constraint firstItem="NUm-dx-P2Y" firstAttribute="leading" secondItem="hcg-Ih-6Di" secondAttribute="leading" id="PbB-QV-xv5"/>
                         <constraint firstItem="hcg-Ih-6Di" firstAttribute="trailing" secondItem="jdc-vJ-qf4" secondAttribute="trailing" constant="32" id="Q8X-yF-Mlt"/>
-                        <constraint firstItem="NUm-dx-P2Y" firstAttribute="top" secondItem="Bfa-bk-V2f" secondAttribute="bottom" constant="-15" id="RUk-TA-hgD"/>
                         <constraint firstItem="Bfa-bk-V2f" firstAttribute="leading" secondItem="hcg-Ih-6Di" secondAttribute="leading" id="YlC-5J-nKO"/>
+                        <constraint firstItem="BaD-yM-5NN" firstAttribute="leading" secondItem="hcg-Ih-6Di" secondAttribute="leading" id="f68-tt-x9C"/>
                         <constraint firstItem="jdc-vJ-qf4" firstAttribute="leading" secondItem="hcg-Ih-6Di" secondAttribute="leading" constant="32" id="hRa-Me-O4g"/>
+                        <constraint firstItem="BaD-yM-5NN" firstAttribute="bottom" secondItem="hcg-Ih-6Di" secondAttribute="bottom" id="x3C-z2-jkN"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="hcg-Ih-6Di"/>
                 </view>
@@ -96,6 +95,7 @@
                 <constraint firstItem="e6F-Ie-cKC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vme-cN-VZ6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="80.5" y="59.5"/>
         </view>
     </objects>
 </document>

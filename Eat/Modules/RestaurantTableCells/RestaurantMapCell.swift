@@ -11,10 +11,6 @@ import MapKit
 
 
 final class RestaurantMapCell: UITableViewCell {
-  fileprivate struct Constants {
-    static let regionRadius: CLLocationDistance = 1000
-  }
-
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var openMapsButton: UIButton!
   @IBOutlet weak var openMapsButtonLabel: UILabel!
