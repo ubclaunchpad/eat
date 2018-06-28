@@ -11,7 +11,7 @@ import UIKit
 final class AppCoordinator: Coordinator {
   fileprivate var currentCoordinator: Coordinator?
 
-  fileprivate let dataManager = DataManager.default
+  fileprivate let dataManager: OnboardingDataManager = DataManager.default
 
   fileprivate let window: UIWindow
   

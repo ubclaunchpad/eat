@@ -44,10 +44,9 @@ final class RestaurantCardSelectionViewModelImpl {
   let eaterEndTurnText = "Thanks for your input! Pass the phone to the next person".localize()
   let eaterCalculatingText = "Finding a place for us to eat...".localize()
 
-  fileprivate let dataManager = DataManager.default
-
   fileprivate let searchQuery: SearchQuery
   fileprivate let numberOfPlayers: Int
+  fileprivate let dataManager: RestaurantDataManager
 
   fileprivate var currentPlayer = 1 {
     didSet {
@@ -62,9 +61,10 @@ final class RestaurantCardSelectionViewModelImpl {
   fileprivate var gameStateManager: GameStateManager?
 
 
-  init(searchQuery: SearchQuery) {
+  init(searchQuery: SearchQuery, dataManager: RestaurantDataManager = DataManager.default) {
     self.searchQuery = searchQuery
     self.numberOfPlayers = searchQuery.numberOfPeople
+    self.dataManager = dataManager
   }
 
   var onNoRestaurantsError: ((GameError) -> Void)?

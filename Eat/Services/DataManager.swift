@@ -14,6 +14,16 @@ import PromiseKit
 internal typealias JSON = [String: Any]
 internal typealias JSONArray = [JSON]
 
+protocol RestaurantDataManager {
+  func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]>
+  func fetchReviews(with restaurantID: String) -> Promise<[Review]>
+}
+
+protocol OnboardingDataManager {
+  func isFirstLaunch() -> Bool
+  func setFirstLaunch(value: Bool)
+}
+
 internal final class DataManager {
   static var `default` = DataManager()
 
@@ -25,7 +35,7 @@ internal final class DataManager {
 }
 
 // Yelp API
-extension DataManager {
+extension DataManager: RestaurantDataManager {
   func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]> {
     return yelpAPIManager.search(searchQuery: query)
       .compactMap { RestaurantsParser().parse(from: $0) }
@@ -38,7 +48,7 @@ extension DataManager {
 }
 
 // check first launch to show tutorial
-extension DataManager {
+extension DataManager: OnboardingDataManager {
   func isFirstLaunch() -> Bool {
     return !UserDefaults.standard.bool(forKey: "launchedBefore")
   }

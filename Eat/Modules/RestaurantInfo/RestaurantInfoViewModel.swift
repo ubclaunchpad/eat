@@ -32,7 +32,7 @@ final class RestaurantInfoViewModelImpl {
 
   fileprivate let restaurant: Restaurant
 
-  fileprivate let dataManager = DataManager.default
+  fileprivate let dataManager: RestaurantDataManager = DataManager.default
 
   fileprivate var reviews: [Review] = [] {
     didSet {

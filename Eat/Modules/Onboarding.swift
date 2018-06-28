@@ -18,7 +18,7 @@ class Onboarding {
   let height = UIScreen.main.bounds.height
   let width = UIScreen.main.bounds.width
 
-  let dataManager = DataManager.default
+  let dataManager: OnboardingDataManager = DataManager.default
 
   var onFinishTapped: (() -> Void)?
 
