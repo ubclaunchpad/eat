@@ -17,9 +17,8 @@ internal typealias JSONArray = [JSON]
 internal final class DataManager {
   static var `default` = DataManager()
 
-  //check first launch for onboarding tutorial
-
   fileprivate let yelpAPIManager: YelpAPIManager
+  
   init(yelpAPIManager: YelpAPIManager = YelpAPIManager()) {
     self.yelpAPIManager = yelpAPIManager
   }
@@ -27,11 +26,6 @@ internal final class DataManager {
 
 // Yelp API
 extension DataManager {
-
-  enum ReadmeError: Error {
-    case RequestFailed, TimeServiceError
-  }
-
   func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]> {
     return yelpAPIManager.search(searchQuery: query)
       .compactMap { RestaurantsParser().parse(from: $0) }
@@ -48,6 +42,7 @@ extension DataManager {
   func isFirstLaunch() -> Bool {
     return !UserDefaults.standard.bool(forKey: "launchedBefore")
   }
+  
   func setFirstLaunch(value: Bool) {
     UserDefaults.standard.set(value, forKey: "launchedBefore")
   }

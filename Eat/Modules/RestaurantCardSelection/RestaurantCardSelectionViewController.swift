@@ -69,11 +69,14 @@ final class RestaurantCardSelectionViewController: UIViewController {
     restartButton.layer.shadowOpacity = 0.25
 
     skipButton.isEnabled = false
-    keepButton.isEnabled = false
     skipButton.setImage(#imageLiteral(resourceName: "grey_button_skip"), for: .disabled)
-    keepButton.setImage(#imageLiteral(resourceName: "grey_button_keep"), for: .disabled)
     skipButton.setImage(#imageLiteral(resourceName: "button_skip"), for: .normal)
+    skipButton.accessibilityIdentifier = Accessibility.skipButton
+
+    keepButton.isEnabled = false
+    keepButton.setImage(#imageLiteral(resourceName: "grey_button_keep"), for: .disabled)
     keepButton.setImage(#imageLiteral(resourceName: "button_keep"), for: .normal)
+    keepButton.accessibilityIdentifier = Accessibility.keepButton
 
     viewModel.onRestaurantsUpdated = updateKolodaView
     viewModel.onTurnStart = updateHeader
@@ -183,6 +186,7 @@ extension RestaurantCardSelectionViewController: KolodaViewDataSource {
 
   func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
     let card: RestaurantCard = RestaurantCard.instanceFromNib()
+    card.accessibilityIdentifier = Accessibility.restaurantCard + "\(index)"
     card.configure(with: viewModel.itemViewModel(at: index))
     return card
   }

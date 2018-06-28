@@ -24,5 +24,6 @@ final class RestaurantExploreMenuCell: UITableViewCell {
   private func applyStyling() {
     exploreLabel.font = Font.body(size: 16)
     exploreLabel.textColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
+    exploreLabel.accessibilityIdentifier = Accessibility.restaurantExploreMenu
   }
 }

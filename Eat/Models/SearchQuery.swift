@@ -29,7 +29,7 @@ enum DietaryRestriction {
 class SearchQuery {
   // Map
   var latitude: Double = 49.2827 // Latitude of the restaurant
-  var longitude: Double = 123.1207 // Longitude of the restaurant.
+  var longitude: Double = -123.1207 // Longitude of the restaurant.
   var radius: Int = 890 // Radius of search. Ssearch area is in METERS
 
   // People Count

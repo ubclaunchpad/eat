@@ -46,6 +46,8 @@ final class RestaurantInfoViewController: UIViewController {
     let headerInset: CGFloat = 24
     tableView.separatorInset = UIEdgeInsets.init(top: 0, left: headerInset, bottom: 0, right: 0)
 
+    exitButton.accessibilityIdentifier = Accessibility.restaurantCardClose
+
     self.view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
 
     viewModel.onReviewsUpdated = updateViews

@@ -13,7 +13,7 @@ struct RestaurantParser {
     guard
       let restaurantName = json["name"] as? String,
       let restaurantRating = json["rating"] as? Float,
-      let restaurantPhone = json["phone"] as? String,
+      let restaurantPhone = json["display_phone"] as? String,
       let restaurantStatus = json["is_closed"] as? Bool,
       let id = json["id"] as? String,
       let yelpURLString = json["url"] as? String,

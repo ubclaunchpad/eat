@@ -53,6 +53,7 @@ class Onboarding {
     thirdPage.actionButtonBottomMargin = 20 + (safeArea?.bottom ?? 0)
     thirdPage.actionButtonHorizontalMargin = calculateButtonHorizontalMargin()
     thirdPage.actionButtonCornerRadius = 16
+    thirdPage.actionButton.accessibilityIdentifier = Accessibility.onboardingButton
 
     // Define onboarding view controller properties
     onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(color: #colorLiteral(red: 0.9882352941, green: 0.9882352941, blue: 0.9882352941, alpha: 1)), contents: [firstPage, secondPage, thirdPage])
@@ -64,6 +65,7 @@ class Onboarding {
     onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor(red: 1.00, green: 0.76, blue: 0.47, alpha: 1)
     onboardingVC.allowSkipping = false
     onboardingVC.underPageControlPadding = 90
+    onboardingVC.view.accessibilityIdentifier = Accessibility.onboarding
 
     return onboardingVC
   }

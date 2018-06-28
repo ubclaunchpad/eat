@@ -43,6 +43,7 @@ final class ChosenRestaurantViewController: UIViewController {
 
     headerLabel.font = Font.navigationHeaders(size: 18)
     headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    headerLabel.accessibilityIdentifier = Accessibility.chosenRestaurantHeader
   }
 }
 

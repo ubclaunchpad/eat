@@ -50,5 +50,11 @@ final class RestaurantTitleCell: UITableViewCell {
     openNow.font = Font.regular(size: 14)
     reviewSize.textColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
     reviewSize.font = Font.regular(size: 14)
+
+    title.accessibilityIdentifier = Accessibility.restaurantInfoName
+    foodtype.accessibilityIdentifier = Accessibility.restaurantInfoType
+    distance.accessibilityIdentifier = Accessibility.restaurantInfoDistance
+    reviewSize.accessibilityIdentifier = Accessibility.restaurantInfoReview
+    openNow.accessibilityIdentifier = Accessibility.restaurantInfoOpen
   }
 }

@@ -49,6 +49,7 @@ final class FoodPreferencesViewController: UIViewController {
     preferenceTextField.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
     preferenceTextField.tintColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     preferenceTextField.delegate = self
+    preferenceTextField.accessibilityIdentifier = Accessibility.preferenceTextField
 
     // Vegan
     veganButton.layer.cornerRadius = 8
@@ -81,6 +82,7 @@ final class FoodPreferencesViewController: UIViewController {
     finishButton.titleLabel?.font = Font.formNavigation(size: 18)
     finishButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     finishButton.setTitle(viewModel.finishButtonTitle, for: .normal)
+    finishButton.accessibilityIdentifier = Accessibility.preferenceFinish
 
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     view.addGestureRecognizer(tap)

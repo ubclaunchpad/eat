@@ -63,8 +63,10 @@ final class MapViewController: UIViewController {
     nextButton.titleLabel?.font = Font.onboardingAction(size: 17)
     nextButton.layer.cornerRadius = 16
     nextButton.backgroundColor = #colorLiteral(red: 0.3647058824, green: 0.4117647059, blue: 0.9960784314, alpha: 1)
+    nextButton.accessibilityIdentifier = Accessibility.mapNext
 
-    mapView?.showsUserLocation = true
+    mapView.accessibilityIdentifier = Accessibility.mapView
+    mapView.showsUserLocation = true
 
     self.view.bringSubview(toFront: nextButton)
   }

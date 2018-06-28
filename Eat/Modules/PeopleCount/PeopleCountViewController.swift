@@ -43,6 +43,7 @@ final class PeopleCountViewController: UIViewController {
     countButton.layer.shadowRadius = 16.0
     countButton.layer.shadowOpacity = 0.5
     countButton.layer.cornerRadius = 0.5 * countButton.frame.width
+    countButton.accessibilityIdentifier = Accessibility.increaseButton
 
     minusButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     minusButton.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -53,12 +54,15 @@ final class PeopleCountViewController: UIViewController {
     minusButton.layer.borderColor = #colorLiteral(red: 0.908728585, green: 0.908728585, blue: 0.908728585, alpha: 1)
     minusButton.layer.borderWidth = 1.0
     minusButton.layer.cornerRadius = 0.5 * minusButton.frame.width
+    minusButton.accessibilityIdentifier = Accessibility.decreaseButton
 
     headerLabel.font = Font.header(size: 13)
     headerLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     subheaderLabel.font = Font.body(size: 22)
     subheaderLabel.textColor = #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1)
+
     countLabel.font = Font.header(size: 32)
+    countLabel.accessibilityIdentifier = Accessibility.countLabel
 
     backButton.titleLabel?.font = Font.formNavigation(size: 18)
     backButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
@@ -66,6 +70,7 @@ final class PeopleCountViewController: UIViewController {
     nextButton.titleLabel?.font = Font.formNavigation(size: 18)
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
+    nextButton.accessibilityIdentifier = Accessibility.countNext
 
     self.view.backgroundColor = Colors.backgroundColor
 

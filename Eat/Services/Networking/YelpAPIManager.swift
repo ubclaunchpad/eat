@@ -29,7 +29,6 @@ extension YelpAPIManager {
       Alamofire.request(YelpAPIRouter.restaurants(searchQuery: searchQuery))
         .responseJSON { response in
           if let json = response.result.value as? JSON {
-            print(json)
             seal.fulfill(json)
           }
       }

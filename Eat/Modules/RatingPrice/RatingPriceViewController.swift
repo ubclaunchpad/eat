@@ -81,6 +81,7 @@ final class RatingPriceViewController: UIViewController {
     nextButton.titleLabel?.font = Font.formNavigation(size: 18)
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
+    nextButton.accessibilityIdentifier = Accessibility.ratingPriceNext
 
     ratingSlider.setThumbImage(#imageLiteral(resourceName: "Slider"), for: .normal)
     ratingSlider.minimumTrackTintColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)

@@ -24,5 +24,6 @@ final class RestaurantInfoMenuCell: UITableViewCell {
   func applyStyling() {
     yelpLabel.font = Font.regular(size: 12)
     yelpLabel.textColor = #colorLiteral(red: 0.4415612221, green: 0.4858411551, blue: 0.9966537356, alpha: 1)
+    yelpLabel.accessibilityIdentifier = Accessibility.restaurantInfoMenu
   }
 }

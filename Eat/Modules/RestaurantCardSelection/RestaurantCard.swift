@@ -69,5 +69,11 @@ final class RestaurantCard : UIView {
     layer.masksToBounds = false
     layer.shadowRadius = 15.0
     layer.shadowOpacity = 0.7
+
+    titleLabel.accessibilityIdentifier = Accessibility.restaurantCardName
+    typeLabel.accessibilityIdentifier = Accessibility.restaurantCardType
+    distanceLabel.accessibilityIdentifier = Accessibility.restaurantCardDistance
+    reviewLabel.accessibilityIdentifier = Accessibility.restaurantCardReview
+    openNowLabel.accessibilityIdentifier = Accessibility.restaurantCardOpen
   }
 }

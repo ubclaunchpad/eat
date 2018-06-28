@@ -47,6 +47,8 @@ final class MealTimeViewController: UIViewController {
     restaurantHoursTextView.backgroundColor = .clear
     restaurantHoursTextView.textContainerInset = UIEdgeInsets.zero
     restaurantHoursTextView.textContainer.lineFragmentPadding = 0
+    restaurantHoursTextView.accessibilityIdentifier = Accessibility.mealTimeTextField
+    restaurantHoursTextView.inputView = datePicker
 
     bottomGradientView.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: bottomGradientView.frame, andColors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0), #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)])
 
@@ -56,6 +58,7 @@ final class MealTimeViewController: UIViewController {
     nextButton.titleLabel?.font = Font.formNavigation(size: 18)
     nextButton.setTitleColor(#colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1), for: .normal)
     nextButton.setTitle(viewModel.nextButtonTitle, for: .normal)
+    nextButton.accessibilityIdentifier = Accessibility.mealTimeNext
 
     self.view.backgroundColor = Colors.backgroundColor
 
@@ -63,16 +66,18 @@ final class MealTimeViewController: UIViewController {
     datePicker.backgroundColor = .white
     datePicker.minuteInterval = Constants.minuteInterval
     datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-
-    restaurantHoursTextView.inputView = datePicker
+    datePicker.accessibilityIdentifier = Accessibility.mealTimeDatePicker
 
     let toolbar = UIToolbar()
     toolbar.barStyle = .default
     toolbar.sizeToFit()
+    toolbar.accessibilityIdentifier = Accessibility.mealTimeToolbar
     let doneButton = UIBarButtonItem(title: viewModel.doneToolbarTitle, style: .done, target: self, action: #selector(doneTapped))
+    doneButton.accessibilityIdentifier = Accessibility.mealTimeToolbarDone
     let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    let cancelButton = UIBarButtonItem(title: viewModel.nowToolbarTitle, style: .plain, target: self, action: #selector(nowTapped))
-    toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+    let nowButton = UIBarButtonItem(title: viewModel.nowToolbarTitle, style: .plain, target: self, action: #selector(nowTapped))
+    nowButton.accessibilityIdentifier = Accessibility.mealTimeToolbarNow
+    toolbar.setItems([nowButton, spaceButton, doneButton], animated: false)
     toolbar.isUserInteractionEnabled = true
 
     restaurantHoursTextView.inputAccessoryView = toolbar
