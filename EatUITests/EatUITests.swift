@@ -123,6 +123,32 @@ class EatUITests: XCTestCase {
     app.buttons[Accessibility.mealTimeNext].tap()
   }
 
+  func testRating() {
+    app.launch()
+    app.tap()
+
+    // Map View
+    app.buttons[Accessibility.mapNext].tap()
+
+    // People Count
+    app.buttons[Accessibility.countNext].tap()
+
+    // Meal Time
+    app.buttons[Accessibility.mealTimeNext].tap()
+
+    // Rating Price
+    app.buttons[Accessibility.ratingOnePriceButton].tap()
+    app.buttons[Accessibility.ratingOnePriceButton].tap()
+    app.buttons[Accessibility.ratingTwoPriceButton].tap()
+    app.buttons[Accessibility.ratingThreePriceButton].tap()
+
+    app.sliders[Accessibility.ratingSlider].adjust(toNormalizedSliderPosition: 1)
+
+    XCTAssertEqual(app.staticTexts[Accessibility.ratingMinimumRating].label, "Minimum 5.0")
+
+    app.buttons[Accessibility.ratingPriceNext].tap()
+  }
+
   func testPreferences() {
     app.launch()
     app.tap()
