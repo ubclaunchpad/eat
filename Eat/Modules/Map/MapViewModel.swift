@@ -18,8 +18,6 @@ protocol MapViewModel {
   func requestLocationAuthorization()
   func didTapNext(centerLocation: CLLocation, edgeLocation: CLLocation)
 
-  var onTapNext: ((SearchQuery) -> Void)? { get set }
-
   var onLocationAuthorized: (() -> Void)? { get set }
   var onLocationUpdated: ((CLLocation) -> Void)? { get set }
 }

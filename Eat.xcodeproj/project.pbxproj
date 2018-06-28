@@ -49,6 +49,8 @@
 		524CB1E920E4640F00314847 /* RestaurantParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CB1E820E4640F00314847 /* RestaurantParserTests.swift */; };
 		524CB1EB20E49D9200314847 /* ReviewParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CB1EA20E49D9200314847 /* ReviewParserTests.swift */; };
 		524CB1ED20E4AED300314847 /* YelpAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CB1EC20E4AED300314847 /* YelpAPITests.swift */; };
+		524CB1F020E4BC5700314847 /* ChosenRestaurantViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CB1EF20E4BC5700314847 /* ChosenRestaurantViewModelTests.swift */; };
+		524CB1F220E55C8D00314847 /* RestaurantCardSelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CB1F120E55C8D00314847 /* RestaurantCardSelectionViewModelTests.swift */; };
 		5254BAB020DC7ADD00059764 /* MealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */; };
 		5254BAB120DC7ADD00059764 /* MealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */; };
 		5254BAB320DC7AEA00059764 /* MealTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */; };
@@ -91,7 +93,6 @@
 		52D0C024202670B1001CFCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C023202670B1001CFCB5 /* AppDelegate.swift */; };
 		52D0C02B202670B1001CFCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C02A202670B1001CFCB5 /* Assets.xcassets */; };
 		52D0C02E202670B1001CFCB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0C02C202670B1001CFCB5 /* LaunchScreen.storyboard */; };
-		52D0C039202670B1001CFCB5 /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C038202670B1001CFCB5 /* EatTests.swift */; };
 		52D0C044202670B1001CFCB5 /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C043202670B1001CFCB5 /* EatUITests.swift */; };
 		52FCEF82205EF2CB00A46022 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF7D205EF2CB00A46022 /* OnboardingViewController.m */; };
 		52FCEF83205EF2CB00A46022 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FCEF81205EF2CB00A46022 /* OnboardingContentViewController.m */; };
@@ -166,6 +167,8 @@
 		524CB1E820E4640F00314847 /* RestaurantParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantParserTests.swift; sourceTree = "<group>"; };
 		524CB1EA20E49D9200314847 /* ReviewParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewParserTests.swift; sourceTree = "<group>"; };
 		524CB1EC20E4AED300314847 /* YelpAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPITests.swift; sourceTree = "<group>"; };
+		524CB1EF20E4BC5700314847 /* ChosenRestaurantViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenRestaurantViewModelTests.swift; sourceTree = "<group>"; };
+		524CB1F120E55C8D00314847 /* RestaurantCardSelectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardSelectionViewModelTests.swift; sourceTree = "<group>"; };
 		5254BAAE20DC7ADC00059764 /* MealTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTimeViewController.swift; sourceTree = "<group>"; };
 		5254BAAF20DC7ADC00059764 /* MealTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealTimeViewController.xib; sourceTree = "<group>"; };
 		5254BAB220DC7AEA00059764 /* MealTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeViewModel.swift; sourceTree = "<group>"; };
@@ -211,7 +214,6 @@
 		52D0C02D202670B1001CFCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D0C02F202670B1001CFCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0C034202670B1001CFCB5 /* EatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D0C038202670B1001CFCB5 /* EatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatTests.swift; sourceTree = "<group>"; };
 		52D0C03A202670B1001CFCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D0C03F202670B1001CFCB5 /* EatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0C043202670B1001CFCB5 /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
@@ -395,6 +397,15 @@
 			path = FoodPreferences;
 			sourceTree = "<group>";
 		};
+		524CB1EE20E4BC1700314847 /* ParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				524CB1E820E4640F00314847 /* RestaurantParserTests.swift */,
+				524CB1EA20E49D9200314847 /* ReviewParserTests.swift */,
+			);
+			path = ParserTests;
+			sourceTree = "<group>";
+		};
 		5254BAB820DCABD000059764 /* RatingPrice */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,10 +527,10 @@
 		52D0C037202670B1001CFCB5 /* EatTests */ = {
 			isa = PBXGroup;
 			children = (
-				52D0C038202670B1001CFCB5 /* EatTests.swift */,
-				524CB1E820E4640F00314847 /* RestaurantParserTests.swift */,
-				524CB1EA20E49D9200314847 /* ReviewParserTests.swift */,
+				524CB1EE20E4BC1700314847 /* ParserTests */,
 				524CB1EC20E4AED300314847 /* YelpAPITests.swift */,
+				524CB1EF20E4BC5700314847 /* ChosenRestaurantViewModelTests.swift */,
+				524CB1F120E55C8D00314847 /* RestaurantCardSelectionViewModelTests.swift */,
 				52D0C03A202670B1001CFCB5 /* Info.plist */,
 			);
 			path = EatTests;
@@ -1018,9 +1029,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524CB1F220E55C8D00314847 /* RestaurantCardSelectionViewModelTests.swift in Sources */,
 				524CB1ED20E4AED300314847 /* YelpAPITests.swift in Sources */,
-				52D0C039202670B1001CFCB5 /* EatTests.swift in Sources */,
 				524CB1E920E4640F00314847 /* RestaurantParserTests.swift in Sources */,
+				524CB1F020E4BC5700314847 /* ChosenRestaurantViewModelTests.swift in Sources */,
 				524CB1EB20E49D9200314847 /* ReviewParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
