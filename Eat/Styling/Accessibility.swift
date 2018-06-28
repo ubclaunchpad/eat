@@ -28,6 +28,11 @@ struct Accessibility {
   static let mealTimeToolbarNow = "mealTimeToolbarNow"
   static let mealTimeNext = "mealTimeToolbarNext"
 
+  static let ratingSlider = "ratingSlider"
+  static let ratingMinimumRating = "ratingMinimumRating"
+  static let ratingOnePriceButton = "ratingOnePriceButton"
+  static let ratingTwoPriceButton = "ratingTwoPriceButton"
+  static let ratingThreePriceButton = "ratingThreePriceButton"
   static let ratingPriceNext = "ratingPriceNext"
 
   static let preferenceTextField = "preferenceTextField"

@@ -49,6 +49,7 @@ final class RatingPriceViewController: UIViewController {
     ratingQuestionLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
     minimumRatingLabel.font = Font.header(size: 24)
     minimumRatingLabel.textColor = #colorLiteral(red: 0.2235294118, green: 0, blue: 0.8196078431, alpha: 1)
+    minimumRatingLabel.accessibilityIdentifier = Accessibility.ratingMinimumRating
     priceLabel.font = Font.header(size: 13)
     priceLabel.textColor = #colorLiteral(red: 0.4196078431, green: 0.4352941176, blue: 0.6, alpha: 1)
 
@@ -58,18 +59,21 @@ final class RatingPriceViewController: UIViewController {
     onePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     onePriceButton.backgroundColor = Colors.backgroundColor
     onePriceButton.titleLabel?.font =  Font.boldButton(size: 18)
+    onePriceButton.accessibilityIdentifier = Accessibility.ratingOnePriceButton
     unselectButton(button: onePriceButton)
 
     twoPriceButton.layer.cornerRadius = 8
     twoPriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     twoPriceButton.backgroundColor = Colors.backgroundColor
     twoPriceButton.titleLabel?.font =  Font.boldButton(size: 18)
+    twoPriceButton.accessibilityIdentifier = Accessibility.ratingTwoPriceButton
     unselectButton(button: twoPriceButton)
 
     threePriceButton.layer.cornerRadius = 8
     threePriceButton.layer.borderColor = #colorLiteral(red: 0.968627451, green: 0.6117647059, blue: 0.5333333333, alpha: 1)
     threePriceButton.backgroundColor = Colors.backgroundColor
     threePriceButton.titleLabel?.font =  Font.boldButton(size: 18)
+    threePriceButton.accessibilityIdentifier = Accessibility.ratingThreePriceButton
     unselectButton(button: threePriceButton)
 
     ratingQuestionLabel.text = viewModel.ratingsTitle
@@ -88,6 +92,7 @@ final class RatingPriceViewController: UIViewController {
     ratingSlider.maximumTrackTintColor = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.8, alpha: 1)
     ratingSlider.maximumValue = 5
     ratingSlider.minimumValue = 0
+    ratingSlider.accessibilityIdentifier = Accessibility.ratingSlider
 
     viewModel.onRatingChanged = setRating(value:text:)
     viewModel.onPriceChanged = setPriceButtonState(priceButton:selected:)
