@@ -8,42 +8,42 @@
 
 import Foundation
 
-enum EatingTime {
+enum MealTime {
   case now
   case later(date: Date)
 }
 
-enum DietaryRestrictions {
+enum DietaryRestriction {
   case vegan, vegetarian, halal, none
 
-  var keyword: String? {
+  var keyword: String {
     switch self {
     case .vegan: return "vegan"
     case .vegetarian: return "vegetarian"
     case .halal: return "halal"
-    case .none: return nil
+    case .none: return ""
     }
   }
 }
 
 class SearchQuery {
   // Map
-  var latitude: Float = 49.2827 // Latitude of the restaurant
-  var longitude: Float = 123.1207 // Longitude of the restaurant.
+  var latitude: Double = 49.2827 // Latitude of the restaurant
+  var longitude: Double = -123.1207 // Longitude of the restaurant.
   var radius: Int = 890 // Radius of search. Ssearch area is in METERS
 
   // People Count
   var numberOfPeople = 1
 
   // Eating Time
-  var eatingTime: EatingTime = .now
+  var mealTime: MealTime = .now
 
   // Rating and Price
   var minimumRating: Double = 3
   var price: [Int] = [] // Matches one of "$", "$$" or "$$$" ($ = 1, $$ = 2, $$$ = 3)
 
   // Dietary Restrictions
-  var dietary: DietaryRestrictions = .none
+  var dietary: DietaryRestriction = .none
   var searchTerm: String = ""
 }
 

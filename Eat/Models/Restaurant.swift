@@ -13,13 +13,13 @@ struct Restaurant {
   let rating: Float
   let phone: String
   let status: Bool
-  let imageUrl: String
+  let imageURL: URL?
   let address: String
   let foodType: String
   let reviewCount: Int
   let distance: Double
   let id: String
-  let yelpUrl: String
+  let yelpURL: URL
   let lat: Double
   let lon: Double
 }

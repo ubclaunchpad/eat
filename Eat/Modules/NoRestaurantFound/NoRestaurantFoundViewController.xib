@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoRestaurantFoundViewController" customModule="Eat" customModuleProvider="target">
+            <connections>
+                <outlet property="adjustPreferenceButton" destination="BsZ-pK-Cib" id="mQr-8Y-2kk"/>
+                <outlet property="noRestaurantFoundImage" destination="Td2-4r-8yx" id="3IO-C5-yVv"/>
+                <outlet property="noRestaurantFoundLabel" destination="91U-9l-ln9" id="fEd-jK-rpD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfC-Ka-YhN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_restaurant_found" translatesAutoresizingMaskIntoConstraints="NO" id="Td2-4r-8yx">
+                            <rect key="frame" x="50" y="137.5" width="275" height="275"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Td2-4r-8yx" secondAttribute="height" multiplier="1:1" id="XyW-vI-KeI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! There aren't enough restaurant matching your preferences at this location." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91U-9l-ln9">
+                            <rect key="frame" x="65" y="444.5" width="245" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="245" id="hk7-lJ-BiG"/>
+                                <constraint firstAttribute="height" constant="80" id="rL1-t9-0LK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsZ-pK-Cib">
+                            <rect key="frame" x="32" y="576" width="311" height="56"/>
+                            <color key="backgroundColor" red="0.45924956929999999" green="0.5726313328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="Q9P-BU-dWz"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="311" id="utc-6p-Gx6"/>
+                            </constraints>
+                            <state key="normal" title="ADJUST PREFERENCES">
+                                <color key="titleColor" red="0.97227032229999999" green="0.97920274169999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="adjustPreferenceButtonTapped" destination="-1" eventType="touchUpInside" id="NJP-mZ-pOp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="BsZ-pK-Cib" secondAttribute="bottom" constant="35" id="2de-32-EYk"/>
+                        <constraint firstItem="91U-9l-ln9" firstAttribute="centerX" secondItem="awC-QJ-0xW" secondAttribute="centerX" id="5v9-0P-e0B"/>
+                        <constraint firstItem="Td2-4r-8yx" firstAttribute="centerY" secondItem="awC-QJ-0xW" secondAttribute="centerY" multiplier="0.8" id="6Ou-Zc-12Z"/>
+                        <constraint firstItem="91U-9l-ln9" firstAttribute="top" secondItem="Td2-4r-8yx" secondAttribute="bottom" constant="32" id="9iA-ca-YYE"/>
+                        <constraint firstItem="BsZ-pK-Cib" firstAttribute="centerX" secondItem="awC-QJ-0xW" secondAttribute="centerX" id="CUL-n7-SCm"/>
+                        <constraint firstItem="BsZ-pK-Cib" firstAttribute="leading" secondItem="awC-QJ-0xW" secondAttribute="leading" constant="32" id="TNT-6V-gHP"/>
+                        <constraint firstItem="awC-QJ-0xW" firstAttribute="trailing" secondItem="BsZ-pK-Cib" secondAttribute="trailing" constant="32" id="Y2u-wU-4D2"/>
+                        <constraint firstItem="awC-QJ-0xW" firstAttribute="trailing" secondItem="Td2-4r-8yx" secondAttribute="trailing" constant="50" id="fJX-BT-Rcq"/>
+                        <constraint firstItem="Td2-4r-8yx" firstAttribute="leading" secondItem="awC-QJ-0xW" secondAttribute="leading" constant="50" id="rGz-5x-8bj"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="awC-QJ-0xW"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WfC-Ka-YhN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Zx-SU-7QN"/>
+                <constraint firstItem="WfC-Ka-YhN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BKv-XO-NAi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WfC-Ka-YhN" secondAttribute="trailing" id="LHm-2U-C0T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WfC-Ka-YhN" secondAttribute="bottom" id="bzQ-xA-onm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no_restaurant_found" width="277" height="277"/>
+    </resources>
+</document>

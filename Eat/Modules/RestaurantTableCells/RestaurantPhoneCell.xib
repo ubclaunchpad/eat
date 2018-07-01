@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantPhoneCell" rowHeight="67" id="AZm-Di-595" userLabel="CallRestaurantCell" customClass="RestaurantPhoneCell" customModule="Eat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AZm-Di-595" id="hSA-MP-GG6">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jfl-xe-gkR">
+                        <rect key="frame" x="24" y="16" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="TYQ-MS-7I8"/>
+                            <constraint firstAttribute="height" constant="25" id="c3Q-28-tty"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-J6-36Z" userLabel="PhoneNumber">
+                        <rect key="frame" x="59" y="33" width="110" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallRestaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B9-7u-cPN" userLabel="CallRestaurant">
+                        <rect key="frame" x="59" y="10" width="112" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2B9-7u-cPN" firstAttribute="leading" secondItem="Jfl-xe-gkR" secondAttribute="trailing" constant="10" id="4fc-Pt-e8Y"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eXE-J6-36Z" secondAttribute="bottom" constant="2" id="7gw-2b-PQQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Jfl-xe-gkR" secondAttribute="bottom" constant="5" id="KpG-Z9-PQb"/>
+                    <constraint firstItem="Jfl-xe-gkR" firstAttribute="leading" secondItem="hSA-MP-GG6" secondAttribute="leading" constant="24" id="SZ0-ME-10K"/>
+                    <constraint firstItem="Jfl-xe-gkR" firstAttribute="top" secondItem="hSA-MP-GG6" secondAttribute="topMargin" constant="5" id="kEj-gW-YxO"/>
+                    <constraint firstItem="2B9-7u-cPN" firstAttribute="top" secondItem="hSA-MP-GG6" secondAttribute="top" constant="10" id="orn-Qp-Qd4"/>
+                    <constraint firstItem="eXE-J6-36Z" firstAttribute="leading" secondItem="Jfl-xe-gkR" secondAttribute="trailing" constant="10" id="sam-Sd-bnp"/>
+                    <constraint firstItem="eXE-J6-36Z" firstAttribute="top" secondItem="2B9-7u-cPN" secondAttribute="bottom" constant="2" id="zkQ-tC-Yip"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="callRestaurantLabel" destination="2B9-7u-cPN" id="Jnb-MB-fo0"/>
+                <outlet property="phoneIcon" destination="Jfl-xe-gkR" id="Sco-Iw-hAi"/>
+                <outlet property="phoneNumber" destination="eXE-J6-36Z" id="68u-6m-vco"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="PhoneIcon" width="37" height="37"/>
+    </resources>
+</document>

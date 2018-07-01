@@ -11,7 +11,7 @@ import Foundation
 struct Review {
   let userName: String
   let userRating: Float
-  let userImage: String
+  let userImageURL: URL?
   let content: String
   let timeStamp: String
 }

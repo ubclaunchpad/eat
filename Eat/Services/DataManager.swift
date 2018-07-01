@@ -7,65 +7,69 @@
 //
 
 import Foundation
-import BrightFutures
 import Alamofire
 import Kingfisher
+import PromiseKit
+
+internal typealias JSON = [String: Any]
+internal typealias JSONArray = [JSON]
+
+protocol RestaurantDataManager {
+  func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]>
+  func fetchReviews(with restaurantID: String) -> Promise<[Review]>
+}
+
+protocol OnboardingDataManager {
+  func isFirstLaunch() -> Bool
+  func setFirstLaunch(value: Bool)
+}
+
+protocol StoreDataManager {
+  func lastBuildVersion() -> String
+  func setLastBuildVersion(currentVersion: String)
+}
 
 internal final class DataManager {
   static var `default` = DataManager()
 
-  //check first launch for onboarding tutorial
-
   fileprivate let yelpAPIManager: YelpAPIManager
+  
   init(yelpAPIManager: YelpAPIManager = YelpAPIManager()) {
     self.yelpAPIManager = yelpAPIManager
   }
 }
 
 // Yelp API
-extension DataManager {
-
-  enum ReadmeError: Error {
-    case RequestFailed, TimeServiceError
+extension DataManager: RestaurantDataManager {
+  func fetchRestaurants(with query: SearchQuery) -> Promise<[Restaurant]> {
+    return yelpAPIManager.search(searchQuery: query)
+      .compactMap { RestaurantsParser().parse(from: $0) }
   }
 
-  func fetchRestaurants(with query: SearchQuery) -> Future<[Restaurant], ReadmeError> {
-    return Future { complete in
-      let result = yelpAPIManager.search(query: query)
-      result.andThen { result in
-        switch result {
-        case .success(let val):
-          complete(.success(val))
-        case .failure(_):
-          // TODO: make this return an error
-          print("No Restaurants returned")
-        }
-      }
-    }
-  }
-
-  func fetchReviews(with resId: String) -> Future<[Review], ReadmeError> {
-    return Future { complete in
-      let result = yelpAPIManager.getReviews(resId: resId)
-      result.andThen { result in
-        switch result {
-        case .success(let val):
-          complete(.success(val))
-        case .failure(_):
-          print("No reviews returned")
-        }
-      }
-    }
+  func fetchReviews(with restaurantID: String) -> Promise<[Review]> {
+    return yelpAPIManager.getReviews(restaurantID: restaurantID)
+      .compactMap { ReviewsParser().parse(from: $0) }
   }
 }
 
 // check first launch to show tutorial
-extension DataManager {
+extension DataManager: OnboardingDataManager {
   func isFirstLaunch() -> Bool {
-    return !UserDefaults.standard.bool(forKey: "launchedBefore")
+    return !UserDefaults.standard.bool(forKey: UserDefaultsKeys.appLaunchedBefore)
   }
+  
   func setFirstLaunch(value: Bool) {
-    UserDefaults.standard.set(value, forKey: "launchedBefore")
+    UserDefaults.standard.set(value, forKey: UserDefaultsKeys.appLaunchedBefore)
+  }
+}
+
+extension DataManager: StoreDataManager {
+  func lastBuildVersion() -> String {
+    return UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReview) ?? ""
+  }
+
+  func setLastBuildVersion(currentVersion: String) {
+    UserDefaults.standard.set(currentVersion, forKey: UserDefaultsKeys.lastVersionPromptedForReview)
   }
 }
 

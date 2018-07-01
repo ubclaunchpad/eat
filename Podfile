@@ -6,11 +6,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target ‘Eat’ do
   pod 'Alamofire', '~> 4.5’
-  pod 'GoogleMaps’
-  pod 'BrightFutures'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Koloda'
   pod 'Kingfisher', '~> 4.0'
+  pod "PromiseKit", '~> 6.0'
   target 'EatTests' do
     inherit! :search_paths
     # Pods for testing
