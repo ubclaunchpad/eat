@@ -36,6 +36,11 @@ final class ChosenRestaurantViewController: UIViewController {
     configure()
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    viewModel.requestUserReview()
+  }
+
   func configure() {
     tableView.dataSource = self
     tableView.delegate = self

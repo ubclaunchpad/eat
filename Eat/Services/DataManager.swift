@@ -24,6 +24,11 @@ protocol OnboardingDataManager {
   func setFirstLaunch(value: Bool)
 }
 
+protocol StoreDataManager {
+  func lastBuildVersion() -> String
+  func setLastBuildVersion(currentVersion: String)
+}
+
 internal final class DataManager {
   static var `default` = DataManager()
 
@@ -50,11 +55,21 @@ extension DataManager: RestaurantDataManager {
 // check first launch to show tutorial
 extension DataManager: OnboardingDataManager {
   func isFirstLaunch() -> Bool {
-    return !UserDefaults.standard.bool(forKey: "launchedBefore")
+    return !UserDefaults.standard.bool(forKey: UserDefaultsKeys.appLaunchedBefore)
   }
   
   func setFirstLaunch(value: Bool) {
-    UserDefaults.standard.set(value, forKey: "launchedBefore")
+    UserDefaults.standard.set(value, forKey: UserDefaultsKeys.appLaunchedBefore)
+  }
+}
+
+extension DataManager: StoreDataManager {
+  func lastBuildVersion() -> String {
+    return UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReview) ?? ""
+  }
+
+  func setLastBuildVersion(currentVersion: String) {
+    UserDefaults.standard.set(currentVersion, forKey: UserDefaultsKeys.lastVersionPromptedForReview)
   }
 }
 

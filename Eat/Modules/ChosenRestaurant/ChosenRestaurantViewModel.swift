@@ -17,11 +17,14 @@ protocol ChosenRestaurantViewModel {
   func mapViewModel(at indexPath: IndexPath) -> RestaurantMapCellViewModel
   func selectCall()
   func selectExploreMenu()
+  func requestUserReview()
 
   var onExitButtonTapped: (() -> Void)? { get set }
 }
 
 final class ChosenRestaurantViewModelImpl {
+  fileprivate let storeManager = StoreManager()
+
   fileprivate let restaurant: Restaurant
 
   init(restaurant: Restaurant) {
@@ -60,5 +63,9 @@ extension ChosenRestaurantViewModelImpl: ChosenRestaurantViewModel {
 
   func selectExploreMenu() {
     onOpenSafari?(restaurant.yelpURL)
+  }
+
+  func requestUserReview() {
+    storeManager.requestUserReview()
   }
 }
