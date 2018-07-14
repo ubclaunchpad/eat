@@ -28,7 +28,7 @@ Our primary focus when working on this project was to create something we'd use 
 Made by the iOS team at UBC Launch Pad. We are
 * [Sarina Chen](https://github.com/sarina-chen)
 * [Sepand Dyanatkar](https://github.com/DSep)
-* [Gina Hong](https://github.com/1ginahong)
+* [Gina Hong](https://github.com/ginaahong)
 * [Milton Leung](https://github.com/miltonleung)
 * [Yonni Luu](https://github.com/yonniluu)
 * [Hantao Mai](https://github.com/hantaom)
